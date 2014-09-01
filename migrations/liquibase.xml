@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BD-201406241630" author="angshu" context="setup">
+        <comment>Remove unwanted idgen sources. adding location. retiring and adding person attributes</comment>
+        <sql>
+            INSERT INTO location (name, description, creator, date_created, uuid) VALUES ('BahmniFacility', 'Description for this faciltiy', 1, curdate(), uuid());
+            SET @lastlocation = last_insert_id();
+            INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created) (SELECT  @lastlocation, location_attribute_type_id, 'BAM', uuid(), 1, curdate() FROM location_attribute_type WHERE name = 'IdentifierSourceName');
+            delete from idgen_seq_id_gen where prefix in ('GAN', 'SEM', 'SIV');
+            delete from idgen_log_entry;
+            delete from idgen_identifier_source where name in ('GAN', 'SEM', 'SIV');
+            SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created) VALUES (uuid(), 'BD', 'ID sequence source for patients in Bangladesh for this facility', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'BD', '', 9,9);
+            update person_attribute_type set retired=1, retired_by=1, date_retired=now(), retire_reason='not needed for BD' where name in ('caste', 'class', 'primaryRelative', 'secondaryIdentifier', 'secondaryContact');
+            update person_attribute_type set description="পদবি" where name = 'familyNameLocal';
+            update person_attribute_type set description="রোগীর নাম" where name = 'givenNameLocal';
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('Health ID', 'Unique Health ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('National ID', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-201407291747" author="balajin" context="setup">
+        <comment>Create a mapping table for external id to internal id mapping</comment>
+        <sql>
+            create table shr_id_mapping(id MEDIUMINT AUTO_INCREMENT PRIMARY KEY, internal_id varchar(50), external_id varchar(50), type varchar(50));
+        </sql>
+    </changeSet>
+    <changeSet id="BD-201408041739" author="Neha, Utsab" context="setup">
+        <comment>Add the Url field to shr_id_mapping</comment>
+        <sql>
+             alter table shr_id_mapping add uri varchar(150);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-201408061002" author="BalajiN" context="setup">
+        <comment>Dropping Vitals concept</comment>
+        <sql>
+             delete from concept_set where concept_set in (select concept_id  from concept_name where name like '%Vitals%');
+             delete from concept_word where concept_name_id in (select concept_name_id from concept_name where name like '%Vitals%');
+             delete from concept_name where name like '%Vitals%';
+             delete from concept where concept_id in (select concept_id  from concept_name where name like '%Vitals%');
+        </sql>
+    </changeSet>
+</databaseChangeLog>

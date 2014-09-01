@@ -53,7 +53,21 @@
                 },
                 "P/S (Per Speculum) - Cervix" : {
                     "grid" : true
-                }
+                },
+                "CodedVital" : {
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false
+                },
+                "Relationship" : {
+                    "freeTextAutocomplete": {
+                        "codedConceptName": "Relationship"
+                     }
+                },
+                "Relationship Diagnosis" : {
+                    "freeTextAutocomplete" : {
+                        "conceptSetName" : "uncategorized diagnoses"
+                    }
+                 }
             },
             "patientDashboardSections": [
                 {
