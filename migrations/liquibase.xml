@@ -48,4 +48,10 @@
              delete from concept where concept_id in (select concept_id  from concept_name where name like '%Vitals%');
         </sql>
     </changeSet>
+    <changeSet id="BD-201409041636" author="Neha" context="setup">
+        <comment>Deleting OpenERPSaleOrder scheduler tasks</comment>
+        <sql>
+            delete from scheduler_task_config where schedulable_class like 'org.bahmni.module.openerpatomfeedclient.api.task.OpenERPSaleOrder%';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
