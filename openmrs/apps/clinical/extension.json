@@ -8,7 +8,7 @@
         "default": true,
         "icon": "icon-user-md",
         "order": 1,
-        "requiredPrivilege": "app:clinical:observationTab"
+        "requiredPrivilege": "app:clinical"
     },
     {
         "id": "bahmni.clinical.consultation.diagnosis",
@@ -18,7 +18,7 @@
         "url": "diagnosis",
         "icon": "icon-user-md",
         "order": 2,
-        "requiredPrivilege": "app:clinical:clinical"
+        "requiredPrivilege": "app:clinical"
     },
     {
         "id": "bahmni.clinical.consultation.disposition",
@@ -84,7 +84,7 @@
             "default":true
         },
         "order": 1,
-        "requiredPrivilege": "app:clinical:history"
+        "requiredPrivilege": "app:clinical"
     },
     {
         "id": "bahmni.clinical.conceptSetGroup.observations.vitals",
