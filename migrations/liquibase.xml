@@ -100,4 +100,11 @@
             delete from scheduler_task_config where schedulable_class like 'org.bahmni.module.openerpatomfeedclient.api.task.OpenERPSaleOrder%';
         </sql>
     </changeSet>
+    <changeSet id='BD-201409101706' author='Neha,Sumit' context='setup'>
+        <comment>Setting identifier prefix as BDH</comment>
+        <sql>
+            UPDATE idgen_identifier_source set name = 'BDH' WHERE name = 'BD';
+            UPDATE idgen_seq_id_gen set prefix = 'BDH' WHERE prefix = 'BD';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
