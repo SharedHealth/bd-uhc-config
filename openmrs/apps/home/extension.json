@@ -54,7 +54,7 @@
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "National Registry",
-        "url": "openmrs/shrclient/mciPatient.page",
+        "url": "../../openmrs/shrclient/mciPatient.page",
         "icon": "icon-user",
         "order": 7,
         "requiredPrivilege": "app:registration"
