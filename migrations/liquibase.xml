@@ -108,12 +108,12 @@
         </sql>
     </changeSet>
     <changeSet id='BD-201409111506' author='Neha, Utsab' context='setup'>
-        <comment>Adding person attribute occupation</comment>
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
                 SELECT count(*) FROM person_attribute_type WHERE name = 'occupation';
             </sqlCheck>
         </preConditions>
+        <comment>Adding person attribute occupation</comment>
         <sql>
             set @concept_id = 0;
             set @answer_concept_id = 0;
