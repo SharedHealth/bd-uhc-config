@@ -1,0 +1,4 @@
+if("BDH".equals(healthCenter) || "BAM".equals(healthCenter)) {
+       return true;
+   }
+return false;
