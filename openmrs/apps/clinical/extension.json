@@ -8,7 +8,7 @@
         "default": true,
         "icon": "icon-user-md",
         "order": 1,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:observationTab"
     },
     {
         "id": "bahmni.clinical.consultation.diagnosis",
@@ -18,7 +18,7 @@
         "url": "diagnosis",
         "icon": "icon-user-md",
         "order": 2,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:diagnosisTab"
     },
     {
         "id": "bahmni.clinical.consultation.disposition",
@@ -28,7 +28,7 @@
         "url": "disposition",
         "icon": "icon-user-md",
         "order": 3,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:dispositionTab"
     },
     {
         "id": "bahmni.clinical.consultation.summary",
@@ -38,7 +38,7 @@
         "url": "consultation",
         "icon": "icon-user-md",
         "order": 5,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:consultationTab"
     },
     {
         "id": "bahmni.clinical.orders.pending",
@@ -154,7 +154,7 @@
              "conceptName": "Family History",
              "default": true
          },
-         "order": 5,
+         "order": 7,
          "requiredPrivilege": "app:clinical"
-     }
+    }    
 ]

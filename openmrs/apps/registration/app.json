@@ -26,19 +26,19 @@
             "defaultIdentifierPrefix": "BAM",
 	        "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "conceptSetUI": {
-                "temparature": {
-                    "showAbnormalIndicator": true
-                }
-            },
-            "registrationConceptSet":"",
             "showMiddleName": false,
             "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
-	        "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+            "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
             "localNameSearch": true,
             "localNameLabel": "National or Health ID",
             "localNamePlaceholder": "National or Health ID",
-            "localNameAttributesToDisplay": ["National ID", "Health ID"]
+            "localNameAttributesToDisplay": ["National ID", "Health ID"],
+            "conceptSetUI": {
+                "REGISTRATION FEES": {
+                    "required": true,
+                    "label": "Fee"
+                }
+            }
         }
     }
 ]
