@@ -4,4 +4,12 @@
         xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
+
+    <insert schemaName="clinlims" tableName="health_center">
+        <column name="active" type="boolean" valueBoolean="true"/>
+        <column name="name" value="BDH"/>
+        <column name="description" value="BDH"/>
+        <column name="allow_patient_creation" type="boolean" valueBoolean="true"/>
+    </insert>
+
 </databaseChangeLog>
