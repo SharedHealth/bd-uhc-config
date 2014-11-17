@@ -14,4 +14,13 @@
         </insert>
     </changeSet>
 
+    <changeSet id='BD-201411171202' author='Neha, Shruthi' context='setup'>
+        <insert schemaName="clinlims" tableName="health_center">
+            <column name="active" type="boolean" valueBoolean="true"/>
+            <column name="name" value="BAH"/>
+            <column name="description" value="BAH"/>
+            <column name="allow_patient_creation" type="boolean" valueBoolean="true"/>
+        </insert>
+    </changeSet>
+
 </databaseChangeLog>
