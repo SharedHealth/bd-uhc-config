@@ -98,4 +98,24 @@
             UPDATE idgen_seq_id_gen set prefix = 'BDH' WHERE prefix = 'BD';
         </sql>
     </changeSet>
+    <changeSet id="BD-201411241411" author="Neha,Sanjana" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM location where name in ('Discharge');
+            </sqlCheck>
+        </preConditions>
+        <comment>Setting Location for discharge</comment>
+        <sql>
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Discharge', 1, now(), uuid());
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='DISCHARGE'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Discharge'),
+            (Select encounter_type_id from encounter_type where name ='DISCHARGE'), 1, now(), uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
