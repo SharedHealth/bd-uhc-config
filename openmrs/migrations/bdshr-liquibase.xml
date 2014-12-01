@@ -118,4 +118,34 @@
             (Select encounter_type_id from encounter_type where name ='DISCHARGE'), 1, now(), uuid());
         </sql>
     </changeSet>
+    <changeSet id="BD-201411271111" author="tw" context="rel2">
+        <comment>rel2</comment>
+        <sqlFile path="BDAddressHierarchy.sql"/>
+    </changeSet>
+    <changeSet id="BD-201411271042" author="neha" context="setup">
+        <comment>Setting address hierarchy levels</comment>
+        <sql>
+            set @parent_concept_id = 0;
+
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Division', NULL, 'STATE_PROVINCE', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Division' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Zilla', @parent_concept_id, 'COUNTY_DISTRICT', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Zilla' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Upazilla', @parent_concept_id, 'ADDRESS_5', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Upazilla' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Paurasava', @parent_concept_id, 'ADDRESS_4', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Paurasava' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Ward/Union', @parent_concept_id, 'ADDRESS_3', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Ward/Union' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Rural Ward', @parent_concept_id, 'ADDRESS_2', uuid(), 1);
+
+            select address_hierarchy_level_id from address_hierarchy_level where name = 'Rural Ward' into @parent_concept_id;
+            INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Address Line', @parent_concept_id, 'ADDRESS_1' ,uuid(), 0);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
