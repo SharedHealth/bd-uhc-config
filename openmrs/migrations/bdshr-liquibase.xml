@@ -155,6 +155,7 @@
     </changeSet>
     <changeSet id="BD-201412021147" author="neha" context="setup">
         <comment>Setting address hierarchy levels</comment>
+        <sql>
             update address_hierarchy_level set required = 0 where name = 'Rural Ward';
             update address_hierarchy_level set required = 1 where name = 'Address Line';
         </sql>
