@@ -153,4 +153,10 @@
             INSERT INTO address_hierarchy_level (name, parent_level_id, address_field, uuid, required) VALUES ('Address Line', @parent_concept_id, 'ADDRESS_1' ,uuid(), 0);
         </sql>
     </changeSet>
+    <changeSet id="BD-201412021147" author="neha" context="setup">
+        <comment>Setting address hierarchy levels</comment>
+            update address_hierarchy_level set required = 0 where name = 'Rural Ward';
+            update address_hierarchy_level set required = 1 where name = 'Address Line';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
