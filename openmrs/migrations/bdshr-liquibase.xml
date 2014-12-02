@@ -123,6 +123,11 @@
         <sqlFile path="BDAddressHierarchy.sql"/>
     </changeSet>
     <changeSet id="BD-201411271042" author="neha" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM address_hierarchy_level;
+            </sqlCheck>
+        </preConditions>
         <comment>Setting address hierarchy levels</comment>
         <sql>
             set @parent_concept_id = 0;
