@@ -53,7 +53,15 @@
                     "freeTextAutocomplete" : {
                         "conceptSetName" : "uncategorized diagnoses"
                     }
-                }
+                },
+                "Cause of Death" : {
+                    "freeTextAutocomplete" : {
+                        "conceptSetName" : "uncategorized diagnoses"
+                    }
+                },
+        		"Anaemia, Stopped Since When" : {
+        			"conciseText" : true
+        		}
             },
             "patientDashboardSections": [
                 {
@@ -89,18 +97,18 @@
                 "drugFormDefaults" : {
                     "Ayurvedic" : {
                         "doseUnits": "Teaspoon",
-                        "route": "Oral"    
+                        "route": "Oral"
                     },
                     "Capsule" : {
                         "doseUnits": "Capsule(s)",
-                        "route": "Oral"    
+                        "route": "Oral"
                     },
                     "Powder" : {
-                        "route": "Intrathecal"    
+                        "route": "Intrathecal"
                     },
                     "Injection" : {
                         "doseUnits": "mg",
-                        "route": "Intravenous"    
+                        "route": "Intravenous"
                     }
                 }
             }
