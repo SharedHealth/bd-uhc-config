@@ -160,4 +160,17 @@
             update address_hierarchy_level set required = 1 where name = 'Address Line';
         </sql>
     </changeSet>
+    <changeSet id="BD-201412031437" author="neha" context="setup">
+        <comment>Adding Chief Complaint Answers concept</comment>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Chief Complaint Answers', 'Chief Complaint Answers', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Chief', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Complaint', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'Answers', 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>

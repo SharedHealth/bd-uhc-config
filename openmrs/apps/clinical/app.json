@@ -35,26 +35,12 @@
                     "multiple": 3
                 },
                 "Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
-                },
-                "Posture" : {
-                    "buttonSelect" : true
                 },
                 "Non-Coded Chief Complaint" : {
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false
-                },
-                "P/A Presenting Part" : {
-                    "buttonSelect" : true
-                },
-                "FHS" : {
-                    "buttonSelect" : true
-                },
-                "P/S (Per Speculum) - Cervix" : {
-                    "grid" : true
-                },
-                "CodedVital" : {
+                    "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
@@ -67,10 +53,7 @@
                     "freeTextAutocomplete" : {
                         "conceptSetName" : "uncategorized diagnoses"
                     }
-                },
-        		"Anaemia, Stopped Since When" : {
-        			"conciseText" : true
-        		}
+                }
             },
             "patientDashboardSections": [
                 {
