@@ -45,14 +45,11 @@
                     "durationRequired" : false
                 },
                 "Relationship" : {
-                    "freeTextAutocomplete": {
-                        "codedConceptName": "Relationship"
-                     }
+                    "autocomplete" : true
                 },
                 "Relationship Diagnosis" : {
-                    "freeTextAutocomplete" : {
-                        "conceptSetName" : "uncategorized diagnoses"
-                    }
+                    "freeTextAutocomplete" : true,
+                    "conceptSetName" : "uncategorized diagnoses"
                 },
                 "Cause of Death" : {
                     "freeTextAutocomplete" : {
