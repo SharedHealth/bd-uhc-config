@@ -44,19 +44,18 @@
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false
                 },
+                "Relationship Diagnosis" : {
+                    "freeTextAutocomplete" : true,
+                    "answersConceptName" : "Patient Diagnosis Answers"
+                },
                 "Relationship" : {
                     "autocomplete" : true
                 },
-                "Relationship Diagnosis" : {
-                    "freeTextAutocomplete" : true,
-                    "conceptSetName" : "uncategorized diagnoses"
-                },
                 "Cause of Death" : {
-                    "freeTextAutocomplete" : {
-                        "conceptSetName" : "uncategorized diagnoses"
-                    }
+                    "answersConceptName" : "Patient Diagnosis Answers",
+                    "freeTextAutocomplete" : true
                 },
-        		"Anaemia, Stopped Since When" : {
+                "Anaemia, Stopped Since When" : {
         			"conciseText" : true
         		}
             },
