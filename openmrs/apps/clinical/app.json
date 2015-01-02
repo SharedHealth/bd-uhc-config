@@ -55,9 +55,18 @@
                     "answersConceptName" : "Patient Diagnosis Answers",
                     "freeTextAutocomplete" : true
                 },
-                "Anaemia, Stopped Since When" : {
-        			"conciseText" : true
-        		}
+                "Immunization Reason" : {
+                    "autocomplete" : true
+                },
+                "No Immunization Reason" : {
+                    "autocomplete" : true
+                },
+                "Quantity Units" : {
+                    "autocomplete" : true
+                },
+                "Vaccine" : {
+                    "freeTextAutocomplete" : true
+                }
             },
             "patientDashboardSections": [
                 {

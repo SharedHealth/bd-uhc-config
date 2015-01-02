@@ -139,5 +139,16 @@
         },
         "order": 8,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.immunizationIncident",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Immunization Incident"
+        },
+        "order": 9,
+        "requiredPrivilege": "app:clinical"
     }
 ]
