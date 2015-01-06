@@ -66,6 +66,9 @@
                 },
                 "Vaccine" : {
                     "freeTextAutocomplete" : true
+                },
+                "Route of Administration" : {
+                    "autocomplete" : true
                 }
             },
             "patientDashboardSections": [
