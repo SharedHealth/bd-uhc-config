@@ -65,10 +65,17 @@
                     "autocomplete" : true
                 },
                 "Vaccine" : {
-                    "freeTextAutocomplete" : true
+                    "freeTextAutocomplete" : true,
+                    "required": true
                 },
                 "Route of Administration" : {
                     "autocomplete" : true
+                },
+                "Vaccination Reported" : {
+                    "required": true
+                },
+                "Vaccination Refused" : {
+                    "required": true
                 }
             },
             "patientDashboardSections": [
