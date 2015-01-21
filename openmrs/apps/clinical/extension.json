@@ -150,5 +150,16 @@
         },
         "order": 9,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.procedures",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Procedures"
+        },
+        "order": 10,
+        "requiredPrivilege": "app:clinical"
     }
 ]

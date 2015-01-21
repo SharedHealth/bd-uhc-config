@@ -76,6 +76,20 @@
                 },
                 "Vaccination Refused" : {
                     "required": true
+                },
+                "Procedure": {
+                    "freeTextAutocomplete" : true,
+                    "required" : true,
+                    "answersConceptName" : "Procedure"
+                },
+                "Diagnosis" : {
+                    "freeTextAutocomplete" : true,
+                    "answersConceptName" : "Patient Diagnosis Answers"
+                },
+                "Diagnostic Test" : {
+                    "freeTextAutocomplete" : true,
+                    "answersConceptName" : "Diagnostic Test",
+                    "required" : true
                 }
             },
             "patientDashboardSections": [
