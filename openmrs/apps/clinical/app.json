@@ -88,8 +88,7 @@
                 },
                 "Diagnostic Test" : {
                     "freeTextAutocomplete" : true,
-                    "answersConceptName" : "Diagnostic Test",
-                    "required" : true
+                    "answersConceptName" : "Diagnostic Test"
                 }
             },
             "patientDashboardSections": [
