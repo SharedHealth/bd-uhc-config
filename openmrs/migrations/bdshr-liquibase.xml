@@ -173,4 +173,17 @@
             call add_concept_word(@concept_id, @concept_name_short_id, 'Answers', 1);
         </sql>
     </changeSet>
+    <changeSet id="BD-20150216-1611" author="neha" context="setup">
+        <comment>Creating provider attribute for Organization</comment>
+        <insert tableName="provider_attribute_type">
+            <column name="name" value="Organization"/>
+            <column name="description" value="Organization"/>
+            <column name="datatype" value="org.openmrs.customdatatype.datatype.FreeTextDatatype"/>
+            <column name="min_occurs" value="0"/>
+            <column name="creator" value="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" value="0"/>
+            <column name="uuid" value="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
