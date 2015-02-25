@@ -186,4 +186,34 @@
             <column name="uuid" value="uuid()"/>
         </insert>
     </changeSet>
+    <changeSet id="BD-20150225-1130" author="neha" context="setup">
+        <sql>
+            update provider_attribute_type set uuid = uuid() where name = 'Organization';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150225-1138" author="neha" context="setup">
+        <comment>Creating Birth registration number and Unique id number person attribute feilds</comment>
+        <insert tableName="person_attribute_type">
+            <column name="name" value="Birth Registration Id"/>
+            <column name="description" value="Birth Registration Number"/>
+            <column name="format" value="java.lang.String"/>
+            <column name="searchable" value="1"/>
+            <column name="creator" value="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" value="0"/>
+            <column name="sort_weight" value="4"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+        <insert tableName="person_attribute_type">
+            <column name="name" value="Unique Id"/>
+            <column name="description" value="Unique Identifier"/>
+            <column name="format" value="java.lang.String"/>
+            <column name="searchable" value="1"/>
+            <column name="creator" value="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" value="0"/>
+            <column name="sort_weight" value="5"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
