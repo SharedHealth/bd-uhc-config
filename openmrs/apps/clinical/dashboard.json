@@ -1,0 +1,91 @@
+[
+    {
+        "dashboardName": "Dashboard",
+        "default": true,
+        "sections": [
+            {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": [],
+                "addressFields": []
+
+            },
+            {
+                "title": "Diagnosis",
+                "name": "diagnosis",
+                "showDetailsButton": false,
+                "showCertainty": true,
+                "showOrder": true
+            },
+            {
+                "title": "Treatments",
+                "name": "treatment",
+                "dashboardParams": {
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": false,
+                    "showDrugForm": false,
+                    "numberOfVisits": 1,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                },
+                "allTreatmentDetails": {
+                    "title": "Treatments",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showRoute": true,
+                    "showDrugForm": true,
+                    "numberOfVisits": 1,
+                    "showOtherActive": true,
+                    "showDetailsButton": false
+                }
+            },
+            {
+                "title": "Radiology",
+                "name": "radiology"
+            },
+            {
+                "title": "Lab Results",
+                "name": "labOrders",
+                "dashboardParams": {
+                    "title": null,
+                    "numberOfVisits": 1,
+                    "showChart": false,
+                    "showTable": true,
+                    "showDetailsButton": false
+                },
+                "allLabDetails": {
+                    "numberOfVisits": 3
+                }
+            },
+            {
+                "title": "Vitals",
+                "name": "vitals",
+                "isObservation": true,
+                "dashboardParams": {
+                    "conceptNames": ["Vitals"],
+                    "numberOfVisits": 1
+                },
+                "allObservationDetails": {
+                    "conceptNames": ["Vitals"],
+                    "numberOfVisits": 2,
+                    "pivotTable": {
+                        "numberOfVisits": "10",
+                        "groupBy": "time",
+                        "obsConcepts": ["Weight", "Vitals"],
+                        "drugConcepts": [],
+                        "labConcepts": []
+                    }
+                }
+            },
+            {
+                "title": "Visits",
+                "name": "visits",
+                "dashboardParams": {
+                    "title": null,
+                    "maximumNoOfVisits": 10
+                }
+            }
+        ]
+    }
+]

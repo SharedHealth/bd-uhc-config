@@ -1,0 +1,20 @@
+[
+    {
+        "default": true,
+        "sections": [
+            {
+                "type": "pivotTable",
+                "title": "Pivot Table",
+                "config": {
+                    "groupBy": "time",
+                    "obsConcepts": [
+                        "Weight",
+                        "Vitals"
+                    ],
+                    "drugConcepts": [],
+                    "labConcepts": []
+                }
+            }
+        ]
+    }
+]
