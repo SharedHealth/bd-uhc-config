@@ -11,17 +11,6 @@
         "requiredPrivilege": "app:clinical:observationTab"
     },
     {
-        "id": "bahmni.clinical.consultation.obs",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Obs",
-        "url": "concept-set-group/observations",
-        "default": true,
-        "icon": "icon-user-md",
-        "order": 1,
-        "requiredPrivilege": "app:clinical:observationTab"
-    },
-    {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
