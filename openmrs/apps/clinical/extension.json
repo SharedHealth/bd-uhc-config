@@ -11,6 +11,17 @@
         "requiredPrivilege": "app:clinical:observationTab"
     },
     {
+        "id": "bahmni.clinical.consultation.obs",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "label": "Obs",
+        "url": "concept-set-group/observations",
+        "default": true,
+        "icon": "icon-user-md",
+        "order": 1,
+        "requiredPrivilege": "app:clinical:observationTab"
+    },
+    {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -160,6 +171,17 @@
             "conceptName": "Procedures"
         },
         "order": 10,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.childHealthUnderFive",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Child Health under 5"
+        },
+        "order": 11,
         "requiredPrivilege": "app:clinical"
     }
 ]
