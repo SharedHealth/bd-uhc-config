@@ -172,5 +172,60 @@
         },
         "order": 11,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.ancServices",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "ANC Services"
+        },
+        "order": 12,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.pncServices",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "PNC Services"
+        },
+        "order": 13,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.deliveryInformation",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Delivery Information"
+        },
+        "order": 14,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.newbornCare",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Outcome and Newborn Care Services"
+        },
+        "order": 15,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.familyPlanning",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Family Planning"
+        },
+        "order": 16,
+        "requiredPrivilege": "app:clinical"
     }
 ]
