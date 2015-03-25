@@ -216,4 +216,9 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
+    <changeSet id="BD-20150325-1530" author="sanjana" context="setup">
+        <sql>
+            alter table shr_id_mapping add index internal_external_map (internal_id,external_id);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
