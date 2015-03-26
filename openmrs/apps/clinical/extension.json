@@ -227,5 +227,16 @@
         },
         "order": 16,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.coiaPlusForChild",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "COIA Plus for Child"
+        },
+        "order": 17,
+        "requiredPrivilege": "app:clinical"
     }
 ]
