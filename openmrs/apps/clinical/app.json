@@ -45,7 +45,7 @@
                     "durationRequired" : false
                 },
                 "Relationship Diagnosis" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Patient Diagnosis Answers"
                 },
                 "Relationship" : {
