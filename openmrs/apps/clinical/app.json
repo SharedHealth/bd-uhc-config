@@ -53,7 +53,7 @@
                 },
                 "Cause of Death" : {
                     "answersConceptName" : "Patient Diagnosis Answers",
-                    "freeTextAutocomplete" : true
+                    "autocomplete" : true
                 },
                 "Immunization Reason" : {
                     "autocomplete" : true
@@ -65,7 +65,7 @@
                     "autocomplete" : true
                 },
                 "Vaccine" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "required": true
                 },
                 "Route of Administration" : {
@@ -78,7 +78,7 @@
                     "required": true
                 },
                 "Procedure": {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "required" : true,
                     "answersConceptName" : "Procedure"
                 },
