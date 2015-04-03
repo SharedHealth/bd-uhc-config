@@ -38,6 +38,11 @@
                     "required": true,
                     "label": "Fee"
                 }
+            },
+            "fieldValidation" : {
+                "National ID" : {"pattern" : "^(\\d{13}|\\d{17})$", "errorMessage" : "National ID should be 13 or 17 digits"},
+                "Birth Registration Id" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
+                "Unique Id" : {"pattern" : "^[a-zA-Z0-9]{11}$", "errorMessage" : "Unique Identifier should be 11 characters"}
             }
         }
     }
