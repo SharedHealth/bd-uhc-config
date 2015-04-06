@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BAHMNI-FACILITIES-CLEANUP" author="tw">
+        <comment>Delete unused facilities</comment>
+        <sql>
+
+            DELETE from location_attribute where location_id in (SELECT location_id from location where name in ('Ganiyari','Semariya','Shivtarai','Bahmni','BahmniFacility'));
+            DELETE FROM location where name in ('Ganiyari','Semariya','Shivtarai','Bahmni','BahmniFacility'));
+
+        </sql>
+    </changeSet>
+</databaseChangeLog>
