@@ -221,4 +221,18 @@
             alter table shr_id_mapping add index internal_external_map (internal_id,external_id);
         </sql>
     </changeSet>
+    <changeSet id="BD-20150407-1245" author="Hitansu,Dubey" context="setup">
+        <comment>Creating House Hold Code person attribute fields</comment>
+        <insert tableName="person_attribute_type">
+            <column name="name" value="House Hold Code"/>
+            <column name="description" value="House Hold Code"/>
+            <column name="format" value="java.lang.String"/>
+            <column name="searchable" value="1"/>
+            <column name="creator" value="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" value="0"/>
+            <column name="sort_weight" value="6"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>

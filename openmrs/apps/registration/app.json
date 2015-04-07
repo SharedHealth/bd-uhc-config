@@ -30,9 +30,9 @@
             "registrationCardPrintLayout": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
             "supplementalPaperPrintLayout": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
             "localNameSearch": true,
-            "localNameLabel": "National or Health ID",
-            "localNamePlaceholder": "National or Health ID",
-            "localNameAttributesToDisplay": ["National ID", "Health ID"],
+            "localNameLabel": "Search By ID",
+            "localNamePlaceholder": "Enter patient ID",
+            "localNameAttributesToDisplay": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code"],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,
