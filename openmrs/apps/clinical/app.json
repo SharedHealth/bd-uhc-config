@@ -46,13 +46,13 @@
                 },
                 "Relationship Diagnosis" : {
                     "autocomplete" : true,
-                    "answersConceptName" : "Patient Diagnosis Answers"
+                    "answersConceptName" : "Diagnosis Answers"
                 },
                 "Relationship" : {
                     "autocomplete" : true
                 },
                 "Cause of Death" : {
-                    "answersConceptName" : "Patient Diagnosis Answers",
+                    "answersConceptName" : "Diagnosis Answers",
                     "autocomplete" : true
                 },
                 "Immunization Reason" : {
@@ -84,7 +84,7 @@
                 },
                 "Diagnosis" : {
                     "freeTextAutocomplete" : true,
-                    "answersConceptName" : "Patient Diagnosis Answers"
+                    "answersConceptName" : "Diagnosis Answers"
                 },
                 "Diagnostic Test" : {
                     "freeTextAutocomplete" : true,
