@@ -57,6 +57,6 @@
         "url": "../../openmrs/shrclient/mciPatient.page",
         "icon": "icon-user",
         "order": 7,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "National Registry"
     }
 ]
