@@ -259,4 +259,8 @@
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'National Registry') on duplicate key update privilege='National Registry';
         </sql>
     </changeSet>
+    <changeSet id="BD-20150415-2100" author="Angshu" context="setup">
+        <comment>Change address_hierarchy entry.user_generated_id column size to 12 from default 11.</comment>
+        <modifyDataType tableName="address_hierarchy_entry" columnName="user_generated_id" newDataType="varchar(12)" />
+    </changeSet>
 </databaseChangeLog>
