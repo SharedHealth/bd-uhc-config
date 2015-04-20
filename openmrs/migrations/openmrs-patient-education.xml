@@ -468,4 +468,11 @@
             update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
         </sql>
     </changeSet>
+    <changeSet id="BD-20150420-1710" author="Hitansu, Utsab">
+        <comment>Ensuring required education details are not retired</comment>
+        <sql>
+            update concept set retired=0, retire_reason=null where concept_id in (SELECT concept_id FROM concept_name WHERE name='Education Details');
+            update concept set retired=0, retire_reason=null where concept_id between (SELECT concept_id FROM concept_name WHERE name='Nursery' limit 1) and (SELECT concept_id FROM concept_name WHERE name='Other Education' limit 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
