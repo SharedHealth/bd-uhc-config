@@ -1,7 +1,7 @@
 [
     {
         "dashboardName": "Dashboard",
-        "default": true,
+        "displayByDefault": true,
         "sections": [
             {
                 "title": "Patient Information",
