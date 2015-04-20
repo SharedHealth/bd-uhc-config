@@ -1,0 +1,1371 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BD-20150420-1100" author="Hitansu, Utsab">
+        <comment>Deleting Old Occupation Concepts</comment>
+        <sql>
+            call delete_concept('Unemployed');
+            call delete_concept('Student');
+            call delete_concept('Government');
+            call delete_concept('Business');
+            call delete_concept('Housewife');
+            call delete_concept('Labour');
+            call delete_concept('Other Occupation');
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-0" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Physical scientist and related technician';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Physical scientist and related technician</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Physical scientist and related technician', 'Physical scientist and related technician', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Physical', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'scientist', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-1" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Engineer and architect';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Engineer and architect</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Engineer and architect', 'Engineer and architect', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Engineer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'architect', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 2);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-2" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Engineering and architecture related technician';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Engineering and architecture related technician</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Engineering and architecture related technician', 'Engineering and architecture related technician', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Engineering', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'architecture', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 3);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-3" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Aircraft and ship officer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Aircraft and ship officer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Aircraft and ship officer', 'Aircraft and ship officer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Aircraft', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'ship', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 4);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-4" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Biologist and related technician';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Biologist and related technician</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Biologist and related technician', 'Biologist and related technician', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Biologist', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'technician', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 5);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-5" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Doctor, dentist and veterinarian';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Doctor, dentist and veterinarian</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Doctor, dentist and veterinarian', 'Doctor, dentist and veterinarian', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Doctor', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'veterinarian', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 6);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-6" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Nurse and other medical staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Nurse and other medical staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Nurse and other medical staff', 'Nurse and other medical staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Nurse', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'medical', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 7);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-7" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Statistician, mathematician, systems analyst and related stuff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Statistician, mathematician, systems analyst and related stuff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Statistician, mathematician, systems analyst and related stuff', 'Statistician, mathematician, systems analyst and related stuff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Statistician', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'mathematician', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 8);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-8" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Economist';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Economist</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Economist', 'Economist', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Economist', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Economist', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 9);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-9" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Accountant';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Accountant</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Accountant', 'Accountant', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Accountant', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Accountant', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 10);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-10" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Judge';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Judge</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Judge', 'Judge', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Judge', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Judge', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 11);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-11" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Teacher';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Teacher</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Teacher', 'Teacher', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Teacher', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Teacher', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 12);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-12" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Religious Worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Religious Worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Religious Worker', 'Religious Worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Religious', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Worker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 13);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-13" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Writer, journalist and activist';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Writer, journalist and activist</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Writer, journalist and activist', 'Writer, journalist and activist', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'journalist', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Writer', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 14);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-14" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Painter, photographer and creative artist';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Painter, photographer and creative artist</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Painter, photographer and creative artist', 'Painter, photographer and creative artist', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'photographer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'artist', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 15);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-15" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Actor, singer and dancer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Actor, singer and dancer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Actor, singer and dancer', 'Actor, singer and dancer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Actor', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'singer and dancer', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 16);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-16" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Player or ground staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Player or ground staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Player or ground staff', 'Player or ground staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Player', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'ground staff', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 17);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-17" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Professional, technical and other uncategorized related stuff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Professional, technical and other uncategorized related stuff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Professional, technical and other uncategorized related stuff', 'Professional, technical and other uncategorized related stuff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Professional', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'technical', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 18);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-18" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Lawyer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Lawyer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Lawyer', 'Lawyer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Lawyer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Lawyer', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 19);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-19" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Manager';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Manager</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Manager', 'Manager', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Manager', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Manager', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 20);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-20" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Government executive';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Government executive</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Government executive', 'Government executive', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Government', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'executive', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 21);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-21" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Clerk';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Clerk</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Clerk', 'Clerk', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Clerk', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Clerk', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 22);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-22" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Typist, Stenographer, Computer Operator';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Typist, Stenographer, Computer Operator</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Typist, Stenographer, Computer Operator', 'Typist, Stenographer, Computer Operator', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Typist', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Stenographer', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 23);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-23" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Record keeper, cashier and related staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Record keeper, cashier and related staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Record keeper, cashier and related staff', 'Record keeper, cashier and related staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'cashier', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Record keeper', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 24);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-24" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Computer-related staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Computer-related staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Computer-related staff', 'Computer-related staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Computer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 25);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-25" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Transport and communication supervisor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Transport and communication supervisor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Transport and communication supervisor', 'Transport and communication supervisor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Transport', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'communication', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 26);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-26" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Driver and conductor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Driver and conductor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Driver and conductor', 'Driver and conductor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Driver', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'conductor', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 27);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-27" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Postman';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Postman</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Postman', 'Postman', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Postman', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Postman', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 28);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-28" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Telephone and Telegraph Operator';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Telephone and Telegraph Operator</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Telephone and Telegraph Operator', 'Telephone and Telegraph Operator', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Telephone', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Telegraph', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 29);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-29" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Uncategorized official';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Uncategorized official</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized official', 'Uncategorized official', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'official', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 30);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-30" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Manager (wholesale and retail trade)';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Manager (wholesale and retail trade)</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Manager (wholesale and retail trade)', 'Manager (wholesale and retail trade)', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Manager', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'wholesale and retail', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 31);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-31" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Sales supervisor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Sales supervisor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Sales supervisor', 'Sales supervisor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Sales', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'supervisor', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 32);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-32" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Tourism staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Tourism staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tourism staff', 'Tourism staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tourism', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 33);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-33" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Insurance, Real Estate, Business and related service vendor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Insurance, Real Estate, Business and related service vendor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Insurance, Real Estate, Business and related service vendor', 'Insurance, Real Estate, Business and related service vendor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Insurance', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Real Estate', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 34);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-34" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Hawker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Hawker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hawker', 'Hawker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hawker', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Hawker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 35);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-35" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Uncategorized sales staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Uncategorized sales staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized sales staff', 'Uncategorized sales staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sales', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 36);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-36" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Residential hotel manager';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Residential hotel manager</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Residential hotel manager', 'Residential hotel manager', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'hotel', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'manager', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 37);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-37" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Hotel owner';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Hotel owner</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hotel owner', 'Hotel owner', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hotel', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'owner', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 38);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-38" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Hotel caretaker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Hotel caretaker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hotel caretaker', 'Hotel caretaker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hotel', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'caretaker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 39);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-39" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Cook, hotel boy and related employee';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Cook, hotel boy and related employee</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Cook, hotel boy and related employee', 'Cook, hotel boy and related employee', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Cook', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'hotel boy', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 40);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-40" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Uncategorized maid';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Uncategorized maid</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized maid', 'Uncategorized maid', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'maid', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 41);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-41" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'House caretaker, sweeper and related staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept House caretaker, sweeper and related staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'House caretaker, sweeper and related staff', 'House caretaker, sweeper and related staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'caretaker', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sweeper', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 42);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-42" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Washerman';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Washerman</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Washerman', 'Washerman', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Washerman', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Washerman', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 43);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-43" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Security staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Security staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Security staff', 'Security staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Security', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 44);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-44" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Uncategorized service staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Uncategorized service staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized service staff', 'Uncategorized service staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'service', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 45);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-45" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Farmhouse manager and supervisor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Farmhouse manager and supervisor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Farmhouse manager and supervisor', 'Farmhouse manager and supervisor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Farmhouse', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'supervisor', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 46);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-46" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Farmer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Farmer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Farmer', 'Farmer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Farmer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Farmer', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 47);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-47" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Forest worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Forest worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Forest worker', 'Forest worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Forest', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 48);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-48" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Fishermen, hunter and related worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Fishermen, hunter and related worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Fishermen, hunter and related worker', 'Fishermen, hunter and related worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Fishermen', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'hunter', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 49);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-49" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Production supervisor and foreman';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Production supervisor and foreman</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Production supervisor and foreman', 'Production supervisor and foreman', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Production supervisor', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'foreman', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 50);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-50" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Excavator';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Excavator</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Excavator', 'Excavator', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Excavator', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Excavator', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 51);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-51" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Metal goods manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Metal goods manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Metal goods manufacturer', 'Metal goods manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'manufacturer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Metal', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 52);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-52" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Chemical goods manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Chemical goods manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Chemical goods manufacturer', 'Chemical goods manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'manufacturer', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Chemical', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 53);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-53" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Weaver and fabric worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Weaver and fabric worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Weaver and fabric worker', 'Weaver and fabric worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Weaver', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'fabric', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 54);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-54" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Leather worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Leather worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Leather worker', 'Leather worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Leather', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 55);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-55" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Food and beverage manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Food and beverage manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Food and beverage manufacturer', 'Food and beverage manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Food', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'beverage', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 56);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-56" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Tobacco processor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Tobacco processor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tobacco processor', 'Tobacco processor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tobacco', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'processor', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 57);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-57" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Tailoring and sewing staff';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Tailoring and sewing staff</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tailoring and sewing staff', 'Tailoring and sewing staff', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tailoring', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sewing', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 58);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-58" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Shoes and leather products manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Shoes and leather products manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Shoes and leather products manufacturer', 'Shoes and leather products manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Shoes', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'leather', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 59);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-59" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Carpenter';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Carpenter</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Carpenter', 'Carpenter', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Carpenter', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Carpenter', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 60);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-60" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Stone cutter and processor';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Stone cutter and processor</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Stone cutter and processor', 'Stone cutter and processor', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Stone', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'cutter', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 61);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-61" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Blacksmith, welder and goods part manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Blacksmith, welder and goods part manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Blacksmith, welder and goods part manufacturer', 'Blacksmith, welder and goods part manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Blacksmith', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'welder', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 62);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-62" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Machine operator (other than electrical machine)';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Machine operator (other than electrical machine)</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Machine operator (other than electrical machine)', 'Machine operator (other than electrical machine)', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Machine', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'operator', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 63);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-63" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Electrical machine operator';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Electrical machine operator</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Electrical machine operator', 'Electrical machine operator', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'machine', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'operator', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 64);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-64" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'campaign workers and theater operators';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept campaign workers and theater operators</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'campaign workers and theater operators', 'campaign workers and theater operators', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'theater', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'campaign', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 65);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-65" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Water-sewerage structures manufacturer and metal Welder';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Water-sewerage structures manufacturer and metal Welder</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Water-sewerage structures manufacturer and metal Welder', 'Water-sewerage structures manufacturer and metal Welder', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Water-sewerage', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Welder', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 66);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-66" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Goldsmith';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Goldsmith</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Goldsmith', 'Goldsmith', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Goldsmith', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Goldsmith', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 67);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-67" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Glass and pottery manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Glass and pottery manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Glass and pottery manufacturer', 'Glass and pottery manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'pottery', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Glass', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 68);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-68" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Rubber and plastic products manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Rubber and plastic products manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Rubber and plastic products manufacturer', 'Rubber and plastic products manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Rubber', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'plastic', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 69);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-69" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Paper and paper board manufacturer';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Paper and paper board manufacturer</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Paper and paper board manufacturer', 'Paper and paper board manufacturer', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Paper', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'board', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 70);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1155-70" author="Utsab, Hitansu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Print worker';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Print worker</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Print worker', 'Print worker', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Print', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 71);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

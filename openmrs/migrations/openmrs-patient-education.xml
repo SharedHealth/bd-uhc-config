@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BD-20150416-1100" author="Hitansu, Utsab">
+        <comment>Deleting Old Education Concepts</comment>
+        <sql>
+            call delete_concept('Uneducated');
+            call delete_concept('5th Pass and Below');
+            call delete_concept('6th to 9th');
+            call delete_concept('10th pass');
+            call delete_concept('12th pass');
+            call delete_concept('Graduate and Above');
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1101" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Nursery';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Nursery</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Nursery', 'Nursery', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Nursery', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Nursery', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1102" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '1st Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 1st Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '1st Std', '1st', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '1st', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 2);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1103" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '2nd Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 2nd Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '2nd Std', '2nd', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '2nd', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 3);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1104" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '3rd Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 3rd Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '3rd Std', '3rd', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '3rd', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 4);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1105" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '4th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 4th Std'</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '4th Std', '4th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '4th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 5);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1106" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '5th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 5th Std'</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '5th Std', '5th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '5th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 6);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1107" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '6th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 6th Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '6th Std', '6th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '6th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, '6th Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 7);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1108" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '7th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 7th Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '7th Std', '7th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '7th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 8);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1109" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '8th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 8th Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '8th Std', '8th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '8th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 9);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1110" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '9th Std';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 9th Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '9th Std', '9th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '9th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 10);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1111" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = '10th Std or Equivalent';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept 10th Std</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, '10th Std or Equivalent', '10th', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, '10th', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Std', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Equivalent', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 11);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1112" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Higher Secondary or Equivalent';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Higher Secondary</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Higher Secondary or Equivalent', 'Higher Secondary', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Higher', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Secondary', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Equivalent', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 12);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1113" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Graduate or Equivalent';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Graduate</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Graduate or Equivalent', 'Graduate', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Graduate', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Equivalent', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 13);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1114" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Post Graduate';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Post Graduate</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Post Graduate', 'Post Graduate', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Post', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Graduate', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 14);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1115" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Medical';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Medical</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Medical', 'Medical', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Medical', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Medical', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 15);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1116" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Engineering';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Engineering</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Engineering', 'Engineering', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Engineering', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Engineering', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 16);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1117" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Vocational Education';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Vocational Education</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Vocational Education', 'Vocational Education', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Vocational', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Education', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 17);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1118" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Technical Education';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Technical Education</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Technical Education', 'Technical Education', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Technical', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Education', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 18);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1119" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Nursing';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Nursing</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Nursing', 'Nursing', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Nursing', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Nursing', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 19);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150416-1120" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Other Education';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding Concept Other Education</comment>
+        <sql>
+            set @concept_id = 0;
+            set @answer_concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Education Details';
+            call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Other Education', 'Other Education', 'Text', 'Misc', false);
+            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Other', '1');
+            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Education', '1');
+            call add_concept_answer(@concept_id, @answer_concept_id, 20);
+        </sql>
+    </changeSet>
+</databaseChangeLog>

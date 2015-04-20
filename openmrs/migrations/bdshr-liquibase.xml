@@ -263,4 +263,6 @@
         <comment>Change address_hierarchy entry.user_generated_id column size to 12 from default 11.</comment>
         <modifyDataType tableName="address_hierarchy_entry" columnName="user_generated_id" newDataType="varchar(12)" />
     </changeSet>
+    <include file = "openmrs-patient-education.xml"/>
+    <include file = "openmrs-patient-occupation-liquibase.xml"/>
 </databaseChangeLog>
