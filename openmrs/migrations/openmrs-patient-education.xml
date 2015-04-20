@@ -7,15 +7,82 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
 
-    <changeSet id="BD-20150416-1100" author="Hitansu, Utsab">
-        <comment>Deleting Old Education Concepts</comment>
+    <changeSet id="BD-20150420-1101" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = 'Uneducated';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete Uneducated</comment>
         <sql>
-            call delete_concept('Uneducated');
-            call delete_concept('5th Pass and Below');
-            call delete_concept('6th to 9th');
-            call delete_concept('10th pass');
-            call delete_concept('12th pass');
-            call delete_concept('Graduate and Above');
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Uneducated';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1102" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = '5th Pass and Below';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete 5th Pass and Below</comment>
+        <sql>
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='5th Pass and Below';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1103" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = '6th to 9th';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete 6th to 9th</comment>
+        <sql>
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='6th to 9th';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1104" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = '10th pass';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete 10th pass</comment>
+        <sql>
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='10th pass';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1105" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = '12th pass';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete 12th pass</comment>
+        <sql>
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='12th pass';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150420-1106" author="Hitansu, Utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from concept_name where name = 'Graduate and Above';
+            </sqlCheck>
+        </preConditions>
+        <comment>Soft delete Graduate and Above</comment>
+        <sql>
+            set @concept_id = 0;
+            SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Graduate and Above';
+            update concept set retired= 1, retire_reason='Old Data' where concept_id = concept_id;
         </sql>
     </changeSet>
     <changeSet id="BD-20150416-1101" author="Hitansu, Utsab">
