@@ -1,6 +1,7 @@
 [
     {
-        "default": true,
+        "displayByDefault": true,
+        "defaultSections": true,
         "sections": [
             {
                 "type": "pivotTable",
