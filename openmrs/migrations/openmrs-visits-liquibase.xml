@@ -9,9 +9,9 @@
 
     <!-- This Liquibase file is meant to contain changesets for Visit Related Information Only -->
     <changeSet id="BAHMNI-IMPL-OMRS-V-001" author="tw">
-        <comment>Create new visit type for IPD</comment>
+        <comment>Create new visit type for inpatient</comment>
         <insert tableName="visit_type">
-            <column name="name" value="IPD" />
+            <column name="name" value="inpatient" />
             <column name="description" value="Visit for patients being admitted" />
             <column name="creator" value="1" />
             <column name="uuid" valueComputed="uuid()" />
@@ -20,10 +20,10 @@
     </changeSet>
 
     <changeSet id="BAHMNI-IMPL-OMRS-V-002" author="tw">
-        <comment>Create new visit type for OPD</comment>
+        <comment>Create new visit type for outpatient</comment>
         <insert tableName="visit_type">
-            <column name="name" value="OPD" />
-            <column name="description" value="Visit for patients coming for OPD" />
+            <column name="name" value="outpatient" />
+            <column name="description" value="Visit for patients coming for Out Patient" />
             <column name="creator" value="1" />
             <column name="uuid" valueComputed="uuid()" />
             <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
@@ -75,30 +75,15 @@
             <column name="uuid" valueComputed="uuid()" />
         </insert>
     </changeSet>
-    <changeSet id="BAHMNI-IMPL-OMRS-V-009" author="tw">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM visit_type where name = 'Special OPD';
-            </sqlCheck>
-        </preConditions>
-        <comment>Create new visit type for Special OPD</comment>
-        <insert tableName="visit_type">
-            <column name="name" value="Special OPD" />
-            <column name="description" value="Visit for patients coming for Dental, Spine, Skin etc" />
-            <column name="creator" value="1" />
-            <column name="uuid" valueComputed="uuid()" />
-            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
-        </insert>
-    </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-V-010" author="tw">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM visit_type where name = 'EMERGENCY';
+                SELECT COUNT(*) FROM visit_type where name = 'emergency';
             </sqlCheck>
         </preConditions>
         <comment>Create new visit type for Emergency</comment>
         <insert tableName="visit_type">
-            <column name="name" value="EMERGENCY" />
+            <column name="name" value="emergency" />
             <column name="description" value="Emergency patient visit" />
             <column name="creator" value="1" />
             <column name="uuid" valueComputed="uuid()" />

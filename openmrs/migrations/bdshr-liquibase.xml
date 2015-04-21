@@ -49,10 +49,6 @@
             ON DUPLICATE KEY UPDATE property_value = @concept_uuid;
         </sql>
     </changeSet>
-    <changeSet id="JSS-8" author="tw" context="rel2">
-        <comment>rel2</comment>
-        <sqlFile path="V1_17__JSSAddressHierarchy.sql"/>
-    </changeSet>
     <changeSet id="BD-201406241630" author="angshu" context="setup">
         <comment>Remove unwanted idgen sources. adding location. retiring and adding person attributes</comment>
         <sql>
@@ -61,7 +57,7 @@
             INSERT INTO location_attribute (location_id, attribute_type_id, value_reference, uuid, creator, date_created) (SELECT  @lastlocation, location_attribute_type_id, 'BAM', uuid(), 1, curdate() FROM location_attribute_type WHERE name = 'IdentifierSourceName');
             delete from idgen_seq_id_gen where prefix in ('GAN', 'SEM', 'SIV');
             delete from idgen_log_entry;
-            delete from idgen_identifier_source where name in ('GAN', 'SEM', 'SIV');
+            delete from idgen_identifier_source where name in ('GAN', 'SEM', 'SIV', 'BAH');
             SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;
             INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created) VALUES (uuid(), 'BD', 'ID sequence source for patients in Bangladesh for this facility', @patient_identifier, 1, curdate());
             SET @source_id := LAST_INSERT_ID();
@@ -85,37 +81,11 @@
              alter table shr_id_mapping add uri varchar(150);
         </sql>
     </changeSet>
-    <changeSet id="BD-201409041636" author="Neha" context="setup">
-        <comment>Deleting OpenERPSaleOrder scheduler tasks</comment>
-        <sql>
-            delete from scheduler_task_config where schedulable_class like 'org.bahmni.module.openerpatomfeedclient.api.task.OpenERPSaleOrder%';
-        </sql>
-    </changeSet>
     <changeSet id='BD-201409101706' author='Neha,Sumit' context='setup'>
         <comment>Setting identifier prefix as BDH</comment>
         <sql>
             UPDATE idgen_identifier_source set name = 'BDH' WHERE name = 'BD';
             UPDATE idgen_seq_id_gen set prefix = 'BDH' WHERE prefix = 'BD';
-        </sql>
-    </changeSet>
-    <changeSet id="BD-201411241411" author="Neha,Sanjana" context="setup">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM location where name in ('Discharge');
-            </sqlCheck>
-        </preConditions>
-        <comment>Setting Location for discharge</comment>
-        <sql>
-            INSERT INTO location(name, creator, date_created, uuid)
-            VALUES('Discharge', 1, now(), uuid());
-
-            INSERT INTO location_tag_map(location_id, location_tag_id)
-            VALUES((Select location_id from location where name ='DISCHARGE'),
-            (Select location_tag_id from location_tag where name ='Login Location'));
-
-            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
-            VALUES((Select location_id from location where name ='Discharge'),
-            (Select encounter_type_id from encounter_type where name ='DISCHARGE'), 1, now(), uuid());
         </sql>
     </changeSet>
     <changeSet id="BD-201411271111" author="tw" context="rel2">
@@ -183,36 +153,6 @@
             <column name="creator" value="1"/>
             <column name="date_created" valueDate="now()"/>
             <column name="retired" value="0"/>
-            <column name="uuid" value="uuid()"/>
-        </insert>
-    </changeSet>
-    <changeSet id="BD-20150225-1130" author="neha" context="setup">
-        <sql>
-            update provider_attribute_type set uuid = uuid() where name = 'Organization';
-        </sql>
-    </changeSet>
-    <changeSet id="BD-20150225-1138" author="neha" context="setup">
-        <comment>Creating Birth registration number and Unique id number person attribute feilds</comment>
-        <insert tableName="person_attribute_type">
-            <column name="name" value="Birth Registration Id"/>
-            <column name="description" value="Birth Registration Number"/>
-            <column name="format" value="java.lang.String"/>
-            <column name="searchable" value="1"/>
-            <column name="creator" value="1"/>
-            <column name="date_created" valueDate="now()"/>
-            <column name="retired" value="0"/>
-            <column name="sort_weight" value="4"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-        <insert tableName="person_attribute_type">
-            <column name="name" value="Unique Id"/>
-            <column name="description" value="Unique Identifier"/>
-            <column name="format" value="java.lang.String"/>
-            <column name="searchable" value="1"/>
-            <column name="creator" value="1"/>
-            <column name="date_created" valueDate="now()"/>
-            <column name="retired" value="0"/>
-            <column name="sort_weight" value="5"/>
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
@@ -221,48 +161,8 @@
             alter table shr_id_mapping add index internal_external_map (internal_id,external_id);
         </sql>
     </changeSet>
-    <changeSet id="BD-20150407-1245" author="Hitansu,Dubey" context="setup">
-        <comment>Creating House Hold Code person attribute fields</comment>
-        <insert tableName="person_attribute_type">
-            <column name="name" value="House Hold Code"/>
-            <column name="description" value="House Hold Code"/>
-            <column name="format" value="java.lang.String"/>
-            <column name="searchable" value="1"/>
-            <column name="creator" value="1"/>
-            <column name="date_created" valueDate="now()"/>
-            <column name="retired" value="0"/>
-            <column name="sort_weight" value="6"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-    </changeSet>
-    <changeSet id="BD-20150407-1812" author="Hitansu,Dubey" context="setup">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM privilege where privilege = 'National Registry'
-            </sqlCheck>
-        </preConditions>
-        <comment>Adding privilege for National Registry</comment>
-        <insert tableName="privilege">
-            <column name="privilege" value="National Registry"/>
-            <column name="description" value="National Registry"/>
-            <column name="uuid" valueComputed="uuid()"/>
-        </insert>
-    </changeSet>
-    <changeSet id="BD-20150407-1823" author="Hitansu,Dubey" context="setup">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                SELECT COUNT(*) FROM role where role = 'RegistrationClerk'
-            </sqlCheck>
-        </preConditions>
-        <comment>Mapping National Registry Privilege to Role RegistrationClerk</comment>
-        <sql>
-            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'National Registry') on duplicate key update privilege='National Registry';
-        </sql>
-    </changeSet>
     <changeSet id="BD-20150415-2100" author="Angshu" context="setup">
         <comment>Change address_hierarchy entry.user_generated_id column size to 12 from default 11.</comment>
         <modifyDataType tableName="address_hierarchy_entry" columnName="user_generated_id" newDataType="varchar(12)" />
     </changeSet>
-    <include file = "openmrs-patient-education.xml"/>
-    <include file = "openmrs-patient-occupation-liquibase.xml"/>
 </databaseChangeLog>

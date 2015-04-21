@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="LOCATION-DATA-001" author="tw">
+        <comment>Create login locations for Reg</comment>
+        <sql>
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Registration', 1, now(), uuid());
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='Registration'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Registration'),
+            (Select encounter_type_id from encounter_type where name ='REG'), 1, now(), uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="LOCATION-DATA-002" author="neha">
+        <comment>Create login locations and encounter_type for OPD</comment>
+        <sql>
+            INSERT INTO encounter_type(name, description, creator, date_created, retired, uuid)
+            VALUES('OPD', 'OPD encounter type', 1, now(), 0, uuid());
+
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('OPD', 1, now(), uuid());
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='OPD'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='OPD'),
+            (Select encounter_type_id from encounter_type where name ='OPD'), 1, now(), uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="LOCATION-DATA-003" author="Neha,Sanjana" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM location where name in ('Discharge');
+            </sqlCheck>
+        </preConditions>
+        <comment>Setting Location for discharge</comment>
+        <sql>
+            INSERT INTO location(name, creator, date_created, uuid)
+            VALUES('Discharge', 1, now(), uuid());
+
+            INSERT INTO location_tag_map(location_id, location_tag_id)
+            VALUES((Select location_id from location where name ='DISCHARGE'),
+            (Select location_tag_id from location_tag where name ='Login Location'));
+
+            INSERT INTO location_encounter_type_map(location_id, encounter_type_id, creator, date_created, uuid)
+            VALUES((Select location_id from location where name ='Discharge'),
+            (Select encounter_type_id from encounter_type where name ='DISCHARGE'), 1, now(), uuid());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

@@ -222,4 +222,28 @@
             insert into role_privilege (role, privilege) values ('Nurse', 'Manage Encounter Roles');
         </sql>
     </changeSet>
+    <changeSet id="BD-20150407-1812" author="Hitansu,Dubey" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM privilege where privilege = 'National Registry'
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding privilege for National Registry</comment>
+        <insert tableName="privilege">
+            <column name="privilege" value="National Registry"/>
+            <column name="description" value="National Registry"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
+    <changeSet id="BD-20150407-1823" author="Hitansu,Dubey" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) FROM role where role = 'RegistrationClerk'
+            </sqlCheck>
+        </preConditions>
+        <comment>Mapping National Registry Privilege to Role RegistrationClerk</comment>
+        <sql>
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'National Registry') on duplicate key update privilege='National Registry';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
