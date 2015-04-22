@@ -90,4 +90,49 @@
             <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
         </insert>
     </changeSet>
+    <changeSet id="BD-V-201504221612" author="neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM visit_type where name = 'ambulatory';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create new visit type for Ambulatory</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="ambulatory" />
+            <column name="description" value="Ambulatory patient visit" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+    <changeSet id="BD-V-201504221613" author="neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM visit_type where name = 'home';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create new visit type for Home</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="home" />
+            <column name="description" value="Home patient visit" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
+    <changeSet id="BD-V-201504221614" author="neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM visit_type where name = 'field';
+            </sqlCheck>
+        </preConditions>
+        <comment>Create new visit type for Field</comment>
+        <insert tableName="visit_type">
+            <column name="name" value="field" />
+            <column name="description" value="Field patient visit" />
+            <column name="creator" value="1" />
+            <column name="uuid" valueComputed="uuid()" />
+            <column name="date_created" valueDate="CURRENT_TIMESTAMP" />
+        </insert>
+    </changeSet>
 </databaseChangeLog>
