@@ -1364,11 +1364,11 @@
             update concept set retired=0, retire_reason=null where concept_id between (SELECT concept_id FROM concept_name WHERE name='Physical scientist and related technician' limit 1) and (SELECT concept_id FROM concept_name WHERE name='Print worker' limit 1);
         </sql>
     </changeSet>
-    <changeSet id="BD-20150421-1201" author="Utsab">
+    <changeSet id="BD-20150422-1201" author="Utsab">
         <comment>Ensuring all the occupation are stored with uuid</comment>
         <sql>
             set @first = 0;
-            set @lastt = 0;
+            set @last = 0;
             SELECT concept_id into @first FROM concept_name WHERE name='Physical scientist and related technician' limit 1;
             SELECT concept_id into @last FROM concept_name WHERE name='Print worker' limit 1;
             update concept_name set uuid = uuid() where uuid is null and concept_id between @first and @last;
