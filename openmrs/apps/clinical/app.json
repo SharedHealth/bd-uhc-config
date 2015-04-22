@@ -11,10 +11,6 @@
                 "description": "Define conceptsets part of a conceptset group"
             },
             {
-                "id": "org.bahmni.clinical.orders",
-                "description": "Bahmni Orders Page"
-            },
-            {
                 "id":"org.bahmni.patient.search",
                 "description": "Bahmni Patient search, lookups Page"
             }
@@ -24,11 +20,7 @@
             "visitUuid"
         ],
         "config" : {
-            "obsIgnoreList" : ["REGISTRATION FEES", "COMMENTS", "Patient file"],
-            "otherInvestigationsMap": {
-                "Radiology": "Radiology Order",
-                "Endoscopy": "Endoscopy Order"
-            },
+            "obsIgnoreList" : [],
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
                 "Chief Complaint Data": {
@@ -106,10 +98,6 @@
                     "title": "Treatments",
                     "name": "treatment",
                     "numberOfVisits": 1
-                },
-                {
-                    "title": "Radiology",
-                    "name": "radiology"
                 },
                 {
                     "title": "Lab Orders",

@@ -6,7 +6,7 @@
             {
                 "title": "Patient Information",
                 "name": "patientInformation",
-                "patientAttributes": [],
+                "patientAttributes": ["Health ID"],
                 "addressFields": []
 
             },
@@ -39,10 +39,6 @@
                     "showOtherActive": true,
                     "showDetailsButton": false
                 }
-            },
-            {
-                "title": "Radiology",
-                "name": "radiology"
             },
             {
                 "title": "Lab Results",

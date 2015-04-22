@@ -51,16 +51,6 @@
         "requiredPrivilege": "app:clinical:consultationTab"
     },
     {
-        "id": "bahmni.clinical.orders.pending",
-        "extensionPointId": "org.bahmni.clinical.orders",
-        "type": "link",
-        "label": "Pending Orders",
-        "url": "pendingOrders",
-        "icon": "icon-user-md",
-        "order": 5,
-        "requiredPrivilege": "app:radiologyOrders"
-    },
-    {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",

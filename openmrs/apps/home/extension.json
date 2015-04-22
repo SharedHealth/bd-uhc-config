@@ -30,26 +30,6 @@
         "requiredPrivilege": "app:adt"
     },
     {
-        "id": "bahmni.radiology.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Radiology Upload",
-        "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
-        "icon": "icon-camera",
-        "order": 5,
-        "requiredPrivilege": "app:document-upload"
-    },
-    {
-        "id": "bahmni.patient.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Patient Documents",
-        "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
-        "icon": "icon-camera",
-        "order": 6,
-        "requiredPrivilege": "app:document-upload"
-    },
-    {
         "id": "bahmni.nationalregistry.search",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
