@@ -389,23 +389,4 @@
             call add_concept_answer(@concept_id, @answer_concept_id, 20);
         </sql>
     </changeSet>
-
-    <changeSet id="BD-20150420-1710" author="Hitansu, Utsab">
-        <comment>Ensuring required education details are not retired</comment>
-        <sql>
-            update concept set retired=0, retire_reason=null where concept_id in (SELECT concept_id FROM concept_name WHERE name='Education Details');
-            update concept set retired=0, retire_reason=null where concept_id between (SELECT concept_id FROM concept_name WHERE name='Nursery' limit 1) and (SELECT concept_id FROM concept_name WHERE name='Other Education' limit 1);
-        </sql>
-    </changeSet>
-    <changeSet id="BD-20150422-1200" author="Utsab">
-        <comment>Ensuring all the education are stored with uuid</comment>
-        <sql>
-            set @first = 0;
-            set @last = 0;
-            SELECT concept_id into @first FROM concept_name WHERE name='Nursery' limit 1;
-            SELECT concept_id into @last FROM concept_name WHERE name='Other Education' limit 1;
-            update concept_name set uuid = uuid() where uuid is null and concept_id between @first and @last;
-            update concept set uuid = uuid() where uuid is null and concept_id between @first and @last;
-        </sql>
-    </changeSet>
 </databaseChangeLog>
