@@ -101,4 +101,23 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
+    <changeSet id="BD-20150424-1632" author="neha" context="setup">
+        <preConditions>
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'primaryContact';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Primary Contact person attribute feilds</comment>
+        <insert tableName="person_attribute_type">
+            <column name="name" value="primaryContact"/>
+            <column name="description" value="Primary Contact"/>
+            <column name="format" value="java.lang.String"/>
+            <column name="searchable" value="0"/>
+            <column name="creator" value="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" value="0"/>
+            <column name="sort_weight" value="8"/>
+            <column name="uuid" valueComputed="uuid()"/>
+        </insert>
+    </changeSet>
 </databaseChangeLog>
