@@ -228,5 +228,16 @@
         },
         "order": 17,
         "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.clinical.conceptSetGroup.observations.maternalHealth",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "default": true,
+            "conceptName": "Maternal Health Program"
+        },
+        "order": 18,
+        "requiredPrivilege": "app:clinical"
     }
 ]
