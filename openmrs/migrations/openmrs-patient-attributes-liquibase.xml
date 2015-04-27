@@ -120,4 +120,34 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
+    <changeSet id="BD-20150427-1345" author="neha" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = "uncategorized diagnoses";
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'uncategorized diagnoses', 'uncategorized diagnoses', 'N/A', 'ConvSet', true);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'uncategorized', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'diagnoses', 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150427-1346" author="neha" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = "Diagnosis Answers";
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            set @concept_id = 0;
+            set @concept_name_short_id = 0;
+            set @concept_name_full_id = 0;
+            call add_concept(@concept_id, @concept_name_short_id, @concept_name_full_id, 'Diagnosis Answers', 'Diagnosis Answers', 'Coded', 'Misc', false);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'DIAGNOSIS', 1);
+            call add_concept_word(@concept_id, @concept_name_short_id, 'ANSWERS', 1);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
