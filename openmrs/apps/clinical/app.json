@@ -23,18 +23,17 @@
             "obsIgnoreList" : [],
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Chief Complaint Data": {
-                    "multiple": 3
-                },
                 "Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                    "durationRequired" : false,
+                    "allowAddMore" : true
                 },
                 "Non-Coded Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
-                    "durationRequired" : false
+                    "durationRequired" : false,
+                    "allowAddMore" : true
                 },
                 "Relationship Diagnosis" : {
                     "autocomplete" : true,
@@ -87,6 +86,10 @@
                 },
                 "Birth Weight" : {
                     "autocomplete" : true
+                },
+                "Relationship" : {
+                    "autocomplete" : true,
+                    "answersConceptName" : "Relationship Type"
                 }
             },
             "patientDashboardSections": [
