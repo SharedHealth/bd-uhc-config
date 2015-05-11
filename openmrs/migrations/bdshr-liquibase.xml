@@ -158,4 +158,20 @@
         <comment>Change address_hierarchy entry.user_generated_id column size to 12 from default 11.</comment>
         <modifyDataType tableName="address_hierarchy_entry" columnName="user_generated_id" newDataType="varchar(12)" />
     </changeSet>
+    <changeSet id="BD-20150511-1031" author="Hemanth" context="rel3">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM scheduler_task_config where schedulable_class = 'org.openmrs.module.atomfeed.scheduler.tasks.EventRecordsNumberOffsetMarkerTask'
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding event record number offset marker task</comment>
+        <sql>
+            INSERT INTO  scheduler_task_config  (name, description, schedulable_class,
+            start_time, start_time_pattern, repeat_interval, start_on_startup, started,
+            created_by, date_created, changed_by, date_changed, last_execution_time, uuid )
+            VALUES ('OpenMRS event offset marker task', NULL, 'org.openmrs.module.atomfeed.scheduler.tasks.EventRecordsNumberOffsetMarkerTask',
+            '2015-05-11 00:00:00','MM/dd/yyyy HH:mm:ss',86400, 1, 1,
+            1, now(), NULL, NULL, NULL, uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
