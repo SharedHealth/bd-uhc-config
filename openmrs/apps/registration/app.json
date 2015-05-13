@@ -24,13 +24,17 @@
         "config" : {
             "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "BDH",
-	        "defaultVisitType": "outpatient",
+	        "defaultVisitType": "field",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "localNameSearch": true,
             "localNameLabel": "Search By ID",
             "localNamePlaceholder": "Enter patient ID",
             "localNameAttributesToDisplay": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code"],
+            "search": {
+                "name": "Rural Ward",
+                "field": "address2"
+            },
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,

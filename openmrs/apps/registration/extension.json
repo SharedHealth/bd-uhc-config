@@ -30,52 +30,6 @@
         "icon": "icon-patient-edit",
         "order": 1,
         "requiredPrivilege": "Edit Patients"
-    },
-    {
-        "id": "bahmni.patient.edit.action.startVisit",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
-        "type": "config",
-        "extensionParams" : {
-            "action" : "startVisit",
-            "display": "Start Visit",
-            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
-        },
-        "order": 1,
-        "requiredPrivilege": "Add Visits"
-    },
-    {
-        "id": "bahmni.patient.edit.action.editVisit",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
-        "type": "config",
-        "extensionParams" : {
-            "action" : "enterVisitDetails",
-            "display": "Enter Visit Details"
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
-    },
-    {
-        "id": "bahmni.patient.edit.action.print",
-        "extensionPointId": "org.bahmni.registration.patient.edit.action",
-       "type": "config",
-        "extensionParams" : {
-            "action" : "print",
-            "display": "Save"
-        },
-        "order": 2,
-        "requiredPrivilege": "Edit Patients"
-    },
-    {
-        "id": "bahmni.patient.create.action.startVisit",
-        "extensionPointId": "org.bahmni.registration.patient.create.action",
-        "type": "config",
-        "extensionParams" : {
-            "action" : "startVisit",
-            "display": "Start Visit",
-            "forwardUrl" : "../registration/#/patient/{{patientUuid}}/visit"
-        },
-        "order": 1,
-        "requiredPrivilege": "Add Visits"
     }
 ]
 
