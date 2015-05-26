@@ -28,9 +28,9 @@
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "localNameSearch": true,
-            "localNameLabel": "Search By ID",
-            "localNamePlaceholder": "Enter patient ID",
-            "localNameAttributesToDisplay": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code"],
+            "localNameLabel": "ID/ Bangla Name",
+            "localNamePlaceholder": "Enter ID/ Bangla Name",
+            "localNameAttributesToDisplay": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code", "givenNameLocal", "familyNameLocal"],
             "search": {
                 "name": "Rural Ward",
                 "field": "address2"
