@@ -172,4 +172,16 @@
             delete from person_attribute_type where name = 'primaryContact';
         </sql>
     </changeSet>
+    <changeSet id="BD-20150526-1703" author="utsab" context="setup">
+        <preConditions  onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'Phone Number';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Patient Phone Number Attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('Phone Number', 'Phone Number', 'java.lang.String', '1', 1, curdate(), 0, 8, uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
