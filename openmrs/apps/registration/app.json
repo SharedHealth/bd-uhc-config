@@ -27,14 +27,6 @@
 	        "defaultVisitType": "field",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
-            "localNameSearch": true,
-            "localNameLabel": "ID/Bangla Name/Phone",
-            "localNamePlaceholder": "ID/Bangla Name/Phone",
-            "localNameAttributesToDisplay": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code", "givenNameLocal", "familyNameLocal", "Phone Number"],
-            "search": {
-                "name": "Rural Ward",
-                "field": "address2"
-            },
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,
@@ -46,6 +38,18 @@
                 "Birth Registration Id" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
                 "Unique Id" : {"pattern" : "^[a-zA-Z0-9]{11}$", "errorMessage" : "Unique Identifier should be 11 characters"},
                 "Phone Number" : {"pattern" : "^(\\d{3,11})$", "errorMessage" : "Phone Number should be between 3 to 11 digits"}
+            },
+            "patientSearch": {
+                "address": {
+                    "label": "Rural Ward",
+                    "placeholder": "Enter ward",
+                    "field": "address2"
+                },
+                "customAttributes": {
+                    "label": "ID/Bangla Name/Phone",
+                    "placeholder": "ID/Bangla Name/Phone",
+                    "fields": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code", "givenNameLocal", "familyNameLocal", "Phone Number"]
+                }
             }
         }
     }
