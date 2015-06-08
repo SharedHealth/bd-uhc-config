@@ -48,7 +48,7 @@
                 "customAttributes": {
                     "label": "ID/Bangla Name/Phone",
                     "placeholder": "ID/Bangla Name/Phone",
-                    "fields": ["National ID", "Health ID", "Birth Registration Id", "Unique Id", "House Hold Code", "givenNameLocal", "familyNameLocal", "Phone Number"]
+                    "fields": ["National ID", "Health ID", "Birth Registration Id", "givenNameLocal", "familyNameLocal", "Phone Number"]
                 }
             }
         }
