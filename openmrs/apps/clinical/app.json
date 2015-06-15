@@ -74,11 +74,11 @@
                     "answersConceptName" : "Procedure"
                 },
                 "Diagnosis" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers"
                 },
                 "Diagnostic Test" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Diagnostic Test"
                 },
                 "Immunization Status" : {
