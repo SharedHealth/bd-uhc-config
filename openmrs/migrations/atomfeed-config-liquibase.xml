@@ -45,5 +45,38 @@
             <column name="title" type="varchar(255)"></column>
         </createTable>
     </changeSet>
-    
+    <changeSet id="bdshr-config-201517061552" context="setup" author="utsab">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from information_schema.columns where column_name='retries' and table_name = 'failed_events';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add column 'retries' and not null constraint, if does not exists</comment>
+        <addColumn tableName="failed_events">
+            <column name="retries" type="int"/>
+        </addColumn>
+        <addNotNullConstraint columnDataType="int"
+                              columnName="retries"
+                              defaultNullValue="0"
+                              tableName="failed_events"/>
+    </changeSet>
+    <changeSet id="bdshr-config-201517061616" context="setup" author="utsab">
+        <preConditions onFail="MARK_RAN">
+            <not>
+                <tableExists tableName="failed_event_retry_log"/>
+            </not>
+        </preConditions>
+        <comment>Create table failed_event_retry_log if does not exists</comment>
+        <createTable tableName="failed_event_retry_log">
+            <column name="id" type="serial">
+                <constraints nullable="false" primaryKey="true"/>
+            </column>
+            <column name="feed_uri" type="varchar(255)"/>
+            <column name="failed_at" type="timestamp"/>
+            <column name="error_message" type="varchar(4000)"/>
+            <column name="event_id" type="varchar(255)"/>
+            <column name="event_content" type="varchar(4000)"/>
+            <column name="error_hash_code" type="int"/>
+        </createTable>
+    </changeSet>
 </databaseChangeLog>
