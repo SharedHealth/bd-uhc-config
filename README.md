@@ -1,15 +1,9 @@
-## Default Bahmni configuration and data. 
+## Default Bahmni Configuration for a Hospital System 
 ======================================================================
 
 #### Deploy
 - under server (apache) www directory
 - alias root (default-config) to bahmni_config
-
-
-#### Dev commands
-* `./scripts/vagrant-link.sh` to link default_config to vagrants /var/www/bahmni_config
-* `./scripts/vagrant-database.sh` to run liquibase migrations in vagrant 
-
 
 #### CI Deployment
 The `default-config.zip` is created on the CI Server as part of the **Bahmni_MRS_Master** pipeline (*FunctionalTests* job). You can download the latest ZIP from this URL:
