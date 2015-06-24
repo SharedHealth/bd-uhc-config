@@ -1,20 +1,8 @@
 [
     {
+        "title": "General",
         "displayByDefault": true,
         "defaultSections": true,
-        "sections": [
-            {
-                "type": "pivotTable",
-                "title": "Pivot Table",
-                "config": {
-                    "groupBy": "time",
-                    "obsConcepts": [
-                        "Vitals"
-                    ],
-                    "drugConcepts": [],
-                    "labConcepts": []
-                }
-            }
-        ]
+        "sections": []
     }
 ]
