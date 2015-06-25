@@ -69,18 +69,6 @@
             INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('National ID', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
         </sql>
     </changeSet>
-    <changeSet id="BD-201407291747" author="balajin" context="setup">
-        <comment>Create a mapping table for external id to internal id mapping</comment>
-        <sql>
-            create table shr_id_mapping(id MEDIUMINT AUTO_INCREMENT PRIMARY KEY, internal_id varchar(50), external_id varchar(50), type varchar(50));
-        </sql>
-    </changeSet>
-    <changeSet id="BD-201408041739" author="Neha, Utsab" context="setup">
-        <comment>Add the Url field to shr_id_mapping</comment>
-        <sql>
-             alter table shr_id_mapping add uri varchar(150);
-        </sql>
-    </changeSet>
     <changeSet id='BD-201409101706' author='Neha,Sumit' context='setup'>
         <comment>Setting identifier prefix as BDH</comment>
         <sql>
@@ -149,11 +137,6 @@
             <column name="uuid" valueComputed="uuid()"/>
         </insert>
     </changeSet>
-    <changeSet id="BD-20150325-1530" author="sanjana" context="setup">
-        <sql>
-            alter table shr_id_mapping add index internal_external_map (internal_id,external_id);
-        </sql>
-    </changeSet>
     <changeSet id="BD-20150415-2100" author="Angshu" context="setup">
         <comment>Change address_hierarchy entry.user_generated_id column size to 12 from default 11.</comment>
         <modifyDataType tableName="address_hierarchy_entry" columnName="user_generated_id" newDataType="varchar(12)" />
@@ -173,5 +156,16 @@
             '2015-05-11 00:00:00','MM/dd/yyyy HH:mm:ss',86400, 1, 1,
             1, now(), NULL, NULL, NULL, uuid());
         </sql>
+    </changeSet>
+    <changeSet id="BD-20150625-1631" author="neha,angshu">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from chunking_history;
+            </sqlCheck>
+        </preConditions>
+        <insert tableName="chunking_history">
+            <column name="chunk_length" value="100"/>
+            <column name="start" value="1"/>
+        </insert>
     </changeSet>
 </databaseChangeLog>
