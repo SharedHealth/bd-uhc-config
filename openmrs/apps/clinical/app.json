@@ -87,7 +87,7 @@
                 "Birth Weight" : {
                     "autocomplete" : true
                 },
-                "Relationship" : {
+                "Relationship Type" : {
                     "autocomplete" : true,
                     "answersConceptName" : "Relationship Type"
                 }
