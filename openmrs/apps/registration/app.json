@@ -27,6 +27,10 @@
 	        "defaultVisitType": "field",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": true,
+                "freeTextAddressFields": ["address1"]
+            },
             "conceptSetUI": {
                 "REGISTRATION FEES": {
                     "required": true,
