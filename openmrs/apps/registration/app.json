@@ -24,7 +24,7 @@
         "config" : {
             "autoCompleteFields":["familyName"],
             "defaultIdentifierPrefix": "BDH",
-	        "defaultVisitType": "field",
+	        "defaultVisitType": "outpatient",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "addressHierarchy": {
