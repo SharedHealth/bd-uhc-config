@@ -37,10 +37,8 @@
                 },
                 "Relationship Diagnosis" : {
                     "autocomplete" : true,
-                    "answersConceptName" : "Diagnosis Answers"
-                },
-                "Relationship" : {
-                    "autocomplete" : true
+                    "answersConceptName" : "Diagnosis Answers",
+                    "required": true
                 },
                 "Cause of Death" : {
                     "answersConceptName" : "Diagnosis Answers",
@@ -89,7 +87,8 @@
                 },
                 "Relationship Type" : {
                     "autocomplete" : true,
-                    "answersConceptName" : "Relationship Type"
+                    "answersConceptName" : "Relationship Type",
+                    "required": true
                 }
             },
             "drugOrder": {
