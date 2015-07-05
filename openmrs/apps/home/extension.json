@@ -20,16 +20,6 @@
         "requiredPrivilege": "app:clinical"
     },
     {
-        "id": "bahmni.adt",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Admission and Discharge",
-        "url": "../adt/",
-        "icon": "fa-file-o",
-        "order": 4,
-        "requiredPrivilege": "app:adt"
-    },
-    {
         "id": "bahmni.nationalregistry.search",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
