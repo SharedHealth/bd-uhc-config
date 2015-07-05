@@ -79,12 +79,6 @@
                     "autocomplete" : true,
                     "answersConceptName" : "Diagnostic Test"
                 },
-                "Immunization Status" : {
-                    "autocomplete" : true
-                },
-                "Birth Weight" : {
-                    "autocomplete" : true
-                },
                 "Relationship Type" : {
                     "autocomplete" : true,
                     "answersConceptName" : "Relationship Type",
