@@ -38,7 +38,7 @@
         "url": "orders",
         "icon": "icon-user-md",
         "order": 4,
-        "requiredPrivilege": "app:clinical"
+        "requiredPrivilege": "app:clinical:orderTab"
     },
     {
         "id": "bahmni.clinical.consultation.summary",

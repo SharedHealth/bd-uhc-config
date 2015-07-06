@@ -259,4 +259,15 @@
             insert into role_privilege (role, privilege) values ('Clinical:ReadOnly', 'app:clinical:treatmentTab');
         </sql>
     </changeSet>
+    <changeSet id="BD-20150706-1444" author="neha" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM privilege where privilege = 'app:clinical:orderTab';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding privilage for treatment tab</comment>
+        <sql>
+            insert into privilege (privilege, description, uuid) values ('app:clinical:orderTab', 'Privilege for lab order tab', uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
