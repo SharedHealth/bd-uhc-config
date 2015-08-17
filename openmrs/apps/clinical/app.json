@@ -23,19 +23,19 @@
             "obsIgnoreList" : [],
             "maxConceptSetLevels": 3,
             "conceptSetUI": {
-                "Chief Complaint" : {
+                "Condition Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
-                "Non-Coded Chief Complaint" : {
+                "Condition Non-Coded Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
                     "freeTextAutocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
-                "Relationship Diagnosis" : {
+                "Family Member Condition Diagnosis" : {
                     "autocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers",
                     "required": true
@@ -45,7 +45,7 @@
                     "answersConceptName" : "Relationship Type",
                     "required": true
                 },
-                "Person" : {
+                "Family Member History" : {
                     "allowAddMore" :true
                 },
                 "Cause of Death" : {
@@ -61,29 +61,29 @@
                 "Quantity Units" : {
                     "autocomplete" : true
                 },
-                "Vaccine" : {
+                "Immunization Incident Vaccine" : {
                     "autocomplete" : true,
                     "required": true
                 },
                 "Route of Administration" : {
                     "autocomplete" : true
                 },
-                "Vaccination Reported" : {
+                "Immunization Incident Vaccination Reported" : {
                     "required": true
                 },
-                "Vaccination Refused" : {
+                "Immunization Incident Vaccination Refused" : {
                     "required": true
                 },
-                "Procedure": {
+                "Procedure Type": {
                     "autocomplete" : true,
                     "required" : true,
-                    "answersConceptName" : "Procedure"
+                    "answersConceptName" : "Procedure Type"
                 },
-                "Diagnosis" : {
+                "Procedure Diagnosis" : {
                     "autocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers"
                 },
-                "Diagnostic Test" : {
+                "Procedure Diagnostic Test" : {
                     "autocomplete" : true,
                     "answersConceptName" : "Diagnostic Test"
                 }
