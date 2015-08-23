@@ -1,0 +1,62 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+    <changeSet id="JSS-201406201540" author="rohan/mujir" context="">
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="customerFeedJobTrigger"/>
+            <column name="cron_statement" value="0/15 * * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="true"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="customerFeedfailedJobTrigger"/>
+            <column name="cron_statement" value="0 0/1 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="true"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="eventRecordsNumberOffsetMarkerTrigger"/>
+            <column name="cron_statement" value="0 0 0/1 * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="true"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="referenceDataFeedJobTrigger"/>
+            <column name="cron_statement" value="0 0/5 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="true"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="referenceDataFeedFailedJobTrigger"/>
+            <column name="cron_statement" value="0 0/5 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="true"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="saleOrderFeedJobTrigger"/>
+            <column name="cron_statement" value="0 0/1 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="false"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="saleOrderFeedFailedJobTrigger"/>
+            <column name="cron_statement" value="0 0/5 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="false"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="openelisSaleOrderFeedJobTrigger"/>
+            <column name="cron_statement" value="0 0/1 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="false"/>
+        </insert>
+        <insert tableName="quartz_cron_scheduler">
+            <column name="name" value="openelisSaleOrderFeedFailedJobTrigger"/>
+            <column name="cron_statement" value="0 0/5 * * * ?"/>
+            <column name="start_delay" valueComputed="60000"/>
+            <column name="enabled" valueComputed="false"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
