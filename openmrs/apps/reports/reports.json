@@ -1,5 +1,5 @@
-[
-    {
+{
+    "hospital_activities__number_of_clients_served_referred": {
         "name": "Hospital Activities - Number of Clients Served (Referred)",
         "type": "CodedObsCount",
         "config": {
@@ -8,56 +8,54 @@
             "conceptNames": "'Disposition'"
         }
     },
-	{
-	     "name": "Discharge List",
-         "type": "CodedObsCount",
-         "config": {
-             "type": "codedObsCountReport",
-             "ageGroupName": "All Agest",
-			  "conceptNames": "'Type Of Discharge'"
-			  }
+    "discharge_list": {
+        "name": "Discharge List",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Agest",
+            "conceptNames": "'Type Of Discharge'"
+        }
     },
-	{
-	     "name": "Admission List",
-         "type": "CodedObsCount",
-         "config": {
-             "type": "codedObsCountReport",
-             "ageGroupName": "All Ages",
-			  "conceptNames": "'Type Of Admission'"
-    }
-  },
-  {
-            "name": "Discharge Report",
-            "type": "obsTemplate",
-            "config": {
-              "type": "obsTemplateReport",
-             "templateName": "Type Of Discharge"
-         }
-		 },
-		 
-		 {
-            "name": "Admission Report",
-			"type": "obsTemplate",
-            "config": {
-              "type": "obsTemplateReport",
-             "templateName": "Type Of Admission"
-         }
-		 },
-		 {
-	     "name": "Department of Psychology",
-         "type": "CodedObsCount",
-         "config": {
-             "type": "codedObsCountReport",
-             "ageGroupName": "Cotherapy Session",
-			  "conceptNames": "'Cotherapy Session'"
-    }
-  },
-  {            
-			 "name": "OPD/IPD Visit Count",
-             "type": "IpdOpdVisitCount"
-			 },
-			 
-  {
+    "admission_list": {
+        "name": "Admission List",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Type Of Admission'"
+        }
+    },
+    "discharge_report": {
+        "name": "Discharge Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Type Of Discharge"
+        }
+    },
+    "admission_report": {
+        "name": "Admission Report",
+        "type": "obsTemplate",
+        "config": {
+            "type": "obsTemplateReport",
+            "templateName": "Type Of Admission"
+        }
+    },
+    "department_of_psychology": {
+        "name": "Department of Psychology",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "Cotherapy Session",
+            "conceptNames": "'Cotherapy Session'"
+        }
+    },
+    "opdipd_visit_count": {
+        "name": "OPD/IPD Visit Count",
+        "type": "IpdOpdVisitCount"
+    },
+    "diagnosis_categorization": {
         "name": "Diagnosis Categorization",
         "type": "diagnosisCount",
         "config": {
@@ -65,16 +63,16 @@
             "type": "diagnosisReport"
         }
     },
-	{
-	    "name": "Hospital Emergency",
-         "type": "CodedObsCount",
-         "config": {
-             "type": "codedObsCountReport",
-             "ageGroupName": "All Ages",
-			  "conceptNames": "'Category'"
-			  }
-	},
-    {
+    "hospital_emergency": {
+        "name": "Hospital Emergency",
+        "type": "CodedObsCount",
+        "config": {
+            "type": "codedObsCountReport",
+            "ageGroupName": "All Ages",
+            "conceptNames": "'Category'"
+        }
+    },
+    "side_effects": {
         "name": "Side Effects",
         "type": "CodedObsCount",
         "config": {
@@ -83,7 +81,7 @@
             "conceptNames": "'Side Effects'"
         }
     },
-	{
+    "case_manager_review": {
         "name": "Case Manager Review",
         "type": "CodedObsCount",
         "config": {
@@ -92,7 +90,7 @@
             "conceptNames": "'Progress'"
         }
     },
-    {
+    "inpatient_outcome_status": {
         "name": "Inpatient Outcome Status",
         "type": "CodedObsCount",
         "config": {
@@ -101,7 +99,7 @@
             "conceptNames": "'Discharge note, Inpatient outcome'"
         }
     },
-    {
+    "hospital_services__diagnostic_services_usg_ecg": {
         "name": "Hospital Services - Diagnostic Services (USG, ECG)",
         "type": "obsCount",
         "config": {
@@ -110,4 +108,4 @@
             "conceptNames": "'USG Notes','ECG Notes'"
         }
     }
-]
+}

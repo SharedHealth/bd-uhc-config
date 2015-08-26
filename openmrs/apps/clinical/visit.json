@@ -1,5 +1,5 @@
-[
-    {
+{
+    "general": {
         "title": "General",
         "displayByDefault": true,
         "printing": {
@@ -8,8 +8,8 @@
             "logo": "../images/bahmniLogo.png"
         },
         "defaultSections": true,
-        "sections": [
-            {
+        "sections": {
+            "pivot_table": {
                 "type": "pivotTable",
                 "title": "Pivot table",
                 "config": {
@@ -20,52 +20,77 @@
                         "WEIGHT",
                         "M/C Days"
                     ],
-                    "drugConcepts": ["Gamma Benzene Hexachloride"],
+                    "drugConcepts": [
+                        "Gamma Benzene Hexachloride"
+                    ],
                     "labConcepts": ""
-                }
+                },
+                "displayOrder": 0
             }
-        ]
+        }
     },
-    {
+    "discharge_summary": {
         "title": "Discharge Summary",
         "printing": {
             "title": "Bahmni",
             "header": "Discharge Summary",
             "logo": "../images/bahmniLogo.png"
         },
-        "sections": [
-            {
+        "sections": {
+            "patientinformation": {
                 "type": "patientInformation",
                 "config": {
                     "title": "PatientInformation",
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
-                }
+                    "patientAttributes": [
+                        "caste",
+                        "class",
+                        "education",
+                        "occupation",
+                        "debt",
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
+                        "RationCard",
+                        "familyIncome"
+                    ],
+                    "addressFields": [
+                        "address1",
+                        "address2",
+                        "cityVillage",
+                        "countryDistrict"
+                    ]
+                },
+                "displayOrder": 0
             },
-            {
+            "admissiondetails": {
                 "type": "admissionDetails",
                 "config": {
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 1
             },
-            {
+            "weight": {
                 "type": "observation",
                 "title": "Weight",
                 "config": {
-                    "conceptNames": ["WEIGHT"],
+                    "conceptNames": [
+                        "WEIGHT"
+                    ],
                     "scope": "latest"
-                }
+                },
+                "displayOrder": 2
             },
-            {
+            "diagnosis": {
                 "type": "diagnosis",
                 "config": {
                     "title": "Diagnoses",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
-                }
+                },
+                "displayOrder": 3
             },
-            {
+            "clinical_notes": {
                 "type": "observation",
                 "title": "Clinical Notes",
                 "config": {
@@ -78,9 +103,10 @@
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"
-                }
+                },
+                "displayOrder": 4
             },
-            {
+            "investigationresult": {
                 "type": "investigationResult",
                 "config": {
                     "title": "Lab Investigations",
@@ -92,9 +118,10 @@
                     "numberOfVisits": 10,
                     "initialAccessionCount": 1,
                     "latestAccessionCount": 1
-                }
+                },
+                "displayOrder": 5
             },
-            {
+            "treatment": {
                 "type": "treatment",
                 "config": {
                     "title": "Treatments",
@@ -104,9 +131,10 @@
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
-                }
+                },
+                "displayOrder": 6
             },
-            {
+            "advice_on_discharge": {
                 "type": "observation",
                 "title": "Advice on Discharge",
                 "config": {
@@ -116,24 +144,27 @@
                         "Discharge Summary, Plan for follow up"
                     ],
                     "scope": "latest"
-                }
-            }
-        ]
-    },
-    {
-      "title": "Orders",
-      "sections": [
-        {
-            "type": "order",
-            "title": "Radiology Orders",
-            "config": {
-                "title": "Radiology Orders",
-                "name": "ordersControl",
-                "orderType": "Radiology Order",
-                "conceptNames":["Summary"]
+                },
+                "displayOrder": 7
             }
         }
-      ]
-
+    },
+    "orders": {
+        "title": "Orders",
+        "sections": {
+            "radiology_orders": {
+                "type": "order",
+                "title": "Radiology Orders",
+                "config": {
+                    "title": "Radiology Orders",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames": [
+                        "Summary"
+                    ]
+                },
+                "displayOrder": 0
+            }
+        }
     }
-]
+}

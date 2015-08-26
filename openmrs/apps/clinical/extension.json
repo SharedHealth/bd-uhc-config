@@ -1,5 +1,5 @@
-[
-    {
+{
+    "bahmni_clinical_consultation_observations_app:clinical:observationtab": {
         "id": "bahmni.clinical.consultation.observations",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -10,7 +10,7 @@
         "order": 1,
         "requiredPrivilege": "app:clinical:observationTab"
     },
-    {
+    "bahmni_clinical_consultation_diagnosis_app:clinical:diagnosistab": {
         "id": "bahmni.clinical.consultation.diagnosis",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -20,7 +20,7 @@
         "order": 2,
         "requiredPrivilege": "app:clinical:diagnosisTab"
     },
-    {
+    "bahmni_clinical_consultation_disposition_app:clinical:dispositiontab": {
         "id": "bahmni.clinical.consultation.disposition",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -30,7 +30,7 @@
         "order": 3,
         "requiredPrivilege": "app:clinical:dispositionTab"
     },
- {
+    "bahmni_clinical_billing_treatment_app:clinical:consultationtab": {
         "id": "bahmni.clinical.billing.treatment",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -40,7 +40,7 @@
         "order": 7,
         "requiredPrivilege": "app:clinical:consultationTab"
     },
-{
+    "bahmni_clinical_consultation_orders_app:clinical:diagnosistab": {
         "id": "bahmni.clinical.consultation.orders",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -50,7 +50,7 @@
         "order": 4,
         "requiredPrivilege": "app:clinical:diagnosisTab"
     },
-   {
+    "bahmni_clinical_patients_search_allpatients_active_app:clinical": {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -63,7 +63,7 @@
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
-    {
+    "bahmni_clinical_patients_search_allpatients_all_app:clinical": {
         "id": "bahmni.clinical.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -75,4 +75,4 @@
         "order": 2,
         "requiredPrivilege": "app:clinical"
     }
-]
+}
