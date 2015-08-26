@@ -1,5 +1,5 @@
-[
-    {
+{
+    "bahmniRegistration": {
         "id": "bahmni.registration",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -9,7 +9,7 @@
         "order": 1,
         "requiredPrivilege": "app:registration"
     },
-    {
+    "bahmniClinical": {
         "id": "bahmni.clinical",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -19,7 +19,7 @@
         "order": 3,
         "requiredPrivilege": "app:clinical"
     },
-    {
+    "bahmniAdt": {
         "id": "bahmni.adt",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -29,7 +29,7 @@
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
-    {
+    "bahmniOrders": {
         "id": "bahmni.orders",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -39,7 +39,7 @@
         "order": 4,
         "requiredPrivilege": "app:clinical"
     },
-    {
+    "bahmniPatientDocumentUpload": {
         "id": "bahmni.patient.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -49,7 +49,7 @@
         "order": 6,
         "requiredPrivilege": "app:document-upload"
     },
-    {
+    "bahmniRadiologyDocumentUpload": {
         "id": "bahmni.radiology.document.upload",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -59,15 +59,14 @@
         "order": 5,
         "requiredPrivilege": "app:document-upload"
     },
-    {
+    "bahmniReports": {
         "id": "bahmni.reports",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
         "label": "Reports",
-
         "order": 7
     },
-    {
+    "bahmniAdmin": {
         "id": "bahmni.admin",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -77,7 +76,7 @@
         "order": 8,
         "requiredPrivilege": "app:admin"
     },
-    {
+    "nationalRegistrySearch": {
         "id": "bahmni.nationalregistry.search",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",
@@ -87,4 +86,4 @@
         "order": 7,
         "requiredPrivilege": "National Registry"
     }
-]
+}
