@@ -31,6 +31,9 @@
             },
             "visitTypeForRetrospectiveEntries": "Special OPD",
             "maxConceptSetLevels": 3,
+            "visitTypeForRetrospectiveEntries": "outpatient",
+            "allowConsultationWhenNoOpenVisit": true,
+            "defaultVisitType": "outpatient",
             "conceptSetUI": {
                 "Chief Complaint Data": {
                     "multiple": 3
