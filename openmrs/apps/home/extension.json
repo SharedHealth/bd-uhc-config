@@ -20,6 +20,64 @@
         "requiredPrivilege": "app:clinical"
     },
     {
+        "id": "bahmni.adt",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Admission and Discharge",
+        "url": "../adt/",
+        "icon": "fa-file-o",
+        "order": 3,
+        "requiredPrivilege": "app:adt"
+    },
+    {
+        "id": "bahmni.orders",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Orders",
+        "url": "../orders/#/search",
+        "icon": "fa-book",
+        "order": 4,
+        "requiredPrivilege": "app:clinical"
+    },
+    {
+        "id": "bahmni.patient.document.upload",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Patient Documents",
+        "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
+        "icon": "fa-camera",
+        "order": 6,
+        "requiredPrivilege": "app:document-upload"
+    },
+    {
+        "id": "bahmni.radiology.document.upload",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Radiology Upload",
+        "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
+        "icon": "fa-camera",
+        "order": 5,
+        "requiredPrivilege": "app:document-upload"
+    },
+    {
+        "id": "bahmni.reports",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Reports",
+
+        "order": 7
+    },
+    {
+        "id": "bahmni.admin",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "label": "Admin",
+        "url": "../admin/#/dashboard/home",
+        "icon": "fa-user",
+        "order": 8,
+        "requiredPrivilege": "app:admin"
+    },
+    {
         "id": "bahmni.nationalregistry.search",
         "extensionPointId": "org.bahmni.home.dashboard",
         "type": "link",

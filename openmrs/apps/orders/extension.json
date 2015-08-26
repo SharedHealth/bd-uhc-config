@@ -1,0 +1,62 @@
+[
+	{
+	 "id": "bahmni.clinical.patients.search.MandPReferralOrders",
+	 "extensionPointId": "org.bahmni.patient.search",
+	 "type": "config",
+	 "extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.active.MNPReferralOrder",
+	  "display":"Department of Medical and Psychiatry",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Medical and Psychiatry Order",
+	  "forwardButtonTitle" : "View",
+	  "view":"tabular"
+	 },
+	 "label": "Department of Medical and Psychiatry",
+	 "order": 1,
+	 "requiredPrivilege": "app:orders"
+	 },
+	{
+	 "id": "bahmni.clinical.patients.search.PsychologyReferralOrders",
+	 "extensionPointId": "org.bahmni.patient.search",
+	 "type": "config",
+	 "extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.active.PsychologyReferralOrder",
+	  "display":"Department of Psychology",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Psychology Order",
+	  "forwardButtonTitle" : "View",
+	  "view":"tabular"
+	 },
+	 "label": "Department of Psychology",
+	 "order": 2,
+	 "requiredPrivilege": "app:orders"
+	 },
+	{
+	 "id": "bahmni.clinical.patients.search.OTNVTReferralOrders",
+	 "extensionPointId": "org.bahmni.patient.search",
+	 "type": "config",
+	 "extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.active.OTNVTReferralOrder",
+	  "display":"Department of OT and VT",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Department of OT and VT Order",
+	  "forwardButtonTitle" : "View",
+	  "view":"tabular"
+	 },
+	 "label": "Department of OT and VT",
+	 "order": 3,
+	 "requiredPrivilege": "app:orders"
+	 },
+	{
+	 "id": "bahmni.clinical.patients.search.SocialWorkReferralOrders",
+	 "extensionPointId": "org.bahmni.patient.search",
+	 "type": "config",
+	 "extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.active.SocialWorkReferralOrder",
+	  "display":"Department of SocialWork",
+	  "forwardUrl" : "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Social Work Order",
+	  "forwardButtonTitle" : "View",
+	  "view":"tabular"
+	 },
+	 "label": "Department of Social Work",
+	 "order": 3,
+	 "requiredPrivilege": "app:orders"
+	 }
+]

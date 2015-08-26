@@ -25,10 +25,60 @@
             "visitUuid"
         ],
         "config" : {
-            "onAdmissionForwardTo": "#/patient/search",
-            "onTransferForwardTo": "#/patient/search",
+            "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
+            "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
             "onDischargeForwardTo": "#/patient/search",
-            "defaultVisitType": "IPD"
+            "defaultVisitType": "General",
+            "dashboard":{
+                "dashboardName": "General",
+                "conceptName": "Adt Notes",
+                "sections": [
+                {
+                    "title": "Vitals",
+                    "name": "vitals",
+                    "isObservation": true,
+                    "dashboardParams": {
+                        "conceptNames": ["Vitals"],
+                        "numberOfVisits": 2
+                    }
+                },
+                {
+                    "title": "Disposition",
+                    "name": "disposition",
+                    "numberOfVisits": 1
+                },
+                {
+                    "title": "Diagnosis",
+                    "name": "diagnosis",
+                    "numberOfVisits": 1,
+                    "showDetailsButton":true
+                },
+                {
+                "title": "Patient Information",
+                "name": "patientInformation",
+                "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
+                "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                },
+                {
+                "title": "Admission Details",
+                "name":"admissionDetails"
+                },
+                {
+                    "title": "Navigation Links Control",
+                    "name": "navigationLinksControl",
+                    "links": [
+                        {
+                            "title": "Program Management Page",
+                            "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
+                        },
+                        {
+                            "title": "Consultation",
+                            "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
+                        }
+                    ]
+                }
+            ]
+        }
         }
     }
 ]
