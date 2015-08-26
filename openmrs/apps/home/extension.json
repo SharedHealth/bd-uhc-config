@@ -16,65 +16,8 @@
         "label": "Clinical",
         "url": "../clinical/",
         "icon": "fa-stethoscope",
-        "order": 3,
+        "order": 2,
         "requiredPrivilege": "app:clinical"
-    },
-    "bahmniAdt": {
-        "id": "bahmni.adt",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Admission and Discharge",
-        "url": "../adt/",
-        "icon": "fa-file-o",
-        "order": 3,
-        "requiredPrivilege": "app:adt"
-    },
-    "bahmniOrders": {
-        "id": "bahmni.orders",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Orders",
-        "url": "../orders/#/search",
-        "icon": "fa-book",
-        "order": 4,
-        "requiredPrivilege": "app:clinical"
-    },
-    "bahmniPatientDocumentUpload": {
-        "id": "bahmni.patient.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Patient Documents",
-        "url": "../document-upload/?encounterType=Patient Document&topLevelConcept=Patient Document&defaultOption=Patient file",
-        "icon": "fa-camera",
-        "order": 6,
-        "requiredPrivilege": "app:document-upload"
-    },
-    "bahmniRadiologyDocumentUpload": {
-        "id": "bahmni.radiology.document.upload",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Radiology Upload",
-        "url": "../document-upload/?encounterType=RADIOLOGY&topLevelConcept=Radiology",
-        "icon": "fa-camera",
-        "order": 5,
-        "requiredPrivilege": "app:document-upload"
-    },
-    "bahmniReports": {
-        "id": "bahmni.reports",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Reports",
-        "order": 7
-    },
-    "bahmniAdmin": {
-        "id": "bahmni.admin",
-        "extensionPointId": "org.bahmni.home.dashboard",
-        "type": "link",
-        "label": "Admin",
-        "url": "../admin/#/dashboard/home",
-        "icon": "fa-user",
-        "order": 8,
-        "requiredPrivilege": "app:admin"
     },
     "nationalRegistrySearch": {
         "id": "bahmni.nationalregistry.search",
@@ -83,7 +26,7 @@
         "label": "National Registry",
         "url": "../../openmrs/shrclient/mciPatient.page",
         "icon": "fa-user",
-        "order": 7,
+        "order": 3,
         "requiredPrivilege": "National Registry"
     }
 }
