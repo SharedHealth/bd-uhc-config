@@ -21,8 +21,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Physical scientist and related technician', 'Physical scientist and related technician', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Physical', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'scientist', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 1);
         </sql>
     </changeSet>
@@ -40,8 +38,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Engineer and architect', 'Engineer and architect', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Engineer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'architect', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 2);
         </sql>
     </changeSet>
@@ -59,8 +55,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Engineering and architecture related technician', 'Engineering and architecture related technician', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Engineering', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'architecture', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 3);
         </sql>
     </changeSet>
@@ -78,8 +72,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Aircraft and ship officer', 'Aircraft and ship officer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Aircraft', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'ship', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 4);
         </sql>
     </changeSet>
@@ -97,8 +89,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Biologist and related technician', 'Biologist and related technician', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Biologist', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'technician', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 5);
         </sql>
     </changeSet>
@@ -116,8 +106,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Doctor, dentist and veterinarian', 'Doctor, dentist and veterinarian', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Doctor', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'veterinarian', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 6);
         </sql>
     </changeSet>
@@ -135,8 +123,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Nurse and other medical staff', 'Nurse and other medical staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Nurse', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'medical', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 7);
         </sql>
     </changeSet>
@@ -154,8 +140,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Statistician, mathematician, systems analyst and related stuff', 'Statistician, mathematician, systems analyst and related stuff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Statistician', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'mathematician', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 8);
         </sql>
     </changeSet>
@@ -173,8 +157,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Economist', 'Economist', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Economist', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Economist', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 9);
         </sql>
     </changeSet>
@@ -192,8 +174,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Accountant', 'Accountant', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Accountant', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Accountant', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 10);
         </sql>
     </changeSet>
@@ -211,8 +191,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Judge', 'Judge', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Judge', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Judge', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 11);
         </sql>
     </changeSet>
@@ -230,8 +208,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Teacher', 'Teacher', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Teacher', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Teacher', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 12);
         </sql>
     </changeSet>
@@ -249,8 +225,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Religious Worker', 'Religious Worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Religious', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Worker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 13);
         </sql>
     </changeSet>
@@ -268,8 +242,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Writer, journalist and activist', 'Writer, journalist and activist', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'journalist', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Writer', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 14);
         </sql>
     </changeSet>
@@ -287,8 +259,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Painter, photographer and creative artist', 'Painter, photographer and creative artist', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'photographer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'artist', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 15);
         </sql>
     </changeSet>
@@ -306,8 +276,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Actor, singer and dancer', 'Actor, singer and dancer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Actor', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'singer and dancer', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 16);
         </sql>
     </changeSet>
@@ -325,8 +293,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Player or ground staff', 'Player or ground staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Player', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'ground staff', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 17);
         </sql>
     </changeSet>
@@ -344,8 +310,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Professional, technical and other uncategorized related stuff', 'Professional, technical and other uncategorized related stuff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Professional', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'technical', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 18);
         </sql>
     </changeSet>
@@ -363,8 +327,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Lawyer', 'Lawyer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Lawyer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Lawyer', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 19);
         </sql>
     </changeSet>
@@ -382,8 +344,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Manager', 'Manager', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Manager', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Manager', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 20);
         </sql>
     </changeSet>
@@ -401,8 +361,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Government executive', 'Government executive', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Government', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'executive', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 21);
         </sql>
     </changeSet>
@@ -420,8 +378,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Clerk', 'Clerk', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Clerk', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Clerk', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 22);
         </sql>
     </changeSet>
@@ -439,8 +395,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Typist, Stenographer, Computer Operator', 'Typist, Stenographer, Computer Operator', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Typist', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Stenographer', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 23);
         </sql>
     </changeSet>
@@ -458,8 +412,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Record keeper, cashier and related staff', 'Record keeper, cashier and related staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'cashier', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Record keeper', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 24);
         </sql>
     </changeSet>
@@ -477,8 +429,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Computer-related staff', 'Computer-related staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Computer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 25);
         </sql>
     </changeSet>
@@ -496,8 +446,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Transport and communication supervisor', 'Transport and communication supervisor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Transport', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'communication', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 26);
         </sql>
     </changeSet>
@@ -515,8 +463,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Driver and conductor', 'Driver and conductor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Driver', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'conductor', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 27);
         </sql>
     </changeSet>
@@ -534,8 +480,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Postman', 'Postman', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Postman', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Postman', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 28);
         </sql>
     </changeSet>
@@ -553,8 +497,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Telephone and Telegraph Operator', 'Telephone and Telegraph Operator', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Telephone', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Telegraph', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 29);
         </sql>
     </changeSet>
@@ -572,8 +514,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized official', 'Uncategorized official', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'official', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 30);
         </sql>
     </changeSet>
@@ -591,8 +531,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Manager (wholesale and retail trade)', 'Manager (wholesale and retail trade)', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Manager', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'wholesale and retail', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 31);
         </sql>
     </changeSet>
@@ -610,8 +548,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Sales supervisor', 'Sales supervisor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Sales', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'supervisor', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 32);
         </sql>
     </changeSet>
@@ -629,8 +565,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tourism staff', 'Tourism staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tourism', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 33);
         </sql>
     </changeSet>
@@ -648,8 +582,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Insurance, Real Estate, Business and related service vendor', 'Insurance, Real Estate, Business and related service vendor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Insurance', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Real Estate', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 34);
         </sql>
     </changeSet>
@@ -667,8 +599,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hawker', 'Hawker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hawker', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Hawker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 35);
         </sql>
     </changeSet>
@@ -686,8 +616,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized sales staff', 'Uncategorized sales staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sales', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 36);
         </sql>
     </changeSet>
@@ -705,8 +633,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Residential hotel manager', 'Residential hotel manager', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'hotel', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'manager', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 37);
         </sql>
     </changeSet>
@@ -724,8 +650,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hotel owner', 'Hotel owner', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hotel', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'owner', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 38);
         </sql>
     </changeSet>
@@ -743,8 +667,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Hotel caretaker', 'Hotel caretaker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Hotel', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'caretaker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 39);
         </sql>
     </changeSet>
@@ -762,8 +684,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Cook, hotel boy and related employee', 'Cook, hotel boy and related employee', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Cook', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'hotel boy', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 40);
         </sql>
     </changeSet>
@@ -781,8 +701,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized maid', 'Uncategorized maid', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Uncategorized', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'maid', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 41);
         </sql>
     </changeSet>
@@ -800,8 +718,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'House caretaker, sweeper and related staff', 'House caretaker, sweeper and related staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'caretaker', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sweeper', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 42);
         </sql>
     </changeSet>
@@ -819,8 +735,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Washerman', 'Washerman', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Washerman', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Washerman', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 43);
         </sql>
     </changeSet>
@@ -838,8 +752,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Security staff', 'Security staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Security', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 44);
         </sql>
     </changeSet>
@@ -857,8 +769,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Uncategorized service staff', 'Uncategorized service staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'service', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'staff', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 45);
         </sql>
     </changeSet>
@@ -876,8 +786,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Farmhouse manager and supervisor', 'Farmhouse manager and supervisor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Farmhouse', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'supervisor', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 46);
         </sql>
     </changeSet>
@@ -895,8 +803,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Farmer', 'Farmer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Farmer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Farmer', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 47);
         </sql>
     </changeSet>
@@ -914,8 +820,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Forest worker', 'Forest worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Forest', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 48);
         </sql>
     </changeSet>
@@ -933,8 +837,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Fishermen, hunter and related worker', 'Fishermen, hunter and related worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Fishermen', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'hunter', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 49);
         </sql>
     </changeSet>
@@ -952,8 +854,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Production supervisor and foreman', 'Production supervisor and foreman', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Production supervisor', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'foreman', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 50);
         </sql>
     </changeSet>
@@ -971,8 +871,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Excavator', 'Excavator', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Excavator', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Excavator', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 51);
         </sql>
     </changeSet>
@@ -990,8 +888,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Metal goods manufacturer', 'Metal goods manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'manufacturer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Metal', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 52);
         </sql>
     </changeSet>
@@ -1009,8 +905,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Chemical goods manufacturer', 'Chemical goods manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'manufacturer', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Chemical', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 53);
         </sql>
     </changeSet>
@@ -1028,8 +922,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Weaver and fabric worker', 'Weaver and fabric worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Weaver', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'fabric', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 54);
         </sql>
     </changeSet>
@@ -1047,8 +939,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Leather worker', 'Leather worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Leather', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 55);
         </sql>
     </changeSet>
@@ -1066,8 +956,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Food and beverage manufacturer', 'Food and beverage manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Food', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'beverage', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 56);
         </sql>
     </changeSet>
@@ -1085,8 +973,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tobacco processor', 'Tobacco processor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tobacco', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'processor', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 57);
         </sql>
     </changeSet>
@@ -1104,8 +990,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Tailoring and sewing staff', 'Tailoring and sewing staff', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Tailoring', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'sewing', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 58);
         </sql>
     </changeSet>
@@ -1123,8 +1007,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Shoes and leather products manufacturer', 'Shoes and leather products manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Shoes', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'leather', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 59);
         </sql>
     </changeSet>
@@ -1142,8 +1024,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Carpenter', 'Carpenter', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Carpenter', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Carpenter', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 60);
         </sql>
     </changeSet>
@@ -1161,8 +1041,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Stone cutter and processor', 'Stone cutter and processor', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Stone', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'cutter', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 61);
         </sql>
     </changeSet>
@@ -1180,8 +1058,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Blacksmith, welder and goods part manufacturer', 'Blacksmith, welder and goods part manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Blacksmith', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'welder', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 62);
         </sql>
     </changeSet>
@@ -1199,8 +1075,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Machine operator (other than electrical machine)', 'Machine operator (other than electrical machine)', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Machine', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'operator', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 63);
         </sql>
     </changeSet>
@@ -1218,8 +1092,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Electrical machine operator', 'Electrical machine operator', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'machine', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'operator', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 64);
         </sql>
     </changeSet>
@@ -1237,8 +1109,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'campaign workers and theater operators', 'campaign workers and theater operators', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'theater', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'campaign', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 65);
         </sql>
     </changeSet>
@@ -1256,8 +1126,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Water-sewerage structures manufacturer and metal Welder', 'Water-sewerage structures manufacturer and metal Welder', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Water-sewerage', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Welder', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 66);
         </sql>
     </changeSet>
@@ -1275,8 +1143,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Goldsmith', 'Goldsmith', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Goldsmith', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Goldsmith', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 67);
         </sql>
     </changeSet>
@@ -1294,8 +1160,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Glass and pottery manufacturer', 'Glass and pottery manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'pottery', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'Glass', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 68);
         </sql>
     </changeSet>
@@ -1313,8 +1177,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Rubber and plastic products manufacturer', 'Rubber and plastic products manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Rubber', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'plastic', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 69);
         </sql>
     </changeSet>
@@ -1332,8 +1194,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Paper and paper board manufacturer', 'Paper and paper board manufacturer', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Paper', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'board', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 70);
         </sql>
     </changeSet>
@@ -1351,8 +1211,6 @@
             set @concept_name_full_id = 0;
             SELECT concept_id INTO @concept_id FROM concept_name WHERE name='Occupation'  and concept_name_type = 'short';
             call add_concept(@answer_concept_id, @concept_name_short_id, @concept_name_full_id, 'Print worker', 'Print worker', 'Text', 'Misc', false);
-            call add_concept_word(@answer_concept_id, @concept_name_short_id, 'Print', '1');
-            call add_concept_word(@answer_concept_id, @concept_name_full_id, 'worker', '1');
             call add_concept_answer(@concept_id, @answer_concept_id, 71);
         </sql>
     </changeSet>
