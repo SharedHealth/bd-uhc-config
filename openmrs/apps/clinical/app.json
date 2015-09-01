@@ -37,51 +37,71 @@
         "allowConsultationWhenNoOpenVisit": true,
         "defaultVisitType": "outpatient",
         "conceptSetUI": {
-            "Chief Complaint Data": {
-                "multiple": 3
+                "Condition Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false,
+                    "allowAddMore" : true
+                },
+                "Condition Non-Coded Chief Complaint" : {
+                    "answersConceptName" : "Chief Complaint Answers",
+                    "freeTextAutocomplete" : true,
+                    "durationRequired" : false,
+                    "allowAddMore" : true
+                },
+                "Family Member Condition Diagnosis" : {
+                    "autocomplete" : true,
+                    "answersConceptName" : "Diagnosis Answers",
+                    "required": true
+                },
+                "Relationship Type" : {
+                    "autocomplete" : true,
+                    "answersConceptName" : "Relationship Type",
+                    "required": true
+                },
+                "Family Member History" : {
+                    "allowAddMore" :true
+                },
+                "Cause of Death" : {
+                    "answersConceptName" : "Diagnosis Answers",
+                    "autocomplete" : true
+                },
+                "Immunization Reason" : {
+                    "autocomplete" : true
+                },
+                "No Immunization Reason" : {
+                    "autocomplete" : true
+                },
+                "Quantity Units" : {
+                    "autocomplete" : true
+                },
+                "Immunization Incident Vaccine" : {
+                    "autocomplete" : true,
+                    "required": true
+                },
+                "Route of Administration" : {
+                    "autocomplete" : true
+                },
+                "Immunization Incident Vaccination Reported" : {
+                    "required": true
+                },
+                "Immunization Incident Vaccination Refused" : {
+                    "required": true
+                },
+                "Procedure Type": {
+                    "autocomplete" : true,
+                    "required" : true,
+                    "answersConceptName" : "Procedure Type"
+                },
+                "Procedure Diagnosis" : {
+                    "autocomplete" : true,
+                    "answersConceptName" : "Diagnosis Answers"
+                },
+                "Procedure Diagnostic Test" : {
+                    "autocomplete" : true,
+                    "answersConceptName" : "Diagnostic Test"
+                }
             },
-            "Chief Complaint": {
-                "freeTextAutocomplete": true,
-                "durationRequired": false
-            },
-            "Posture": {
-                "buttonSelect": true
-            },
-            "Non-Coded Chief Complaint": {
-                "freeTextAutocomplete": true,
-                "durationRequired": false
-            },
-            "P/A Presenting Part": {
-                "multiSelect": true
-            },
-            "FHS": {
-                "buttonSelect": true
-            },
-            "P/S (Per Speculum) - Cervix": {
-                "grid": true
-            },
-            "Anaemia, Stopped Since When": {
-                "conciseText": true
-            },
-            "Examination Notes": {
-                "conciseText": true
-            },
-            "Tuberculosis Intake Template": {
-                "computeDrugs": true
-            },
-            "Set1": {
-                "allowAddMore": true
-            },
-            "Set2": {
-                "allowAddMore": true
-            },
-            "Coded3": {
-                "multiSelect": true
-            },
-            "Image": {
-                "allowAddMore": true
-            }
-        },
         "visitPage": {
             "observationDisplay": {
                 "conceptNames": []
