@@ -56,6 +56,10 @@
             "Phone Number": {
                 "pattern": "^(\\d{3,12})$",
                 "errorMessage": "Phone Number should be between 3 to 12 digits"
+            },
+            "Health ID" : {
+                "pattern" : "^[9][1-9][0-9]{9}$",
+                "errorMessage" : "Please enter a valid HID"
             }
         },
         "patientSearch": {
