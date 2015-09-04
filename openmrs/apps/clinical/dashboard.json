@@ -86,41 +86,6 @@
                 ],
                 "displayOrder": 5
             },
-            "radiology_orders": {
-                "orderType": "Radiology Order",
-                "name": "ordersControl",
-                "title": "Radiology Orders",
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Summary"
-                    ],
-                    "numberOfVisits": 4
-                },
-                "displayOrder": 6
-            },
-            "lab_orders_display_control": {
-                "title": "Lab Orders Display Control",
-                "name": "ordersControl",
-                "orderType": "Lab Order",
-                "showDetailsButton": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "allOrdersDetails": {
-                    "conceptNames": [
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
-                },
-                "displayOrder": 7
-            },
             "lab_results": {
                 "title": "Lab Results",
                 "name": "labOrders",
@@ -137,33 +102,6 @@
                     "numberOfVisits": 10
                 },
                 "displayOrder": 8
-            },
-            "nutritional_values": {
-                "title": "Nutritional Values",
-                "name": "vitals",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "HEIGHT",
-                        "Weight",
-                        "BMI",
-                        "BMI STATUS"
-                    ],
-                    "numberOfVisits": 2,
-                    "scope": "latest",
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                },
-                "displayOrder": 9
             },
             "vitals": {
                 "title": "Vitals",
@@ -194,26 +132,6 @@
                 },
                 "displayOrder": 10
             },
-            "second_vitals": {
-                "title": "Second Vitals",
-                "name": "secon vitals",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                },
-                "displayOrder": 11
-            },
             "history_and_examinations": {
                 "title": "History and Examinations",
                 "name": "vitals",
@@ -234,46 +152,6 @@
                 },
                 "displayOrder": 12
             },
-            "gynaecology": {
-                "title": "Gynaecology",
-                "name": "gynaecology",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Gynaecology"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                },
-                "displayOrder": 13
-            },
-            "obstetrics": {
-                "title": "Obstetrics",
-                "name": "obstetrics",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Obstetrics"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                },
-                "displayOrder": 14
-            },
             "visits": {
                 "title": "Visits",
                 "name": "visits",
@@ -282,43 +160,6 @@
                     "maximumNoOfVisits": 10
                 },
                 "displayOrder": 15
-            },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes Template",
-                "name": "diseaseTemplate",
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "15",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "Weight",
-                            "Height",
-                            "Systolic",
-                            "Diastolic",
-                            "Diabetes, Foot Exam",
-                            "Diabetes, Eye Exam"
-                        ],
-                        "drugConcepts": [
-                            "Ipratropium Pressurised",
-                            "Garbhpal Rasa"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Albumin",
-                            "Polymorph"
-                        ]
-                    }
-                },
-                "displayOrder": 16
             },
             "admission_details": {
                 "title": "Admission Details",
@@ -335,37 +176,17 @@
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [
-                    "caste",
-                    "class",
+                    "Health ID",
                     "education",
-                    "occupation",
-                    "debt",
-                    "distanceFromCenter",
-                    "isUrban",
-                    "cluster",
-                    "RationCard",
-                    "familyIncome"
+                    "occupation"
                 ],
                 "addressFields": [
                     "address1",
-                    "address2",
-                    "cityVillage",
-                    "countryDistrict"
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
                 ],
                 "displayOrder": 0
-            },
-            "growth_chart": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Growth Chart",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight"
-                    ],
-                    "referenceData": "growthChartReference.csv",
-                    "numberOfVisits": 20
-                },
-                "displayOrder": 1
             },
             "bp": {
                 "type": "observationGraph",
@@ -381,34 +202,6 @@
                 },
                 "displayOrder": 2
             },
-            "weight/bmi": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Weight/BMI",
-                "config": {
-                    "yAxisConcepts": [
-                        "Weight",
-                        "BMI"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 3
-            },
-            "diabetes/blood_sugar": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Diabetes/Blood Sugar",
-                "config": {
-                    "yAxisConcepts": [
-                        "Blood Sugar Fasting",
-                        "Blood Sugar P.P"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 4
-            },
             "pulse": {
                 "type": "observationGraph",
                 "name": "observationGraph",
@@ -421,38 +214,6 @@
                     "numberOfVisits": 10
                 },
                 "displayOrder": 5
-            },
-            "diabetes": {
-                "title": "Diabetes",
-                "templateName": "Diabetes, Progress",
-                "name": "diseaseTemplate",
-                "dashboardParams": {
-                    "showOnly": []
-                },
-                "allDiseaseDetails": {
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "visits",
-                        "obsConcepts": [
-                            "Diabetes, Blood Pressure",
-                            "Diabetes, A1C",
-                            "Diabetes, LDL",
-                            "Diabetes, Ulcers on Feet",
-                            "Blood Sugar Fasting",
-                            "Blood Sugar PP"
-                        ],
-                        "labConcepts": [
-                            "RBS",
-                            "FBS",
-                            "PP2BS",
-                            "Hb1AC",
-                            "Creatinine",
-                            "Cholesterol"
-                        ]
-                    }
-                },
-                "displayOrder": 6
             }
         }
     }
