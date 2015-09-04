@@ -4,6 +4,11 @@
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
+            "patientInformation": {
+                "title" : "Patient Information",
+                "name" : "patientInformation",
+                "patientAttributes" : ["Health ID"]
+            },
             "diagnosis": {
                 "title": "Diagnosis",
                 "name": "diagnosis",
@@ -176,7 +181,6 @@
                 "title": "Patient Information",
                 "name": "patientInformation",
                 "patientAttributes": [
-                    "Health ID",
                     "education",
                     "occupation"
                 ],
