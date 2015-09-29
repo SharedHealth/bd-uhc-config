@@ -8,7 +8,7 @@
             "display":"Active Patients",
             "forwardUrl" : "#/patient/{{patientUuid}}/document"
         },
-        "label": "Active Patients",
+        "transitionKey": "Active Patients",
         "order": 1,
         "requiredPrivilege": "app:document-upload"
     },
@@ -20,7 +20,7 @@
             "display":"All patients",
             "forwardUrl" : "#/patient/{{patientUuid}}/document"
         },
-        "label": "All patients",
+        "transitionKey": "All patients",
         "order": 1,
         "requiredPrivilege": "app:document-upload"
     }

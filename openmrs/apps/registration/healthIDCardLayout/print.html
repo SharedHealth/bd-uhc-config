@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
+<table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
+    <tbody>
+    <tr>
+    
+        <td class="print-table-right" valign="top">
+            <table class="registrationCard-details">
+             <tbody>
+                 <tr>
+                    <b> 
+                        <h2> {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}</h2></b>
+                        </tr>
+                        <br>
+                        <tr>
+        			    <b> <h3>{{ "REGISTRATION_INSTITUTE_ADDRESS" | translate }}</h3></b> 
+        	       </tr>  
+            <br>
+           
+            
+            <table class="registrationCard-details" >
+               
+                <b> 
+                <tr>
+                   <u><h1> {{patient.HealthID}}</h1></u>
+                </tr>
+                </b><br>
+                
+                <tr>
+                   <h3> Dated :  {{patient.registrationDate | bahmniDate}} </h3>
+                </tr>
+                <tr>
+                  <h3>  Registration :{{patient.identifier}} </h3>
+                </tr>
+                <tr>
+                  <h3>  Name  :  {{patient.givenName}}</h3>
+                </tr>
+                <tr>
+                  <h3>  Age: {{patient.age | age}}</h3>
+                    </tr>
+               <tr> <h3>Gender : {{patient.gender}} </h3>
+                </tr>
+                </tr>
+               <tr> <h3>Address : {{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} {{patient.address.address3}} {{patient.address.address4}} {{patient.address.address5}} {{patient.address.countyDistrict}}  {{patient.address.stateProvince}} </h3>
+                </tr>
+           
+                
+             
+                </tbody>
+            </table>
+        </td>
+    </tr>
+    </tbody>
+</table>

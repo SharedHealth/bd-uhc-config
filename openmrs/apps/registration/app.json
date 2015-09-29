@@ -1,85 +1,80 @@
-{
-    "id": "bahmni.registration",
-    "instanceOf": "bahmni.template.registration",
-    "description": "Bahmni Patient Registration App",
-    "extensionPoints": [
-        {
-            "id": "org.bahmni.registration.patient.search.result.action",
-            "description": "Bahmni Patient Search Result Action"
-        },
-        {
-            "id": "org.bahmni.registration.patient.edit.action",
-            "description": "Bahmni Patient Edit Page Action"
-        },
-        {
-            "id": "org.bahmni.registration.patient.create.action",
-            "description": "Bahmni Patient Create Page Action"
-        }
-    ],
-    "contextModel": [
-        "patientUuid",
-        "activeVisitUuid"
-    ],
-    "config": {
-        "autoCompleteFields": [
-            "familyName"
+
+    {
+        "id": "bahmni.registration",
+        "instanceOf":"bahmni.template.registration",
+        "description": "Bahmni Patient Registration App",
+        "extensionPoints": [
+            {
+                "id": "org.bahmni.registration.patient.search.result.action",
+                "description": "Bahmni Patient Search Result Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.edit.action",
+                "description": "Bahmni Patient Edit Page Action"
+            },
+            {
+                "id": "org.bahmni.registration.patient.create.action",
+                "description": "Bahmni Patient Create Page Action"
+            }
         ],
-        "defaultIdentifierPrefix": "BDH",
-        "defaultVisitType": "outpatient",
-        "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-        "showMiddleName": false,
-        "addressHierarchy": {
-            "showAddressFieldsTopDown": true,
-            "freeTextAddressFields": [
-                "address1"
-            ]
-        },
-        "conceptSetUI": {
-            "REGISTRATION FEES": {
-                "required": true,
-                "label": "Fee"
+        "contextModel": [
+            "patientUuid",
+            "activeVisitUuid"
+        ],
+        "config" : {
+            "autoCompleteFields":["familyName"],
+            "defaultIdentifierPrefix": "BDH",
+	        "defaultVisitType": "outpatient",
+            "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+            "showMiddleName": false,
+            "addressHierarchy": {
+                "showAddressFieldsTopDown": true,
+                "freeTextAddressFields": ["address1"]
+            },
+            "printOptions":[
+                {
+                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                    "shortcutKey": "l"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_HEALTHID_CARD_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/healthIDCardLayout/print.html",
+                    "shortcutKey": "p"
+                }
+            ],
+            "conceptSetUI": {
+                "Department Sent To": {
+                	"required": false,
+                	"autocomplete": {
+				"src": "self"
+			}
+            },
+             "Fee Category": {
+                	"required": false,
+                	"autocomplete": {
+				"src": "self"
+			}
             }
-        },
-        "fieldValidation": {
-            "National ID": {
-                "pattern": "^(\\d{13}|\\d{17})$",
-                "errorMessage": "National ID should be 13 or 17 digits"
             },
-            "Birth Registration Id": {
-                "pattern": "^\\d{17}$",
-                "errorMessage": "Birth Registration Number should be 17 digits"
+            "fieldValidation" : {
+                "National ID" : {"pattern" : "^(\\d{13}|\\d{17})$", "errorMessage" : "National ID should be 13 or 17 digits"},
+                "Birth Registration Id" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
+                "Unique Id" : {"pattern" : "^[a-zA-Z0-9]{11}$", "errorMessage" : "Unique Identifier should be 11 characters"},
+                "Phone Number" : {"pattern" : "^(\\d{3,12})$", "errorMessage" : "Phone Number should be between 3 to 12 digits"}
             },
-            "Unique Id": {
-                "pattern": "^[a-zA-Z0-9]{11}$",
-                "errorMessage": "Unique Identifier should be 11 characters"
-            },
-            "Phone Number": {
-                "pattern": "^(\\d{3,12})$",
-                "errorMessage": "Phone Number should be between 3 to 12 digits"
-            },
-            "Health ID" : {
-                "pattern" : "^[9][1-9][0-9]{9}$",
-                "errorMessage" : "Please enter a valid HID"
-            }
-        },
-        "patientSearch": {
-            "address": {
-                "label": "Rural Ward",
-                "placeholder": "Enter ward",
-                "field": "address2"
-            },
-            "customAttributes": {
-                "label": "ID/Bangla Name/Phone",
-                "placeholder": "ID/Bangla Name/Phone",
-                "fields": [
-                    "National ID",
-                    "Health ID",
-                    "Birth Registration Id",
-                    "givenNameLocal",
-                    "familyNameLocal",
-                    "Phone Number"
-                ]
+            "patientSearch": {
+                "address": {
+                    "label": "Rural Ward",
+                    "placeholder": "Enter ward",
+                    "field": "address2"
+                },
+                "customAttributes": {
+                    "label": "ID/Bangla Name/Phone",
+                    "placeholder": "ID/Bangla Name/Phone",
+                    "fields": ["NationalID", "HealthID", "BirthRegistrationID", "givenNameLocal", "familyNameLocal", "PhoneNumber", "fatherHusbandName"]
+                }
             }
         }
     }
-}
+

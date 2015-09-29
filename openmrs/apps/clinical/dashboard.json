@@ -1,6 +1,6 @@
 {
     "general": {
-        "dashboardName": "General",
+       "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault": true,
         "maxRecentlyViewedPatients": 10,
         "sections": {
@@ -11,20 +11,21 @@
                 "displayOrder": 0
             },
             "diagnosis": {
-                "title": "Diagnosis",
+                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
                 "name": "diagnosis",
                 "showCertainty": true,
                 "showOrder": true,
                 "displayOrder": 1
             },
             "disposition": {
-                "title": "Disposition",
+                "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
                 "name": "disposition",
                 "numberOfVisits": 1,
                 "displayOrder": 2
             },
             "treatments": {
                 "title": "Treatments",
+                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                 "name": "treatment",
                 "dashboardParams": {
                     "showFlowSheet": true,
@@ -37,6 +38,7 @@
                 },
                 "allTreatmentDetails": {
                     "title": "Treatments",
+                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
                     "showFlowSheet": true,
                     "showListView": true,
                     "showRoute": true,
@@ -49,16 +51,19 @@
             },
             "radiology": {
                 "title": "Radiology",
+                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
                 "name": "radiology",
                 "displayOrder": 4
             },
             "programs": {
                 "title": "Programs",
+                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
                 "name": "programs",
                 "displayOrder": 5
             },
             "navigation_links_control": {
                 "title": "Navigation Links Control",
+                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
                 "name": "navigationLinksControl",
                 "links": [
                     {
@@ -67,7 +72,7 @@
                     },
                     {
                         "title": "Patient Visit Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/"
+                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
                         "title": "Patient ADT Page",
@@ -75,25 +80,26 @@
                     },
                     {
                         "title": "Patient Dashboard",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard"
+                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard"
                     },
                     {
                         "title": "Discharge Summary Page",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}/"
+                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
                     },
                     {
                         "title": "Program Management Page",
-                        "url": "../clinical/#/programs/patient/{{patientUuid}}/consultationContext"
+                        "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
                     },
                     {
                         "title": "Consultation",
-                        "url": "../clinical/#/default/patient/{{patientUuid}}/concept-set-group/observations"
+                        "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
                     }
                 ],
                 "displayOrder": 6
             },
             "lab_results": {
                 "title": "Lab Results",
+                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "name": "labOrders",
                 "dashboardParams": {
                     "title": null,
@@ -111,6 +117,7 @@
             },
             "vitals": {
                 "title": "Vitals",
+                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -140,6 +147,7 @@
             },
             "history_and_examinations": {
                 "title": "History and Examinations",
+                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "name": "vitals",
                 "isObservation": true,
                 "dashboardParams": {
@@ -160,6 +168,7 @@
             },
             "visits": {
                 "title": "Visits",
+                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
                 "name": "visits",
                 "dashboardParams": {
                     "title": null,
@@ -169,6 +178,7 @@
             },
             "admission_details": {
                 "title": "Admission Details",
+                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "name": "admissionDetails",
                 "displayOrder": 11
             }
@@ -180,6 +190,7 @@
         "sections": {
             "patient_information": {
                 "title": "Patient Information",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "name": "patientInformation",
                 "patientAttributes": [
                     "education",

@@ -3,7 +3,7 @@
         "id": "bahmni.registration.navigation.patient.search",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
-        "label": "<u>S</u>earch",
+        "translationKey": "REGISTRATION_SEARCH_CONFIG_KEY",
         "url": "/search",
         "shortcutKey": "s",
         "icon": "fa-search",
@@ -14,7 +14,7 @@
         "id": "bahmni.registration.navigation.patient.create",
         "extensionPointId": "org.bahmni.registration.navigation",
         "type": "link",
-        "label": "Create <u>N</u>ew",
+        "translationKey": "REGISTRATION_CREATE_NEW_CONFIG_KEY",
         "url": "/patient/new",
         "icon": "fa-plus",
         "shortcutKey": "n",
@@ -25,7 +25,7 @@
         "id": "bahmni.patient.search.result.action.edit",
         "extensionPointId": "org.bahmni.registration.patient.search.result.action",
         "type": "link",
-        "label": "View",
+        "translationKey": "REGISTRATION_VIEW_CONFIG_KEY",
         "url": "/patient/{{patientUuid}}",
         "icon": "fa-patient-edit",
         "order": 1,
@@ -36,5 +36,17 @@
         "extensionPointId": "org.bahmni.patient.registration.birthTime",
         "type": "config",
         "showBirthTime": true
+    },
+     "bahmni_registration_conceptsetgroup_visitdetails": {
+        "id": "bahmni.registration.conceptSetGroup.visitDetails",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Visit Details",
+            "autocomplete": true,
+            "required": true
+        },
+        "order": 1,
+        "requiredPrivilege": "Edit Visits"
     }
 }
