@@ -182,4 +182,180 @@
             VALUES ('Phone Number', 'Phone Number', 'java.lang.String', '1', 1, curdate(), 0, 8, uuid());
         </sql>
     </changeSet>
+    <changeSet id="BD-20151005-1301" author="sanjana" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'fatherName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Father's name attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('fatherName', 'Father\'s Name', 'java.lang.String', '1', 1, now(), 0, 9, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20151005-1436" author="sanjana" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'spouseName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Spouse's name attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('spouseName', 'Spouse\'s Name', 'java.lang.String', '1', 1, now(), 0, 10, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20151005-1437" author="sanjana" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'motherName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Spouse's name attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('motherName', 'Mother\'s Name', 'java.lang.String', '1', 1, now(), 0, 10, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1438" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'Health ID';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute Health ID</comment>
+        <sql>
+           UPDATE person_attribute_type SET name = 'healthId' WHERE name = 'Health ID';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1439" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'National ID';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute National ID</comment>
+        <sql>
+            UPDATE person_attribute_type SET name = 'nationalId' WHERE name = 'National ID';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1440" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'Birth Registration Id';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute Birth Registration ID </comment>
+        <sql>
+            UPDATE person_attribute_type SET name = 'birthRegistrationId' WHERE name = 'Birth Registration Id';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1441" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'House Hold Code';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute House hold code</comment>
+        <sql>
+            UPDATE person_attribute_type SET name = 'householdCode' WHERE name = 'House Hold Code';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1442" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'Occupation';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute Occupation</comment>
+        <sql>
+            UPDATE person_attribute_type SET name = 'occupation' WHERE name = 'Occupation';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1443" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name =  'Phone Number';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the attribute Phone Number </comment>
+        <sql>
+            UPDATE person_attribute_type SET name = 'phoneNumber' WHERE name = 'Phone Number';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150528-1444" author="apaule" context="setup">
+        <comment>Deleting all the person attributes, referring to givenNameLocal, familyNameLocal, middleNameLocal</comment>
+        <sql>
+            delete from person_attribute where person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'familyNameLocal');
+            delete from person_attribute where person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'givenNameLocal');
+            delete from person_attribute where person_attribute_type_id = (select person_attribute_type_id from person_attribute_type where name = 'middleNameLocal');
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150528-1445" author="apaule" context="setup">
+        <preConditions  onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'familyNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Removing family Name Local Attribute</comment>
+        <sql>
+            delete from person_attribute_type where name = 'familyNameLocal';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150528-1446" author="apaule" context="setup">
+        <preConditions  onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'givenNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Removing given Name Local Attribute</comment>
+        <sql>
+            delete from person_attribute_type where name = 'givenNameLocal';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150528-1447" author="apaule" context="setup">
+        <preConditions  onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'middleNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Removing middle Name Local Attribute</comment>
+        <sql>
+            delete from person_attribute_type where name = 'middleNameLocal';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1448" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'fatherName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute father Name</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '1' WHERE name = 'fatherName';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1449" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'motherName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute mother Name</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '2' WHERE name = 'motherName';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1450" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'spouseName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute spouse Name</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '3' WHERE name = 'spouseName';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
