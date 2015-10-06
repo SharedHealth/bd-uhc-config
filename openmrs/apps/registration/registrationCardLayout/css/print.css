@@ -1,8 +1,28 @@
+.custom-print-center{
+   text-align : center;
+}
+
+.custom-print-left{
+   text-align : left;
+}
+
+.custom-bold-text{	
+  font-weight : bold;
+}
+.custom-dischargePatient-print-table h2{
+	margin: 10px 0 10px 0;
+}
+
 @page {
   margin-left: 0.2cm;
   margin-right: 0.2cm;
   margin-top: 0.2cm;
   margin-bottom: 0.2cm;
+}
+.custom-camelCase{
+p.capitalize {
+    text-transform: capitalize;
+}
 }
 
 /* line 10, print.scss */
@@ -35,6 +55,17 @@ h1, h2, h3 {
   overflow: scroll;
   margin: 0 auto;
   table-layout: fixed;
+}
+
+.dischargePatient-print-table {
+  width: 150mm;
+  height: 250mm;
+  overflow: scroll;
+  margin: 0 auto;
+  table-layout: fixed;
+  p {
+    text-indent: 50px;
+    } 
 }
 
 /* line 24, print.scss */
@@ -94,6 +125,7 @@ h1, h2, h3 {
   padding: 0px;
   margin: 0px;
   height: 12mm;
+  
 }
 
 /* line 65, print.scss */

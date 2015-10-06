@@ -186,6 +186,7 @@
     },
     "trends": {
         "dashboardName": "Trends",
+        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
         "maxRecentlyViewedPatients": 10,
         "sections": {
             "patient_information": {
@@ -232,5 +233,49 @@
                 "displayOrder": 5
             }
         }
+    },
+    "patient_discharge_summary":
+    {
+    	"dashboardname":"Patient Discharge",
+    	"translationKey":"PATIENT_DISCHARGE_REPORT",
+    	"maxRecentlyViewedPatients": 10,
+    	"sections": {
+    	 "patient_information": {
+                "title": "Patient Information",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "name": "patientInformation",
+                "patientAttributes": [
+                    "education",
+                    "occupation"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
+                ],
+                "displayOrder": 0
+            },
+            "patientDischarge": {
+    "title": "Patient Discharge",
+    "printing": {
+        "title": "Bahmni",
+        "header": "Patient Discharge",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+        "Patient Discharge": {
+            "type": "custom",
+            "config": {
+                "title": "Birth Certificate",
+                "template": "<birth-certificate></birth-certificate>"
+            }
+        }
+    }
+}
+    	
+    	
+    	
+    	}
     }
 }

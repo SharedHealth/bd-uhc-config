@@ -1,6 +1,7 @@
 {
     "general": {
         "title": "General",
+        "translationKey":"GENERAL_TYPE_VISIT",
         "displayByDefault": true,
         "printing": {
             "title": "Bahmni",
@@ -29,142 +30,125 @@
             }
         }
     },
-    "discharge_summary": {
-        "title": "Discharge Summary",
-        "printing": {
-            "title": "Bahmni",
-            "header": "Discharge Summary",
-            "logo": "../images/bahmniLogo.png"
+    "dischargeSummary": 
+    {
+    "title": "Patient Discharge Summary ",
+    "translationKey":"DISCHARGE_SUMMARY_VISIT",
+    "printing": {
+        "title": "Bahmni",
+        "header": "Certificate",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+        "Discharge Certificate": 
+        {
+            "type": "custom",
+            "displayOrder": 1,
+            "config":
+             {
+                "title": "Patient Discharge Summary ",
+                "template": "<discharge-summary></discharge-summary>"
+             }
         },
-        "sections": {
-            "patientinformation": {
-                "type": "patientInformation",
-                "config": {
-                    "title": "PatientInformation",
-                    "patientAttributes": [
-                        "caste",
-                        "class",
-                        "education",
-                        "occupation",
-                        "debt",
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome"
-                    ],
-                    "addressFields": [
-                        "address1",
-                        "address2",
-                        "cityVillage",
-                        "countryDistrict"
-                    ]
-                },
-                "displayOrder": 0
-            },
-            "admissiondetails": {
-                "type": "admissionDetails",
-                "config": {
-                    "showDetailsButton": true
-                },
-                "displayOrder": 1
-            },
-            "weight": {
-                "type": "observation",
-                "title": "Weight",
-                "config": {
-                    "conceptNames": [
-                        "WEIGHT"
-                    ],
-                    "scope": "latest"
-                },
-                "displayOrder": 2
-            },
-            "diagnosis": {
+        "diagnoses":{
                 "type": "diagnosis",
+                "displayOrder": 2,
                 "config": {
-                    "title": "Diagnoses",
+                    "translationKey" : "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
                     "showCertainty": false,
                     "showOrder": false,
                     "showDetailsButton": true
-                },
-                "displayOrder": 3
+                }
             },
-            "clinical_notes": {
-                "type": "observation",
-                "title": "Clinical Notes",
-                "config": {
-                    "conceptNames": [
-                        "History and Examination Notes",
-                        "Discharge Summary",
-                        "Lab Investigation Notes",
-                        "Radiology Notes",
-                        "Other Notes"
-                    ],
-                    "scope": "latest",
-                    "numberOfVisits": "1"
-                },
-                "displayOrder": 4
-            },
-            "investigationresult": {
-                "type": "investigationResult",
-                "config": {
-                    "title": "Lab Investigations",
-                    "showChart": true,
-                    "showTable": false,
-                    "showNormalLabResults": true,
-                    "showCommentsExpanded": true,
-                    "showAccessionNotes": true,
-                    "numberOfVisits": 10,
-                    "initialAccessionCount": 1,
-                    "latestAccessionCount": 1
-                },
-                "displayOrder": 5
-            },
-            "treatment": {
+            "treatments":{
                 "type": "treatment",
+                "displayOrder": 3,
                 "config": {
-                    "title": "Treatments",
+                    "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true
+                }
                 },
-                "displayOrder": 6
-            },
-            "advice_on_discharge": {
+       "clinicalNotes": {
                 "type": "observation",
-                "title": "Advice on Discharge",
+                "title": "Clinical Notes",
                 "config": {
-                    "conceptNames": [
-                        "Additional Advice on Discharge",
-                        "Follow up Date",
-                        "Discharge Summary, Plan for follow up"
-                    ],
-                    "scope": "latest"
+                    "conceptNames": ["Discharge Summary" ],
+                    "translationKey": "DISCHARGE_CLINICAL_DISCHARGE",
+                    "scope": "latest",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
                 },
-                "displayOrder": 7
-            }
-        }
+                "displayOrder": 4
+            },
+            "footerSummary": {
+                "type": "custom",
+                "displayOrder": 5,
+                "config": {
+                "translationKey": "FOOTER_SUMMARY",
+                "title": " Discharge Summary ",
+               "template": "<footer-summary></footer-summary>"
+                         }
+         }
+       }
     },
-    "orders": {
-        "title": "Orders",
-        "sections": {
-            "radiology_orders": {
-                "type": "order",
-                "title": "Radiology Orders",
-                "config": {
-                    "title": "Radiology Orders",
-                    "name": "ordersControl",
-                    "orderType": "Radiology Order",
-                    "conceptNames": [
-                        "Summary"
-                    ]
-                },
-                "displayOrder": 0
+    "injuryCertificate":
+    {
+    "title": "Patient INJURY CERTIFICATE ",
+    "translationKey":"INJURY_CLINICAL_CERTIFICATE",
+    "printing": {
+        "title": "Bahmni",
+        "header": " Injury Certificate",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+    "Patient Information": {
+            "type": "patientInformation",
+            "title": "Patient Information",
+            "displayOrder": 0,
+            "config": {
+                "title": "PatientInformation",
+                "patientAttributes": [
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
+                ]
             }
-        }
+        },
+    
+    "InjuryNotes": 
+    {
+                "type": "observation",
+                "title": "Injury Notes",
+                "config": {
+                    "conceptNames": ["Injury Notes" ],
+                    "translationKey":"INJURY_CLINICAL_NOTES",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
+                }
+            }
+             
     }
+    
+    }
+
 }

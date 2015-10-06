@@ -55,12 +55,11 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "translationKey":"DASHBOARD_TAB_ACTIVE_KEY",
             "searchHandler": "emrapi.sqlSearch.activePatients",
             "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
         },
-        "label": "Active",
+        "translationKey": "Active",
         "order": 1,
         "requiredPrivilege": "app:clinical"
     },
@@ -70,7 +69,7 @@
         "type": "config",
         "extensionParams": {
             "display": "All",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active"
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
         },
         "transitionKey": "All",
         "order": 2,

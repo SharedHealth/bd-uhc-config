@@ -1,62 +1,18 @@
 {
-    "bahmni_clinical_patients_search_mandpreferralorders": {
-        "id": "bahmni.clinical.patients.search.MandPReferralOrders",
+
+"bahmni_clinical_patients_search_TuberculosisReferralOrder": {
+        "id": "bahmni.clinical.patients.search.TuberculosisReferralOrder",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.MNPReferralOrder",
-            "display": "Department of Medical and Psychiatry",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Medical and Psychiatry Order",
+            "searchHandler": "emrapi.sqlSearch.active.TuberculosisReferralOrder",
+            "display": "Department Of Tuberculosis",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department Of Tuberculosis",
             "forwardButtonTitle": "View",
             "view": "tabular"
         },
-        "transitionKey": "Department of Medical and Psychiatry",
+        "transitionKey": "Department Of Tuberculosis",
         "order": 1,
-        "requiredPrivilege": "app:orders"
-    },
-    "bahmni_clinical_patients_search_psychologyreferralorders": {
-        "id": "bahmni.clinical.patients.search.PsychologyReferralOrders",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.PsychologyReferralOrder",
-            "display": "Department of Psychology",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Psychology Order",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "transitionKey": "Department of Psychology",
-        "order": 2,
-        "requiredPrivilege": "app:orders"
-    },
-    "bahmni_clinical_patients_search_otnvtreferralorders": {
-        "id": "bahmni.clinical.patients.search.OTNVTReferralOrders",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.OTNVTReferralOrder",
-            "display": "Department of OT and VT",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department of OT and VT Order",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "transitionKey": "Department of OT and VT",
-        "order": 3,
-        "requiredPrivilege": "app:orders"
-    },
-    "bahmni_clinical_patients_search_socialworkreferralorders": {
-        "id": "bahmni.clinical.patients.search.SocialWorkReferralOrders",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.SocialWorkReferralOrder",
-            "display": "Department of SocialWork",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department of Social Work Order",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "transitionKey": "Department of Social Work",
-        "order": 3,
         "requiredPrivilege": "app:orders"
     }
 }

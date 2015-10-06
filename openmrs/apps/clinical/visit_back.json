@@ -1,0 +1,121 @@
+{
+    "general": {
+        "title": "General",
+        "translationKey":"GENERAL_TYPE_VISIT",
+        "displayByDefault": true,
+        "printing": {
+            "title": "Bahmni",
+            "header": "Visit",
+            "logo": "../images/bahmniLogo.png"
+        },
+        "defaultSections": true,
+        "sections": {
+            "pivot_table": {
+                "type": "pivotTable",
+                "title": "Pivot table",
+                "config": {
+                    "groupBy": "encounters",
+                    "obsConcepts": [
+                        "Vitals",
+                        "Height",
+                        "WEIGHT",
+                        "M/C Days"
+                    ],
+                    "drugConcepts": [
+                        "Gamma Benzene Hexachloride"
+                    ],
+                    "labConcepts": ""
+                },
+                "displayOrder": 0
+            }
+        }
+    },
+    "birthCertificate": 
+            {
+   				 "title": "Birth Certificate",
+   				 "translationKey":"BIRTH_CERTIFICATE_VISIT",
+    				"printing": {
+        						"title": "Bahmni",
+       						    "header": "Certificate",
+        						"logo": "../images/bahmniLogo.png"
+    							},
+    				"sections": {
+        						"Birth Certificate": 
+        						{
+            					"type": "custom",
+            					"config": {
+                						"title": "Birth Certificate",
+                						"template": "<birth-certificate></birth-certificate>"
+            							  }
+       							 }
+    }
+    },
+    "dischargeSummary": 
+    {
+    "title": "Patient Discharge Summary ",
+    "translationKey":"DISCHARGE_SUMMARY_VISIT",
+    "printing": {
+        "title": "Bahmni",
+        "header": "Certificate",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+        "Birth Certificate": {
+            "type": "custom",
+            "config": {
+                "title": "Patient Discharge Summary ",
+                "template": "<discharge-summary></discharge-summary>"
+            }
+        },
+         "patient_information": {
+                "title": "Patient Information",
+                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+                "name": "patientInformation",
+                "patientAttributes": [
+                    "education",
+                    "occupation"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
+                ],
+                "displayOrder": 0
+            },
+            "bp": {
+                "type": "observationGraph",
+                "name": "observationGraph",
+                "title": "BP",
+                "config": {
+                    "yAxisConcepts": [
+                        "Systolic",
+                        "Diastolic"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 2
+            }
+}
+ },
+    "orders": {
+        "title": "Orders",
+         "translationKey":"ORDER_VISIT",
+        "sections": {
+            "radiology_orders": {
+                "type": "order",
+                "title": "Radiology Orders",
+                "config": {
+                    "title": "Radiology Orders",
+                    "name": "ordersControl",
+                    "orderType": "Radiology Order",
+                    "conceptNames": [
+                        "Summary"
+                    ]
+                },
+                "displayOrder": 0
+            }
+        }
+    }
+}

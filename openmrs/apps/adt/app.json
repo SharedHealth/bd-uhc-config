@@ -27,7 +27,7 @@
         "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onDischargeForwardTo": "#/patient/search",
-        "defaultVisitType": "General",
+        "defaultVisitType": "inpatient",
         "dashboard": {
             "dashboardName": "General",
             "conceptName": "Adt Notes",

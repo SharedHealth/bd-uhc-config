@@ -64,10 +64,15 @@
                 "Phone Number" : {"pattern" : "^(\\d{3,12})$", "errorMessage" : "Phone Number should be between 3 to 12 digits"}
             },
             "patientSearch": {
+                "address": {
+                    "label": "Rural Ward",
+                    "placeholder": "Enter ward",
+                    "field": "address2"
+                },
                 "customAttributes": {
-                    "label": "ID//Phone",
-                    "placeholder": "ID//Phone",
-                    "fields": ["nationalId", "healthId", "birthRegistrationId", "PhoneNumber", "fatherName", "spouseName", "motherName"]
+                    "label": "ID/Bangla Name/Phone",
+                    "placeholder": "ID/Bangla Name/Phone",
+                    "fields": ["NationalID", "HealthID", "BirthRegistrationID", "givenNameLocal", "familyNameLocal", "PhoneNumber", "fatherName", "spouseName"]
                 }
             }
         }
