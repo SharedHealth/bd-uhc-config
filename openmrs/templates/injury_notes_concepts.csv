@@ -1,0 +1,7 @@
+"uuid","name","description","class","shortname","datatype","units","High Normal","Low Normal","synonym.1","answer.1","reference-term-source","reference-term-code","reference-term-relationship"
+"0bb23358-0f1b-4beb-b7e2-c555422ea844","Injury Notes, Description and Position of the Injury on the body",,"Misc","Description and Position of the Injury on the body","Text",,,,"","",,,
+"c2af17eb-6388-4c39-8385-a714965ad31c","Injury Notes, Size of Injury",,"Misc","Size of Injury","Numeric",,,,"","",,,
+"8ecb69b9-dc1b-41bf-81ef-a76e46e6686f","Injury Notes, Age of Injury",,"Misc","Age of Injury","Numeric",,,,"","",,,
+"3a44c60e-184e-4ddc-a739-a24e34b49fe1","Injury Notes, Kinds of weapon used",,"Misc","Kinds of weapon used","Text",,,,"","",,,
+"4aa7705b-6d26-40ab-911a-c08f861cc765","Injury Notes, Nature of Injury",,"Misc","Nature of Injury","Text",,,,"","",,,
+"ac748931-a05b-44d1-9c0b-cf8493b9f9d8","Injury Notes, Remarks",,"Misc","Remarks","Text",,,,"","",,,
