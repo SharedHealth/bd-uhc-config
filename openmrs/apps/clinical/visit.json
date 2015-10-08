@@ -149,6 +149,122 @@
              
     }
     
+    },
+    "deathCertificate":
+    {
+    "title": "Death CERTIFICATE ",
+    "translationKey":"DEATH_CLINICAL_CERTIFICATE",
+    "printing": {
+        "title": "Bahmni",
+        "header": " Death Certificate",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+            "Death Certificate": 
+        {
+            "type": "custom",
+            "displayOrder": 1,
+            "config":
+             {
+                "title": "Patient Death Certificate ",
+                "template": "<death-certificate></death-certificate>"
+             }
+        },
+    
+    "DeathNotes": 
+    {
+                "type": "observation",
+                "title": "Death Notes",
+                "displayOrder": 2,
+                "config": {
+                    "conceptNames": ["Death Note" ],
+                    "translationKey":"DEATH_CLINICAL_NOTES",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
+                }
+            },
+            "Death Footer": 
+        {
+            "type": "custom",
+            "displayOrder": 4,
+            "config":
+             {
+                "title": "Death Footer",
+                "template": "<death-footer></death-footer>"
+             }
+        }
+             
+    }
+    
+    },
+    "Prescription":
+    {
+    "title": "Patient_Prescription ",
+    "translationKey":"PRESCRIPTION",
+    "printing": {
+        "title": "Bahmni",
+        "header": " Prescription",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+    "Patient Information": {
+            "type": "patientInformation",
+            "title": "Patient Information",
+            "displayOrder": 0,
+            "config": {
+                "title": "PatientInformation",
+                "patientAttributes": [
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
+                ]
+            }
+        },
+        "diagnoses":{
+                "type": "diagnosis",
+                "displayOrder": 2,
+                "config": {
+                    "translationKey" : "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
+                    "showCertainty": false,
+                    "showOrder": false,
+                    "showDetailsButton": true
+                }
+            },
+            "treatments":{
+                "type": "treatment",
+                "displayOrder": 3,
+                "config": {
+                    "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true,
+                    "showDrugForm": true
+                }
+                },
+                "Death Footer": 
+        {
+            "type": "custom",
+            "displayOrder": 4,
+            "config":
+             {
+                "title": "Death Footer",
+                "template": "<prescription-footer></prescription-footer>"
+             }
+        }
+    }
     }
 
-}
+ }

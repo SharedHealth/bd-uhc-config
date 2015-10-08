@@ -1,18 +1,184 @@
 {
-
-"bahmni_clinical_patients_search_TuberculosisReferralOrder": {
+      "labOrder": {
+	"id": "bahmni.clinical.patients.search.allPatients",
+	"extensionPointId": "org.bahmni.patient.search",
+	"type": "config",
+	"extensionParams": {
+	  "searchHandler": "emrapi.sqlSearch.activePatients",
+	  "translationKey": "MODULE_LABEL_LAB_ORDER_KEY",
+	  "forwardUrl": "../clinical/#/default/patient/{{patientUuid}}/dashboard",
+	  "forwardButtonTitle": "View",
+	  "view": "tabular"
+	},
+	"label": "Lab Order",
+	"order": 1,
+	"requiredPrivilege": "app:orders"
+  },
+  "bahmni_clinical_patients_search_TuberculosisReferralOrder": {
         "id": "bahmni.clinical.patients.search.TuberculosisReferralOrder",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.active.TuberculosisReferralOrder",
-            "display": "Department Of Tuberculosis",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Department Of Tuberculosis",
+            "translationKey": "Department_Of_Tuberculosis",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Tuberculosis OPD",
             "forwardButtonTitle": "View",
             "view": "tabular"
         },
-        "transitionKey": "Department Of Tuberculosis",
-        "order": 1,
+        "label": "Department Of Tuberculosis",
+        "order": 2,
+        "requiredPrivilege": "app:orders"
+    },
+    
+ "bahmni_clinical_patients_search_fandcCentreReferralOrder": {
+        "id": "bahmni.clinical.patients.search.fandcCentreReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.fandcCentreReferralOrder",
+            "translationKey": "Dept_of_Family_Planning_and_Counselling",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Family Planning and Counselling Centre",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Family Planning and Counselling",
+        "order": 3,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_Eye/EntReferralOrder": {
+        "id": "bahmni.clinical.patients.search.Eye/EntReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.Eye/EntReferralOrder",
+            "translationKey": "Dept_of_Eye/Ent",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Eye-Ent OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Eye/Ent",
+        "order": 4,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_imciReferralOrder": {
+        "id": "bahmni.clinical.patients.search.imciReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.imciReferralOrder",
+            "translationKey": "Dept_of_IMCI",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of IMCI",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of IMCI",
+        "order": 5,
+        "requiredPrivilege": "app:orders"
+    },
+
+ "bahmni_clinical_patients_search_immunisationReferralOrder": {
+        "id": "bahmni.clinical.patients.search.immunisationReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.immunisationReferralOrder",
+            "translationKey":"Dept_of_Immunisation",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Immunisation",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Immunisation",
+        "order": 6,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_medicineReferralOrder": {
+        "id": "bahmni.clinical.patients.search.medicineReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.medicineReferralOrder",
+            "translationKey":"Dept_of_Medicine",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Medicine",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Medicine",
+        "order": 7,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_ncdReferralOrder": {
+        "id": "bahmni.clinical.patients.search.ncdReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.ncdReferralOrder",
+            "translationKey":"Dept_of_NCD",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of NCD OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of NCD",
+        "order": 8,
+        "requiredPrivilege": "app:orders"
+    },
+     "bahmni_clinical_patients_search_ob-gynReferralOrder": {
+        "id": "bahmni.clinical.patients.search.ob-gynReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.ob-gynReferralOrder",
+            "translationKey":"Dept_of_Ob-Gyn",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Ob-Gyn OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Ob-Gyn",
+        "order": 9,
+        "requiredPrivilege": "app:orders"
+    },
+     "bahmni_clinical_patients_search_orthopaedicReferralOrder": {
+        "id": "bahmni.clinical.patients.search.orthopaedicReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.orthopaedicReferralOrder",
+            "translationKey":"Dept_of_Orthopaedic",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Orthopaedic OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Orthopaedic",
+        "order": 10,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_paediatricReferralOrder": {
+        "id": "bahmni.clinical.patients.search.paediatricReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.paediatricReferralOrder",
+            "translationKey":"Dept_of_Paediatric",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Paediatric OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Paediatric",
+        "order": 11,
+        "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_surgeryReferralOrder": {
+        "id": "bahmni.clinical.patients.search.surgeryReferralOrder",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.active.surgeryReferralOrder",
+            "translationKey":"Dept_of_Surgery",
+            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Surgery OPD",
+            "forwardButtonTitle": "View",
+            "view": "tabular"
+        },
+        "label": "Dept of Surgery",
+        "order": 12,
         "requiredPrivilege": "app:orders"
     }
-}
+   }

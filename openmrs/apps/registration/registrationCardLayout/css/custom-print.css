@@ -1,0 +1,38 @@
+@page {
+  margin-left: 0.2cm;
+  margin-right: 0.2cm;
+  margin-top: 0.2cm;
+  margin-bottom: 0.2cm;
+}
+
+body{
+	font-family : Arial , sans-serif;
+}
+
+.custom-print-center{
+   text-align : center;
+}
+
+.custom-bold-text{
+  font-family : Arial , sans-serif;
+  font-weight : bold;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+.opdTicket-print-table-container{
+	border: 1px #000 solid;
+	min-height:800px;
+	padding: 0 20px 0 20px;
+}
+
+.opdTicket-print-table {
+	border: none
+	border-collapse: collapse;
+	width: 100%;
+}
+.opdTicket-print-table h2{
+	margin-bottom : 40px;
+}

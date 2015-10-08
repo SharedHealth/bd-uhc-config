@@ -1,1 +1,14 @@
-"Department_of_Medical_and_Psychiatry":"Department of Medical and Psychiatry"
+{
+  "MODULE_LABEL_LAB_ORDER_KEY": "Lab order",
+  "Department_Of_Tuberculosis":"Dept of Tuberculosis",
+  "Dept_of_Eye/Ent":"Dept of Eye/Ent",
+  "Dept_of_Family_Planning_and_Counselling":"Dept of Family Planning and Counselling",
+  "Dept_of_IMCI":"Dept of IMCI",
+  "Dept_of_Immunisation":"Dept of Immunisation",
+  "Dept_of_Medicine":"Dept of Medicine",
+  "Dept_of_NCD":"Dept of NCD",
+  "Dept_of_Ob-Gyn":"Dept of Ob-Gyn",
+  "Dept_of_Orthopaedic":"Dept of orthopaedic",
+  "Dept_of_Paediatric":"Dept of Paediatric",
+  "Dept_of_Surgery":"Dept of Surgery"
+}
