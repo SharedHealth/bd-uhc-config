@@ -358,4 +358,37 @@
             UPDATE person_attribute_type SET sort_weight = '3' WHERE name = 'spouseName';
         </sql>
     </changeSet>
+    <changeSet id="BD-20150421-1451" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'healthId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute health Id</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '4' WHERE name = 'healthId';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1452" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'nationalId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute nationalId</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '5' WHERE name = 'nationalId';
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150421-1453" author="apaule">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'birthRegistrationId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute birthRegistrationId</comment>
+        <sql>
+            UPDATE person_attribute_type SET sort_weight = '6' WHERE name = 'birthRegistrationId';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
