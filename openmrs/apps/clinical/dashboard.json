@@ -1,281 +1,279 @@
 {
-    "general": {
-       "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
-        "displayByDefault": true,
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "patientInformation": {
-                "title" : "Patient Information",
-                "name" : "patientInformation",
-                "patientAttributes" : ["Health ID"],
-                "displayOrder": 0
-            },
-            "diagnosis": {
-                "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-                "name": "diagnosis",
-                "showCertainty": true,
-                "showOrder": true,
-                "displayOrder": 1
-            },
-            "disposition": {
-                "translationKey" : "DASHBOARD_TITLE_DISPOSITION_KEY",
-                "name": "disposition",
-                "numberOfVisits": 1,
-                "displayOrder": 2
-            },
-            "treatments": {
-                "title": "Treatments",
-                "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                "name": "treatment",
-                "dashboardParams": {
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 5,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                },
-                "allTreatmentDetails": {
-                    "title": "Treatments",
-                    "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-                    "showFlowSheet": true,
-                    "showListView": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "numberOfVisits": 10,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                },
-                "displayOrder": 3
-            },
-            "radiology": {
-                "title": "Radiology",
-                "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "name": "radiology",
-                "displayOrder": 4
-            },
-            "programs": {
-                "title": "Programs",
-                "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-                "name": "programs",
-                "displayOrder": 5
-            },
-            "navigation_links_control": {
-                "title": "Navigation Links Control",
-                "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-                "name": "navigationLinksControl",
-                "links": [
-                    {
-                        "title": "Home Dashboard",
-                        "url": "../home/#/dashboard"
-                    },
-                    {
-                        "title": "Patient Visit Page",
-                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "title": "Patient ADT Page",
-                        "url": "../adt/#/patient/{{patientUuid}}/visit/{{visitUuid}}/"
-                    },
-                    {
-                        "title": "Patient Dashboard",
-                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard"
-                    },
-                    {
-                        "title": "Discharge Summary Page",
-                        "url": "../clinical/#/patient/{{patientUuid}}/dashboard/visit/{{visitUuid}}"
-                    },
-                    {
-                        "title": "Program Management Page",
-                        "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
-                    },
-                    {
-                        "title": "Consultation",
-                        "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
-                    }
-                ],
-                "displayOrder": 6
-            },
-            "lab_results": {
-                "title": "Lab Results",
-                "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "name": "labOrders",
-                "dashboardParams": {
-                    "title": null,
-                    "numberOfVisits": 1,
-                    "showChart": false,
-                    "showTable": true,
-                    "showDetailsButton": false,
-                    "initialAccessionCount": 0,
-                    "latestAccessionCount": 1
-                },
-                "allLabDetails": {
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 7
-            },
-            "vitals": {
-                "title": "Vitals",
-                 "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
-                "name": "vitals",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "Vitals"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "Vitals"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {
-                        "numberOfVisits": "10",
-                        "groupBy": "encounters",
-                        "obsConcepts": [
-                            "Weight",
-                            "Vitals"
-                        ],
-                        "drugConcepts": [],
-                        "labConcepts": []
-                    }
-                },
-                "displayOrder": 8
-            },
-            "history_and_examinations": {
-                "title": "History and Examinations",
-                 "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                "name": "vitals",
-                "isObservation": true,
-                "dashboardParams": {
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2
-                },
-                "allObservationDetails": {
-                    "conceptNames": [
-                        "History and Examination"
-                    ],
-                    "numberOfVisits": 2,
-                    "showDetailsButton": true,
-                    "pivotTable": {}
-                },
-                "displayOrder": 9
-            },
-            "visits": {
-                "title": "Visits",
-                 "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
-                "name": "visits",
-                "dashboardParams": {
-                    "title": null,
-                    "maximumNoOfVisits": 10
-                },
-                "displayOrder": 10
-            },
-            "admission_details": {
-                "title": "Admission Details",
-                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-                "name": "admissionDetails",
-                "displayOrder": 11
-            }
-        }
-    },
-    "trends": {
-        "dashboardName": "Trends",
-        "translationKey":"DASHBOARD_TAB_TRENDS_KEY",
-        "maxRecentlyViewedPatients": 10,
-        "sections": {
-            "patient_information": {
-                "title": "Patient Information",
-                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "name": "patientInformation",
-                "patientAttributes": [
-                    "education",
-                    "occupation"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address5",
-                    "countyDistrict",
-                    "stateProvince"
-                ],
-                "displayOrder": 0
-            },
-            "bp": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "BP",
-                "config": {
-                    "yAxisConcepts": [
-                        "Systolic",
-                        "Diastolic"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 2
-            },
-            "pulse": {
-                "type": "observationGraph",
-                "name": "observationGraph",
-                "title": "Pulse",
-                "config": {
-                    "yAxisConcepts": [
-                        "Pulse"
-                    ],
-                    "xAxisConcept": "observationDateTime",
-                    "numberOfVisits": 10
-                },
-                "displayOrder": 5
-            }
-        }
-    },
-    "patient_discharge_summary":
-    {
-    	"dashboardname":"Patient Discharge",
-    	"translationKey":"PATIENT_DISCHARGE_REPORT",
-    	"maxRecentlyViewedPatients": 10,
-    	"sections": {
-    	 "patient_information": {
-                "title": "Patient Information",
-                "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-                "name": "patientInformation",
-                "patientAttributes": [
-                    "education",
-                    "occupation"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address5",
-                    "countyDistrict",
-                    "stateProvince"
-                ],
-                "displayOrder": 0
-            },
-            "patientDischarge": {
-    "title": "Patient Discharge",
-    "printing": {
-        "title": "Bahmni",
-        "header": "Patient Discharge",
-        "logo": "../images/bahmniLogo.png"
-    },
+  "general": {
+    "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
+    "displayByDefault": true,
+    "maxRecentlyViewedPatients": 10,
     "sections": {
-        "Patient Discharge": {
-            "type": "custom",
-            "config": {
-                "title": "Birth Certificate",
-                "template": "<birth-certificate></birth-certificate>"
-            }
+      "patientInformation": {
+        "title": "Patient Information",
+        "name": "patientInformation",
+        "patientAttributes": [
+          "healthId",
+          "fatherName",
+          "motherName",
+          "spouseName",
+          "nationalId",
+          "education",
+          "householdCode",
+          "birthRegistrationId",
+          "occupation",
+          "phoneNumber"
+        ],
+        "addressFields": [
+          "address1",
+          "address2",
+          "address3",
+          "address4",
+          "address5",
+          "countyDistrict",
+          "stateProvince"
+        ],
+        "displayOrder": 0
+      },
+      "diagnosis": {
+        "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+        "name": "diagnosis",
+        "showCertainty": true,
+        "showOrder": true,
+        "displayOrder": 1
+      },
+      "disposition": {
+        "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
+        "name": "disposition",
+        "numberOfVisits": 1,
+        "displayOrder": 2
+      },
+      "treatments": {
+        "title": "Treatments",
+        "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+        "name": "treatment",
+        "dashboardParams": {
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 5,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        },
+        "allTreatmentDetails": {
+          "title": "Treatments",
+          "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
+          "showFlowSheet": true,
+          "showListView": true,
+          "showRoute": true,
+          "showDrugForm": true,
+          "numberOfVisits": 10,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        },
+        "displayOrder": 3
+      },
+      "radiology": {
+        "title": "Radiology",
+        "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
+        "name": "radiology",
+        "displayOrder": 4
+      },
+      "programs": {
+        "title": "Programs",
+        "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
+        "name": "programs",
+        "displayOrder": 5
+      },
+      "navigation_links_control": {
+        "title": "Navigation Links Control",
+        "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
+        "name": "navigationLinksControl",
+        "links": [
+          {
+            "translationKey": "Order Fulfilment",
+            "url": "../orders/#/search"
+          },
+          {
+            "translationKey": "Registration",
+            "url": "../registration/#/patient/{{patientUuid}}"
+          }
+        ],
+        "displayOrder": 6
+      },
+      "lab_results": {
+        "title": "Lab Results",
+        "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
+        "name": "labOrders",
+        "dashboardParams": {
+          "title": null,
+          "numberOfVisits": 1,
+          "showChart": false,
+          "showTable": true,
+          "showDetailsButton": false,
+          "initialAccessionCount": 0,
+          "latestAccessionCount": 1
+        },
+        "allLabDetails": {
+          "numberOfVisits": 10
+        },
+        "displayOrder": 7
+      },
+      "vitals": {
+        "title": "Vitals",
+        "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
+        "name": "vitals",
+        "isObservation": true,
+        "dashboardParams": {
+          "conceptNames": [
+            "Vitals"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Vitals"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {
+            "numberOfVisits": "10",
+            "groupBy": "encounters",
+            "obsConcepts": [
+              "Weight",
+              "Vitals"
+            ],
+            "drugConcepts": [],
+            "labConcepts": []
+          }
+        },
+        "displayOrder": 8
+      },
+      "history_and_examinations": {
+        "title": "History and Examinations",
+        "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+        "name": "vitals",
+        "isObservation": true,
+        "dashboardParams": {
+          "conceptNames": [
+            "History and Examination"
+          ],
+          "numberOfVisits": 2
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "History and Examination"
+          ],
+          "numberOfVisits": 2,
+          "showDetailsButton": true,
+          "pivotTable": {}
+        },
+        "displayOrder": 9
+      },
+      "visits": {
+        "title": "Visits",
+        "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
+        "name": "visits",
+        "dashboardParams": {
+          "title": null,
+          "maximumNoOfVisits": 10
+        },
+        "displayOrder": 10
+      },
+      "admission_details": {
+        "title": "Admission Details",
+        "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
+        "name": "admissionDetails",
+        "displayOrder": 11
+      }
+    }
+  },
+  "trends": {
+    "dashboardName": "Motherhood",
+    "translationKey": "DASHBOARD_TITLE_MOTHERHOOD",
+    "maxRecentlyViewedPatients": 10,
+    "sections": {
+      "patient_information": {
+        "title": "Patient Information",
+        "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
+        "name": "patientInformation",
+        "patientAttributes": [
+          "healthId",
+          "fatherName",
+          "motherName",
+          "spouseName",
+          "nationalId",
+          "education",
+          "householdCode",
+          "birthRegistrationId",
+          "occupation",
+          "phoneNumber"
+        ],
+        "addressFields": [
+          "address1",
+          "address2",
+          "address3",
+          "address4",
+          "address5",
+          "countyDistrict",
+          "stateProvince"
+        ],
+        "displayOrder": 0
+      },
+      "DeliveryNotes": {
+        "type": "observation",
+        "title": "Delivery Note",
+        "isObservation": true,
+        "name": "Delivery Note",
+        "displayOrder": 1,
+         "conceptNames": ["Delivery Note"],
+          "translationKey": "DELIVERY_NOTES",
+          "numberOfVisits": "5",
+          "dashboardParams": {
+            "conceptNames": ["Delivery Note"],
+            "numberOfVisits": "5"
+          },
+          "allObservationDetails": {
+            "conceptNames": ["Delivery Note"],
+            "showDetailsButton": true,
+            "pivotTable": {}
         }
+      },
+      "PNCNotes": {
+        "type": "observation",
+        "title": "PNC Notes",
+        "isObservation": true,
+        "name": "PNC Notes",
+        "displayOrder": 1,
+         "conceptNames": ["PNC Notes"],
+          "translationKey": "PNC_NOTES",
+          "numberOfVisits": "5",
+          "dashboardParams": {
+            "conceptNames": ["PNC Notes"],
+            "numberOfVisits": "5"
+          },
+          "allObservationDetails": {
+            "conceptNames": ["PNC Notes"],
+            "showDetailsButton": true,
+            "pivotTable": {}
+        }
+      },
+       "ANCNotes": {
+        "type": "observation",
+        "title": "PNC Notes",
+        "isObservation": true,
+        "name": "ANC Notes",
+        "displayOrder": 1,
+         "conceptNames": ["ANC Notes"],
+          "translationKey": "ANC_NOTES",
+          "numberOfVisits": "5",
+          "dashboardParams": {
+            "conceptNames": ["ANC Notes"],
+            "numberOfVisits": "5"
+          },
+          "allObservationDetails": {
+            "conceptNames": ["ANC Notes"],
+            "showDetailsButton": true,
+            "pivotTable": {}
+        }
+      }
+      
     }
-}
-    	
-    	
-    	
-    	}
-    }
+  }
 }

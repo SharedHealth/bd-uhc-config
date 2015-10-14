@@ -14,22 +14,6 @@
 	"order": 1,
 	"requiredPrivilege": "app:orders"
   },
-  "bahmni_clinical_patients_search_TuberculosisReferralOrder": {
-        "id": "bahmni.clinical.patients.search.TuberculosisReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.TuberculosisReferralOrder",
-            "translationKey": "Department_Of_Tuberculosis",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Tuberculosis OPD",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Department Of Tuberculosis",
-        "order": 2,
-        "requiredPrivilege": "app:orders"
-    },
-    
  "bahmni_clinical_patients_search_fandcCentreReferralOrder": {
         "id": "bahmni.clinical.patients.search.fandcCentreReferralOrder",
         "extensionPointId": "org.bahmni.patient.search",
@@ -91,37 +75,7 @@
         "order": 6,
         "requiredPrivilege": "app:orders"
     },
-    "bahmni_clinical_patients_search_medicineReferralOrder": {
-        "id": "bahmni.clinical.patients.search.medicineReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.medicineReferralOrder",
-            "translationKey":"Dept_of_Medicine",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Medicine",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Dept of Medicine",
-        "order": 7,
-        "requiredPrivilege": "app:orders"
-    },
-    "bahmni_clinical_patients_search_ncdReferralOrder": {
-        "id": "bahmni.clinical.patients.search.ncdReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.ncdReferralOrder",
-            "translationKey":"Dept_of_NCD",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of NCD OPD",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Dept of NCD",
-        "order": 8,
-        "requiredPrivilege": "app:orders"
-    },
-     "bahmni_clinical_patients_search_ob-gynReferralOrder": {
+        "bahmni_clinical_patients_search_ob-gynReferralOrder": {
         "id": "bahmni.clinical.patients.search.ob-gynReferralOrder",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -132,7 +86,7 @@
             "forwardButtonTitle": "View",
             "view": "tabular"
         },
-        "label": "Dept of Ob-Gyn",
+        "label": "Dept of Obs-Gynae",
         "order": 9,
         "requiredPrivilege": "app:orders"
     },
@@ -151,22 +105,7 @@
         "order": 10,
         "requiredPrivilege": "app:orders"
     },
-    "bahmni_clinical_patients_search_paediatricReferralOrder": {
-        "id": "bahmni.clinical.patients.search.paediatricReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.paediatricReferralOrder",
-            "translationKey":"Dept_of_Paediatric",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Paediatric OPD",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Dept of Paediatric",
-        "order": 11,
-        "requiredPrivilege": "app:orders"
-    },
-    "bahmni_clinical_patients_search_surgeryReferralOrder": {
+       "bahmni_clinical_patients_search_surgeryReferralOrder": {
         "id": "bahmni.clinical.patients.search.surgeryReferralOrder",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",

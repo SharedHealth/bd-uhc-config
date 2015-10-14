@@ -1,0 +1,11 @@
+{
+"ADT_GENERAL":"General",
+"ADT_DIAGNOSIS":"Diagnosis",
+"ADT_PATIENT_INFO":"Patient Information",
+"ADT_ADMISSION":"Admission",
+"ADT_NAVIGATIONAL":"Navigational",
+"ADT_DISPOSITION":"Disposition",
+"ADT_VITALS":"Vitals",
+"TO_ADMIT":"To Admit"
+"ADMITTED":"Admitted"
+}

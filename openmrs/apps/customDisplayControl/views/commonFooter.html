@@ -1,10 +1,16 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/custom-display.css" />
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
 <br><br><br>
-<div class="footer-summary-container placeholder-text">
+<div class="footer-summary-container placeholder-text" ng-if="displayStuff">
 	<div class="fl half-width">
 		{{curDate | bahmniDateTime}}
-	<br>
+		
+		
+		
+		<br>
+		
+		
+		 
 	</div>
     <div class="fr half-width">
       <p>Provider : 
@@ -16,13 +22,14 @@
       	</span>
     	</p>
    </div>
+   
     <br><br>
     <br><br>
     <br><br>
-   This is an electronically generated document and does not require a signature 
+    This is an electronically generated document and does not require a signature
     
     
    
-</div>
+    </div>
 	
 

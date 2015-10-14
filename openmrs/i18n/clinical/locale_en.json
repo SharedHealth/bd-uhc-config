@@ -58,7 +58,14 @@
   "PATIENT_ADT_PAGE_KEY":"Patient ADT Page",
   "PATIENT_DASHBOARD_KEY":"Patient Dashboard",
   "PATIENT_VISIT_PAGE_KEY":"Patient Visit Page",
-  "HOME_DASHBOARD_KEY":"Home Dashboard"
+  "HOME_DASHBOARD_KEY":"Home Dashboard",
+  "BABY_NOTES":"Baby Notes",
+  "PRESCRIPTION":"Prescription",
+  "HOME_DASHBOARD":"Home Dashboard",
+  "DASHBOARD_TITLE_MOTHERHOOD":"MotherHood Dashboard",
+  "DELIVERY_NOTES":"Delivery Notes",
+  "PNC_NOTES":"PNC Notes",
+  "ANC_NOTES":"ANC Notes "
   
 
 }

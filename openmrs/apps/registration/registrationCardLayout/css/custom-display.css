@@ -18,6 +18,9 @@
     text-transform: capitalize;
 }
 
+.half-width{
+	width:50%;
+}
 /* styling for Death footer section*/
 .death-footer-container{
 

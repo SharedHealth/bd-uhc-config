@@ -30,72 +30,82 @@
         "defaultVisitType": "inpatient",
         "dashboard": {
             "dashboardName": "General",
+            "translationKey":"ADT_GENERAL",
             "conceptName": "Adt Notes",
             "sections": {
                 "vitals": {
                     "title": "Vitals",
                     "name": "vitals",
-                    "isObservation": true,
+                    "translationKey":"ADT_VITALS",
+                     "isObservation": true,
                     "dashboardParams": {
                         "conceptNames": [
                             "Vitals"
                         ],
                         "numberOfVisits": 2
                     },
-                    "displayOrder": 0
+                    "displayOrder": 1
                 },
                 "disposition": {
                     "title": "Disposition",
+                    "translationKey":"ADT_DISPOSITION",
                     "name": "disposition",
                     "numberOfVisits": 1,
-                    "displayOrder": 1
+                    "displayOrder": 2
                 },
                 "diagnosis": {
                     "title": "Diagnosis",
+                    "translationKey":"ADT_DIAGNOSIS",
                     "name": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,
-                    "displayOrder": 2
+                    "displayOrder": 3
                 },
                 "patient_information": {
                     "title": "Patient Information",
                     "name": "patientInformation",
+                    "translationKey":"ADT_PATIENT_INFO",
                     "patientAttributes": [
-                        "caste",
-                        "class",
-                        "education",
-                        "occupation",
-                        "debt",
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome"
-                    ],
-                    "addressFields": [
-                        "address1",
-                        "address2",
-                        "cityVillage",
-                        "countryDistrict"
-                    ],
-                    "displayOrder": 3
+                                  "healthId",
+                                  "fatherName",
+                                  "motherName",
+                                  "spouseName",
+                                  "nationalId",
+                                  "education",
+                                  "householdCode",
+                                  "birthRegistrationId",
+                                  "occupation",
+                                  "phoneNumber"
+                                         ],
+                  "addressFields": [
+                                    "address1",
+                                    "address2",
+                                    "address3",
+                                    "address4",
+                                    "address5",
+                                    "countyDistrict",
+                                   "stateProvince"
+                                 ],
+                    "displayOrder": 0
                 },
                 "admission_details": {
+                    "translationKey":"ADT_ADMISSION",
                     "title": "Admission Details",
                     "name": "admissionDetails",
                     "displayOrder": 4
                 },
                 "navigation_links_control": {
+                    "translationKey":"ADT_NAVIGATIONAL",
                     "title": "Navigation Links Control",
                     "name": "navigationLinksControl",
                     "links": [
                         {
-                            "title": "Program Management Page",
-                            "url": "../clinical/#/patient/{{patientUuid}}/consultationContext"
+                         "translationKey": "Order Fulfilment",
+                         "url": "../orders/#/search"
                         },
-                        {
-                            "title": "Consultation",
-                            "url": "../clinical/#/patient/{{patientUuid}}/concept-set-group/observations"
+                       {
+                        "translationKey": "Registration",
+                        "url": "../registration/#/patient/{{patientUuid}}"
                         }
                     ],
                     "displayOrder": 5
