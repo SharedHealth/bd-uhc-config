@@ -94,10 +94,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToAdmit",
-            "display": "To Admit",
+ 	    "translationKey": "To Admit",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
-        "label": "To Admit",
         "order": 1,
         "requiredPrivilege": "app:adt"
     },
@@ -107,10 +106,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.admittedPatients",
-            "display": "Admitted",
+ 	    "translationKey": "Admitted",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer"
         },
-        "label": "Admitted",
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
@@ -120,10 +118,9 @@
         "type": "config",
         "extensionParams": {
             "searchHandler": "emrapi.sqlSearch.patientsToDischarge",
-            "display": "To Discharge",
+ 	    "translationKey": "To Discharge",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
         },
-        "label": "To Discharge",
         "order": 3,
         "requiredPrivilege": "app:adt"
     },
@@ -132,10 +129,9 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "display": "All",
+ 	    "translationKey": "All",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
-        "label": "All",
         "order": 4,
         "requiredPrivilege": "app:adt"
     }

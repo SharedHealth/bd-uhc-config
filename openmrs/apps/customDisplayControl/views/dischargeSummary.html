@@ -3,26 +3,30 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/custom-display.css" />
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/custom-print.css" media="print"/>
 
-<div class="custom-dischargePatient-print-table">
-	<h2 class="custom-print-center">KALIGANJ UHC HOSPITAL</h2>
+<div class="custom-dischargePatient-print-table" ng-if="displayStuff">
+
+	
 	<p class="custom-print-center custom-bold-text">Discharge  Summary Report</p>
-	<p class="placeholder-text">To Whomsoever it may concern,
+	<p class="placeholder-text">To whomsoever it may concern,
    		<span ng-if="patient.gender == 'M'">Mr </span>
    		<span ng-if="patient.gender == 'O'">Mx </span>  
    		<span ng-if="patient.gender == 'F'">Ms </span>
-   		<span class="custom-bold-text"> {{patient.name}},</span>  aged {{patient.age}}, 
-   		whose <span ng-if="patient.gender == 'M'">son of </span> 
-          <span ng-if="patient.gender == 'F'">daughter of </span>
-          <span ng-if="patient.gender == 'O'">son of </span>  
- 		{{patient.fatherName.value}}, 
- 	<span ng-if="patient.gender == 'M'">husband of </span> 
- 	<span ng-if="patient.gender == 'F'">wife of </span> 
- 	<span ng-if="patient.gender == 'O'">spouse of </span> 
-	 	{{patient.spouseName.value}}, residing at {{patient.address.address1}}
+   		<span class="custom-bold-text"> {{patient.name}}</span>,
+   		<span ng-if="patient.gender == 'M' && patient.fatherName.value!=undefined">son of </span> 
+        <span ng-if="patient.gender == 'F' && patient.fatherName.value!=undefined">daughter of </span>
+        <span ng-if="patient.gender == 'O' && patient.fatherName.value!=undefined">son of </span>  
+ 		{{patient.fatherName.value}} <span ng-if="patient.fatherName.value != undefined">, </span> 
+ 		<span ng-if="patient.gender == 'M' && patient.spouseName.value!=undefined">husband of </span> 
+ 	    <span ng-if="patient.gender == 'F'&& patient.spouseName.value!=undefined">wife of </span> 
+ 	    <span ng-if="patient.gender == 'O'&& patient.spouseName.value!=undefined">spouse of </span> 
+	 	{{patient.spouseName.value}} <span ng-if="patient.spouseName.value != undefined">, </span> 
+	  residing at {{patient.address.address1}}
   	{{patient.address.address2}} {{patient.address.address3}} {{patient.address.cityVillage}}{{patient.address.countyDistrict}} 
-  	{{patient.address.stateProvince}} was under treatment at <b>KALIGANJ UHC HOSPITAL </b>Department <span class="custom-camelCase">{{visitSummary.visitType}} </span>
+  	{{patient.address.stateProvince}} was under treatment at <b class="custom-bold-text">KALIGANJ UHC HOSPITAL </b>Department <span class="capitalize">{{visitSummary.visitType}} </span>
   	Ward {{bedDetails.physicalLocationName}} Bed {{bedDetails.bedNumber}} from  {{visitSummary.admissionDetails.date  | bahmniDateTime}}
-   	to {{visitSummary.dischargeDetails.date | bahmniDateTime}}</p>
+   	to {{visitSummary.dischargeDetails.date | bahmniDateTime}}
+   	
+   </p>
 </div>
 </html>
 

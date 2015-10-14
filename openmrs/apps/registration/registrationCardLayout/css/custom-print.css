@@ -6,7 +6,7 @@
 }
 
 body{
-	font-family : Arial , sans-serif;
+	font-family : Arial , sans-serif !important;
 }
 
 .custom-print-center{
@@ -14,7 +14,7 @@ body{
 }
 
 .custom-bold-text{
-  font-family : Arial , sans-serif;
+  font-family : Arial, sans-serif !important;
   font-weight : bold;
 }
 

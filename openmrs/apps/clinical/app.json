@@ -103,6 +103,27 @@
                 },
                 "Injury Notes": {
                     "allowAddMore": true
+                },
+                "Delivery Note, Baby notes": {
+                    "allowAddMore": true
+                },
+                "ANC Notes, Pregnancy History":{
+                "allowAddMore": true
+                },
+                "Delivery Information, Weight":{
+                "allowAddMore": true
+                },
+                "Medical History, Respiratory System":{
+                "multiSelect": true
+                },
+                "Medical History, CardioVascular":{
+                 "multiSelect": true
+                },
+                "Medical History, Breast":{
+                "multiSelect": true
+                },
+                "Medical History, Urinary Tract":{
+                "multiSelect": true
                 }
             },
         "visitPage": {

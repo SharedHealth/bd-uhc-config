@@ -36,7 +36,7 @@
     "translationKey":"DISCHARGE_SUMMARY_VISIT",
     "printing": {
         "title": "Bahmni",
-        "header": "Certificate",
+        "header": "DISCHARGE SUMMARY",
         "logo": "../images/bahmniLogo.png"
     },
     "sections": {
@@ -96,7 +96,7 @@
                 "translationKey": "FOOTER_SUMMARY",
                 "title": " Discharge Summary ",
                "template": "<footer-summary></footer-summary>"
-                         }
+            }
          }
        }
     },
@@ -120,7 +120,7 @@
                     "caste",
                     "class",
                     "education",
-                    "occupation"
+                    "occupation"	
                 ],
                 "addressFields": [
                     "address1",
@@ -134,18 +134,28 @@
     "InjuryNotes": 
     {
                 "type": "observation",
+                "displayOrder": 1,
                 "title": "Injury Notes",
                 "config": {
                     "conceptNames": ["Injury Notes" ],
                     "translationKey":"INJURY_CLINICAL_NOTES",
-                    "numberOfVisits": "1",
+                    "numberOfVisits": "2",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
                     "showDetailsButton": true,
                     "showRoute": true
                 }
-            }
+            }, 
+            "footerSummary": {
+                "type": "custom",
+                "displayOrder": 3,
+                "config": {
+                "translationKey": "FOOTER_SUMMARY",
+                "title": " Discharge Summary ",
+               "template": "<common-footer concept-name='Injury Notes'></common-footer>"
+                         }
+         }
              
     }
     
@@ -187,16 +197,15 @@
                     "showRoute": true
                 }
             },
-            "Death Footer": 
-        {
-            "type": "custom",
-            "displayOrder": 4,
-            "config":
-             {
-                "title": "Death Footer",
-                "template": "<death-footer></death-footer>"
-             }
-        }
+           "footerSummary": {
+                "type": "custom",
+                "displayOrder": 5,
+                "config": {
+                "translationKey": "FOOTER_SUMMARY",
+                "title": " Discharge Summary ",
+               "template": "<death-footer></death-footer>"
+                         }
+         }
              
     }
     
@@ -254,7 +263,7 @@
                     "showDrugForm": true
                 }
                 },
-                "Death Footer": 
+                "Presciption Footer": 
         {
             "type": "custom",
             "displayOrder": 4,
@@ -265,6 +274,65 @@
              }
         }
     }
+    },
+        "Baby Notes":
+    {
+    "title": "Baby_Notes",
+    "translationKey":"BABY_NOTES",
+    "printing": {
+        "title": "Bahmni",
+        "header": "Baby Notes",
+        "logo": "../images/bahmniLogo.png"
+    },
+    "sections": {
+    "Patient Information": {
+            "type": "patientInformation",
+            "title": "Patient Information",
+            "displayOrder": 0,
+            "config": {
+                "title": "PatientInformation",
+                "patientAttributes": [
+                    "caste",
+                    "class",
+                    "education",
+                    "occupation"
+                ],
+                "addressFields": [
+                    "address1",
+                    "address5",
+                    "countyDistrict",
+                    "stateProvince"
+                ]
+            }
+        },
+        "BabyNotes": 
+    {
+                "type": "observation",
+                "title": "Baby Notes",
+                "displayOrder": 2,
+                "config": {
+                    "conceptNames": ["Delivery Note, Baby notes" ],
+                    "translationKey":"BABY_NOTES",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true,
+                    "showRoute": true
+                }
+            },
+           "Baby Notes Footer": 
+        {
+            "type": "custom",
+            "displayOrder": 4,
+            "config":
+             {
+                "title": "Death Footer",
+                "template": "<common-footer concept-name='Delivery Note, Baby notes'></common-footer>"
+             }
+        }
     }
+    }
+
 
  }

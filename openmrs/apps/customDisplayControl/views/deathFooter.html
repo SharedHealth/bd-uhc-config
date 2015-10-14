@@ -1,16 +1,26 @@
 <link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/custom-display.css" />
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/custom-print.css" media="print"/>
 
-<div class="death-footer-container placeholder-text">
+<br><br><br>
+<div class="custom-dischargePatient-print-table placeholder-text"  ng-if="displayStuff">
+
 	<div class="fl">
 		{{curDate | bahmniDateTime}}
+		<br>
+		
+		
+		 
 	</div>
     <div class="fr">
     	<p>
-    		<br /><br /><br /><br />
 			<span>Signature</span><br />
 			Resident Medical Office/Assistant Registrar
 			Department</p>
     </div>
+    <br><br>
+    <br><br>
     
-    This is electronically generated copy does not require signature 
+    
+    
+   
     </div>

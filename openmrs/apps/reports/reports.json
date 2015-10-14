@@ -5,10 +5,84 @@
         "type": "obsCount",
         "config": 
         {
-            "type": "codedObsCountReport",
             "ageGroupName": "All Ages",
             "conceptNames": ["Fee Category"],
             "countOnlyClosedVisits":"false"
         }
+    },
+    "children_death_report": 
+    {
+        "name": "Children Death Report",
+        "type": "obsCount",
+        "config": 
+        {
+            "ageGroupName": "Children Death",
+            "conceptNames": ["Death Note"],
+            "countOnlyClosedVisits":"false"
+        }
+    },
+    "delivery_report_based_on_type":
+    {
+    "name":"Delivery Report based on Type of delivery",
+    "type":"obsCount",
+    "config":
+    {
+    "ageGroupName":"All Ages",
+    "conceptNames":["Type of delivery"],
+    "countOnlyClosedVisits":"false"
     }
+    },
+    "delivery_report_based_Delivery_Outcome":
+    {
+    "name":"Delivery Report based on Delivery Outcome",
+    "type":"obsCount",
+    "config":
+    {
+    "ageGroupName":"All Ages",
+    "conceptNames":["Delivery Note, Delivery Outcome"],
+    "countOnlyClosedVisits":"false"
+    }
+    },
+    "ANCTemplateReport":{
+        "name": "Total Registered Pregnant Women",
+        "type":"obsCount",
+    	"config":
+   			 {
+   				 "ageGroupName":"All Ages",
+   				 "conceptNames":["ANC Notes"],
+   				 "countOnlyClosedVisits":"false",
+   				 "countOncePerPatient": "true"
+    		}
+    },
+    "ANCReportCount":{
+    "name":"ANC Report",
+    "type":"obsCount",
+    "config":
+    {
+    "ageGroupName":"All Ages",
+    "conceptNames":["ANC number"],
+    "countOnlyClosedVisits":"false"
+    }
+  },
+  "PNCTemplateReport":{
+        "name": "Total PNC Visits",
+        "type":"obsCount",
+    	"config":
+   			 {
+   				 "ageGroupName":"All Ages",
+   				 "conceptNames":["PNC Notes"],
+   				 "countOnlyClosedVisits":"false",
+   				 "countOncePerPatient": "true"
+    		}
+    },
+    "PNCReportCount":{
+    "name":"PNC Report",
+    "type":"obsCount",
+    "config":
+    {
+    "ageGroupName":"All Ages",
+    "conceptNames":["PNC number"],
+    "countOnlyClosedVisits":"false"
+    }
+  }
 }
