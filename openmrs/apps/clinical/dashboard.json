@@ -2,7 +2,7 @@
   "general": {
     "translationKey": "DASHBOARD_TAB_GENERAL_KEY",
     "displayByDefault": true,
-    "maxRecentlyViewedPatients": 10,
+    "maxRecentlyViewedPatients": 3,
     "sections": {
       "patientInformation": {
         "title": "Patient Information",
@@ -37,12 +37,6 @@
         "showOrder": true,
         "displayOrder": 1
       },
-      "disposition": {
-        "translationKey": "DASHBOARD_TITLE_DISPOSITION_KEY",
-        "name": "disposition",
-        "numberOfVisits": 1,
-        "displayOrder": 2
-      },
       "treatments": {
         "title": "Treatments",
         "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -68,18 +62,6 @@
           "showDetailsButton": true
         },
         "displayOrder": 3
-      },
-      "radiology": {
-        "title": "Radiology",
-        "translationKey": "DASHBOARD_TITLE_RADIOLOGY_KEY",
-        "name": "radiology",
-        "displayOrder": 4
-      },
-      "programs": {
-        "title": "Programs",
-        "translationKey": "DASHBOARD_TITLE_PROGRAMS_KEY",
-        "name": "programs",
-        "displayOrder": 5
       },
       "navigation_links_control": {
         "title": "Navigation Links Control",
@@ -180,11 +162,11 @@
         "title": "Admission Details",
         "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
         "name": "admissionDetails",
-        "displayOrder": 11
+        "displayOrder": 2 
       }
     }
   },
-  "trends": {
+  "Motherhood": {
     "dashboardName": "Motherhood",
     "translationKey": "DASHBOARD_TITLE_MOTHERHOOD",
     "maxRecentlyViewedPatients": 10,
@@ -216,12 +198,19 @@
         ],
         "displayOrder": 0
       },
+      "diagnosis": {
+        "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
+        "name": "diagnosis",
+        "showCertainty": true,
+        "showOrder": true,
+        "displayOrder": 1
+      },
       "DeliveryNotes": {
         "type": "observation",
         "title": "Delivery Note",
         "isObservation": true,
         "name": "Delivery Note",
-        "displayOrder": 1,
+        "displayOrder": 2,
          "conceptNames": ["Delivery Note"],
           "translationKey": "DELIVERY_NOTES",
           "numberOfVisits": "5",
@@ -240,7 +229,7 @@
         "title": "PNC Notes",
         "isObservation": true,
         "name": "PNC Notes",
-        "displayOrder": 1,
+        "displayOrder": 3,
          "conceptNames": ["PNC Notes"],
           "translationKey": "PNC_NOTES",
           "numberOfVisits": "5",
@@ -259,7 +248,7 @@
         "title": "PNC Notes",
         "isObservation": true,
         "name": "ANC Notes",
-        "displayOrder": 1,
+        "displayOrder": 4,
          "conceptNames": ["ANC Notes"],
           "translationKey": "ANC_NOTES",
           "numberOfVisits": "5",
