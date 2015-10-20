@@ -154,15 +154,12 @@ angular.module('bahmni.common.displaycontrol.custom')
             },
             template: '<ng-include src="contentUrl"/>',
         }
-    }]).directive('prescriptionFooter', ['observationsService','visitService','appService', 'spinner', function (observationsService,visitService,appService, spinner) 
+    }]).directive('prescriptionFooter', ['TreatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
     {
        var link = function ($scope) 
-        {
-        $scope.displayStuff = false;
-            var conceptNames = ["Diagnosis Set of Sets"];
-        
-            spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
-            	$scope.observations = response.data;
+        {        
+            spinner.forPromise(treatmentService.getPrescribedAndActiveDrugOrders($scope.patient.uuid, undefined , false, [$scope.visitUuid]).then(function (response) {
+            	$scope.drugOrders = response.data;
 	            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/prescription.html";
     	        $scope.curDate=new Date();
         	}));

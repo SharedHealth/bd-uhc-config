@@ -124,6 +124,12 @@
                 },
                 "Medical History, Urinary Tract":{
                 "multiSelect": true
+                },
+                "Medication received":{
+                "multiSelect": true
+                },
+                "Non Communicable Disease Set, Risky Behaviour":{
+                 "multiSelect": true
                 }
             },
         "visitPage": {
