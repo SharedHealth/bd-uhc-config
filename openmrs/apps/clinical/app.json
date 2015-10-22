@@ -24,14 +24,8 @@
     ],
     "config": {
         "obsIgnoreList": [
-            "REGISTRATION FEES",
-            "COMMENTS",
-            "Patient file"
+            "Fee Category"
         ],
-        "otherInvestigationsMap": {
-            "Radiology": "Radiology Order",
-            "Endoscopy": "Endoscopy Order"
-        },
         "visitTypeForRetrospectiveEntries": "outpatient",
         "maxConceptSetLevels": 3,
         "allowConsultationWhenNoOpenVisit": true,
@@ -130,13 +124,12 @@
                 },
                 "Non Communicable Disease Set, Risky Behaviour":{
                  "multiSelect": true
+                },
+                "Non Communicable Disease Set, Non Communicable Disease":{
+                 "multiSelect": true
                 }
             },
-        "visitPage": {
-            "observationDisplay": {
-                "conceptNames": []
-            }
-        },
+
         "drugOrder": {
             "defaultDurationUnit": "Day(s)",
             "defaultInstructions": "As directed",

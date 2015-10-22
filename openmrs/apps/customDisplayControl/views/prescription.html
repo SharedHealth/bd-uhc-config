@@ -4,18 +4,11 @@
 <div class="footer-summary-container placeholder-text">
 	<div class="fl half-width">
 		{{curDate | bahmniDateTime}}
-		{{drugOrders}}
-	<br>
+		
+	
 	</div>
     <div class="fr half-width">
-      <p>Provider : 
-		<span class="cusotom-bold-text" ng-if="observations[0].creatorName.length > 0 && observations[0].providers[0].name.length > 0 && observations[0].creatorName != observations[0].providers[0].name ">
-			{{visitDrugOrders[0].creatorName}} on behalf of   <b>{{visitDrugOrders[0].provider.name}}</b>
-      	</span>
-      	<span class="cusotom-bold-text" ng-if="observations[0].creatorName.length > 0 && observations[0].providers[0].name.length > 0 && observations[0].creatorName == observations[0].providers[0].name ">
-			{{visitDrugOrders[0].provider.name}}
-      	</span>
-    	</p>
+      <span ng-repeat="x in displayName ">{{x}}<br></span></br>
    </div>
     <br><br>
     <br><br>
