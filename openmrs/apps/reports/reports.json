@@ -1,131 +1,146 @@
 {
-    "registration_reports_category": 
-    {
-        "name": "Registration based on Department Sent To",
-        "type": "obsCount",
+  "registration_reports_category": {
+    "name": "OPD Registration based on Fee Category",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Fee Category"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "children_death_report": {
+    "name": "Children Death Report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "Children Death",
+      "conceptNames": [
+        "Death Note"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "delivery_report_based_on_type": {
+    "name": "Delivery Report based on Type of delivery",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Type of delivery"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "delivery_report_based_Delivery_Outcome": {
+    "name": "Delivery Report based on Delivery Outcome",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Delivery Note, Delivery Outcome"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "ANCTemplateReport": {
+    "name": "Total Registered Pregnant Women",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "ANC Notes"
+      ],
+      "countOnlyClosedVisits": "true",
+      "countOncePerPatient": "true"
+    }
+  },
+  "ANCReportCount": {
+    "name": "ANC Report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "ANC number"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "PNCTemplateReport": {
+    "name": "Total PNC Visits",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "PNC Notes"
+      ],
+      "countOnlyClosedVisits": "true",
+      "countOncePerPatient": "true"
+    }
+  },
+  "PNCReportCount": {
+    "name": "PNC Report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "PNC number"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  
+  "OT_Report":{
+        "name": "OT Report",
+        "type": "MultipleCodedObsByCodedObs",
         "config": 
         {
             "ageGroupName": "All Ages",
-            "conceptNames": ["Fee Category"],
-            "countOnlyClosedVisits":"true"
+            "rowsGroupBy": ["Procedure Type"],
+            "columnsGroupBy": ["Procedure Template, Procedure Complexity","Procedure Template, Procedure Outcome"],
+            "countOnlyClosedVisits": "false"
         }
     },
-    "children_death_report": 
-    {
-        "name": "Children Death Report",
-        "type": "obsCount",
-        "config": 
-        {
-            "ageGroupName": "Children Death",
-            "conceptNames": ["Death Note"],
-            "countOnlyClosedVisits":"true"
-        }
-    },
-    "delivery_report_based_on_type":
-    {
-    "name":"Delivery Report based on Type of delivery",
-    "type":"obsCount",
-    "config":
-    {
-    "ageGroupName":"All Ages",
-    "conceptNames":["Type of delivery"],
-    "countOnlyClosedVisits":"true"
-    }
-    },
-    "delivery_report_based_Delivery_Outcome":
-    {
-    "name":"Delivery Report based on Delivery Outcome",
-    "type":"obsCount",
-    "config":
-    {
-    "ageGroupName":"All Ages",
-    "conceptNames":["Delivery Note, Delivery Outcome"],
-    "countOnlyClosedVisits":"true"
-    }
-    },
-    "ANCTemplateReport":{
-        "name": "Total Registered Pregnant Women",
-        "type":"obsCount",
-    	"config":
-   			 {
-   				 "ageGroupName":"All Ages",
-   				 "conceptNames":["ANC Notes"],
-   				 "countOnlyClosedVisits":"true",
-   				 "countOncePerPatient": "true"
-    		}
-    },
-    "ANCReportCount":{
-    "name":"ANC Report",
-    "type":"obsCount",
-    "config":
-    {
-    "ageGroupName":"All Ages",
-    "conceptNames":["ANC number"],
-    "countOnlyClosedVisits":"true"
+  "OralnDentalReport": {
+    "name": "Dental and Oral Diseases Report",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Oral diagnosis",
+      "ageGroupName":"Age Groups",
+      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
+      "columnsGroupBy": ["gender","agegroup_name"]
     }
   },
-  "PNCTemplateReport":{
-        "name": "Total PNC Visits",
-        "type":"obsCount",
-    	"config":
-   			 {
-   				 "ageGroupName":"All Ages",
-   				 "conceptNames":["PNC Notes"],
-   				 "countOnlyClosedVisits":"true",
-   				 "countOncePerPatient": "true"
-    		}
-    },
-    "PNCReportCount":{
-    "name":"PNC Report",
-    "type":"obsCount",
-    "config":
-    {
-    "ageGroupName":"All Ages",
-    "conceptNames":["PNC number"],
-    "countOnlyClosedVisits":"true"
+  "DiarrhoeaReport": {
+    "name": "Diarrhoea Report",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Diarrhoea Report Set",
+      "ageGroupName":"Age Groups",
+      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
+      "columnsGroupBy": ["gender","agegroup_name"]
     }
   },
-  "OT_REPORT":{
-  "name":"OT Report",
-    "type":"obsCount",
-    "config":
-    {
-    "ageGroupName":"All Ages",
-    "conceptNames":["Procedure Type"],
-    "countOnlyClosedVisits":"true"
+  "ContagiousReport1":
+  {
+  "name": "Integrated Disease Surveillance Report-1",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Contagious Diseases 1 Set",
+      "ageGroupName":"Contagious1",
+      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
+      "columnsGroupBy": ["gender","agegroup_name"]
     }
   },
-  "OTMAJORMINORREPORT": {
-  "name": "OT Report based on Major and Minor",
-  "type": "CodedObsByCodedObs",
-  "config": {
-    "ageGroupName": "All Ages",
-    "conceptPair": ["Procedure Type", "Procedure Template, Procedure Complexity"],
-    "rowsGroupBy": ["Procedure Type"],
-    "columnsGroupBy": ["Procedure Template, Procedure Complexity"],
-    "countOnlyClosedVisits":"true"
-            }
-     },
-     "OT_Succcess__or_Failure": {
-  "name": "OT Report based Success or Failure",
-  "type": "CodedObsByCodedObs",
-  "config": {
-    "ageGroupName": "All Ages",
-    "conceptPair": ["Procedure Type", "Procedure Template, Procedure Outcome"],
-    "rowsGroupBy": ["Procedure Type"],
-    "columnsGroupBy": ["Procedure Template, Procedure Outcome"],
-    "countOnlyClosedVisits":"false"
+  "ContagiousReport2":
+  {
+  "name": "Integrated Disease Surveillance Report-2",
+    "type": "diagnosisCount",
+    "config": {
+      "concept": "Contagious Diseases 2 Set",
+      "ageGroupName":"Contagious2",
+      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
+      "columnsGroupBy": ["gender","agegroup_name"]
+    }
   }
-     },
-     "NCD_Tempate_Report": {
-  "name": "NCD Report",
-  "type": "CodedObsByCodedObs",
-  "config": {
-    "ageGroupName": "All Ages",
-    "conceptPair": ["Non Communicable Disease Set, Non Communicable Disease", "Non Communicable Disease Set, Risky Behaviour"],
-    "rowsGroupBy": ["Non Communicable Disease Set, Non Communicable Disease"],
-    "columnsGroupBy": ["Non Communicable Disease Set, Risky Behaviour"],
-    "countOnlyClosedVisits":"false"
-  }
-     }
 }

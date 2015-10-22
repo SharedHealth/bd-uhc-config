@@ -40,7 +40,7 @@
         "order": 7,
         "requiredPrivilege": "app:clinical:consultationTab"
     },
-    "bahmni_clinical_consultation_orders_app:clinical:diagnosistab": {
+    "bahmni_clinical_consultation_orders_app:clinical:orderstab": {
         "id": "bahmni.clinical.consultation.orders",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -48,7 +48,7 @@
         "url": "orders",
         "icon": "icon-user-md",
         "order": 4,
-        "requiredPrivilege": "app:clinical:diagnosisTab"
+        "requiredPrivilege": "app:clinical:orderTab"
     },
     "bahmni_clinical_patients_search_allpatients_active_app:clinical": {
         "id": "bahmni.clinical.patients.search.allPatients",

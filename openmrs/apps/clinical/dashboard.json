@@ -34,7 +34,7 @@
         "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
         "name": "diagnosis",
         "showCertainty": true,
-        "showOrder": true,
+        "showOrder": false,
         "displayOrder": 1
       },
       "treatments": {
@@ -84,16 +84,18 @@
         "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
         "name": "labOrders",
         "dashboardParams": {
-          "title": null,
           "numberOfVisits": 1,
           "showChart": false,
-          "showTable": true,
-          "showDetailsButton": false,
-          "initialAccessionCount": 0,
-          "latestAccessionCount": 1
+          "showTable": false,
+          "showDetailsButton": true,
+          "showNormalLabResults": true,
+          "showCommentsExpanded": true,
+          "showAccessionNotes": true
         },
         "allLabDetails": {
-          "numberOfVisits": 10
+          "numberOfVisits": 5,
+          "showChart": true,
+          "showTable": true
         },
         "displayOrder": 7
       },
@@ -162,7 +164,7 @@
         "title": "Admission Details",
         "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
         "name": "admissionDetails",
-        "displayOrder": 2 
+        "displayOrder": 2
       }
     }
   },
@@ -211,17 +213,23 @@
         "isObservation": true,
         "name": "Delivery Note",
         "displayOrder": 2,
-         "conceptNames": ["Delivery Note"],
-          "translationKey": "DELIVERY_NOTES",
-          "numberOfVisits": "5",
-          "dashboardParams": {
-            "conceptNames": ["Delivery Note"],
-            "numberOfVisits": "5"
-          },
-          "allObservationDetails": {
-            "conceptNames": ["Delivery Note"],
-            "showDetailsButton": true,
-            "pivotTable": {}
+        "conceptNames": [
+          "Delivery Note"
+        ],
+        "translationKey": "DELIVERY_NOTES",
+        "numberOfVisits": "5",
+        "dashboardParams": {
+          "conceptNames": [
+            "Delivery Note"
+          ],
+          "numberOfVisits": "5"
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "Delivery Note"
+          ],
+          "showDetailsButton": true,
+          "pivotTable": {}
         }
       },
       "PNCNotes": {
@@ -230,39 +238,56 @@
         "isObservation": true,
         "name": "PNC Notes",
         "displayOrder": 3,
-         "conceptNames": ["PNC Notes"],
-          "translationKey": "PNC_NOTES",
-          "numberOfVisits": "5",
-          "dashboardParams": {
-            "conceptNames": ["PNC Notes"],
-            "numberOfVisits": "5"
-          },
-          "allObservationDetails": {
-            "conceptNames": ["PNC Notes"],
-            "showDetailsButton": true,
-            "pivotTable": {}
+        "conceptNames": [
+          "PNC Notes"
+        ],
+        "translationKey": "PNC_NOTES",
+        "numberOfVisits": "5",
+        "dashboardParams": {
+          "conceptNames": [
+            "PNC Notes"
+          ],
+          "numberOfVisits": "5"
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "PNC Notes"
+          ],
+          "showDetailsButton": true,
+          "pivotTable": {}
         }
       },
-       "ANCNotes": {
+      "ANCNotes": {
         "type": "observation",
-        "title": "PNC Notes",
+        "title": "ANC Notes",
         "isObservation": true,
         "name": "ANC Notes",
         "displayOrder": 4,
-         "conceptNames": ["ANC Notes"],
-          "translationKey": "ANC_NOTES",
-          "numberOfVisits": "5",
-          "dashboardParams": {
-            "conceptNames": ["ANC Notes"],
-            "numberOfVisits": "5"
-          },
-          "allObservationDetails": {
-            "conceptNames": ["ANC Notes"],
-            "showDetailsButton": true,
-            "pivotTable": {}
+        "conceptNames": [
+          "ANC Notes"
+        ],
+        "translationKey": "ANC_NOTES",
+        "numberOfVisits": "5",
+        "dashboardParams": {
+          "conceptNames": [
+            "ANC Notes"
+          ],
+          "numberOfVisits": "5"
+        },
+        "allObservationDetails": {
+          "conceptNames": [
+            "ANC Notes"
+          ],
+          "showDetailsButton": true,
+          "pivotTable": {
+                 "numberOfVisits": "10",
+                 "groupBy": "encounters",
+                 "obsConcepts": ["Weight"],
+                        "drugConcepts": [],
+                        "labConcepts": []
+            }
         }
       }
-      
     }
   }
 }

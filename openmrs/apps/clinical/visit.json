@@ -257,7 +257,7 @@
                     "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
                     "showFlowSheet": false,
                     "showListView": true,
-                    "showOtherActive": true,
+                    "showOtherActive": false,
                     "showDetailsButton": true,
                     "showRoute": true,
                     "showDrugForm": true

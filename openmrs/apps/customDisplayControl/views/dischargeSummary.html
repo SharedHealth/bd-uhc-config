@@ -6,7 +6,8 @@
 <div class="custom-dischargePatient-print-table" ng-if="displayStuff">
 
 	
-	<p class="custom-print-center custom-bold-text">Discharge  Summary Report</p>
+	<div ng-if="visitSummary.dischargeDetails.date !=null && visitSummary.admissionDetails.date !=null">
+	
 	<p class="placeholder-text">To whomsoever it may concern,
    		<span ng-if="patient.gender == 'M'">Mr </span>
    		<span ng-if="patient.gender == 'O'">Mx </span>  
@@ -24,8 +25,16 @@
   	{{patient.address.address2}} {{patient.address.address3}} {{patient.address.cityVillage}}{{patient.address.countyDistrict}} 
   	{{patient.address.stateProvince}} was under treatment at <b class="custom-bold-text">KALIGANJ UHC HOSPITAL </b>Department <span class="capitalize">{{visitSummary.visitType}} </span>
   	Ward {{bedDetails.physicalLocationName}} Bed {{bedDetails.bedNumber}} from  {{visitSummary.admissionDetails.date  | bahmniDateTime}}
-   	to {{visitSummary.dischargeDetails.date | bahmniDateTime}}
-   	
+   	to 
+
+   	<span ng-if="visitSummary.dischargeDetails.date!=undefined && visitSummary.stopDateTime==null">
+   			{{visitSummary.dischargeDetails.date | bahmniDateTime}}
+   		</span>
+ 	<span ng-if="visitSummary.dischargeDetails.date==null && visitSummary.stopDateTime!=undefined"> 
+   	   		{{visitSummary.stopDateTime | bahmniDateTime}}
+   	   </span>
+   	   </div>
+   	  
    </p>
 </div>
 </html>
