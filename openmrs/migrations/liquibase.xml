@@ -7,6 +7,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
         http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
     
+    <include file = "bdshr-liquibase.xml"/>
     <include file = "openmrs-roles-and-privileges-liquibase.xml"/>
     <include file = "openmrs-users-liquibase.xml"/>
     <include file = "openmrs-patient-attributes-liquibase.xml"/>
@@ -14,5 +15,4 @@
     <include file = "openmrs-misc-config-liquibase.xml"/>
     <include file = "atomfeed-config-liquibase.xml"/>
     <include file = "location-encounter-data-liquibase.xml"/>
-    <include file = "bdshr-liquibase.xml"/>
 </databaseChangeLog>
