@@ -45,8 +45,10 @@
             "conceptName": "Visit Details",
             "autocomplete": true,
             "required": true
+          
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
     }
+    
 }

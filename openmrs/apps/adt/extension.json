@@ -88,6 +88,20 @@
         "order": 2,
         "requiredPrivilege": "app:adt"
     },
+     "bahmni_clinical_patients_search_allpatients_active_app:clinical": {
+        "id": "bahmni.clinical.patients.search.allPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatients",
+            "display": "Active",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active",
+           "translationKey": "Active"
+        },
+         
+        "order": 1,
+        "requiredPrivilege": "app:adt"
+    },
     "bahmni_adt_patients_search_patientstoadmit": {
         "id": "bahmni.adt.patients.search.patientsToAdmit",
         "extensionPointId": "org.bahmni.patient.search",
@@ -97,7 +111,7 @@
  	    "translationKey": "To Admit",
             "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
-        "order": 1,
+        "order": 2,
         "requiredPrivilege": "app:adt"
     },
     "bahmni_adt_patients_search_patientsadmitted": {

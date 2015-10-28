@@ -23,7 +23,8 @@
         ],
         "config" : {
             "defaultIdentifierPrefix": "BDH",
-	    "defaultVisitType": "outpatient",
+            "prepopulateFields" : ["Division", "Zilla", "Upazilla"],
+	        "defaultVisitType": "outpatient",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "addressHierarchy": {
