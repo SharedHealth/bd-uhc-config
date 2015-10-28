@@ -1,6 +1,6 @@
 {
   "registration_reports_category": {
-    "name": "OPD Registration based on Fee Category",
+    "name": "Registration based on Fee Category",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
@@ -89,26 +89,35 @@
       "countOnlyClosedVisits": "true"
     }
   },
-  
-  "OT_Report":{
-        "name": "OT Report",
-        "type": "MultipleCodedObsByCodedObs",
-        "config": 
-        {
-            "ageGroupName": "All Ages",
-            "rowsGroupBy": ["Procedure Type"],
-            "columnsGroupBy": ["Procedure Template, Procedure Complexity","Procedure Template, Procedure Outcome"],
-            "countOnlyClosedVisits": "false"
-        }
-    },
+  "OT_Report": {
+    "name": "OT Report",
+    "type": "MultipleCodedObsByCodedObs",
+    "config": {
+      "ageGroupName": "All Ages",
+      "rowsGroupBy": [
+        "Procedure Type"
+      ],
+      "columnsGroupBy": [
+        "Procedure Template, Procedure Complexity",
+        "Procedure Template, Procedure Outcome"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
   "OralnDentalReport": {
-    "name": "Dental and Oral Diseases Report",
+    "name": "Dental and Oral Report",
     "type": "diagnosisCount",
     "config": {
       "concept": "Oral diagnosis",
-      "ageGroupName":"Age Groups",
-      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
-      "columnsGroupBy": ["gender","agegroup_name"]
+      "ageGroupName": "Age Groups",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
     }
   },
   "DiarrhoeaReport": {
@@ -116,31 +125,71 @@
     "type": "diagnosisCount",
     "config": {
       "concept": "Diarrhoea Report Set",
-      "ageGroupName":"Age Groups",
-      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
-      "columnsGroupBy": ["gender","agegroup_name"]
+      "ageGroupName": "Age Groups",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
     }
   },
-  "ContagiousReport1":
-  {
-  "name": "Integrated Disease Surveillance Report-1",
+  "ContagiousReport1": {
+    "name": "Integrated Disease Surveillance Report-1",
     "type": "diagnosisCount",
     "config": {
       "concept": "Contagious Diseases 1 Set",
-      "ageGroupName":"Contagious1",
-      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
-      "columnsGroupBy": ["gender","agegroup_name"]
+      "ageGroupName": "Contagious1",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
     }
   },
-  "ContagiousReport2":
-  {
-  "name": "Integrated Disease Surveillance Report-2",
+  "ContagiousReport2": {
+    "name": "Integrated Disease Surveillance Report-2",
     "type": "diagnosisCount",
     "config": {
       "concept": "Contagious Diseases 2 Set",
-      "ageGroupName":"Contagious2",
-      "rowsGroupBy": ["header_concept_name", "leaf_concept_name"],
-      "columnsGroupBy": ["gender","agegroup_name"]
+      "ageGroupName": "Contagious2",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
+    }
+  },
+  "NCDReport": {
+    "name": "NCD Report",
+    "type": "CodedObsByCodedObs",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptPair": [
+        "Non Communicable Disease Set, Non Communicable Disease",
+        "Non Communicable Disease Set, Risky Behaviour"
+      ],
+      "rowsGroupBy": [
+        "Non Communicable Disease Set, Non Communicable Disease"
+      ],
+      "columnsGroupBy": [
+        "Non Communicable Disease Set, Risky Behaviour"
+      ]
+    }
+  },
+  "CrossCheck": {
+    "name": "Cross check",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/reports/bduhcreport/crosscheck.sql"
     }
   }
 }
