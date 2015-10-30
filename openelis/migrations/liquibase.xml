@@ -5,7 +5,13 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
-    <changeSet id='BD-201411171139' author='Neha, Shruthi' context='setup'>
+    <changeSet id='201510281511' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='BDH';
+            </sqlCheck>
+        </preConditions>
+        <comment>Identifier for bd patients</comment>
         <insert schemaName="clinlims" tableName="health_center">
             <column name="active" type="boolean" valueBoolean="true"/>
             <column name="name" value="BDH"/>
@@ -14,13 +20,94 @@
         </insert>
     </changeSet>
 
-    <changeSet id='BD-201411171202' author='Neha, Shruthi' context='setup'>
-        <insert schemaName="clinlims" tableName="health_center">
-            <column name="active" type="boolean" valueBoolean="true"/>
-            <column name="name" value="BAH"/>
-            <column name="description" value="BAH"/>
-            <column name="allow_patient_creation" type="boolean" valueBoolean="true"/>
-        </insert>
+    <changeSet id="201510281514" author="Neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from site_information where name='defaultOrganizationName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add default organization name for openelis</comment>
+        <sql>
+            INSERT INTO site_information(id, name, lastupdated, description, value, encrypted, value_type)  VALUES ( nextVal( 'site_information_seq' ) , 'defaultOrganizationName', now(), 'Default organization name for department to be synced from openmrs',  'BD', 'f', 'text' );
+        </sql>
+    </changeSet>
+    <changeSet id="201510281612" author="Neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from organization where name='BD';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add Bahmni organization</comment>
+        <sql>
+            INSERT INTO organization(id, name, is_active)  VALUES ( nextVal( 'organization_seq' ) , 'BD', 'Y');
+        </sql>
+    </changeSet>
+
+    <changeSet id='201510301411' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='CHP';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers CHP</comment>
+        <sql>
+            update health_center set active='f' where name = 'CHP';
+        </sql>
+    </changeSet>
+    <changeSet id='201510301412' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='GAN';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers GAN</comment>
+        <sql>
+            update health_center set active='f' where name = 'GAN';
+        </sql>
+    </changeSet>
+    <changeSet id='201510301413' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='SEM';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers SEM</comment>
+        <sql>
+            update health_center set active='f' where name = 'SEM';
+        </sql>
+    </changeSet>
+    <changeSet id='201510301414' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='SIV';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers SIV</comment>
+        <sql>
+            update health_center set active='f' where name = 'SIV';
+        </sql>
+    </changeSet>
+    <changeSet id='201510301415' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='BAH';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers BAH</comment>
+        <sql>
+            update health_center set active='f' where name = 'BAH';
+        </sql>
+    </changeSet>
+    <changeSet id='201510301416' author='Neha' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from health_center where name='BAM';
+            </sqlCheck>
+        </preConditions>
+        <comment>Deactivation bahmni default health centers BAM</comment>
+        <sql>
+            update health_center set active='f' where name = 'BAM';
+        </sql>
     </changeSet>
 
 </databaseChangeLog>
