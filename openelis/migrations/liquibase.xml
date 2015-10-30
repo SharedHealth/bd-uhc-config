@@ -43,9 +43,9 @@
         </sql>
     </changeSet>
 
-    <changeSet id='201510301411' author='Neha' context='setup'>
+    <changeSet id='201510301711' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='CHP';
             </sqlCheck>
         </preConditions>
@@ -54,9 +54,9 @@
             update health_center set active='f' where name = 'CHP';
         </sql>
     </changeSet>
-    <changeSet id='201510301412' author='Neha' context='setup'>
+    <changeSet id='201510301712' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='GAN';
             </sqlCheck>
         </preConditions>
@@ -65,9 +65,9 @@
             update health_center set active='f' where name = 'GAN';
         </sql>
     </changeSet>
-    <changeSet id='201510301413' author='Neha' context='setup'>
+    <changeSet id='201510301713' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='SEM';
             </sqlCheck>
         </preConditions>
@@ -76,9 +76,9 @@
             update health_center set active='f' where name = 'SEM';
         </sql>
     </changeSet>
-    <changeSet id='201510301414' author='Neha' context='setup'>
+    <changeSet id='201510301714' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='SIV';
             </sqlCheck>
         </preConditions>
@@ -87,9 +87,9 @@
             update health_center set active='f' where name = 'SIV';
         </sql>
     </changeSet>
-    <changeSet id='201510301415' author='Neha' context='setup'>
+    <changeSet id='201510301715' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='BAH';
             </sqlCheck>
         </preConditions>
@@ -98,9 +98,9 @@
             update health_center set active='f' where name = 'BAH';
         </sql>
     </changeSet>
-    <changeSet id='201510301416' author='Neha' context='setup'>
+    <changeSet id='201510301716' author='Neha' context='setup'>
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from health_center where name='BAM';
             </sqlCheck>
         </preConditions>
