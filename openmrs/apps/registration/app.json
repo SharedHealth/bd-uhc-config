@@ -55,15 +55,31 @@
             },
             "fieldValidation" : {
                 "nationalId" : {"pattern" : "^(\\d{13}|\\d{17})$", "errorMessage" : "National ID should be 13 or 17 digits"},
-                "Birth Registration Id" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
-                "Unique Id" : {"pattern" : "^[a-zA-Z0-9]{11}$", "errorMessage" : "Unique Identifier should be 11 characters"},
-                "Phone Number" : {"pattern" : "^(\\d{3,12})$", "errorMessage" : "Phone Number should be between 3 to 12 digits"}
-            },
+                "birthRegistrationId" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
+                "phoneNumber" : {"pattern" : "^(\\d{3,12})$", "errorMessage" : "Phone Number should be between 3 to 12 digits"},
+                "healthId" : {
+                    "pattern" : "^[9][1-9][0-9]{9}$",
+                    "errorMessage" : "Please enter a valid HID"
+                },
+                "address1" : {
+                    "pattern" : "^(\\s*[^\\s]\\s*){3,255}$",
+                    "errorMessage" : "Should have minimum 3 characters"
+                }
+
+	      },
+
             "patientSearch": {
                 "customAttributes": {
-                    "label": "ID/Bangla Name/Phone",
-                    "placeholder": "ID/Bangla Name/Phone",
-                    "fields": ["nationalId", "healthId", "birthRegistrationId", "PhoneNumber", "fatherName", "motherName", "spouseName"]
+                 "label": "ID/Bangla Name/Phone",
+                 "placeholder": "ID/Bangla Name/Phone",
+                 "fields": ["nationalId",
+                "healthId",
+                "birthRegistrationId",
+                "phoneNumber",
+                "fatherName",
+                "motherName",
+                "spouseName"]
+
                 }
             }
         }
