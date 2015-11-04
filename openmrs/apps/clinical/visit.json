@@ -12,7 +12,7 @@
         "sections": {
             "pivot_table": {
                 "type": "pivotTable",
-                "title": "Pivot table",
+                "title": "Basic Examination",
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [

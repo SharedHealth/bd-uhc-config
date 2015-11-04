@@ -64,7 +64,7 @@
         "displayOrder": 3
       },
       "navigation_links_control": {
-        "title": "Navigation Links Control",
+        "title": "Go To",
         "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
         "name": "navigationLinksControl",
         "links": [
