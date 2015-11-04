@@ -56,6 +56,9 @@
                 "Family Member History" : {
                     "allowAddMore" :true
                 },
+                "Family Member Condition" : {
+                    "allowAddMore" : true
+                },
                 "Cause of Death" : {
                     "answersConceptName" : "Diagnosis Answers",
                     "autocomplete" : true
