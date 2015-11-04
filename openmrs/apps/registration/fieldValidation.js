@@ -29,7 +29,7 @@ var containTwoSetsOfThreeConsecutiveDigits = function(healthId) {
 }
 
 Bahmni.Registration.customValidator = {
-	"Health ID": {
+	"healthId": {
 		method: function(name, value, attributeDetails) {
 			if (containFourConsecutiveDigits(value)) {
 				return false;
