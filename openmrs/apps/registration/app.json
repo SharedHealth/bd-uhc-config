@@ -22,6 +22,8 @@
             "activeVisitUuid"
         ],
         "config" : {
+            "autoCompleteFields":["familyName"],
+            "prepopulateFields" : ["Division", "Zilla", "Upazilla"],
             "defaultIdentifierPrefix": "BDH",
             "prepopulateFields" : ["Division", "Zilla", "Upazilla"],
 	        "defaultVisitType": "outpatient",
