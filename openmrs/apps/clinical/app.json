@@ -79,12 +79,6 @@
                 "Route of Administration" : {
                     "autocomplete" : true
                 },
-                "Immunization Incident Vaccination Reported" : {
-                    "required": true
-                },
-                "Immunization Incident Vaccination Refused" : {
-                    "required": true
-                },
                 "Procedure Type": {
                     "autocomplete" : true,
                     "required" : true,
