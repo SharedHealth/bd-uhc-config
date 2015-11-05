@@ -66,6 +66,9 @@
                 "Immunization Reason" : {
                     "autocomplete" : true
                 },
+                "Immunization Incident Group": {
+                    "allowAddMore": true
+                },
                 "No Immunization Reason" : {
                     "autocomplete" : true
                 },
