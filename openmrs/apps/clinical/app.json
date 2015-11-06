@@ -63,9 +63,6 @@
                 "Immunization Reason" : {
                     "autocomplete" : true
                 },
-                "Immunization Incident Group": {
-                    "allowAddMore": true
-                },
                 "No Immunization Reason" : {
                     "autocomplete" : true
                 },
@@ -78,6 +75,12 @@
                 },
                 "Route of Administration" : {
                     "autocomplete" : true
+                },
+                "Immunization Incident Vaccination Reported" : {
+                    "required": true
+                },
+                "Immunization Incident Vaccination Refused" : {
+                    "required": true
                 },
                 "Procedure Type": {
                     "autocomplete" : true,
@@ -153,78 +156,54 @@
                 }
             ],
             "drugFormDefaults": {
-                "Ayurvedic": {
-                    "doseUnits": "Teaspoon",
+                "Capsule dose form": {
+                    "doseUnits": "Capsule",
                     "route": "Oral"
                 },
-                "Capsule": {
-                    "doseUnits": "Capsule(s)",
+                "Tablet dose form": {
+                    "doseUnits": "Tablet",
                     "route": "Oral"
                 },
-                "Cream": {
-                    "route": "Topical"
-                },
-                "Drops": {
+                "Drops dose form": {
                     "doseUnits": "Drop",
                     "route": "Topical"
                 },
-                "Food Supplement": {
-                    "doseUnits": "Unit(s)",
+                "Granules for oral solution": {
+                    "doseUnits": "Sachet",
                     "route": "Oral"
                 },
-                "Gel": {
-                    "route": "Topical"
-                },
-                "Granule": {
-                    "doseUnits": "Unit(s)",
+                "Granules for oral suspension": {
+                    "doseUnits": "TSF",
                     "route": "Oral"
                 },
-                "Inhaler": {
-                    "doseUnits": "Puff(s)",
-                    "route": "Inhalation"
-                },
-                "Injection": {
-                    "doseUnits": "mg",
+                "Infusion solution": {
+                    "doseUnits": "ml",
                     "route": "Intravenous"
                 },
-                "Jelly": {
-                    "route": "Topical"
+                "Inhalation aerosol solution": {
+                    "doseUnits": "Ampoule",
+                    "route": "Inhalation"
                 },
-                "Liquid": {
-                    "doseUnits": "ml",
-                    "route": "Oral"
-                },
-                "Lotion": {
-                    "route": "Topical"
+                "Injection solution": {
+                    "doseUnits": "Vial",
+                    "route": "Intravenous"
                 },
                 "Ointment": {
+                    "doseUnits": "QS",
                     "route": "Topical"
                 },
-                "Pessary": {
-                    "doseUnits": "Unit(s)",
-                    "route": "Per Vaginal"
-                },
-                "Powder": {
-                    "doseUnits": "mg",
+                "Powder for oral suspension": {
+                    "doseUnits": "TSF",
                     "route": "Topical"
                 },
-                "Solution": {
-                    "doseUnits": "ml",
-                    "route": "Topical"
-                },
-                "Spray": {
-                    "doseUnits": "Puff(s)",
-                    "route": "Nasal"
+                "Powder for syrup": {
+                    "doseUnits": "TSF",
+                    "route": "Oral"
                 },
                 "Syrup": {
-                    "doseUnits": "ml",
-                    "route": "Oral"
-                },
-                "Tablet": {
-                    "doseUnits": "Tablet(s)",
+                    "doseUnits": "TSF",
                     "route": "Oral"
                 }
-                
             }
         }
     }
