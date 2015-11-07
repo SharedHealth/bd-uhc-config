@@ -109,5 +109,11 @@
             update health_center set active='f' where name = 'BAM';
         </sql>
     </changeSet>
-
+    <changeSet id='201511061756' author='Neha' context='setup'>
+        <comment>Increasing the test name and description size to 255</comment>
+        <sql>
+            ALTER TABLE test ALTER COLUMN name TYPE character varying(255);
+            ALTER TABLE test ALTER COLUMN description TYPE character varying(255);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
