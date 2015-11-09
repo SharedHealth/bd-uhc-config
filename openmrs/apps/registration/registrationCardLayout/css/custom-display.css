@@ -26,6 +26,18 @@
 
 }
 
+.columns-2{
+  width:50%;
+}
+
+.columns-3{
+  width: 33.33%;
+}
+
+.columns-4{
+  width: 25%;
+}
+
 .registrationCard-print-table {
   width: 150mm;
   height: 83mm;

@@ -149,13 +149,23 @@
             }, 
             "footerSummary": {
                 "type": "custom",
-                "displayOrder": 3,
+                "displayOrder": 6,
                 "config": {
                 "translationKey": "FOOTER_SUMMARY",
                 "title": " Discharge Summary ",
                "template": "<common-footer concept-name='Injury Notes'></common-footer>"
                          }
-         }
+         },
+        "Presciption EndFooter": 
+        {
+            "type": "custom",
+            "displayOrder": 2,
+            "config":
+             {
+                "title": "   ",
+                "template": "<end_prescription></end_prescription>"
+             }
+        }
              
     }
     
@@ -269,7 +279,7 @@
             "displayOrder": 4,
             "config":
              {
-                "title": "Death Footer",
+                "title": "  ",
                 "template": "<prescription-footer></prescription-footer>"
              }
         }
