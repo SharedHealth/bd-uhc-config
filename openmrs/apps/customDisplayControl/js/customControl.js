@@ -180,4 +180,30 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             template: '<ng-include src="contentUrl"/>',
         }
+    }]).directive('endPrescription', ['TreatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
+    {
+       var link = function ($scope) 
+        {        
+            spinner.forPromise(treatmentService.getPrescribedAndActiveDrugOrders($scope.patient.uuid, undefined , false, [$scope.visitUuid]).then(function (response) {
+            	$scope.drugOrders = response.data;
+            	
+            	var audits = _.map($scope.drugOrders.visitDrugOrders, function(drugOrder){
+                return _.pick(drugOrder, 'creatorName', 'provider');
+                });
+                var auditDisplay = _.map(audits, function(audit){
+                 return  audit.creatorName == audit.provider.name ? audit.provider.name : audit.creatorName+ " on behalf of "+audit.provider.name;
+                 });  
+               $scope.displayName= _.uniq(auditDisplay)
+                
+
+	            $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/endprescription.html";
+    	        $scope.curDate=new Date();
+        	}));
+        }
+
+        return {
+            restrict: 'E',
+            link: link,
+            template: '<ng-include src="contentUrl"/>',
+        }
     }]);

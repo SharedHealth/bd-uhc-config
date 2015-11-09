@@ -36,3 +36,15 @@ body{
 .opdTicket-print-table h2{
 	margin-bottom : 40px;
 }
+
+.columns-2{
+  width:50%;
+}
+
+.columns-3{
+  width: 33.33%;
+}
+
+.columns-4{
+  width: 25%;
+}
