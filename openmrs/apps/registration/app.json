@@ -23,10 +23,9 @@
         ],
         "config" : {
             "autoCompleteFields":["familyName"],
-            "prepopulateFields" : ["Division", "Zilla", "Upazilla"],
             "defaultIdentifierPrefix": "BDH",
             "prepopulateFields" : ["Division", "Zilla", "Upazilla"],
-	        "defaultVisitType": "outpatient",
+	    "defaultVisitType": "outpatient",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": false,
             "addressHierarchy": {
@@ -47,10 +46,7 @@
             ],
             "conceptSetUI": {
              "Fee Category": {
-                	"required": false,
-                	"autocomplete": {
-				"src": "self"
-			}
+                	"required": true
             }
             },
             "fieldValidation" : {
@@ -69,15 +65,19 @@
 	      },
 
             "patientSearch": {
+		"address" : {
+			"label": "Ward/Union",
+			"placeholder": "Enter Ward/Union",
+			"field": "address3"
+		},	
                 "customAttributes": {
-                 "label": "ID/Bangla Name/Phone",
-                 "placeholder": "ID/Bangla Name/Phone",
+                 "label": "ID/Relative Name/Phone",
+                 "placeholder": "ID/Relative Name/Phone",
                  "fields": ["nationalId",
                 "healthId",
                 "birthRegistrationId",
                 "phoneNumber",
                 "fatherName",
-                "motherName",
                 "spouseName"]
 
                 }
