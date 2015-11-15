@@ -159,54 +159,63 @@
                 }
             ],
             "drugFormDefaults": {
+               "Chewable tablet": {
+                    "doseUnits": "Tablet dose form",
+                    "route": "Chew, oral"
+                },
                 "Capsule dose form": {
-                    "doseUnits": "Capsule",
-                    "route": "Oral"
+                    "doseUnits": "Capsule dose form",
+                    "route": "OralRoute"
                 },
                 "Tablet dose form": {
-                    "doseUnits": "Tablet",
-                    "route": "Oral"
+                    "doseUnits": "Tablet dose form",
+                    "route": "OralRoute"
                 },
                 "Drops dose form": {
-                    "doseUnits": "Drop",
+                    "doseUnits": "Drop - unit of product",
                     "route": "Topical"
                 },
                 "Granules for oral solution": {
-                    "doseUnits": "Sachet",
-                    "route": "Oral"
+                    "doseUnits": "Sachet - unit of product",
+                    "route": "OralRoute"
                 },
                 "Granules for oral suspension": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
                 },
                 "Infusion solution": {
-                    "doseUnits": "ml",
-                    "route": "Intravenous"
+                    "doseUnits": "millilitre",
+                    "route": "Injection, intravenous"
                 },
                 "Inhalation aerosol solution": {
-                    "doseUnits": "Ampoule",
+                    "doseUnits": "Ampule - unit of product",
+                    "route": "Inhalation"
+                },
+                "Inhalation aerosol suspension": {
+                    "doseUnits": "Ampule - unit of product",
                     "route": "Inhalation"
                 },
                 "Injection solution": {
-                    "doseUnits": "Vial",
-                    "route": "Intravenous"
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
                 },
                 "Ointment": {
                     "doseUnits": "QS",
                     "route": "Topical"
                 },
                 "Powder for oral suspension": {
-                    "doseUnits": "TSF",
+                    "doseUnits": "Teaspoonful - unit of product",
                     "route": "Topical"
                 },
                 "Powder for syrup": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
                 },
                 "Syrup": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
                 }
+
             }
         }
     }
