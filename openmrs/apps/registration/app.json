@@ -50,12 +50,13 @@
             }
             },
             "fieldValidation" : {
+                "familyName" : {"pattern" : "^([A-Za-z]*)$", "errorMessage" : "Family name should only have alphabets, not even space"},
                 "nationalId" : {"pattern" : "^(\\d{13}|\\d{17})$", "errorMessage" : "National ID should be 13 or 17 digits"},
                 "birthRegistrationId" : {"pattern" : "^\\d{17}$", "errorMessage" : "Birth Registration Number should be 17 digits"},
                 "phoneNumber" : {"pattern" : "^(\\d{3,12})$", "errorMessage" : "Phone Number should be between 3 to 12 digits"},
                 "healthId" : {
                     "pattern" : "^[9][1-9][0-9]{9}$",
-                    "errorMessage" : "Please enter a valid HID"
+                    "errorMessage" : "Please enter a valid Health ID"
                 },
                 "address1" : {
                     "pattern" : "^(\\s*[^\\s]\\s*){3,255}$",

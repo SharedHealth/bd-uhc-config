@@ -39,6 +39,6 @@ Bahmni.Registration.customValidator = {
 			}
 			return (getLunhAlgorithmSum(value) % 10) == 0;
 		},
-		errorMessage: "Please Enter Valid HID."
+		errorMessage: "Please Enter Valid Health ID."
 	}
 };

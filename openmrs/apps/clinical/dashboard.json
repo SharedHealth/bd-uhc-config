@@ -10,7 +10,6 @@
         "patientAttributes": [
           "healthId",
           "fatherName",
-          "motherName",
           "spouseName",
           "nationalId",
           "education",
@@ -73,7 +72,7 @@
             "url": "../orders/#/search"
           },
           {
-            "translationKey": "Registration",
+            "translationKey": "Registration & Close Visit",
             "url": "../registration/#/patient/{{patientUuid}}"
           }
         ],
@@ -85,15 +84,15 @@
         "name": "labOrders",
         "dashboardParams": {
           "numberOfVisits": 1,
-          "showChart": false,
-          "showTable": false,
+          "showChart": true,
+          "showTable": true,
           "showDetailsButton": true,
           "showNormalLabResults": true,
           "showCommentsExpanded": true,
           "showAccessionNotes": true
         },
         "allLabDetails": {
-          "numberOfVisits": 5,
+          "numberOfVisits": 10,
           "showChart": true,
           "showTable": true
         },
@@ -180,7 +179,6 @@
         "patientAttributes": [
           "healthId",
           "fatherName",
-          "motherName",
           "spouseName",
           "nationalId",
           "education",

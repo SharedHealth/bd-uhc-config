@@ -78,5 +78,30 @@
         
         "order": 2,
         "requiredPrivilege": "app:clinical"
+    },
+    "bahmni_clinical_conceptsetgroup_observations_Condition_Complaint_Template:clinical": {
+         "id": "bahmni.clinical.conceptSetGroup.observations.acuteOPDvisit",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+           "conceptName" : "Condition Complaint Template",
+	   "default" : "true",
+	   "isOpen" : "true" 
+        },
+        "order": 1, 
+        "requiredPrivilege": "app:clinical"
+    },
+     "bahmni_clinical_conceptsetgroup_observations_basic_examination_details:clinical": {
+         "id": "bahmni.clinical.conceptSetGroup.observations.Vitals",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+           "conceptName" : "Vitals",
+	   "default" : "true",
+	   "isOpen" : "true" 
+        },
+        "order": 2, 
+        "requiredPrivilege": "app:clinical"
     }
+   
 }

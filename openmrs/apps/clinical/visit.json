@@ -4,9 +4,9 @@
         "translationKey":"GENERAL_TYPE_VISIT",
         "displayByDefault": true,
         "printing": {
-            "title": "Bahmni",
+            "title": "DGHS",
             "header": "Visit",
-            "logo": "../images/bahmniLogo.png"
+            "logo": "/bahmni_config/openmrs/images/dghslogo.png"
         },
         "defaultSections": true,
         "sections": {
@@ -16,13 +16,9 @@
                 "config": {
                     "groupBy": "encounters",
                     "obsConcepts": [
-                        "Vitals",
-                        "Height",
-                        "WEIGHT",
-                        "M/C Days"
+                        "Vitals"
                     ],
                     "drugConcepts": [
-                        "Gamma Benzene Hexachloride"
                     ],
                     "labConcepts": ""
                 },
@@ -35,9 +31,9 @@
     "title": "Patient Discharge Summary ",
     "translationKey":"DISCHARGE_SUMMARY_VISIT",
     "printing": {
-        "title": "Bahmni",
+        "title": "DGHS",
         "header": "DISCHARGE SUMMARY",
-        "logo": "../images/bahmniLogo.png"
+        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
         "Discharge Certificate": 
@@ -50,9 +46,24 @@
                 "template": "<discharge-summary></discharge-summary>"
              }
         },
+   	 "History_Examinations":
+    	 {
+                "type": "observation",
+                "displayOrder": 2,
+                "title": "History and Examination",
+                "config": {
+                    "conceptNames": ["Condition Complaint Template"],
+                    "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+                    "numberOfVisits": "1",
+                    "showFlowSheet": false,
+                    "showListView": true,
+                    "showOtherActive": true,
+                    "showDetailsButton": true
+                }
+            },
         "diagnoses":{
                 "type": "diagnosis",
-                "displayOrder": 2,
+                "displayOrder": 3,
                 "config": {
                     "translationKey" : "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
                     "showCertainty": false,
@@ -62,7 +73,7 @@
             },
             "treatments":{
                 "type": "treatment",
-                "displayOrder": 3,
+                "displayOrder": 4,
                 "config": {
                     "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
                     "showFlowSheet": false,
@@ -105,9 +116,9 @@
     "title": "Patient INJURY CERTIFICATE ",
     "translationKey":"INJURY_CLINICAL_CERTIFICATE",
     "printing": {
-        "title": "Bahmni",
+        "title": "DGHS",
         "header": " Injury Certificate",
-        "logo": "../images/bahmniLogo.png"
+        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
     "Patient Information": {
@@ -139,7 +150,7 @@
                 "config": {
                     "conceptNames": ["Injury Notes" ],
                     "translationKey":"INJURY_CLINICAL_NOTES",
-                    "numberOfVisits": "2",
+                    "numberOfVisits": "1",
                     "showFlowSheet": false,
                     "showListView": true,
                     "showOtherActive": true,
@@ -175,9 +186,9 @@
     "title": "Death CERTIFICATE ",
     "translationKey":"DEATH_CLINICAL_CERTIFICATE",
     "printing": {
-        "title": "Bahmni",
+        "title": "DGHS",
         "header": " Death Certificate",
-        "logo": "../images/bahmniLogo.png"
+        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
             "Death Certificate": 
@@ -225,7 +236,7 @@
     "title": "Patient_Prescription ",
     "translationKey":"PRESCRIPTION",
     "printing": {
-        "title": "Bahmni",
+        "title": "DGHS",
         "header": " Prescription",
         "logo": "../images/bahmniLogo.png"
     },
@@ -290,9 +301,9 @@
     "title": "Baby_Notes",
     "translationKey":"BABY_NOTES",
     "printing": {
-        "title": "Bahmni",
+        "title": "DGHS",
         "header": "Baby Notes",
-        "logo": "../images/bahmniLogo.png"
+        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
     "Patient Information": {
