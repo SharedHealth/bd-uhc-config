@@ -23,7 +23,6 @@
                     "allowAddMore": true
                 },
                 "Immunization Incident Vaccine" : {
-                    "autocomplete" : true,
                     "required": true
                 },
                 "Immunization Incident Vaccination Reported" : {

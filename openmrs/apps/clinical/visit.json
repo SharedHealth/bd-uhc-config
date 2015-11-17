@@ -238,7 +238,7 @@
     "printing": {
         "title": "DGHS",
         "header": " Prescription",
-        "logo": "../images/bahmniLogo.png"
+        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
     "Patient Information": {
