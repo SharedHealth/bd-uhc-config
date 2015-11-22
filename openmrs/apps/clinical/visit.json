@@ -1,359 +1,443 @@
 {
-    "general": {
-        "title": "General",
-        "translationKey":"GENERAL_TYPE_VISIT",
-        "displayByDefault": true,
-        "printing": {
-            "title": "DGHS",
-            "header": "Visit",
-            "logo": "/bahmni_config/openmrs/images/dghslogo.png"
-        },
-        "defaultSections": true,
-        "sections": {
-            "pivot_table": {
-                "type": "pivotTable",
-                "title": "Basic Examination",
-                "config": {
-                    "groupBy": "encounters",
-                    "obsConcepts": [
-                        "Vitals"
-                    ],
-                    "drugConcepts": [
-                    ],
-                    "labConcepts": ""
-                },
-                "displayOrder": 0
-            }
-        }
+  "general": {
+    "title": "General",
+    "translationKey": "GENERAL_TYPE_VISIT",
+    "displayByDefault": true,
+    "printing": {
+      "title": "DGHS",
+      "header": "Visit",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
-    "dischargeSummary": 
-    {
+    "defaultSections": true,
+    "sections": {
+      "pivot_table": {
+        "type": "pivotTable",
+        "title": "Basic Examination",
+        "config": {
+          "groupBy": "encounters",
+          "obsConcepts": [
+            "Vitals"
+          ],
+          "drugConcepts": [],
+          "labConcepts": ""
+        },
+        "displayOrder": 0
+      }
+    }
+  },
+  "dischargeSummary": {
     "title": "Patient Discharge Summary ",
-    "translationKey":"DISCHARGE_SUMMARY_VISIT",
+    "translationKey": "DISCHARGE_SUMMARY_VISIT",
     "printing": {
-        "title": "DGHS",
-        "header": "DISCHARGE SUMMARY",
-        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+      "title": "DGHS",
+      "header": "DISCHARGE SUMMARY",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
-        "Discharge Certificate": 
-        {
-            "type": "custom",
-            "displayOrder": 1,
-            "config":
-             {
-                "title": "Patient Discharge Summary ",
-                "template": "<discharge-summary></discharge-summary>"
-             }
+      "Discharge Certificate": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Patient Discharge Summary ",
+          "template": "<discharge-summary></discharge-summary>"
+        }
+      },
+      "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
+        }
+      },
+      "History_Examinations": {
+        "type": "observation",
+        "displayOrder": 2,
+        "title": "History and Examination",
+        "config": {
+          "conceptNames": [
+            "Condition Complaint Template"
+          ],
+          "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
+          "numberOfVisits": "1",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        }
+      },
+      "diagnoses": {
+        "type": "diagnosis",
+        "displayOrder": 3,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
+          "showCertainty": false,
+          "showOrder": false,
+          "showDetailsButton": true
+        }
+      },
+      "treatments": {
+        "type": "treatment",
+        "displayOrder": 4,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      },
+      "clinicalNotes": {
+        "type": "observation",
+        "title": "Clinical Notes",
+        "config": {
+          "conceptNames": [
+            "Discharge Summary"
+          ],
+          "translationKey": "DISCHARGE_CLINICAL_DISCHARGE",
+          "scope": "latest",
+          "numberOfVisits": "1",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true,
+          "showRoute": true
         },
-   	 "History_Examinations":
-    	 {
-                "type": "observation",
-                "displayOrder": 2,
-                "title": "History and Examination",
-                "config": {
-                    "conceptNames": ["Condition Complaint Template"],
-                    "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true
-                }
-            },
-        "diagnoses":{
-                "type": "diagnosis",
-                "displayOrder": 3,
-                "config": {
-                    "translationKey" : "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
-                    "showCertainty": false,
-                    "showOrder": false,
-                    "showDetailsButton": true
-                }
-            },
-            "treatments":{
-                "type": "treatment",
-                "displayOrder": 4,
-                "config": {
-                    "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true,
-                    "showDrugForm": true
-                }
-                },
-       "clinicalNotes": {
-                "type": "observation",
-                "title": "Clinical Notes",
-                "config": {
-                    "conceptNames": ["Discharge Summary" ],
-                    "translationKey": "DISCHARGE_CLINICAL_DISCHARGE",
-                    "scope": "latest",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true
-                },
-                "displayOrder": 4
-            },
-            "footerSummary": {
-                "type": "custom",
-                "displayOrder": 5,
-                "config": {
-                "translationKey": "FOOTER_SUMMARY",
-                "title": " Discharge Summary ",
-               "template": "<footer-summary></footer-summary>"
-            }
-         }
-       }
-    },
-    "injuryCertificate":
-    {
+        "displayOrder": 4
+      },
+      "footerSummary": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "translationKey": "FOOTER_SUMMARY",
+          "title": " Discharge Summary ",
+          "template": "<footer-summary></footer-summary>"
+        }
+      }
+    }
+  },
+  "injuryCertificate": {
     "title": "Patient INJURY CERTIFICATE ",
-    "translationKey":"INJURY_CLINICAL_CERTIFICATE",
+    "translationKey": "INJURY_CLINICAL_CERTIFICATE",
     "printing": {
-        "title": "DGHS",
-        "header": " Injury Certificate",
-        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+      "title": "DGHS",
+      "header": " Injury Certificate",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
-    "Patient Information": {
-            "type": "patientInformation",
-            "title": "Patient Information",
-            "displayOrder": 0,
-            "config": {
-                "title": "PatientInformation",
-                "patientAttributes": [
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation"	
-                ],
-                "addressFields": [
-                    "address1",
-                    "address5",
-                    "countyDistrict",
-                    "stateProvince"
-                ]
-            }
-        },
-    
-    "InjuryNotes": 
-    {
-                "type": "observation",
-                "displayOrder": 1,
-                "title": "Injury Notes",
-                "config": {
-                    "conceptNames": ["Injury Notes" ],
-                    "translationKey":"INJURY_CLINICAL_NOTES",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true
-                }
-            }, 
-            "footerSummary": {
-                "type": "custom",
-                "displayOrder": 6,
-                "config": {
-                "translationKey": "FOOTER_SUMMARY",
-                "title": " Discharge Summary ",
-               "template": "<common-footer concept-name='Injury Notes'></common-footer>"
-                         }
-         },
-        "Presciption EndFooter": 
-        {
-            "type": "custom",
-            "displayOrder": 2,
-            "config":
-             {
-                "title": "   ",
-                "template": "<end_prescription></end_prescription>"
-             }
+      "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
         }
-             
+      },
+      "InjuryNotes": {
+        "type": "observation",
+        "displayOrder": 1,
+        "title": "Injury Notes",
+        "config": {
+          "conceptNames": [
+            "Injury Notes"
+          ],
+          "translationKey": "INJURY_CLINICAL_NOTES",
+          "numberOfVisits": "1",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true,
+          "showRoute": true
+        }
+      },
+      "footerSummary": {
+        "type": "custom",
+        "displayOrder": 6,
+        "config": {
+          "translationKey": "FOOTER_SUMMARY",
+          "title": " Discharge Summary ",
+          "template": "<common-footer concept-name='Injury Notes'></common-footer>"
+        }
+      },
+      "Presciption EndFooter": {
+        "type": "custom",
+        "displayOrder": 2,
+        "config": {
+          "title": "   ",
+          "template": "<end_prescription></end_prescription>"
+        }
+      }
     }
-    
-    },
-    "deathCertificate":
-    {
+  },
+  "deathCertificate": {
     "title": "Death CERTIFICATE ",
-    "translationKey":"DEATH_CLINICAL_CERTIFICATE",
+    "translationKey": "DEATH_CLINICAL_CERTIFICATE",
     "printing": {
-        "title": "DGHS",
-        "header": " Death Certificate",
-        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+      "title": "DGHS",
+      "header": " Death Certificate",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
-            "Death Certificate": 
-        {
-            "type": "custom",
-            "displayOrder": 1,
-            "config":
-             {
-                "title": "Patient Death Certificate ",
-                "template": "<death-certificate></death-certificate>"
-             }
-        },
-    
-    "DeathNotes": 
-    {
-                "type": "observation",
-                "title": "Death Notes",
-                "displayOrder": 2,
-                "config": {
-                    "conceptNames": ["Death Note" ],
-                    "translationKey":"DEATH_CLINICAL_NOTES",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true
-                }
-            },
-           "footerSummary": {
-                "type": "custom",
-                "displayOrder": 5,
-                "config": {
-                "translationKey": "FOOTER_SUMMARY",
-                "title": " Discharge Summary ",
-               "template": "<death-footer></death-footer>"
-                         }
-         }
-             
+      "Death Certificate": {
+        "type": "custom",
+        "displayOrder": 1,
+        "config": {
+          "title": "Patient Death Certificate ",
+          "template": "<death-certificate></death-certificate>"
+        }
+      },
+          "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
+        }
+      },
+      "DeathNotes": {
+        "type": "observation",
+        "title": "Death Notes",
+        "displayOrder": 2,
+        "config": {
+          "conceptNames": [
+        	    "Death Note"
+          ],
+          "translationKey": "DEATH_CLINICAL_NOTES",
+          "numberOfVisits": "1",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true,
+          "showRoute": true
+        }
+      },
+      "footerSummary": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "translationKey": "FOOTER_SUMMARY",
+          "title": " Discharge Summary ",
+          "template": "<death-footer></death-footer>"
+        }
+      }
     }
-    
-    },
-    "Prescription":
-    {
+  },
+  "Prescription": {
     "title": "Patient_Prescription ",
-    "translationKey":"PRESCRIPTION",
+    "translationKey": "PRESCRIPTION",
     "printing": {
-        "title": "DGHS",
-        "header": " Prescription",
-        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+      "title": "DGHS",
+      "header": " Prescription",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
-    "Patient Information": {
-            "type": "patientInformation",
-            "title": "Patient Information",
-            "displayOrder": 0,
-            "config": {
-                "title": "PatientInformation",
-                "patientAttributes": [
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address5",
-                    "countyDistrict",
-                    "stateProvince"
-                ]
-            }
-        },
-        "diagnoses":{
-                "type": "diagnosis",
-                "displayOrder": 2,
-                "config": {
-                    "translationKey" : "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
-                    "showCertainty": false,
-                    "showOrder": false,
-                    "showDetailsButton": true
-                }
-            },
-            "treatments":{
-                "type": "treatment",
-                "displayOrder": 3,
-                "config": {
-                    "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": false,
-                    "showDetailsButton": true,
-                    "showRoute": true,
-                    "showDrugForm": true
-                }
-                },
-                "Presciption Footer": 
-        {
-            "type": "custom",
-            "displayOrder": 4,
-            "config":
-             {
-                "title": "  ",
-                "template": "<prescription-footer></prescription-footer>"
-             }
+      "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
         }
+      },
+      "diagnoses": {
+        "type": "diagnosis",
+        "displayOrder": 2,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
+          "showCertainty": false,
+          "showOrder": false,
+          "showDetailsButton": true
+        }
+      },
+      "treatments": {
+        "type": "treatment",
+        "displayOrder": 3,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": false,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      },
+      "ConsultationNotes": {
+        "type": "observation",
+        "title": "Consultation Notes",
+        "displayOrder": 4,
+        "config": {
+          "conceptNames": [
+            "Consultation Note"
+          ],
+          "numberOfVisits": "1",
+          "showListView": false,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        }
+      },
+      "Presciption Footer": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "title": "  ",
+          "template": "<prescription-footer></prescription-footer>"
+        }
+      }
     }
-    },
-        "Baby Notes":
-    {
+  },
+  "Baby Notes": {
     "title": "Baby_Notes",
-    "translationKey":"BABY_NOTES",
+    "translationKey": "BABY_NOTES",
     "printing": {
-        "title": "DGHS",
-        "header": "Baby Notes",
-        "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+      "title": "DGHS",
+      "header": "Baby Notes",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
     "sections": {
-    "Patient Information": {
+      "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "Patient Information": {
             "type": "patientInformation",
             "title": "Patient Information",
             "displayOrder": 0,
             "config": {
-                "title": "PatientInformation",
-                "patientAttributes": [
-                    "caste",
-                    "class",
-                    "education",
-                    "occupation"
-                ],
-                "addressFields": [
-                    "address1",
-                    "address5",
-                    "countyDistrict",
-                    "stateProvince"
-                ]
+              "title": "PatientInformation",
+              "patientAttributes": [
+                "healthId",
+                "fatherName",
+                "spouseName",
+                "nationalId",
+                "education",
+                "householdCode",
+                "birthRegistrationId",
+                "occupation",
+                "phoneNumber"
+              ],
+              "addressFields": [
+                "address1",
+                "address2",
+                "address3",
+                "address4",
+                "address5",
+                "countyDistrict",
+                "stateProvince"
+              ]
             }
-        },
-        "BabyNotes": 
-    {
-                "type": "observation",
-                "title": "Baby Notes",
-                "displayOrder": 2,
-                "config": {
-                    "conceptNames": ["Delivery Note, Baby notes" ],
-                    "translationKey":"BABY_NOTES",
-                    "numberOfVisits": "1",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": true,
-                    "showDetailsButton": true,
-                    "showRoute": true
-                }
-            },
-           "Baby Notes Footer": 
-        {
+          },
+          "BabyNotes": {
+            "type": "observation",
+            "title": "Baby Notes",
+            "displayOrder": 2,
+            "config": {
+              "conceptNames": [
+                "Delivery Note, Baby notes"
+              ],
+              "translationKey": "BABY_NOTES",
+              "numberOfVisits": "1",
+              "showFlowSheet": false,
+              "showListView": true,
+              "showOtherActive": true,
+              "showDetailsButton": true,
+              "showRoute": true
+            }
+          },
+          "Baby Notes Footer": {
             "type": "custom",
             "displayOrder": 4,
-            "config":
-             {
-                "title": "Death Footer",
-                "template": "<common-footer concept-name='Delivery Note, Baby notes'></common-footer>"
-             }
+            "config": {
+              "title": "Death Footer",
+              "template": "<common-footer concept-name='Delivery Note, Baby notes'></common-footer>"
+            }
+          }
         }
+      }
     }
-    }
-
-
- }
+  }
+}

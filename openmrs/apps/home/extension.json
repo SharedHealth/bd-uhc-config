@@ -47,7 +47,7 @@
         "url": "../reports/#/dashboard",
          "icon": "fa-pencil-square-o",
 	"order": 7,
-        "requiredPrivilege": "app:admin"
+        "requiredPrivilege": "app:registration"
     },
     "bahmni_admin": {
         "id": "bahmni.admin",

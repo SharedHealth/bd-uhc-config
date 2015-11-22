@@ -3,11 +3,11 @@
     "name": "Registration based on Fee Category",
     "type": "obsCount",
     "config": {
-      "ageGroupName": "All Ages",
+      "ageGroupName": "Registration",
       "conceptNames": [
         "Fee Category"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "children_death_report": {
