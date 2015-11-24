@@ -15,4 +15,15 @@
             VALUES ('emr.personImagesDirectory', '/home/bahmni/patient_images', 'Location of patient images - required by emrapi', uuid());
         </sql>
     </changeSet>
+    <changeSet id="BD-20151124-1650" author="tw">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                SELECT COUNT(*) FROM global_property where property='patient.nameValidationRegex';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the given name regex pattern </comment>
+        <sql>
+            update global_property set property_value='^[a-zA-Z \\-\\.]+$' where property='patient.nameValidationRegex';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
