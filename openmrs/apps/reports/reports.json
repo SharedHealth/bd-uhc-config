@@ -191,5 +191,19 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/reports/bduhcreport/crosscheck.sql"
     }
+  },
+  "FreeTextDrugOrdered": {
+    "name": "Non coded drugs",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddrugs.sql"
+    }
+  },
+  "FreeTextDiagnosis": {
+    "name": "Non coded Diagnosis",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddiagnosis.sql"
+    }
   }
 }

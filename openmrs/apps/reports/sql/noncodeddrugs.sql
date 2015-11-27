@@ -1,0 +1,1 @@
+select distinct do.drug_non_coded as 'Non coded drugs ordered' from drug_order do join orders o on do.order_id = o.order_id where do.drug_non_coded is not null and o.date_created >= '#startDate#' and o.date_created < '#endDate#' order by do.drug_non_coded;

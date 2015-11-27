@@ -1,10 +1,110 @@
-{
+{  
+  "Prescription": {
+    "title": "Patient_Prescription ",
+    "translationKey": "PRESCRIPTION",
+    "displayByDefault": true,
+    "printing": {
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
+      "header": " Prescription",
+      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
+    },
+    "sections": {
+      "Patient Information": {
+        "type": "patientInformation",
+        "title": "Patient Information",
+        "displayOrder": 0,
+        "config": {
+          "title": "PatientInformation",
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
+        }
+      },
+      "investigationresult":
+	{
+		"type": "investigationResult",
+		"config": {
+			"title": "Lab Investigations",
+			"showChart": false,
+			"showTable": true,
+			"showNormalLabResults": true,
+			"showCommentsExpanded": true,
+			"showAccessionNotes": true,
+			"numberOfVisits": 10
+		},
+		"displayOrder":1
+	},
+      "diagnoses": {
+        "type": "diagnosis",
+        "displayOrder": 2,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
+          "showCertainty": false,
+          "showOrder": false,
+          "showDetailsButton": true
+        }
+      },
+      "treatments": {
+        "type": "treatment",
+        "displayOrder": 3,
+        "config": {
+          "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": false,
+          "showDetailsButton": true,
+          "showRoute": true,
+          "showDrugForm": true
+        }
+      },
+      "ConsultationNotes": {
+        "type": "observation",
+        "title": "Consultation Notes",
+        "displayOrder": 4,
+        "config": {
+          "conceptNames": [
+            "Consultation Note"
+          ],
+          "numberOfVisits": "1",
+          "showListView": false,
+          "showOtherActive": true,
+          "showDetailsButton": true
+        }
+      },
+      "Presciption Footer": {
+        "type": "custom",
+        "displayOrder": 5,
+        "config": {
+          "title": "  ",
+          "template": "<prescription-footer></prescription-footer>"
+        }
+      }
+    }
+  },
+
   "general": {
     "title": "General",
     "translationKey": "GENERAL_TYPE_VISIT",
     "displayByDefault": true,
     "printing": {
-      "title": "DGHS",
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
       "header": "Visit",
       "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
@@ -29,7 +129,7 @@
     "title": "Patient Discharge Summary ",
     "translationKey": "DISCHARGE_SUMMARY_VISIT",
     "printing": {
-      "title": "DGHS",
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
       "header": "DISCHARGE SUMMARY",
       "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
@@ -86,6 +186,20 @@
           "showDetailsButton": true
         }
       },
+       "investigationresult":
+        {
+                "type": "investigationResult",
+                "config": {
+                        "title": "Lab Investigations",
+                        "showChart": false,
+                        "showTable": true,
+                        "showNormalLabResults": true,
+                        "showCommentsExpanded": true,
+                        "showAccessionNotes": true,
+                        "numberOfVisits": 10
+                },
+                "displayOrder":3
+        },
       "diagnoses": {
         "type": "diagnosis",
         "displayOrder": 3,
@@ -142,7 +256,7 @@
     "title": "Patient INJURY CERTIFICATE ",
     "translationKey": "INJURY_CLINICAL_CERTIFICATE",
     "printing": {
-      "title": "DGHS",
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
       "header": " Injury Certificate",
       "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
@@ -215,7 +329,7 @@
     "title": "Death CERTIFICATE ",
     "translationKey": "DEATH_CLINICAL_CERTIFICATE",
     "printing": {
-      "title": "DGHS",
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
       "header": " Death Certificate",
       "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
@@ -284,95 +398,11 @@
       }
     }
   },
-  "Prescription": {
-    "title": "Patient_Prescription ",
-    "translationKey": "PRESCRIPTION",
-    "printing": {
-      "title": "DGHS",
-      "header": " Prescription",
-      "logo": "/bahmni_config/openmrs/images/dghslogo.png"
-    },
-    "sections": {
-      "Patient Information": {
-        "type": "patientInformation",
-        "title": "Patient Information",
-        "displayOrder": 0,
-        "config": {
-          "title": "PatientInformation",
-          "patientAttributes": [
-            "healthId",
-            "fatherName",
-            "spouseName",
-            "nationalId",
-            "education",
-            "householdCode",
-            "birthRegistrationId",
-            "occupation",
-            "phoneNumber"
-          ],
-          "addressFields": [
-            "address1",
-            "address2",
-            "address3",
-            "address4",
-            "address5",
-            "countyDistrict",
-            "stateProvince"
-          ]
-        }
-      },
-      "diagnoses": {
-        "type": "diagnosis",
-        "displayOrder": 2,
-        "config": {
-          "translationKey": "DISCHARGE_CLINICAL_DIAGNOSIS_KEY",
-          "showCertainty": false,
-          "showOrder": false,
-          "showDetailsButton": true
-        }
-      },
-      "treatments": {
-        "type": "treatment",
-        "displayOrder": 3,
-        "config": {
-          "translationKey": "DISCHARGE_CLINICAL_TREATMENTS_KEY",
-          "showFlowSheet": false,
-          "showListView": true,
-          "showOtherActive": false,
-          "showDetailsButton": true,
-          "showRoute": true,
-          "showDrugForm": true
-        }
-      },
-      "ConsultationNotes": {
-        "type": "observation",
-        "title": "Consultation Notes",
-        "displayOrder": 4,
-        "config": {
-          "conceptNames": [
-            "Consultation Note"
-          ],
-          "numberOfVisits": "1",
-          "showListView": false,
-          "showOtherActive": true,
-          "showDetailsButton": true
-        }
-      },
-      "Presciption Footer": {
-        "type": "custom",
-        "displayOrder": 5,
-        "config": {
-          "title": "  ",
-          "template": "<prescription-footer></prescription-footer>"
-        }
-      }
-    }
-  },
   "Baby Notes": {
     "title": "Baby_Notes",
     "translationKey": "BABY_NOTES",
     "printing": {
-      "title": "DGHS",
+      "title": "উপজেলা স্বাস্থ্য কমপ্লেক্স কালিগঞ্জ, গাজীপুর জরুরী  স্বাস্থ্য সেবার মোবাইল নং 01730324480",
       "header": "Baby Notes",
       "logo": "/bahmni_config/openmrs/images/dghslogo.png"
     },
