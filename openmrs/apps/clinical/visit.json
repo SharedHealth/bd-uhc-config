@@ -413,59 +413,51 @@
         "displayOrder": 0,
         "config": {
           "title": "PatientInformation",
-          "Patient Information": {
-            "type": "patientInformation",
-            "title": "Patient Information",
-            "displayOrder": 0,
-            "config": {
-              "title": "PatientInformation",
-              "patientAttributes": [
-                "healthId",
-                "fatherName",
-                "spouseName",
-                "nationalId",
-                "education",
-                "householdCode",
-                "birthRegistrationId",
-                "occupation",
-                "phoneNumber"
-              ],
-              "addressFields": [
-                "address1",
-                "address2",
-                "address3",
-                "address4",
-                "address5",
-                "countyDistrict",
-                "stateProvince"
-              ]
-            }
-          },
-          "BabyNotes": {
-            "type": "observation",
-            "title": "Baby Notes",
-            "displayOrder": 2,
-            "config": {
-              "conceptNames": [
-                "Delivery Note, Baby notes"
-              ],
-              "translationKey": "BABY_NOTES",
-              "numberOfVisits": "1",
-              "showFlowSheet": false,
-              "showListView": true,
-              "showOtherActive": true,
-              "showDetailsButton": true,
-              "showRoute": true
-            }
-          },
-          "Baby Notes Footer": {
-            "type": "custom",
-            "displayOrder": 4,
-            "config": {
-              "title": "Death Footer",
-              "template": "<common-footer concept-name='Delivery Note, Baby notes'></common-footer>"
-            }
-          }
+          "patientAttributes": [
+            "healthId",
+            "fatherName",
+            "spouseName",
+            "nationalId",
+            "education",
+            "householdCode",
+            "birthRegistrationId",
+            "occupation",
+            "phoneNumber"
+          ],
+          "addressFields": [
+            "address1",
+            "address2",
+            "address3",
+            "address4",
+            "address5",
+            "countyDistrict",
+            "stateProvince"
+          ]
+        }
+      },
+      "BabyNotes": {
+        "type": "observation",
+        "title": "Baby Notes",
+        "displayOrder": 2,
+        "config": {
+          "conceptNames": [
+            "Delivery Note, Baby notes"
+          ],
+          "translationKey": "BABY_NOTES",
+          "numberOfVisits": "1",
+          "showFlowSheet": false,
+          "showListView": true,
+          "showOtherActive": true,
+          "showDetailsButton": true,
+          "showRoute": true
+        }
+      },
+      "Baby Notes Footer": {
+        "type": "custom",
+        "displayOrder": 4,
+        "config": {
+          "title": "Death Footer",
+          "template": "<common-footer concept-name='Delivery Note, Baby notes'></common-footer>"
         }
       }
     }
