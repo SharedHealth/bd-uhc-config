@@ -163,9 +163,9 @@
             <column name="start" value="1"/>
         </insert>
     </changeSet>
-    <changeSet id="BD-20151203-1902" author="neha">
+    <changeSet id="BD-20151203-2202" author="neha">
         <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
+            <sqlCheck expectedResult="1">
                 select count(*) from order_frequency o join concept_name cn on o.concept_id = cn.concept_id where name = 'Immediately' and concept_name_type = 'FULLY_SPECIFIED';
             </sqlCheck>
         </preConditions>
