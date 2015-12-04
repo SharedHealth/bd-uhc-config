@@ -163,4 +163,16 @@
             <column name="start" value="1"/>
         </insert>
     </changeSet>
+    <changeSet id="BD-20151203-1902" author="neha">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_frequency o join concept_name cn on o.concept_id = cn.concept_id where name = 'Immediately' and concept_name_type = 'FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <sql>
+            set @concept_id = 0;
+            select concept_id into  @concept_id from concept_name where name = 'Immediately' and concept_name_type = 'FULLY_SPECIFIED';
+            update order_frequency set retired = 1, date_retired=now(), retire_reason='Not an order frequency' where concept_id = @concept_id;
+        </sql>
+    </changeSet>
 </databaseChangeLog>
