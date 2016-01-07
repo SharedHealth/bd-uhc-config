@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BD-20150107-1158" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Condition Complaint Template'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Condition Complaint Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+
+            set @condition_complaint_template_id = 0;
+            set @condition_complaint_template_name_short_id = 0;
+            set @condition_complaint_template_name_full_id = 0;
+
+            set @condition_chief_complaint_data_id = 0;
+            set @condition_chief_complaint_data_name_short_id = 0;
+            set @condition_chief_complaint_data_name_full_id = 0;
+
+            set @condition_chief_complaint_id = 0;
+            set @condition_chief_complaint_name_short_id = 0;
+            set @condition_chief_complaint_name_full_id = 0;
+
+            set @condition_non_coded_chief_complaint_id = 0;
+            set @condition_non_coded_chief_complaint_name_short_id = 0;
+            set @condition_non_coded_chief_complaint_name_full_id = 0;
+
+            set @condition_chief_complaint_duration_id = 0;
+            set @condition_chief_complaint_duration_name_short_id = 0;
+            set @condition_chief_complaint_duration_name_full_id = 0;
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@condition_complaint_template_id, @condition_complaint_template_name_short_id, @condition_complaint_template_name_full_id, 'Condition Complaint Template', 'History and Examination', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @condition_complaint_template_id, 2);
+
+            call add_concept(@condition_chief_complaint_data_id, @condition_chief_complaint_data_name_short_id, @condition_chief_complaint_data_name_full_id, 'Condition Chief Complaint Data', 'Chief Complaint Data', 'N/A', 'Concept Details', TRUE);
+            call add_concept_set_members(@condition_complaint_template_id, @condition_chief_complaint_data_id, 1);
+
+            call add_concept(@condition_chief_complaint_id, @condition_chief_complaint_name_short_id, @condition_chief_complaint_name_full_id, 'Condition Chief Complaint', 'Chief Complaint', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@condition_chief_complaint_data_id, @condition_chief_complaint_id, 1);
+
+            call add_concept(@condition_non_coded_chief_complaint_id, @condition_non_coded_chief_complaint_name_short_id, @condition_non_coded_chief_complaint_name_full_id, 'Condition Non-Coded Chief Complaint', 'Non-Coded Chief Complaint', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@condition_chief_complaint_data_id, @condition_non_coded_chief_complaint_id, 2);
+
+            call add_concept(@condition_chief_complaint_duration_id, @condition_chief_complaint_duration_name_short_id, @condition_chief_complaint_duration_name_full_id, 'Condition Chief Complaint Duration', 'Chief Complaint Duration', 'Numeric', 'Duration', FALSE);
+            call add_concept_set_members(@condition_chief_complaint_data_id, @condition_chief_complaint_duration_id, 3);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150107-1308" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Family History Template'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Family History Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+
+            set @family_history_template_id = 0;
+            set @family_history_template_name_short_id = 0;
+            set @family_history_template_name_full_id = 0;
+
+            set @family_member_history_id = 0;
+            set @family_member_history_name_short_id = 0;
+            set @family_member_history_name_full_id = 0;
+
+            set @family_member_born_on_id = 0;
+            set @family_member_born_on_name_short_id = 0;
+            set @family_member_born_on_name_full_id = 0;
+
+            set @family_member_condition_id = 0;
+            set @family_member_condition_name_short_id = 0;
+            set @family_member_condition_name_full_id = 0;
+
+            set @family_member_condition_notes_id = 0;
+            set @family_member_condition_notes_name_short_id = 0;
+            set @family_member_condition_notes_name_full_id = 0;
+
+            set @family_member_condition_diagnosis_id = 0;
+            set @family_member_condition_diagnosis_name_short_id = 0;
+            set @family_member_condition_diagnosis_name_full_id = 0;
+
+            set @family_member_condition_onset_age_id = 0;
+            set @family_member_condition_onset_age_name_short_id = 0;
+            set @family_member_condition_onset_age_name_full_id = 0;
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@family_history_template_id, @family_history_template_name_short_id, @family_history_template_name_full_id, 'Family History Template', 'Family Member History', 'N/A', 'Misc', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @family_history_template_id, 3);
+
+            call add_concept(@family_member_history_id, @family_member_history_name_short_id, @family_member_history_name_full_id, 'Family Member History', 'Family Member', 'N/A', 'Misc', TRUE);
+            call add_concept_set_members(@family_history_template_id, @family_member_history_id, 1);
+
+            call add_concept(@family_member_born_on_id, @family_member_born_on_name_short_id, @family_member_born_on_name_full_id, 'Family Member Born On', 'Born On', 'Date', 'Misc', FALSE);
+            call add_concept_set_members(@family_member_history_id, @family_member_born_on_id, 2);
+
+            call add_concept(@family_member_condition_id, @family_member_condition_name_short_id, @family_member_condition_name_full_id, 'Family Member Condition', 'Condition', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@family_member_history_id, @family_member_condition_id, 3);
+
+            call add_concept(@family_member_condition_notes_id, @family_member_condition_notes_name_short_id, @family_member_condition_notes_name_full_id, 'Family Member Condition Notes', 'Notes', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@family_member_condition_id, @family_member_condition_notes_id, 1);
+
+            call add_concept(@family_member_condition_diagnosis_id, @family_member_condition_diagnosis_name_short_id, @family_member_condition_diagnosis_name_full_id, 'Family Member Condition Diagnosis', 'Diagnosis', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@family_member_condition_id, @family_member_condition_diagnosis_id, 2);
+
+            call add_concept(@family_member_condition_onset_age_id, @family_member_condition_onset_age_name_short_id, @family_member_condition_onset_age_name_full_id, 'Family Member Condition Onset Age', 'Onset Age', 'Numeric', 'Misc', FALSE);
+            call add_concept_set_members(@family_member_condition_id, @family_member_condition_onset_age_id, 3);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150107-1429" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Procedure Template'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Procedure Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+            
+            set @procedure_template_id = 0;
+            set @procedure_template_name_short_id = 0;
+            set @procedure_template_name_full_id = 0;
+
+            set @procedure_start_date_id = 0;
+            set @procedure_start_date_name_short_id = 0;
+            set @procedure_start_date_name_full_id = 0;
+
+            set @procedure_end_date_id = 0;
+            set @procedure_end_date_name_short_id = 0;
+            set @procedure_end_date_name_full_id = 0;
+
+            set @procedure_notes_id = 0;
+            set @procedure_notes_name_short_id = 0;
+            set @procedure_notes_name_full_id = 0;
+
+            set @procedure_type_id = 0;
+            set @procedure_type_name_short_id = 0;
+            set @procedure_type_name_full_id = 0;
+
+            set @procedure_followup_id = 0;
+            set @procedure_followup_name_short_id = 0;
+            set @procedure_followup_name_full_id = 0;
+
+            set @procedure_diagnostic_study_id = 0;
+            set @procedure_diagnostic_study_name_short_id = 0;
+            set @procedure_diagnostic_study_name_full_id = 0;
+
+            set @procedure_diagnostic_test_id = 0;
+            set @procedure_diagnostic_test_name_short_id = 0;
+            set @procedure_diagnostic_test_name_full_id = 0;
+
+            set @procedure_diagnostic_result_id = 0;
+            set @procedure_diagnostic_result_name_short_id = 0;
+            set @procedure_diagnostic_result_name_full_id = 0;
+
+            set @procedure_diagnosis_id = 0;
+            set @procedure_diagnosis_name_short_id = 0;
+            set @procedure_diagnosis_name_full_id = 0;
+
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+            
+            call add_concept(@procedure_template_id, @procedure_template_name_short_id, @procedure_template_name_full_id, 'Procedure Template', 'Procedures', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @procedure_template_id, 5);
+
+            call add_concept(@procedure_start_date_id, @procedure_start_date_name_short_id, @procedure_start_date_name_full_id, 'Procedure Start Date', 'Start Date', 'Date', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_template_id, @procedure_start_date_id, 1);
+
+            call add_concept(@procedure_end_date_id, @procedure_end_date_name_short_id, @procedure_end_date_name_full_id, 'Procedure End Date', 'End Date', 'Date', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_template_id, @procedure_end_date_id, 2);
+
+            call add_concept(@procedure_notes_id, @procedure_notes_name_short_id, @procedure_notes_name_full_id, 'Procedure Notes', 'Notes', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_template_id, @procedure_notes_id, 5);
+
+            call add_concept(@procedure_type_id, @procedure_type_name_short_id, @procedure_type_name_full_id, 'Procedure Type', 'Procedure', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_template_id, @procedure_type_id, 3);
+
+            call add_concept(@procedure_followup_id, @procedure_followup_name_short_id, @procedure_followup_name_full_id, 'Procedure Followup', 'Followup', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_template_id, @procedure_followup_id, 4);
+
+            call add_concept(@procedure_diagnostic_study_id, @procedure_diagnostic_study_name_short_id, @procedure_diagnostic_study_name_full_id, 'Procedure Diagnostic Study', 'Diagnostic Study', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@procedure_template_id, @procedure_diagnostic_study_id, 5);
+
+            call add_concept(@procedure_diagnostic_test_id, @procedure_diagnostic_test_name_short_id, @procedure_diagnostic_test_name_full_id, 'Procedure Diagnostic Test', 'Test', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_diagnostic_study_id, @procedure_diagnostic_test_id, 1);
+
+            call add_concept(@procedure_diagnostic_result_id, @procedure_diagnostic_result_name_short_id, @procedure_diagnostic_result_name_full_id, 'Procedure Diagnostic Result', 'Result', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_diagnostic_study_id, @procedure_diagnostic_result_id, 2);
+
+            call add_concept(@procedure_diagnosis_id, @procedure_diagnosis_name_short_id, @procedure_diagnosis_name_full_id, 'Procedure Diagnosis', 'Diagnosis', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@procedure_diagnostic_study_id, @procedure_diagnosis_id, 3);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150107-1444" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Immunization Incident Template'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Immunization Incident Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+
+            set @immunization_incident_template_id = 0;
+            set @immunization_incident_template_name_short_id = 0;
+            set @immunization_incident_template_name_full_id = 0;
+
+            set @immunization_incident_group_id = 0;
+            set @immunization_incident_group_name_short_id = 0;
+            set @immunization_incident_group_name_full_id = 0;
+
+            set @immunization_incident_vaccine_id = 0;
+            set @immunization_incident_vaccine_name_short_id = 0;
+            set @immunization_incident_vaccine_name_full_id = 0;
+
+            set @immunization_incident_vaccination_date_id = 0;
+            set @immunization_incident_vaccination_date_name_short_id = 0;
+            set @immunization_incident_vaccination_date_name_full_id = 0;
+
+            set @immunization_incident_vaccination_dosage_id = 0;
+            set @immunization_incident_vaccination_dosage_name_short_id = 0;
+            set @immunization_incident_vaccination_dosage_name_full_id = 0;
+
+            set @immunization_incident_vaccination_reported_id = 0;
+            set @immunization_incident_vaccination_reported_name_short_id = 0;
+            set @immunization_incident_vaccination_reported_name_full_id = 0;
+
+            set @immunization_incident_vaccination_refused_id = 0;
+            set @immunization_incident_vaccination_refused_name_short_id = 0;
+            set @immunization_incident_vaccination_refused_name_full_id = 0;
+
+            set @immunization_note_id = 0;
+            set @immunization_note_name_short_id = 0;
+            set @immunization_note_name_full_id = 0;
+
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@immunization_incident_template_id, @immunization_incident_template_name_short_id, @immunization_incident_template_name_full_id, 'Immunization Incident Template', 'Immunization Incident', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @immunization_incident_template_id, 6);
+
+            call add_concept(@immunization_incident_group_id, @immunization_incident_group_name_short_id, @immunization_incident_group_name_full_id, 'Immunization Incident Group', 'Immunization', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@immunization_incident_template_id, @immunization_incident_group_id, 1);
+
+            call add_concept(@immunization_incident_vaccine_id, @immunization_incident_vaccine_name_short_id, @immunization_incident_vaccine_name_full_id, 'Immunization Incident Vaccine', 'Vaccine', 'Coded', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_incident_vaccine_id, 1);
+
+            call add_concept(@immunization_incident_vaccination_date_id, @immunization_incident_vaccination_date_name_short_id, @immunization_incident_vaccination_date_name_full_id, 'Immunization Incident Vaccination Date', 'Vaccination Date', 'Date', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_incident_vaccination_date_id, 2);
+
+            call add_concept(@immunization_incident_vaccination_dosage_id, @immunization_incident_vaccination_dosage_name_short_id, @immunization_incident_vaccination_dosage_name_full_id, 'Immunization Incident Vaccination Dosage', 'Dosage', 'Numeric', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_incident_vaccination_dosage_id, 3);
+
+            call add_concept(@immunization_incident_vaccination_reported_id, @immunization_incident_vaccination_reported_name_short_id, @immunization_incident_vaccination_reported_name_full_id, 'Immunization Incident Vaccination Reported', 'Vaccination Reported', 'Boolean', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_incident_vaccination_reported_id, 5);
+
+            call add_concept(@immunization_incident_vaccination_refused_id, @immunization_incident_vaccination_refused_name_short_id, @immunization_incident_vaccination_refused_name_full_id, 'Immunization Incident Vaccination Refused', 'Vaccination Refused', 'Boolean', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_incident_vaccination_refused_id, 7);
+
+            call add_concept(@immunization_note_id, @immunization_note_name_short_id, @immunization_note_name_full_id, 'Immunization Note', 'Note', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@immunization_incident_group_id, @immunization_note_id, 8);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150107-1454" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Discharge Summary'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Discharge Summary Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+
+            set @discharge_summary_id = 0;
+            set @discharge_summary_name_short_id = 0;
+            set @discharge_summary_name_full_id = 0;
+
+            set @hospital_course_id = 0;
+            set @hospital_course_name_short_id = 0;
+            set @hospital_course_name_full_id = 0;
+
+            set @history_and_examination_notes_id = 0;
+            set @history_and_examination_notes_name_short_id = 0;
+            set @history_and_examination_notes_name_full_id = 0;
+
+            set @additional_advice_id = 0;
+            set @additional_advice_name_short_id = 0;
+            set @additional_advice_name_full_id = 0;
+
+            set @follow_up_date_id = 0;
+            set @follow_up_date_name_short_id = 0;
+            set @follow_up_date_name_full_id = 0;
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@discharge_summary_id, @discharge_summary_name_short_id, @discharge_summary_name_full_id, 'Discharge Summary', 'Discharge Summary', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @discharge_summary_id, 4);
+
+            call add_concept(@hospital_course_id, @hospital_course_name_short_id, @hospital_course_name_full_id, 'Hospital course', 'Hospital course', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@discharge_summary_id, @hospital_course_id, 1);
+
+            call add_concept(@history_and_examination_notes_id, @history_and_examination_notes_name_short_id, @history_and_examination_notes_name_full_id, 'History and examination notes', 'History and examination notes', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@discharge_summary_id, @history_and_examination_notes_id, 2);
+
+            call add_concept(@additional_advice_id, @additional_advice_name_short_id, @additional_advice_name_full_id, 'Additional advice', 'Additional advice', 'Text', 'Misc', FALSE);
+            call add_concept_set_members(@discharge_summary_id, @additional_advice_id, 3);
+
+            call add_concept(@follow_up_date_id, @follow_up_date_name_short_id, @follow_up_date_name_full_id, 'Follow up date', 'Follow up date', 'Date', 'Misc', FALSE);
+            call add_concept_set_members(@discharge_summary_id, @follow_up_date_id, 4);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150107-1500" author="dubey, sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">select count(*) from concept_name where name = 'Vitals'  and concept_name_type='FULLY_SPECIFIED'</sqlCheck>
+        </preConditions>
+        <comment>Adding Vitals Template and its members</comment>
+        <sql>
+            set @all_observation_concept_id = 0;
+
+            set @vitals_id = 0;
+            set @vitals_name_short_id = 0;
+            set @vitals_name_full_id = 0;
+
+            set @blood_pressure_id = 0;
+            set @blood_pressure_name_short_id = 0;
+            set @blood_pressure_name_full_id = 0;
+
+            SELECT concept_id INTO @all_observation_concept_id FROM concept_name where name = 'All Observation Templates' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@vitals_id, @vitals_name_short_id, @vitals_name_full_id, 'Vitals', 'Vitals', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_observation_concept_id, @vitals_id, 7);
+
+            call add_concept(@blood_pressure_id, @blood_pressure_name_short_id, @blood_pressure_name_full_id, 'Blood Pressure', 'Blood Pressure', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@vitals_id, @blood_pressure_id, 1);
+        </sql>
+    </changeSet>
+</databaseChangeLog>
