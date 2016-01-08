@@ -23,8 +23,8 @@
 	 	{{patient.spouseName.value}} <span ng-if="patient.spouseName.value != undefined">, </span> 
 	  residing at {{patient.address.address1}}
   	{{patient.address.address2}} {{patient.address.address3}} {{patient.address.cityVillage}}{{patient.address.countyDistrict}} 
-  	{{patient.address.stateProvince}} was under treatment at <b class="custom-bold-text">KALIGANJ UHC HOSPITAL </b>Department <span class="capitalize">{{visitSummary.visitType}} </span>
-  	Ward {{bedDetails.physicalLocationName}} Bed {{bedDetails.bedNumber}} from  {{visitSummary.admissionDetails.date  | bahmniDateTime}}
+  	{{patient.address.stateProvince}} was under treatment at <b clas="custom-bold-text">KALIGANJ UHC HOSPITAL </b>
+  	from  {{visitSummary.admissionDetails.date  | bahmniDateTime}}
    	to 
 
    	<span ng-if="visitSummary.dischargeDetails.date!=undefined && visitSummary.stopDateTime==null">

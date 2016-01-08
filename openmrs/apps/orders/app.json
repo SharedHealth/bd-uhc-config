@@ -12,7 +12,31 @@
       "Chief Complaint": {
         "freeTextAutocomplete": true,
         "durationRequired": false
-      }
+      },
+	                "Immunization Reason" : {
+                    "autocomplete" : true
+                },
+                "No Immunization Reason" : {
+                    "autocomplete" : true
+                },
+ "Immunization Incident Group": {
+                    "allowAddMore": true
+                },
+                "Immunization Incident Vaccine" : {
+                    "required": true
+                },
+                "Immunization Incident Vaccination Reported" : {
+                    "required": true
+                },
+                "Immunization Incident Vaccination Refused" : {
+                    "required": true
+                },
+                "Non Communicable Disease Set, Risky Behaviour":{
+                 "multiSelect": true
+                },
+                "Non Communicable Disease Set, Non Communicable Disease":{
+                 "multiSelect": true
+                }
     },
     "sections": {
       "title": "Lab Order FulFillment Form",

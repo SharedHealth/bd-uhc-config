@@ -10,7 +10,7 @@
             <td><span class="custom-bold-text">Date</span> : {{patient.registrationDate | bahmniDate}} </td>
     	</tr>
     	<tr>
-    		<td colspan="2"> <span class="custom-bold-text">Name</span> : <span class="capitalize">{{patient.name}}</span></td>
+    		<td colspan="2"> <span class="custom-bold-text">Name</span> : <span class="capitalize">{{patient.fullNameLocal()}}</span></td>
     	</tr>
     	<tr>
     	    <td><span class="custom-bold-text">Age</span> : {{patient.age | age}} </td>

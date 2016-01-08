@@ -101,7 +101,6 @@ angular.module('bahmni.common.displaycontrol.custom')
     {
        var link = function ($scope) 
         {
-        console.log("inside this")
            $scope.displayStuff = false;
             var conceptNames = ["Discharge Summary"];
             spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptNames, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
@@ -115,7 +114,6 @@ angular.module('bahmni.common.displaycontrol.custom')
             $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/footerSummary.html";
                 spinner.forPromise(visitService.getVisitSummary($scope.visitUuid).then(function(results){
 					$scope.visitSummary = results.data;
-					console.log('$scope.visitSummary',$scope.visitSummary)
 					$scope.curDate=new Date();
                 }));
         };
@@ -136,7 +134,6 @@ angular.module('bahmni.common.displaycontrol.custom')
             var conceptNames = [$scope.conceptName];
             spinner.forPromise(observationsService.fetch($scope.$parent.patient.uuid, conceptNames, "latest", undefined, $scope.$parent.visitUuid, undefined).then(function (response) {
                     $scope.observations = response.data;
-                    console.log($scope.observations);
                     if($scope.observations.length > 0){
 			            $scope.displayStuff = true;                    
                     }

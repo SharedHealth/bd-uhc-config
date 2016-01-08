@@ -30,7 +30,7 @@
         "order": 3,
         "requiredPrivilege": "app:clinical:dispositionTab"
     },
-    "bahmni_clinical_billing_treatment_app:clinical:consultationtab": {
+    "bahmni_clinical_billing_treatment_app:clinical:treatmentTab": {
         "id": "bahmni.clinical.billing.treatment",
         "extensionPointId": "org.bahmni.clinical.consultation.board",
         "type": "link",
@@ -38,7 +38,7 @@
         "url": "treatment",
         "icon": "fa-user-md",
         "order": 7,
-        "requiredPrivilege": "app:clinical:consultationTab"
+        "requiredPrivilege": "app:clinical:treatmentTab"
     },
     "bahmni_clinical_consultation_orders_app:clinical:orderstab": {
         "id": "bahmni.clinical.consultation.orders",
@@ -49,6 +49,16 @@
         "icon": "icon-user-md",
         "order": 4,
         "requiredPrivilege": "app:clinical:orderTab"
+    },
+    "bahmni_clinical_consultation_orders_app:clinical:summaryTab": {
+        "id": "bahmni.clinical.consultation.summary",
+        "extensionPointId": "org.bahmni.clinical.consultation.board",
+        "type": "link",
+        "translationKey": "Summary",
+        "url": "consultation",
+        "icon": "icon-user-md",
+        "order": 8,
+        "requiredPrivilege": "app:clinical:observationTab"
     },
     "bahmni_clinical_patients_search_allpatients_active_app:clinical": {
         "id": "bahmni.clinical.patients.search.allPatients",
@@ -78,5 +88,33 @@
         
         "order": 2,
         "requiredPrivilege": "app:clinical"
+<<<<<<< HEAD
+=======
+    },
+    "bahmni_clinical_conceptsetgroup_observations_Condition_Complaint_Template:clinical": {
+         "id": "bahmni.clinical.conceptSetGroup.observations.acuteOPDvisit",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+           "conceptName" : "Condition Complaint Template",
+	   "default" : "true",
+	   "isOpen" : "true" 
+        },
+        "order": 1, 
+        "requiredPrivilege": "app:clinical"
+    },
+     "bahmni_clinical_conceptsetgroup_observations_basic_examination_details:clinical": {
+         "id": "bahmni.clinical.conceptSetGroup.observations.Vitals",
+        "extensionPointId": "org.bahmni.clinical.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+           "conceptName" : "Vitals",
+	   "default" : "true",
+	   "isOpen" : "true" 
+        },
+        "order": 2, 
+        "requiredPrivilege": "app:clinical"
+>>>>>>> origin/release-0.76
     }
+   
 }

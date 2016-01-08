@@ -6,9 +6,10 @@
   "Dept_of_IMCI":"Dept of IMCI",
   "Dept_of_Immunisation":"Dept of Immunisation",
   "Dept_of_Medicine":"Dept of Medicine",
-  "Dept_of_NCD":"Dept of NCD",
+  "Dept_of_NCD_OPD":"Dept of NCD",
   "Dept_of_Ob-Gyn":"Dept of Ob-Gyn",
   "Dept_of_Orthopaedic":"Dept of orthopaedic",
   "Dept_of_Paediatric":"Dept of Paediatric",
-  "Dept_of_Surgery":"Dept of Surgery"
+  "Dept_of_Surgery":"Dept of Surgery",
+  "ADD_MORE_KEY":"ADD MORE"
 }

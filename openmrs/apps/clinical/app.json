@@ -56,6 +56,9 @@
                 "Family Member History" : {
                     "allowAddMore" :true
                 },
+                "Family Member Condition" : {
+                    "allowAddMore" :true
+                },
                 "Cause of Death" : {
                     "answersConceptName" : "Diagnosis Answers",
                     "autocomplete" : true
@@ -104,7 +107,11 @@
                 "Delivery Note, Baby notes": {
                     "allowAddMore": true
                 },
+<<<<<<< HEAD
                 "ANC Notes, Pregnancy History":{
+=======
+		"ANC Notes, Pregnancy History":{
+>>>>>>> origin/release-0.76
                 "allowAddMore": true
                 },
                 "Baby Weight":{
@@ -159,6 +166,7 @@
                 }
             ],
             "drugFormDefaults": {
+<<<<<<< HEAD
                 "Capsule dose form": {
                     "doseUnits": "Capsule",
                     "route": "Oral"
@@ -207,6 +215,65 @@
                     "doseUnits": "TSF",
                     "route": "Oral"
                 }
+=======
+               "Chewable tablet": {
+                    "doseUnits": "Tablet dose form",
+                    "route": "Chew, oral"
+                },
+                "Capsule dose form": {
+                    "doseUnits": "Capsule dose form",
+                    "route": "OralRoute"
+                },
+                "Tablet dose form": {
+                    "doseUnits": "Tablet dose form",
+                    "route": "OralRoute"
+                },
+                "Drops dose form": {
+                    "doseUnits": "Drop - unit of product",
+                    "route": "Topical"
+                },
+                "Granules for oral solution": {
+                    "doseUnits": "Sachet - unit of product",
+                    "route": "OralRoute"
+                },
+                "Granules for oral suspension": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                },
+                "Infusion solution": {
+                    "doseUnits": "millilitre",
+                    "route": "Injection, intravenous"
+                },
+                "Inhalation aerosol solution": {
+                    "doseUnits": "Ampule - unit of product",
+                    "route": "Inhalation"
+                },
+                "Inhalation aerosol suspension": {
+                    "doseUnits": "Ampule - unit of product",
+                    "route": "Inhalation"
+                },
+                "Injection solution": {
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
+                },
+                "Ointment": {
+                    "doseUnits": "Squirt - unit of product",
+                    "route": "Topical"
+                },
+                "Powder for oral suspension": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "Topical"
+                },
+                "Powder for syrup": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                },
+                "Syrup": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                }
+
+>>>>>>> origin/release-0.76
             }
         }
     }

@@ -68,7 +68,6 @@
                     "patientAttributes": [
                                   "healthId",
                                   "fatherName",
-                                  "motherName",
                                   "spouseName",
                                   "nationalId",
                                   "education",
@@ -99,12 +98,8 @@
                     "title": "Navigation Links Control",
                     "name": "navigationLinksControl",
                     "links": [
-                        {
-                         "translationKey": "Order Fulfilment",
-                         "url": "../orders/#/search"
-                        },
                        {
-                        "translationKey": "Registration",
+                        "translationKey": "Registration & Close Visit",
                         "url": "../registration/#/patient/{{patientUuid}}"
                         }
                     ],

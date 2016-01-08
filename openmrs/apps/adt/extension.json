@@ -93,10 +93,10 @@
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.activePatients",
-            "display": "Active",
-            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard?encounterUuid=active",
-           "translationKey": "Active"
+            "searchHandler": "emrapi.sqlSearch.activeInPatients",
+            "display": "Active IP",
+            "forwardUrl": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit",
+           "translationKey": "Active IP"
         },
          
         "order": 1,
