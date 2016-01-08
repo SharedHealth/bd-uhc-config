@@ -107,11 +107,7 @@
                 "Delivery Note, Baby notes": {
                     "allowAddMore": true
                 },
-<<<<<<< HEAD
-                "ANC Notes, Pregnancy History":{
-=======
 		"ANC Notes, Pregnancy History":{
->>>>>>> origin/release-0.76
                 "allowAddMore": true
                 },
                 "Baby Weight":{
@@ -166,56 +162,7 @@
                 }
             ],
             "drugFormDefaults": {
-<<<<<<< HEAD
-                "Capsule dose form": {
-                    "doseUnits": "Capsule",
-                    "route": "Oral"
-                },
-                "Tablet dose form": {
-                    "doseUnits": "Tablet",
-                    "route": "Oral"
-                },
-                "Drops dose form": {
-                    "doseUnits": "Drop",
-                    "route": "Topical"
-                },
-                "Granules for oral solution": {
-                    "doseUnits": "Sachet",
-                    "route": "Oral"
-                },
-                "Granules for oral suspension": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
-                },
-                "Infusion solution": {
-                    "doseUnits": "ml",
-                    "route": "Intravenous"
-                },
-                "Inhalation aerosol solution": {
-                    "doseUnits": "Ampoule",
-                    "route": "Inhalation"
-                },
-                "Injection solution": {
-                    "doseUnits": "Vial",
-                    "route": "Intravenous"
-                },
-                "Ointment": {
-                    "doseUnits": "QS",
-                    "route": "Topical"
-                },
-                "Powder for oral suspension": {
-                    "doseUnits": "TSF",
-                    "route": "Topical"
-                },
-                "Powder for syrup": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
-                },
-                "Syrup": {
-                    "doseUnits": "TSF",
-                    "route": "Oral"
-                }
-=======
+
                "Chewable tablet": {
                     "doseUnits": "Tablet dose form",
                     "route": "Chew, oral"
@@ -273,7 +220,6 @@
                     "route": "OralRoute"
                 }
 
->>>>>>> origin/release-0.76
             }
         }
     }

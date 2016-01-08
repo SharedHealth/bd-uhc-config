@@ -88,8 +88,7 @@
         
         "order": 2,
         "requiredPrivilege": "app:clinical"
-<<<<<<< HEAD
-=======
+
     },
     "bahmni_clinical_conceptsetgroup_observations_Condition_Complaint_Template:clinical": {
          "id": "bahmni.clinical.conceptSetGroup.observations.acuteOPDvisit",
@@ -114,7 +113,6 @@
         },
         "order": 2, 
         "requiredPrivilege": "app:clinical"
->>>>>>> origin/release-0.76
     }
    
 }
