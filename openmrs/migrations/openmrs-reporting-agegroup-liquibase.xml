@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <!--
+            This Liquibase file content the insert query for adding
+            age group of children death.
+        -->
+    <changeSet id="BD-age-group-001" author="tw">
+        <comment>Add ageGroup for children death</comment>
+        <sql>
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            ('Total Children death (0-5yrs)','Children Death', 0, 0, 5, 0, 7);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            ('Total Neonatal death (0-7 days)','Children Death', 0, 0, 0, 7, 8);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            ('Total Neonatal death (8-28 days)','Children Death', 0, 8, 0, 28, 9);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            ('Total Infant death (29days to 1 yr)','Children Death', 0, 29, 1, -1, 10);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            ('Total Children death (1yr to 5yrs)','Children Death', 1, 0, 5, -1, 11);
+        </sql>
+    </changeSet>
+    </databaseChangeLog>

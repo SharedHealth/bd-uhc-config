@@ -205,5 +205,97 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddiagnosis.sql"
     }
+  },
+  "NCDTemplateReport":{
+    "name": "NCD Template Report",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Non Communicable Disease Set",
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "applyDateRangeFor": "encounterCreateDate"
+    }
+  },
+  "children_death_report": {
+    "name": "Children Death Report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "Children Death",
+      "conceptNames": [
+        "Death Note"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+  "dischargeReport": {
+    "name": "Discharge Report",
+    "type": "ipdPatients",
+    "config": {
+      "addressAttributes": ["address1", "city_village"],
+      "patientAttributes": ["caste", "education"],
+      "conceptNames": ["Height", "Weight"],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "filterBy": "Date of Discharge"
+    }
+  },
+  "admissionReport": {
+    "name": "Admission Report",
+    "type": "ipdPatients",
+    "config": {
+      "addressAttributes": ["address1", "city_village"],
+      "patientAttributes": ["caste", "education"],
+      "conceptNames": ["Height", "Weight"],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "filterBy": "Date of Admission"
+    }
+  },
+  "ProcedureTemplateReport":{
+    "name": "Procedure Test Template Report",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Procedure Template",
+      "patientAttributes": ["caste"],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "applyDateRangeFor": "encounterCreateDate"
+    }
+  },
+
+  "dispositionreport": {
+    "name": "Disposition Report",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Disposition"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+  "deathreport": {
+    "name": "Death Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/deathreport.sql"
+    }
+  },
+  "Physical Assault": {
+    "name": "Physical Assault",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/physicalAssaultCustom.sql"
+    }
   }
 }

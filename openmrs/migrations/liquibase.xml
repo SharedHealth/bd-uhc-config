@@ -15,4 +15,5 @@
     <include file = "openmrs-visits-liquibase.xml"/>
     <include file = "openmrs-misc-config-liquibase.xml"/>
     <include file = "location-encounter-data-liquibase.xml"/>
+    <include file = "openmrs-reporting-agegroup-liquibase.xml"/>
 </databaseChangeLog>
