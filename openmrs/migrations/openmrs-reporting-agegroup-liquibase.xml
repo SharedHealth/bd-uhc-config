@@ -25,4 +25,14 @@
             ('Total Children death (1yr to 5yrs)','Children Death', 1, 0, 5, -1, 11);
         </sql>
     </changeSet>
+    <changeSet id="BD-age-group-002" author="Dayan">
+        <comment>Fixing the sort order of Children Death age group</comment>
+        <sql>
+            update reporting_age_group set sort_order = 1 where name = 'Total Neonatal death (0-7 days)';
+            update reporting_age_group set sort_order = 2 where name = 'Total Neonatal death (8-28 days)';
+            update reporting_age_group set sort_order = 3 where name = 'Total Infant death (29days to 1 yr)';
+            update reporting_age_group set sort_order = 4 where name = 'Total Children death (0-5yrs)';
+            update reporting_age_group set sort_order = 5 where name = 'Total Children death (1yr to 5yrs)';
+        </sql>
+    </changeSet>
     </databaseChangeLog>
