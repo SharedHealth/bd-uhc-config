@@ -13,30 +13,43 @@
         "freeTextAutocomplete": true,
         "durationRequired": false
       },
-	                "Immunization Reason" : {
-                    "autocomplete" : true
-                },
-                "No Immunization Reason" : {
-                    "autocomplete" : true
-                },
- "Immunization Incident Group": {
-                    "allowAddMore": true
-                },
-                "Immunization Incident Vaccine" : {
-                    "required": true
-                },
-                "Immunization Incident Vaccination Reported" : {
-                    "required": true
-                },
-                "Immunization Incident Vaccination Refused" : {
-                    "required": true
-                },
-                "Non Communicable Disease Set, Risky Behaviour":{
-                 "multiSelect": true
-                },
-                "Non Communicable Disease Set, Non Communicable Disease":{
-                 "multiSelect": true
-                }
+      "Immunization Reason" : {
+          "autocomplete" : true
+      },
+      "No Immunization Reason" : {
+          "autocomplete" : true
+      },
+      "Immunization Incident Group": {
+            "allowAddMore": true
+      },
+      "Immunization Incident Vaccine" : {
+          "required": true
+      },
+      "Immunization Incident Vaccination Reported" : {
+          "required": true
+      },
+      "Immunization Incident Vaccination Refused" : {
+          "required": true
+      },
+      "Non Communicable Disease Set, Risky Behaviour":{
+       "multiSelect": true
+      },
+      "Non Communicable Disease Set, Non Communicable Disease":{
+       "multiSelect": true
+      },
+      "Procedure Type": {
+        "autocomplete" : true,
+        "required" : true,
+        "answersConceptName" : "Procedure Type"
+      },
+      "Procedure Diagnosis" : {
+        "autocomplete" : true,
+        "answersConceptName" : "Diagnosis Answers"
+      },
+      "Procedure Diagnostic Test" : {
+        "autocomplete" : true,
+        "answersConceptName" : "Procedure Diagnostic Test"
+      }
     },
     "sections": {
       "title": "Lab Order FulFillment Form",

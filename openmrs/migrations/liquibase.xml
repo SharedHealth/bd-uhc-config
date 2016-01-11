@@ -9,6 +9,7 @@
     
     <include file = "bdshr-liquibase.xml"/>
     <include file = "bdshr-observation-templates-liquibase.xml"/>
+    <include file = "bdshr-orders-setup-liquibase.xml"/>
     <include file = "openmrs-roles-and-privileges-liquibase.xml"/>
     <include file = "openmrs-users-liquibase.xml"/>
     <include file = "openmrs-patient-attributes-liquibase.xml"/>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <changeSet id="BD-20160108-1204" author="dubey,sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type where name='Procedure Order'
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Order Type Procedure Order</comment>
+        <insert tableName="order_type">
+            <column name="name" value="Procedure Order"/>
+            <column name="description" value="An order for procedures"/>
+            <column name="creator" valueNumeric="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" valueBoolean="false"/>
+            <column name="date_retired"/>
+            <column name="retire_reason"/>
+            <column name="uuid" valueComputed="uuid()"/>
+            <column name="java_class_name" value="org.openmrs.Order"/>
+        </insert>
+    </changeSet>
+    <changeSet id="BD-20160108-1206" author="dubey, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type_class_map where order_type_id = (select order_type_id from order_type where name='Procedure Order') and concept_class_id = (select concept_class_id from concept_class where name='Procedure')
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding mapping between Procedure Order order-type and procedure concept class</comment>
+        <sql>
+            insert into order_type_class_map values((select order_type_id from order_type where name='Procedure Order'), (select concept_class_id from concept_class where name='Procedure'));
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150108-1214" author="dubey, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Procedure Order'  and concept_name_type='FULLY_SPECIFIED'
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Procedure Order and adding to All Orderables</comment>
+        <sql>
+            set @all_orderables_concept_id = 0;
+
+            set @procedure_order_id = 0;
+            set @procedure_order_name_short_id = 0;
+            set @procedure_order_name_full_id = 0;
+
+            SELECT concept_id INTO @all_orderables_concept_id FROM concept_name where name = 'All Orderables' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@procedure_order_id, @procedure_order_name_short_id, @procedure_order_name_full_id, 'Procedure Order', 'Procedure', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_orderables_concept_id, @procedure_order_id, 2);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150108-1231" author="dubey, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Procedure Order Fulfillment Form'  and concept_name_type='FULLY_SPECIFIED'
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Procedure Order Fulfillment Form concept for procedure orders</comment>
+        <sql>
+            set @procedure_template_id = 0;
+
+            set @procedure_order_fulfillment_form_id = 0;
+            set @procedure_order_fulfillment_form_name_short_id = 0;
+            set @procedure_order_fulfillment_form_name_full_id = 0;
+
+            SELECT concept_id INTO @procedure_template_id FROM concept_name where name = 'Procedure Template' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@procedure_order_fulfillment_form_id, @procedure_order_fulfillment_form_name_short_id, @procedure_order_fulfillment_form_name_full_id, 'Procedure Order Fulfillment Form', 'Procedure Order Fulfillment Form', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@procedure_order_fulfillment_form_id, @procedure_template_id, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20150108-1353" author="dubey, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from global_property where property = 'emrapi.sqlSearch.active.procedureOrder'
+            </sqlCheck>
+        </preConditions>
+        <comment>set emrapi.sqlSearch.active.procedureOrder global property</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emrapi.sqlSearch.active.procedureOrder', 'SELECT DISTINCT Concat(pn.given_name,'' '', pn.family_name) AS name,
+            pi.identifier,
+            Concat("",p.uuid) AS uuid,
+            Date_format(o.date_activated,''%b %d %Y %h:%i %p'') AS ''Order Placed on''
+            FROM            orders o
+            JOIN            person_name pn
+            ON              o.patient_id = pn.person_id
+            JOIN            patient_identifier pi
+            ON              o.patient_id = pi.patient_id
+            JOIN            person p
+            ON              o.patient_id = p.person_id
+            LEFT OUTER JOIN obs ob
+            ON              o.order_id = ob.order_id
+            JOIN            concept c
+            ON              o.concept_id = c.concept_id
+            JOIN            concept_name cn
+            ON              c.concept_id = cn.concept_id AND cn.concept_name_type=''SHORT''
+            INNER JOIN      order_type ot
+            ON              ot.order_type_id = o.order_type_id
+            WHERE           ob.obs_id IS NULL
+            AND             ot.NAME = ''Procedure Order'' group by pi.identifier', 'Sql query to fetch active patients with procedure order ', uuid());
+        </sql>
+    </changeSet>
+</databaseChangeLog>

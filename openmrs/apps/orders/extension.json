@@ -31,5 +31,20 @@
         "label": "Dept of NCD OPD",
         "order": 2,
         "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_ProcedureOrder": {
+      "id": "bahmni.clinical.patients.search.procedureOrder",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+        "searchHandler": "emrapi.sqlSearch.active.procedureOrder",
+        "translationKey": "Procedures",
+        "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Procedure Order",
+        "forwardButtonTitle": "View",
+        "view": "tabular"
+      },
+      "label": "Procedure Order",
+      "order": 3,
+      "requiredPrivilege": "app:orders"
     }
-   }
+}
