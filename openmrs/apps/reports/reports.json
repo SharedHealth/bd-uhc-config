@@ -262,7 +262,7 @@
     "type": "obsTemplate",
     "config": {
       "templateName": "Procedure Template",
-      "patientAttributes": ["caste"],
+      "patientAttributes": [],
       "locationTagNames":[
         "Report Location"
       ],
