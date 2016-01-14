@@ -291,6 +291,20 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/deathreport.sql"
     }
   },
+  "demoregistration": {
+    "name": "Registration by Users",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
+    }
+  },
+  "customfeereport": {
+    "name": "Registration at Departments",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/feecustomreport.sql"
+    }
+  },
   "Physical Assault": {
     "name": "Physical Assault",
     "type": "MRSGeneric",
