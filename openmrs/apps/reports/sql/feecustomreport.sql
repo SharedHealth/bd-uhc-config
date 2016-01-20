@@ -1,20 +1,6 @@
-SELECT data.name as 'Location Names',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Vaccination'
-    THEN data.count END) AS 'Vaccination',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Revisit Patient'
-    THEN data.count END) AS 'Revisit Patient',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Freedom fighter'
-    THEN data.count END) AS 'Freedom Fighter',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Ultra poor'
-    THEN data.count END) AS 'Ultra Poor',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Handicapped'
-    THEN data.count END) AS 'Handicapped',
-  MAX(CASE WHEN data.Fee_Category = 'Fee Category, Orphan'
-    THEN data.count END) AS 'Orphan'
-from
-(SELECT
-  l.name,
-  cv2.concept_full_name as 'Fee_Category',
+SELECT
+  l.name as 'Department Name',
+  cv2.concept_full_name as 'Fee Category',
   count(DISTINCT (e.patient_id)) as count
 FROM obs o
   INNER JOIN encounter e ON o.encounter_id = e.encounter_id
@@ -50,7 +36,6 @@ FROM obs o
                                                                                                                    lt.name
                                                                                                                    =
                                                                                                                    'Login Location'))
-                           AND l.retired = FALSE AND l.name IN ('OPD', 'IPD', 'Emergency','Vaccination')
+                           AND l.retired = FALSE AND l.name IN ( 'IPD','OPD','Emergency','Vaccination')
 GROUP BY l.name, cv2.concept_full_name
-ORDER BY l.name, cv2.concept_full_name) as data
-GROUP BY data.name ORDER BY data.name;
+ORDER BY l.name;

@@ -364,6 +364,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/locationbasedregistration.sql"
     }
   },
+  "customordertype_providerreport": {
+    "name": "Order Type by Providers",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ordertypebyprovider.sql"
+    }
+  },
   "Physical Assault": {
     "name": "Physical Assault",
     "type": "MRSGeneric",

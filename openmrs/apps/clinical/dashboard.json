@@ -149,6 +149,21 @@
         },
         "displayOrder": 9
       },
+      "ConsultationNotes": {
+
+        "title": "Consultation Notes",
+        "translationKey": "DASHBOARD_TITLE_Consultation_KEY",
+        "name":"Consultation Notes",
+        "isObservation": true,
+        "dashboardParams": {
+          "conceptNames": [
+            "Consultation Note"
+          ],
+          "numberOfVisits": "2"
+        },
+
+        "displayOrder": 11
+      },
       "visits": {
         "title": "Visits",
         "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
