@@ -38,16 +38,16 @@
        "multiSelect": true
       },
       "Procedure Type": {
-        "autocomplete" : true,
+        "freeTextAutocomplete" : true,
         "required" : true,
         "answersConceptName" : "Procedure Type"
       },
       "Procedure Diagnosis" : {
-        "autocomplete" : true,
+        "freeTextAutocomplete" : true,
         "answersConceptName" : "Diagnosis Answers"
       },
       "Procedure Diagnostic Test" : {
-        "autocomplete" : true,
+        "freeTextAutocomplete" : true,
         "answersConceptName" : "Procedure Diagnostic Test"
       }
     },

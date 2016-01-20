@@ -44,13 +44,12 @@
                     "allowAddMore" : true
                 },
                 "Family Member Condition Diagnosis" : {
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers",
                     "required": true
                 },
                 "Relationship Type" : {
                     "autocomplete" : true,
-                    "answersConceptName" : "Relationship Type",
                     "required": true
                 },
                 "Family Member History" : {
@@ -61,7 +60,7 @@
                 },
                 "Cause of Death" : {
                     "answersConceptName" : "Diagnosis Answers",
-                    "autocomplete" : true
+                    "freeTextAutocomplete" : true
                 },
                 "Immunization Reason" : {
                     "autocomplete" : true
@@ -89,16 +88,16 @@
                     "required": true
                 },
                 "Procedure Type": {
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "required" : true,
                     "answersConceptName" : "Procedure Type"
                 },
                 "Procedure Diagnosis" : {
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers"
                 },
                 "Procedure Diagnostic Test" : {
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "answersConceptName" : "Procedure Diagnostic Test"
                 },
                 "Injury Notes": {
