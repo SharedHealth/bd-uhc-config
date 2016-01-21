@@ -109,4 +109,32 @@
             AND             ot.NAME = ''Procedure Order'' group by pi.identifier', 'Sql query to fetch active patients with procedure order ', uuid());
         </sql>
     </changeSet>
+    <changeSet id="BD-20150121-1657" author="dubey" context="setup">
+        <comment>Using concept_name_type as FULLY_SPECIFIED for emrapi.sqlSearch.active.procedureOrder global property</comment>
+        <sql>
+            UPDATE global_property set property_value = 'SELECT DISTINCT Concat(pn.given_name,'' '', pn.family_name) AS name,
+            pi.identifier,
+            Concat("",p.uuid) AS uuid,
+            Date_format(o.date_activated,''%b %d %Y %h:%i %p'') AS ''Order Placed on''
+            FROM            orders o
+            JOIN            person_name pn
+            ON              o.patient_id = pn.person_id
+            JOIN            patient_identifier pi
+            ON              o.patient_id = pi.patient_id
+            JOIN            person p
+            ON              o.patient_id = p.person_id
+            LEFT OUTER JOIN obs ob
+            ON              o.order_id = ob.order_id
+            JOIN            concept c
+            ON              o.concept_id = c.concept_id
+            JOIN            concept_name cn
+            ON              c.concept_id = cn.concept_id AND cn.concept_name_type=''FULLY_SPECIFIED''
+            INNER JOIN      order_type ot
+            ON              ot.order_type_id = o.order_type_id
+            WHERE           ob.obs_id IS NULL
+            AND             ot.NAME = ''Procedure Order'' group by pi.identifier'
+            WHERE property = 'emrapi.sqlSearch.active.procedureOrder';
+
+        </sql>
+    </changeSet>
 </databaseChangeLog>
