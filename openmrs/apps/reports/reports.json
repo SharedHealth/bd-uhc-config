@@ -371,6 +371,20 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ordertypebyprovider.sql"
     }
   },
+  "Codednoncodeddiagnosis": {
+    "name": "Coded And Noncoded Diagnosis",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-diagnosiscount.sql"
+    }
+  },
+  "Codednoncodeddrug": {
+    "name": "Coded And Noncoded Treatment",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-drugcount.sql"
+    }
+  },
   "Physical Assault": {
     "name": "Physical Assault",
     "type": "MRSGeneric",
