@@ -36,8 +36,8 @@
         "type": "link",
         "translationKey": "Treatment",
         "extensionParams": {
-       "tabConfigName": "<tabConfigName>"
-   },
+            "tabConfigName": "allTreatment"
+        },
         "url": "treatment",
         "icon": "fa-user-md",
         "order": 7,
