@@ -132,6 +132,64 @@
                 },
                 "Non Communicable Disease Set, Non Communicable Disease":{
                  "multiSelect": true
+                },
+                "Surgeons’s Name":{
+                  "conciseText": true 
+                },
+                "Anesthesia Type":{
+                  "conciseText": true 
+                },
+                "Anesthetist Name":{
+                  "conciseText": true 
+                },
+                "CBE Positive, General Problem":{
+                  "multiSelect": true
+                },
+                "CBE Examination Result, Examiner Name":{
+                  "conciseText": true 
+                },
+                "CBE Examination Result, Examiner Designation":{
+                  "conciseText": true 
+                },
+                "Results from referral center, Referral Examiner Name":{
+                 "conciseText": true
+                },
+                "Results from referral center, Referral Examiner Designation":{
+                   "conciseText": true
+                },
+                "CBE Negative, Examiner Name":{
+                  "conciseText": true
+                },
+                "CBE Negative, Examiner Designation":{
+                  "conciseText": true
+                },
+                "VIA Positive, General Problem":{
+                  "multiSelect": true
+                },
+                "VIA Negative, Examiner Name":{
+                  "conciseText": true
+                },
+                "VIA Negative, Examiner Designation":{
+                  "conciseText": true
+                },
+                "IMCI 0-2m, General Danger Signs":{
+                  "multiSelect": true
+                },
+                "Check immunization status, If any vaccination needed today mark that":
+                {
+                  "multiSelect": true
+                },
+                "IMCI 2m-5y ,General danger signs":{
+                  "multiSelect": true
+                },
+                "IMCI 2months to 5 years,If any Vaccination needed today":{
+                  "multiSelect": true
+                },
+                "Colposcopy Result, Full Name of Colposcopist":{
+                "conciseText": true
+                },
+                "Colposcopy Result, Designation of Colposcopist":{
+                "conciseText": true
                 }
             },
 

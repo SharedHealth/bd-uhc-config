@@ -104,34 +104,21 @@
       "countOnlyClosedVisits": "false"
     }
   },
-  "OralnDentalReport": {
-    "name": "Dental and Oral Report",
-    "type": "diagnosisCount",
-    "config": {
-      "concept": "Oral diagnosis",
-      "ageGroupName": "Age Groups",
-      "rowsGroupBy": [
-        "header_concept_name",
-        "leaf_concept_name"
-      ],
-      "columnsGroupBy": [
-        "gender",
-        "agegroup_name"
-      ]
-    }
-  },
   "DiarrhoeaReport": {
     "name": "Diarrhoea Report",
     "type": "diagnosisCount",
     "config": {
       "concept": "Diarrhoea Report Set",
       "ageGroupName": "Age Groups",
+      "dateRangeRequired": true, 
+     "applyDateRangeFor": "diagnosisDate",
+     "visitsToConsider": "all",
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
       ],
       "columnsGroupBy": [
-        "gender",
+        "gender",x
         "agegroup_name"
       ]
     }
@@ -140,8 +127,11 @@
     "name": "Integrated Disease Surveillance Report-1",
     "type": "diagnosisCount",
     "config": {
-      "concept": "Contagious Diseases 1 Set",
+      "concept": "Integrated Disease Surveillance 1 Set",
       "ageGroupName": "Contagious1",
+       "dateRangeRequired": true, 
+     "applyDateRangeFor": "diagnosisDate",
+     "visitsToConsider": "all",
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -156,8 +146,11 @@
     "name": "Integrated Disease Surveillance Report-2",
     "type": "diagnosisCount",
     "config": {
-      "concept": "Contagious Diseases 2 Set",
+      "concept": "Integrated Disease Surveillance 2 Set",
       "ageGroupName": "Contagious2",
+       "dateRangeRequired": true, 
+     "applyDateRangeFor": "diagnosisDate",
+     "visitsToConsider": "all",
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -390,6 +383,65 @@
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/physicalAssaultCustom.sql"
+    }
+  },
+  "DogBiteandOtherBite":
+	{
+     "name":"Dog Bite and Other Bite",
+     "type":"diagnosisCount",
+     "config":{
+     "concept":"Dog Bite and Others Set",
+     "ageGroupName":"All Ages",
+     "dateRangeRequired": true, 
+     "applyDateRangeFor": "diagnosisDate",
+     "visitsToConsider": "all",
+     "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
+     }
+  },
+   "breastCancerScreeningReport":
+    {
+    "name":"Breast Cancer Screening Report",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Breast Cancer Screening Notes, CBE Positive","Breast Cancer Screening Notes, CBE Negative"],
+    "countOnlyClosedVisits":"false"
+    }
+    },
+    "cervicalCancerScreeningReport":
+    {
+    "name":"Cervical Cancer Screening Report",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Cervical Cancer Screening Notes, VIA Positive","Cervical Cancer Screening Notes, VIA Negative"],
+    "countOnlyClosedVisits":"false"
+    }
+    },
+    "OralnDentalReport": {
+    "name": "Dental and Oral Report",
+    "type": "diagnosisCount",
+    "config": {
+      "concept":"Oral diagnosis",
+      "ageGroupName":"DentalOral",
+      "dateRangeRequired": true, 
+     "applyDateRangeFor":"diagnosisDate",
+     "visitsToConsider": "all",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
     }
   }
 }
