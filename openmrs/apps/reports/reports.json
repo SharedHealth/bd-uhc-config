@@ -89,21 +89,6 @@
       "countOnlyClosedVisits": "true"
     }
   },
-  "OT_Report": {
-    "name": "OT Report",
-    "type": "MultipleCodedObsByCodedObs",
-    "config": {
-      "ageGroupName": "All Ages",
-      "rowsGroupBy": [
-        "Procedure Type"
-      ],
-      "columnsGroupBy": [
-        "Procedure Template, Procedure Complexity",
-        "Procedure Template, Procedure Outcome"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
   "ContagiousReport1": {
     "name": "Integrated Disease Surveillance Report-1",
     "type": "diagnosisCount",
@@ -207,7 +192,7 @@
   },
 
   "ProcedureTemplateReport":{
-    "name": "Procedure Test Template Report",
+    "name": "Procedure Template Report",
     "type": "obsTemplate",
     "config": {
       "templateName": "Procedure Template",
