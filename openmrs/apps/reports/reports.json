@@ -21,8 +21,18 @@
       "countOnlyClosedVisits": "true"
     }
   },
+ "delivery_report": {
+    "name": "Delivery Note Template Report",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Delivery Note",
+      "locationTagNames":[
+        "Report Location"
+      ]
+    }
+  },
   "delivery_report_based_on_type": {
-    "name": "Delivery Report based on Type of delivery",
+    "name": "Delivery count based on Type of delivery",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
@@ -33,7 +43,7 @@
     }
   },
   "delivery_report_based_Delivery_Outcome": {
-    "name": "Delivery Report based on Delivery Outcome",
+    "name": "Delivery count based on Delivery Outcome",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
@@ -43,48 +53,88 @@
       "countOnlyClosedVisits": "true"
     }
   },
-  "ANCTemplateReport": {
-    "name": "Total Registered Pregnant Women",
+ "ANCTemplateReport": {
+    "name": "Total Registered Pregnant Women or ANC Patients",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
         "ANC Notes"
       ],
+      "locationTagNames":[
+        "Report Location"
+      ],
       "countOnlyClosedVisits": "true",
       "countOncePerPatient": "true"
     }
   },
   "ANCReportCount": {
-    "name": "ANC Report",
+    "name": "ANC Visit-Number Report",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
         "ANC number"
       ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+ "no_blood_transfusion": {
+    "name": "ANC Blood Transfusions",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "Registration",
+      "conceptNames": [
+        "ANC Notes, Blood Transfusion"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
       "countOnlyClosedVisits": "true"
     }
   },
   "PNCTemplateReport": {
-    "name": "Total PNC Visits",
+    "name": "Total PNC Patients",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
         "PNC Notes"
       ],
+      "locationTagNames":[
+        "Report Location"
+      ],
       "countOnlyClosedVisits": "true",
       "countOncePerPatient": "true"
     }
   },
   "PNCReportCount": {
-    "name": "PNC Report",
+    "name": "PNC Visit-Number Report",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
         "PNC number"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "true"
+    }
+  },
+  "no_blood_transfusion": {
+    "name": "PNC Blood Transfusions",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "Registration",
+      "conceptNames": [
+        "PNC Notes, Blood Transfusion"
+      ],
+      "locationTagNames":[
+        "Report Location"
       ],
       "countOnlyClosedVisits": "true"
     }
