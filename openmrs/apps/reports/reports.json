@@ -104,25 +104,6 @@
       "countOnlyClosedVisits": "false"
     }
   },
-  "DiarrhoeaReport": {
-    "name": "Diarrhoea Report",
-    "type": "diagnosisCount",
-    "config": {
-      "concept": "Diarrhoea Report Set",
-      "ageGroupName": "Age Groups",
-      "dateRangeRequired": true, 
-     "applyDateRangeFor": "diagnosisDate",
-     "visitsToConsider": "all",
-      "rowsGroupBy": [
-        "header_concept_name",
-        "leaf_concept_name"
-      ],
-      "columnsGroupBy": [
-        "gender",x
-        "agegroup_name"
-      ]
-    }
-  },
   "ContagiousReport1": {
     "name": "Integrated Disease Surveillance Report-1",
     "type": "diagnosisCount",
