@@ -205,32 +205,7 @@
       "countOnlyClosedVisits": "false"
     }
   },
-  "dischargeReport": {
-    "name": "Discharge Report",
-    "type": "ipdPatients",
-    "config": {
-      "addressAttributes": ["address1", "city_village"],
-      "patientAttributes": ["caste", "education"],
-      "conceptNames": ["Height", "Weight"],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "filterBy": "Date of Discharge"
-    }
-  },
-  "admissionReport": {
-    "name": "Admission Report",
-    "type": "ipdPatients",
-    "config": {
-      "addressAttributes": ["address1", "city_village"],
-      "patientAttributes": ["caste", "education"],
-      "conceptNames": ["Height", "Weight"],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "filterBy": "Date of Admission"
-    }
-  },
+
   "ProcedureTemplateReport":{
     "name": "Procedure Test Template Report",
     "type": "obsTemplate",
@@ -424,5 +399,14 @@
         "agegroup_name"
       ]
     }
-  }
+  },
+ "dischargeoutcome": {
+    "name":"Discharge Outcome count",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Inpatient Outcome"],
+    "countOnlyClosedVisits":"true"
+    }
+}
 }
