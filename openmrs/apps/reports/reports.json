@@ -405,5 +405,33 @@
     "conceptNames": ["Inpatient Outcome"],
     "countOnlyClosedVisits":"true"
     }
-}
+},
+ "dischargeReport": {
+     "name": "Discharge Report",
+     "type": "ipdPatients",
+     "config": {
+       "addressAttributes": ["address1", "city_village"],
+       "patientAttributes": ["caste", "education"],
+       "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
+"Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
+       "locationTagNames":[
+         "Report Location"
+       ],
+       "filterBy": "Date of Discharge"
+     }
+   },
+   "admissionReport": {
+     "name": "Admission Report",
+    "type": "ipdPatients",
+     "config": {
+       "addressAttributes": ["address1", "city_village"],
+       "patientAttributes": ["caste", "education"],
+       "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
+"Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
+       "locationTagNames":[
+         "Report Location"
+       ],
+       "filterBy": "Date of Admission"
+     }
+   }
 }
