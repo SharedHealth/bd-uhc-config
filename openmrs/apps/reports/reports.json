@@ -7,7 +7,10 @@
       "conceptNames": [
         "Fee Category"
       ],
-      "countOnlyClosedVisits": "false"
+     "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "true"
     }
   },
   "children_death_report": {
@@ -17,6 +20,9 @@
       "ageGroupName": "Children Death",
       "conceptNames": [
         "Death Note"
+      ],
+      "locationTagNames":[
+        "Report Location"
       ],
       "countOnlyClosedVisits": "true"
     }
@@ -28,7 +34,8 @@
       "templateName": "Delivery Note",
       "locationTagNames":[
         "Report Location"
-      ]
+      ],
+      "countOnlyClosedVisits": "true"
     }
   },
   "delivery_report_based_on_type": {
@@ -39,6 +46,9 @@
       "conceptNames": [
         "Type of delivery"
       ],
+      "locationTagNames":[
+        "Report Location"
+      ],
       "countOnlyClosedVisits": "true"
     }
   },
@@ -48,7 +58,10 @@
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
-        "Delivery Note, Delivery Outcome"
+        "Delivery outcome"
+      ],
+      "locationTagNames":[
+        "Report Location"
       ],
       "countOnlyClosedVisits": "true"
     }
@@ -74,7 +87,7 @@
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
-        "ANC number"
+        "ANC visit number"
       ],
       "locationTagNames":[
         "Report Location"
@@ -86,7 +99,7 @@
     "name": "ANC Blood Transfusions",
     "type": "obsCount",
     "config": {
-      "ageGroupName": "Registration",
+      "ageGroupName": "All Ages",
       "conceptNames": [
         "ANC Notes, Blood Transfusion"
       ],
@@ -117,7 +130,7 @@
     "config": {
       "ageGroupName": "All Ages",
       "conceptNames": [
-        "PNC number"
+        "PNC visit number"
       ],
       "locationTagNames":[
         "Report Location"
@@ -129,7 +142,7 @@
     "name": "PNC Blood Transfusions",
     "type": "obsCount",
     "config": {
-      "ageGroupName": "Registration",
+      "ageGroupName": "All Ages",
       "conceptNames": [
         "PNC Notes, Blood Transfusion"
       ],
@@ -289,58 +302,7 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/feecustomreport.sql"
     }
   },
-  "no_anc_patient_number": {
-    "name": "Number of ANC Patients",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "Registration",
-      "conceptNames": [
-        "ANC visit number"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "no_blood_transfusion": {
-    "name": "ANC Blood Transfusions",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "Registration",
-      "conceptNames": [
-        "ANC Notes, Blood Transfusion"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "no_anc_patient_number_ANC": {
-    "name": "Number of PNC Patients",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "Registration",
-      "conceptNames": [
-        "PNC visit number"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "delivery_report": {
-    "name": "Delivery Note",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "Delivery Note",
-      "locationTagNames":[
-        "Report Location"
-      ]
-    }
-  },
+
   "customlocationreport": {
     "name": "Total Registrations at Departments ",
     "type": "MRSGeneric",
