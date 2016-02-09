@@ -239,21 +239,6 @@
       "applyDateRangeFor": "encounterCreateDate"
     }
   },
-  "children_death_report": {
-    "name": "Children Death Report",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "Children Death",
-      "conceptNames": [
-        "Death Note"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-
   "ProcedureTemplateReport":{
     "name": "Procedure Template Report",
     "type": "obsTemplate",
