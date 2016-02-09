@@ -29,6 +29,16 @@
 	"order": 3,
         "requiredPrivilege": "app:adt"
     },
+    "bahmni_orders": {
+        "id": "bahmni.orders",
+        "extensionPointId": "org.bahmni.home.dashboard",
+        "type": "link",
+        "translationKey": "MODULE_LABEL_ORDERS_KEY",
+        "url": "../orders/#/search",
+        "icon": "fa-book",
+        "order": 4,
+        "requiredPrivilege": "app:orders"
+    },
     "bahmni_reports": {
         "id": "bahmni.reports",
         "extensionPointId": "org.bahmni.home.dashboard",
