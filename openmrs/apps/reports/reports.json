@@ -405,6 +405,27 @@
        "filterBy": "Date of Discharge"
      }
    },
+  "womenttcount": {
+    "name": "Women Vaccine Count",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/allwomenttcount.sql"
+    }
+  },
+  "pregnantwomenttcount": {
+    "name": "Pregnant Women Vaccine Count",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pregnantwomenttcount.sql"
+    }
+  },
+  "childrenvaccinecount": {
+    "name": "Children Vaccine Count",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/childrenvaccinecount.sql"
+    }
+  },
    "admissionReport": {
      "name": "Admission Report",
     "type": "ipdPatients",
