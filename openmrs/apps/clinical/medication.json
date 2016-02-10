@@ -29,6 +29,64 @@
         "showDoseFractions": true,
         "doseFractions": [
           "½","⅓","¼","¾","⅔"
+        ],
+         "routes": [
+          "Chew, oral",
+          "OralRoute",
+          "NasalRoute",
+          "OphthalmicRoute",
+          "RectalRoute",
+          "VaginalRoute",
+          "Rinse, dental",
+          "Nebulization",
+          "Inhalation, nebulization",
+          "Inhalation",
+          "Topical",
+          "Injection, epidural",
+          "Injection, intraarterial",
+          "Injection, intradermal",
+          "Injection, intramuscular",
+          "Injection, intraocular",
+          "Injection, insulin pump",
+          "Injection, intraspinal",
+          "Injection, intrasynovial",
+          "Injection, intravenous",
+          "Injection, intravenous, slow push",
+          "Injection, subcutaneous",
+          "Injection",
+          "Infusion",
+          "Implantation",
+          "Insertion, cervical (uterine)",
+          "Insertion, intraocular, surgical",
+          "Insertion, subcutaneous, surgical",
+          "Insertion, vaginal",
+          "Instillation, nasogastric tube",
+          "Instillation, urinary catheter",
+          "Instillation, chest tube",
+          "Irrigation, intraocular",
+          "Irrigation, urinary bladder",
+          "Lavage, intragastric",
+          "TopicalApplication",
+          "SuppositoryRoute",
+          "EnemaRoute",
+          "SublingualRoute"
+        ],
+          "drugFormDefaults": {
+          "Tablet": {
+            "doseUnits": "Tablet dose form",
+            "route": "OralRoute"
+          }
+        },
+        "doseUnits": [
+        "Capsule dose form",
+        "Tablet dose form",
+        "Drop - unit of product",
+        "Sachet - unit of product",
+        "Teaspoonful - unit of product",
+        "millilitre",
+        "Ampule - unit of product",
+        "Vial - unit of product",
+        "Squirt - unit of product" 
         ]
       }
     }
