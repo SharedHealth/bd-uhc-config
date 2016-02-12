@@ -72,10 +72,100 @@
           "SublingualRoute"
         ],
           "drugFormDefaults": {
-          "Tablet": {
+          "Tablet dose form": {
             "doseUnits": "Tablet dose form",
             "route": "OralRoute"
-          }
+          },
+          "Chewable tablet": {
+                    "doseUnits": "Tablet dose form",
+                    "route": "Chew, oral"
+                },
+                "Capsule dose form": {
+                    "doseUnits": "Capsule dose form",
+                    "route": "OralRoute"
+                },
+                "Drops dose form": {
+                    "doseUnits": "Drop - unit of product",
+                    "route": "Topical"
+                },
+                "Granules for oral solution": {
+                    "doseUnits": "Sachet - unit of product",
+                    "route": "OralRoute"
+                },
+                "Granules for oral suspension": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                },
+                "Infusion solution": {
+                    "doseUnits": "millilitre",
+                    "route": "Injection, intravenous"
+                },
+                "Inhalation aerosol solution": {
+                    "doseUnits": "Ampule - unit of product",
+                    "route": "Inhalation"
+                },
+                "Inhalation aerosol suspension": {
+                    "doseUnits": "Ampule - unit of product",
+                    "route": "Inhalation"
+                },
+                "Injection solution": {
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
+                },
+                "Ointment": {
+                    "doseUnits": "Squirt - unit of product",
+                    "route": "Topical"
+                },
+                "Eye ointment": {
+                    "doseUnits": "Squirt - unit of product",
+                    "route": "Topical"
+                },
+                "Powder for oral suspension": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "Topical"
+                },
+                "Powder for syrup": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                },
+                "Syrup": {
+                    "doseUnits": "Teaspoonful - unit of product",
+                    "route": "OralRoute"
+                },
+                "Oral drops":{
+                "doseUnits": "Drop - unit of product",
+                "route": "OralRoute"
+                },
+                "Oral solution":{
+                "doseUnits": "Sachet - unit of product",
+                    "route": "OralRoute"
+            	},
+            	"Oral powder":{
+            	"doseUnits": "Teaspoonful - unit of product",
+                "route": "Topical"
+            	},
+            	"Cream": {
+                "doseUnits": "Squirt - unit of product",
+                "route": "Topical"
+                },
+                "Intravenous solution":{
+                "doseUnits": "Vial - unit of product",
+                "route": "Injection, intravenous"
+                },
+                "Infusion":{
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
+                },
+                "Injection":{
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
+                },
+                "Normal Saline (Sodium chloride 0.9% solution)":{
+                    "doseUnits": "Vial - unit of product",
+                    "route": "Injection, intravenous"
+                }
+            	
+                
         },
         "doseUnits": [
         "Capsule dose form",
