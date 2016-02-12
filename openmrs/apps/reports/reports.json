@@ -420,7 +420,7 @@
      }
    },
       "bedoccupancyRate": {
-    "name": "BOR ",
+    "name": " Bed Occupany Rate - BOR ",
     "type": "MRSGeneric",
     "config": {
     "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
