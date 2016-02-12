@@ -535,22 +535,22 @@
       ]
     }
   },
-  "pneumoniaReport": {
-    "name": "Pneumonia Report",
-    "type": "obsCount",
-    "config": {
-    "ageGroupName": "pneumonia",
-    "conceptNames": ["IMCI 2m-5y, IMCI 2months to 5 years, State Of Pneumonia"],
-       "locationTagNames": ["Report Location"],
-      "countOnlyClosedVisits":"false"
-    }
- },
  "pneumoniaReport1": {
-    "name": "Pneumonia Report1",
+    "name": "Pneumonia Report(0-2m)",
     "type": "obsCount",
     "config": {
     "ageGroupName": "pneumonia",
     "conceptNames": ["IMCI 0-2m, State Of Pneumonia"],
+       "locationTagNames": ["Report Location"],
+      "countOnlyClosedVisits":"false"
+    }
+ },
+   "pneumoniaReport": {
+    "name": "Pneumonia Report(2month-5 year)",
+    "type": "obsCount",
+    "config": {
+    "ageGroupName": "pneumonia",
+    "conceptNames": ["IMCI 2m-5y, IMCI 2months to 5 years, State Of Pneumonia"],
        "locationTagNames": ["Report Location"],
       "countOnlyClosedVisits":"false"
     }
