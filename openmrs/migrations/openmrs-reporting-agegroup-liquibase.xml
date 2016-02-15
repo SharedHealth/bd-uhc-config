@@ -46,4 +46,71 @@
             VALUES ('women(15-49 years old)','women 15-49',15,0,49,0,1);
         </sql>
     </changeSet>
+    
+    <changeSet id="BD-age-group-004" author="tw">
+        <comment>Add ageGroup for IDS set 1</comment>
+        <sql>
+           insert into reporting_age_group
+			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			values
+  			('IDS1(0-28days)','Contagious1',0,0,0,28,1);
+			insert into reporting_age_group
+			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			values
+ 			 ('IDS1(29d-1yr)','Contagious1',0,29,1,-1,2);
+			insert into reporting_age_group
+			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			values
+ 			 ('IDS1(1-5yr)','Contagious1',1,0,5,0,3);
+			insert into reporting_age_group
+			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			values
+ 			 ('IDS1(5-15yr)','Contagious1',5,0,15,0,4);
+			insert into reporting_age_group
+			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+			values
+  			('IDS1(15+yr)','Contagious1',15,0,200,0,5);
+        </sql>
+    </changeSet>
+    
+<changeSet id="BD-age-group-005" author="tw">
+<comment>Add ageGroup for IDS set 2</comment>
+<sql>
+    insert into reporting_age_group
+(name,report_group_name, min_years, min_days, max_years , max_days, sort_order)
+values
+  ('IDS2(0-5yr)','Contagious2',0,0,5,0,1);
+  	insert into reporting_age_group
+(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+values
+  ('IDS2(5-15yr)','Contagious2',5,0,15,0,2);
+	insert into reporting_age_group
+(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+values
+  ('IDS2(15+yr)','Contagious2',15,0,200,0,3);
+  
+</sql>
+</changeSet>
+<changeSet id="BD-age-group-006" author="tw">
+<comment>Add ageGroup for Dental and Oral</comment>
+<sql>
+insert into reporting_age_group
+(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+('DentalOral(0-1yr)','DentalOral',0,0,1,0,1);
+insert into reporting_age_group
+(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+('DentalOral(1-4yr)','DentalOral',1,0,4,0,2);
+insert into reporting_age_group
+(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+('DentalOral(5-14yr)','DentalOral',5,0,14,0,3);
+insert into reporting_age_group
+(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+('DentalOral(15-49yr)','DentalOral',15,0,49,0,4);
+insert into reporting_age_group
+(name,report_group_name,min_years,min_days,max_years,max_days, sort_order)values
+('DentalOral(50yr+)','DentalOral',50,0,200,0,5);
+</sql>
+</changeSet>
     </databaseChangeLog>
+    
+    
