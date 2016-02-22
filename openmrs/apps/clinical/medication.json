@@ -86,7 +86,7 @@
                 },
                 "Drops dose form": {
                     "doseUnits": "Drop - unit of product",
-                    "route": "Topical"
+                    "route": "OralRoute"
                 },
                 "Granules for oral solution": {
                     "doseUnits": "Sachet - unit of product",
@@ -101,11 +101,11 @@
                     "route": "Injection, intravenous"
                 },
                 "Inhalation aerosol solution": {
-                    "doseUnits": "Ampule - unit of product",
+                    "doseUnits": "Puffs",
                     "route": "Inhalation"
                 },
                 "Inhalation aerosol suspension": {
-                    "doseUnits": "Ampule - unit of product",
+                    "doseUnits": "Puffs",
                     "route": "Inhalation"
                 },
                 "Injection solution": {
@@ -142,7 +142,7 @@
             	},
             	"Oral powder":{
             	"doseUnits": "Teaspoonful - unit of product",
-                "route": "Topical"
+                "route": "OralRoute"
             	},
             	"Cream": {
                 "doseUnits": "Squirt - unit of product",
@@ -176,7 +176,8 @@
         "millilitre",
         "Ampule - unit of product",
         "Vial - unit of product",
-        "Squirt - unit of product" 
+        "Squirt - unit of product",
+	"Puffs" 
         ]
       }
     }
