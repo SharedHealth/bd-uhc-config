@@ -1,37 +1,4 @@
 {
-     
-
- "bahmni_clinical_patients_search_immunisationReferralOrder": {
-        "id": "bahmni.clinical.patients.search.immunisationReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.immunisationReferralOrder",
-            "translationKey":"Dept_of_Immunisation",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of Immunisation",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Dept of Immunisation",
-        "order": 1,
-        "requiredPrivilege": "app:orders"
-    },
-        
-       "bahmni_clinical_patients_search_surgeryReferralOrder": {
-        "id": "bahmni.clinical.patients.search.ncdReferralOrder",
-        "extensionPointId": "org.bahmni.patient.search",
-        "type": "config",
-        "extensionParams": {
-            "searchHandler": "emrapi.sqlSearch.active.ncdReferralOrder",
-            "translationKey":"Dept_of_NCD_OPD",
-            "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Dept of NCD OPD",
-            "forwardButtonTitle": "View",
-            "view": "tabular"
-        },
-        "label": "Dept of NCD OPD",
-        "order": 2,
-        "requiredPrivilege": "app:orders"
-    },
     "bahmni_clinical_patients_search_ProcedureOrder": {
       "id": "bahmni.clinical.patients.search.procedureOrder",
       "extensionPointId": "org.bahmni.patient.search",
