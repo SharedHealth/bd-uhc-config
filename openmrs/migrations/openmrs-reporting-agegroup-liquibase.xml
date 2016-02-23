@@ -113,7 +113,7 @@ insert into reporting_age_group
 </changeSet>
  <changeSet id="BD-age-group-007" author="apaul">
         <preConditions onFail="WARN">
-            <sqlCheck expectedResult="1">select count(*) from reporting_age_group set where name = '50+ years' and report_group_name='Registration'</sqlCheck>
+            <sqlCheck expectedResult="1">select count(*) from reporting_age_group where name = '50+ years' and report_group_name='Registration';</sqlCheck>
         </preConditions>       
         <comment>Fixing the sort order of Registration age group</comment>
  	<sql>
