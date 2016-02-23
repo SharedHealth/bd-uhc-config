@@ -167,6 +167,9 @@
             	
                 
         },
+        "duration": {
+          "required": true
+        },
         "doseUnits": [
         "Capsule dose form",
         "Tablet dose form",
