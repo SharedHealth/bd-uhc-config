@@ -1,6 +1,6 @@
 {
   "registration_reports_category": {
-    "name": "Registration based on Fee Category",
+    "name": "Registration count - Fee Category",
     "type": "obsCount",
     "config": {
       "ageGroupName": "Registration",
@@ -10,9 +10,31 @@
      "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
+    "customlocationreport": {
+    "name": "Registration count - Departments ",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/locationbasedregistration.sql"
+    }
+  },
+    "demoregistration": {
+    "name": "Registration count by users",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
+    }
+  },
+  "customfeereport": {
+    "name": "Free Registration count at Departments",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/feecustomreport.sql"
+    }
+  },
+
   "children_death_report": {
     "name": "Children Death Report",
     "type": "obsCount",
@@ -271,28 +293,6 @@
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/deathreport.sql"
-    }
-  },
-  "demoregistration": {
-    "name": "Registration by Users",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
-    }
-  },
-  "customfeereport": {
-    "name": "Free Registrations at Departments",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/feecustomreport.sql"
-    }
-  },
-
-  "customlocationreport": {
-    "name": "Total Registrations at Departments ",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/locationbasedregistration.sql"
     }
   },
   "customordertype_providerreport": {
