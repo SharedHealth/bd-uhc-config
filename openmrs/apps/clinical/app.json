@@ -33,18 +33,18 @@
         "conceptSetUI": {
                 "Condition Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
                 "Condition Non-Coded Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
                 "Family Member Condition Diagnosis" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers",
                     "required": true
                 },
@@ -60,7 +60,7 @@
                 },
                 "Cause of Death" : {
                     "answersConceptName" : "Diagnosis Answers",
-                    "freeTextAutocomplete" : true
+                    "autocomplete" : true
                 },
                 "Immunization Reason" : {
                     "autocomplete" : true
@@ -76,7 +76,8 @@
                 },
                 "Immunization Incident Vaccine" : {
                     "autocomplete" : true,
-                    "required": true
+                    "required": true,
+                     "src": "self"
                 },
                 "Route of Administration" : {
                     "autocomplete" : true
@@ -88,16 +89,16 @@
                     "required": true
                 },
                 "Procedure Type": {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "required" : true,
                     "answersConceptName" : "Procedure Type"
                 },
                 "Procedure Diagnosis" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Diagnosis Answers"
                 },
                 "Procedure Diagnostic Test" : {
-                    "freeTextAutocomplete" : true,
+                    "autocomplete" : true,
                     "answersConceptName" : "Procedure Diagnostic Test"
                 },
                 "Injury Notes": {
@@ -106,7 +107,7 @@
                 "Delivery Note, Baby notes": {
                     "allowAddMore": true
                 },
-		"ANC Notes, Pregnancy History":{
+				"ANC Notes, Pregnancy History":{
                 "allowAddMore": true
                 },
                 "Baby Weight":{
@@ -126,6 +127,12 @@
                 },
                 "Medication received":{
                 "multiSelect": true
+                },
+                "Follow up date":{
+                "allowFutureDates": true
+                },
+                "Check immunization status, Next visit date for vaccination":{
+                "allowFutureDates": true
                 },
                 "Non Communicable Disease Set, Risky Behaviour":{
                  "multiSelect": true
