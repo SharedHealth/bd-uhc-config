@@ -122,7 +122,7 @@
                 },
                 "Powder for oral suspension": {
                     "doseUnits": "Teaspoonful - unit of product",
-                    "route": "Topical"
+                    "route": "OralRoute"
                 },
                 "Powder for syrup": {
                     "doseUnits": "Teaspoonful - unit of product",
