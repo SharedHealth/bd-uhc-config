@@ -33,13 +33,13 @@
         "conceptSetUI": {
                 "Condition Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
                 "Condition Non-Coded Chief Complaint" : {
                     "answersConceptName" : "Chief Complaint Answers",
-                    "autocomplete" : true,
+                    "freeTextAutocomplete" : true,
                     "durationRequired" : false,
                     "allowAddMore" : true
                 },
