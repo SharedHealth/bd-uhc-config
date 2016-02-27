@@ -1,6 +1,6 @@
 {
   "registration_reports_category": {
-    "name": "Registration count - Fee Category",
+    "name": "Registration count - All fee Categories",
     "type": "obsCount",
     "config": {
       "ageGroupName": "Registration",
@@ -21,14 +21,14 @@
     }
   },
     "demoregistration": {
-    "name": "Registration count by users",
+    "name": "Registration count by users - General category Only",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
     }
   },
   "customfeereport": {
-    "name": "Free Registration count at Departments",
+    "name": "Registration count at Departments - Free categories only",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/feecustomreport.sql"
@@ -345,22 +345,28 @@
   },
    "breastCancerScreeningReport":
     {
-    "name":"Breast Cancer Screening Report",
+    "name":"Breast Cancer Screening Programme Report(DHIS2)",
     "type":"obsCount",
     "config":{
     "ageGroupName": "All Ages",
     "conceptNames": ["Breast Cancer Screening Notes, CBE Positive","Breast Cancer Screening Notes, CBE Negative"],
-    "countOnlyClosedVisits":"false"
+    "countOnlyClosedVisits":"false",
+      "locationTagNames":[
+        "Report Location"
+      ]
     }
     },
     "cervicalCancerScreeningReport":
     {
-    "name":"Cervical Cancer Screening Report",
+    "name":"Cervical Cancer Screening Programme Report(DHIS2)",
     "type":"obsCount",
     "config":{
     "ageGroupName": "All Ages",
     "conceptNames": ["Cervical Cancer Screening Notes, VIA Positive","Cervical Cancer Screening Notes, VIA Negative"],
-    "countOnlyClosedVisits":"false"
+    "countOnlyClosedVisits":"false",
+      "locationTagNames":[
+        "Report Location"
+      ]
     }
     },
     "OralnDentalReport": {
