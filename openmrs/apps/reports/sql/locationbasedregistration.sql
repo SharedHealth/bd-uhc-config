@@ -7,7 +7,6 @@ select
        sum(IF(p.gender = 'O', 1, 0)) AS Other
 from
   users user inner join provider provider on provider.person_id=user.person_id
-  inner join user_role ur on user.user_id=ur.user_id and role='RegistrationClerk'
   inner join encounter_provider ep on ep.provider_id=provider.provider_id
   inner join encounter ec on ec.encounter_id = ep.encounter_id
 
@@ -31,7 +30,7 @@ from
                                                                                                                    lt.name
                                                                                                                    =
                                                                                                                    'Login Location'))
-                           AND l.retired = FALSE AND l.name IN ('OPD', 'IPD', 'Emergency','Vaccination')
+                           AND l.retired = FALSE
   inner join person p on p.person_id=o.person_id
 
   INNER JOIN reporting_age_group rag ON DATE(o.obs_datetime) BETWEEN (DATE_ADD(

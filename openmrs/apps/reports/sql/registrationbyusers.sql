@@ -1,11 +1,10 @@
 
-select user.username as 'Clerk Name',
+select user.username as 'Name',
   rag.name AS 'Patient Age Group',
   sum(IF(p.gender = 'F', 1, 0)) AS Female,
   sum(IF(p.gender = 'M', 1, 0)) AS Male,
   sum(IF(p.gender = 'O', 1, 0)) AS Other
 from users user inner join provider provider on provider.person_id=user.person_id
-  inner join user_role ur on user.user_id=ur.user_id and role='RegistrationClerk'
   inner join encounter_provider ep on ep.provider_id=provider.provider_id
   inner join encounter ec on ec.encounter_id = ep.encounter_id
   inner join obs o on o.encounter_id=ec.encounter_id and o.obs_id in (select obs_id from obs
