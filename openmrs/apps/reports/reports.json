@@ -160,7 +160,7 @@
       "countOnlyClosedVisits": "true"
     }
   },
-  "no_blood_transfusion": {
+  "pnc_no_blood_transfusion": {
     "name": "PNC Blood Transfusions",
     "type": "obsCount",
     "config": {
@@ -460,6 +460,132 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/visittypecount.sql"
     }
   },
+  "bedoccupancyRate": {
+        "name": "BOR ",
+      "type": "MRSGeneric",
+      "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
+      }
+  },
+    "imciTemplateReport0":{
+        "name": "IMCI(0-2m) General Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 0-2m, General",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+  "imciTemplateReport1":{
+        "name": "IMCI(0-2m) Diarrhoea Template Report1",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 0-2m, Diarrhoea",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport2":{
+        "name": "IMCI(0-2m) Breast feeding assessment Template Report2",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 0-2m, Breast feeding assessment",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport3":{
+        "name": "IMCI(0-2m) Check immunization status Template Report3",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 0-2m, Check immunization status",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport4":{
+        "name": "IMCI(2m-5y) General Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 2m-5y, IMCI 2months to 5 years, General",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport5":{
+        "name": "IMCI(2m-5y) Diarrhoea Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 2m-5y ,Diarrhoea",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport6":{
+        "name": "IMCI(2m-5y) If Low or No Mark Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 2m-5y ,If Low or No Mark",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport7":{
+        "name": "IMCI(2m-5y) Check Immunization Status Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 2months to 5 years,Check Immunization Status",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+    "imciTemplateReport8":{
+        "name": "IMCI(2m-5y) Assess child’s feeding if child has anemia or very low weight or less than 2 years old Template Report",
+        "type": "obsTemplate",
+        "config": {
+            "templateName": "IMCI 2m-5y ,Assess child’s feeding if child has anemia or very low weight or less than 2 years old",
+            "patientAttributes": ["caste", "education"],
+            "locationTagNames": ["Report Location"],
+            "applyDateRangeFor": "encounterCreateDate"
+        }
+    },
+     "ObstericcareReport": {
+    "name": "Obsteric Complications Information Report",
+    "type": "diagnosisCount",
+    "config": {
+      "concept":"Obsteric Complications Info Set",
+      "ageGroupName":"All Ages",
+      "dateRangeRequired": true,
+     "applyDateRangeFor":"diagnosisDate",
+     "visitsToConsider": "all",
+      "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
+    }
+  },
+  "pneumoniaReport": {
+    "name": "Pneumonia Report",
+    "type": "obsCount",
+    "config": {
+    "ageGroupName": "pneumonia",
+    "conceptNames": ["IMCI 2m-5y, IMCI 2months to 5 years, State Of Pneumonia"],
+       "locationTagNames": ["Report Location"],
+      "countOnlyClosedVisits":"true"
+    }
+ },
    "admissionReport": {
      "name": "Admission Report",
     "type": "ipdPatients",
