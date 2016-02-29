@@ -5,10 +5,11 @@
         "type": "link",
         "extensionParams": {},
         "translationKey": "CSV_Upload",
+        "label": "CSV_Upload",
         "url": "#/csv",
         "icon": "fa-upload",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     },
     "csv_export": {
         "id": "bahmni.admin.csvExport",
@@ -16,9 +17,10 @@
         "type": "link",
         "extensionParams": {},
         "translationKey": "CSV_Export",
+        "label":"CSV_Export",
         "url": "#/csvExport",
         "icon": "fa-download",
         "order": 1,
-        "requiredPrivilege": "app:registration"
+        "requiredPrivilege": "app:admin"
     }
 }
