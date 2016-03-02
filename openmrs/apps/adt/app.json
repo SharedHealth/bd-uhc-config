@@ -92,20 +92,8 @@
                     "title": "Admission Details",
                     "name": "admissionDetails",
                     "displayOrder": 4
-                },
-                "navigation_links_control": {
-                    "translationKey":"ADT_NAVIGATIONAL",
-                    "title": "Navigation Links Control",
-                    "name": "navigationLinksControl",
-                    "links": [
-                       {
-                        "translationKey": "Registration & Close Visit",
-                        "url": "../registration/#/patient/{{patientUuid}}"
-                        }
-                    ],
-                    "displayOrder": 5
                 }
-            }
+              }
         }
     }
 }

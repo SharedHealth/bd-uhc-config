@@ -62,22 +62,6 @@
         },
         "displayOrder": 3
       },
-      "navigation_links_control": {
-        "title": "Go To",
-        "translationKey": "DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
-        "name": "navigationLinksControl",
-        "links": [
-          {
-            "translationKey": "Order Fulfilment",
-            "url": "../orders/#/search"
-          },
-          {
-            "translationKey": "Registration & Close Visit",
-            "url": "../registration/#/patient/{{patientUuid}}"
-          }
-        ],
-        "displayOrder": 6
-      },
       "lab_results": {
         "title": "Lab Results",
         "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
