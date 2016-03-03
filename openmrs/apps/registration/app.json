@@ -45,6 +45,9 @@
             "conceptSetUI": {
              "Fee Category": {
                 	"required": true
+            },
+            "defaults":{
+                "Fee Category":"Fee Category, General"
             }
             },
             "fieldValidation" : {
