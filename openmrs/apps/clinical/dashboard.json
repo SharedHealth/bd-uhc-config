@@ -67,8 +67,9 @@
         "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
         "name": "labOrders",
         "dashboardParams": {
+          "title":null,
           "numberOfVisits": 1,
-          "showChart": true,
+          "showChart": false,
           "showTable": true,
           "showDetailsButton": true,
           "showNormalLabResults": true,
