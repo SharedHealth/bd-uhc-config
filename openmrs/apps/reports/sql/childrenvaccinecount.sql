@@ -1,6 +1,6 @@
-select dg.name AS 'Drug Name',
+select dg.name AS 'Vaccine Name',
   rag.name as 'Age Group',
-  count(dg.drug_id) as 'Drug Count'
+  count(dg.drug_id) as 'Count'
 from obs o
   inner join concept_view cv on cv.concept_id=o.concept_id and concept_full_name='Immunization Incident Vaccine' and o.voided=0
   and cast(o.date_created as date) BETWEEN '#startDate#' AND '#endDate#'

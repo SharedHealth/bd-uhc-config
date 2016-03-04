@@ -46,7 +46,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
  "delivery_report": {
@@ -57,7 +57,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "delivery_report_based_on_type": {
@@ -71,7 +71,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "delivery_report_based_Delivery_Outcome": {
@@ -85,7 +85,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
  "ANCTemplateReport": {
@@ -99,7 +99,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true",
+      "countOnlyClosedVisits": "false",
       "countOncePerPatient": "true"
     }
   },
@@ -114,7 +114,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
  "no_blood_transfusion": {
@@ -128,7 +128,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "PNCTemplateReport": {
@@ -142,7 +142,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true",
+      "countOnlyClosedVisits": "false",
       "countOncePerPatient": "true"
     }
   },
@@ -157,7 +157,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "pnc_no_blood_transfusion": {
@@ -171,7 +171,7 @@
       "locationTagNames":[
         "Report Location"
       ],
-      "countOnlyClosedVisits": "true"
+      "countOnlyClosedVisits": "false"
     }
   },
   "ContagiousReport1": {
@@ -183,6 +183,9 @@
        "dateRangeRequired": true, 
      "applyDateRangeFor": "diagnosisDate",
      "visitsToConsider": "all",
+     "locationTagNames":[
+        "Report Location"
+      ],
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -202,6 +205,9 @@
        "dateRangeRequired": true, 
      "applyDateRangeFor": "diagnosisDate",
      "visitsToConsider": "all",
+     "locationTagNames":[
+        "Report Location"
+      ],
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -210,30 +216,6 @@
         "gender",
         "agegroup_name"
       ]
-    }
-  },
-  "NCDReport": {
-    "name": "NCD Report",
-    "type": "CodedObsByCodedObs",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptPair": [
-        "Non Communicable Disease Set, Non Communicable Disease",
-        "Non Communicable Disease Set, Risky Behaviour"
-      ],
-      "rowsGroupBy": [
-        "Non Communicable Disease Set, Non Communicable Disease"
-      ],
-      "columnsGroupBy": [
-        "Non Communicable Disease Set, Risky Behaviour"
-      ]
-    }
-  },
-  "CrossCheck": {
-    "name": "Cross check",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/reports/bduhcreport/crosscheck.sql"
     }
   },
   "FreeTextDrugOrdered": {
@@ -275,7 +257,7 @@
   },
 
   "dispositionreport": {
-    "name": "Disposition Report",
+    "name": "OPD Disposition Report",
     "type": "obsCount",
     "config": {
       "ageGroupName": "All Ages",
@@ -303,14 +285,14 @@
     }
   },
   "Codednoncodeddiagnosis": {
-    "name": "Coded And Noncoded Diagnosis",
+    "name": "Count of Coded And Noncoded Diagnoses by providers",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-diagnosiscount.sql"
     }
   },
   "Codednoncodeddrug": {
-    "name": "Coded And Noncoded Treatment",
+    "name": "Count of Coded And Noncoded Drug orders by proivders",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-drugcount.sql"
@@ -333,6 +315,9 @@
      "dateRangeRequired": true, 
      "applyDateRangeFor": "diagnosisDate",
      "visitsToConsider": "all",
+     "locationTagNames":[
+        "Report Location"
+      ],
      "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -378,6 +363,9 @@
       "dateRangeRequired": true, 
      "applyDateRangeFor":"diagnosisDate",
      "visitsToConsider": "all",
+     "locationTagNames":[
+        "Report Location"
+      ],
       "rowsGroupBy": [
         "header_concept_name",
         "leaf_concept_name"
@@ -394,15 +382,32 @@
     "config":{
     "ageGroupName": "All Ages",
     "conceptNames": ["Inpatient Outcome"],
+     "locationTagNames":[
+        "Report Location"
+      ],
     "countOnlyClosedVisits":"true"
     }
 },
+   "admissionReport": {
+     "name": "Admission Report",
+    "type": "ipdPatients",
+     "config": {
+       "addressAttributes": ["address1"],
+       "patientAttributes": ["fatherName","healthId","phoneNumber"],
+       "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
+"Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
+       "locationTagNames":[
+         "Report Location"
+       ],
+       "filterBy": "Date of Admission"
+     }
+   },
  "dischargeReport": {
      "name": "Discharge Report",
      "type": "ipdPatients",
      "config": {
-       "addressAttributes": ["address1", "city_village"],
-       "patientAttributes": ["caste", "education"],
+       "addressAttributes": ["address1"],
+       "patientAttributes": ["fatherName","healthId","phoneNumber"],
        "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
 "Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
        "locationTagNames":[
@@ -412,21 +417,21 @@
      }
    },
   "womenttcount": {
-    "name": "Women Vaccine Count",
+    "name": "Women TT Vaccine Count(DHIS2)",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/allwomenttcount.sql"
     }
   },
   "pregnantwomenttcount": {
-    "name": "Pregnant Women Vaccine Count",
+    "name": "Pregnant Women TT Vaccine Count(DHIS2)",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pregnantwomenttcount.sql"
     }
   },
   "childrenvaccinecount": {
-    "name": "Children Vaccine Count",
+    "name": "Children Vaccine Count(DHIS2)",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/childrenvaccinecount.sql"
@@ -468,91 +473,61 @@
       }
   },
     "imciTemplateReport0":{
-        "name": "IMCI(0-2m) General Template Report",
+        "name": "IMCI(0-2m) General Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, General",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
   "imciTemplateReport1":{
-        "name": "IMCI(0-2m) Diarrhoea Template Report1",
+        "name": "IMCI(0-2m) Diarrhoea Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Diarrhoea",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
     "imciTemplateReport2":{
-        "name": "IMCI(0-2m) Breast feeding assessment Template Report2",
+        "name": "IMCI(0-2m) Breast Feeding Assessment Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Breast feeding assessment",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
     "imciTemplateReport3":{
-        "name": "IMCI(0-2m) Check immunization status Template Report3",
+        "name": "IMCI(0-2m) Immunization Status Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Check immunization status",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
     "imciTemplateReport4":{
-        "name": "IMCI(2m-5y) General Template Report",
+        "name": "IMCI(2m-5y) General Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 2m-5y, IMCI 2months to 5 years, General",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
     },
     "imciTemplateReport5":{
-        "name": "IMCI(2m-5y) Diarrhoea Template Report",
+        "name": "IMCI(2m-5y) Diarrhoea Section Report",
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 2m-5y ,Diarrhoea",
-            "patientAttributes": ["caste", "education"],
-            "locationTagNames": ["Report Location"],
-            "applyDateRangeFor": "encounterCreateDate"
-        }
-    },
-    "imciTemplateReport6":{
-        "name": "IMCI(2m-5y) If Low or No Mark Template Report",
-        "type": "obsTemplate",
-        "config": {
-            "templateName": "IMCI 2m-5y ,If Low or No Mark",
-            "patientAttributes": ["caste", "education"],
-            "locationTagNames": ["Report Location"],
-            "applyDateRangeFor": "encounterCreateDate"
-        }
-    },
-    "imciTemplateReport7":{
-        "name": "IMCI(2m-5y) Check Immunization Status Template Report",
-        "type": "obsTemplate",
-        "config": {
-            "templateName": "IMCI 2months to 5 years,Check Immunization Status",
-            "patientAttributes": ["caste", "education"],
-            "locationTagNames": ["Report Location"],
-            "applyDateRangeFor": "encounterCreateDate"
-        }
-    },
-    "imciTemplateReport8":{
-        "name": "IMCI(2m-5y) Assess child’s feeding if child has anemia or very low weight or less than 2 years old Template Report",
-        "type": "obsTemplate",
-        "config": {
-            "templateName": "IMCI 2m-5y ,Assess child’s feeding if child has anemia or very low weight or less than 2 years old",
-            "patientAttributes": ["caste", "education"],
+            "patientAttributes": ["fatherName","healthId","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -565,6 +540,9 @@
       "ageGroupName":"All Ages",
       "dateRangeRequired": true,
      "applyDateRangeFor":"diagnosisDate",
+     "locationTagNames":[
+        "Report Location"
+      ],
      "visitsToConsider": "all",
       "rowsGroupBy": [
         "header_concept_name",
@@ -583,21 +561,7 @@
     "ageGroupName": "pneumonia",
     "conceptNames": ["State Of Pneumonia"],
        "locationTagNames": ["Report Location"],
-      "countOnlyClosedVisits":"true"
+      "countOnlyClosedVisits":"false"
     }
- },
-   "admissionReport": {
-     "name": "Admission Report",
-    "type": "ipdPatients",
-     "config": {
-       "addressAttributes": ["address1", "city_village"],
-       "patientAttributes": ["caste", "education"],
-       "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
-"Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
-       "locationTagNames":[
-         "Report Location"
-       ],
-       "filterBy": "Date of Admission"
-     }
-   }
+ }
 }
