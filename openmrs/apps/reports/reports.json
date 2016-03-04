@@ -581,7 +581,7 @@
     "type": "obsCount",
     "config": {
     "ageGroupName": "pneumonia",
-    "conceptNames": ["State Of Pneumonia"],
+    "conceptNames": ["IMCI 0-2m, State Of Pneumonia","IMCI 2m-5y, IMCI 2months to 5 years, State Of Pneumonia"],
        "locationTagNames": ["Report Location"],
       "countOnlyClosedVisits":"true"
     }
