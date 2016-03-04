@@ -120,6 +120,16 @@ insert into reporting_age_group
             update reporting_age_group set sort_order = 5 where name = '50+ years' and report_group_name='Registration';
         </sql>
     </changeSet>
+    <changeSet id="BD-age-group-008" author="apaul">
+        <comment>Add ageGroup for pneumonia & diarrhoea</comment>
+        <sql>
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-11 months','pneumonia', 0, 0, 1, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('1-5 years','pneumonia', 1, 0, 5, -1, 2);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-5 years','Diarrhoea', 0, 0, 5, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('Above 5 years','Diarrhoea', 5, 0, 200, -1, 2);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('All Ages', 'All Ages',0,0,200,1,1);
+        </sql>
+    </changeSet>
 
     </databaseChangeLog>
     
