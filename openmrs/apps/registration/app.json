@@ -87,6 +87,10 @@
                     "pattern" : "(^([a-zA-Z\\.\\s]{1,100}) ([a-zA-Z]{0,25})$)|(^([a-zA-Z\\.]{1,100})$)",
                     "errorMessage" : "Should contain only alphabets, dots and spaces"
                 },
+                "motherName" : {
+                  "pattern" : "(^([a-zA-Z\\.\\s]{1,100}) ([a-zA-Z]{0,25})$)|(^([a-zA-Z\\.]{1,100})$)",
+                  "errorMessage" : "Should contain only alphabets, dots and spaces"
+                },
                 "spouseName" : {
                     "pattern" : "(^([a-zA-Z\\.\\s]{1,100}) ([a-zA-Z]{0,25})$)|(^([a-zA-Z\\.]{1,100})$)",
                     "errorMessage" : "Should contain only alphabets, dots and spaces"
