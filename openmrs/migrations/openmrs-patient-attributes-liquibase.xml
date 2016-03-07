@@ -383,4 +383,16 @@
             UPDATE person_attribute_type SET sort_weight = '6' WHERE name = 'birthRegistrationId';
         </sql>
     </changeSet>
+    <changeSet id="BD-20160307-1231" author="neha,sukreet">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="1">
+                select count(*) from person_attribute_type where name = 'motherName';
+            </sqlCheck>
+        </preConditions>
+        <comment>Updating the sortweight of the attribute mother Name</comment>
+        <sql>
+            UPDATE person_attribute_type SET retired = 0, retired_by = null, date_retired = null 
+            WHERE name = 'motherName';
+        </sql>
+    </changeSet>
 </databaseChangeLog>
