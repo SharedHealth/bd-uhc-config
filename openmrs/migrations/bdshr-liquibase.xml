@@ -177,4 +177,10 @@
             update order_frequency set retired = 1, date_retired = @now, retire_reason='Not an order frequency' where concept_id = @concept_id;
         </sql>
     </changeSet>
+    <changeSet id='201603081440' author='Neha,Sukreet' context='setup'>
+        <comment>Increasing the person attribute value size to 150</comment>
+        <sql>
+            ALTER TABLE person_attribute ALTER COLUMN value TYPE character varying(150);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
