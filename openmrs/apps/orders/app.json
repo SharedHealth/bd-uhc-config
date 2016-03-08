@@ -23,7 +23,8 @@
             "allowAddMore": true
       },
       "Immunization Incident Vaccine" : {
-          "required": true
+          "required": true,
+          "dropdown":true
       },
       "Immunization Incident Vaccination Reported" : {
           "required": true
@@ -38,17 +39,17 @@
        "multiSelect": true
       },
       "Procedure Type": {
-        "freeTextAutocomplete" : true,
-        "required" : true,
-        "answersConceptName" : "Procedure Type"
+          "autocomplete" : true,
+          "required" : true,
+          "answersConceptName" : "Procedure Type"
       },
       "Procedure Diagnosis" : {
-        "freeTextAutocomplete" : true,
-        "answersConceptName" : "Diagnosis Answers"
+          "autocomplete" : true,
+          "answersConceptName" : "Diagnosis Answers"
       },
       "Procedure Diagnostic Test" : {
-        "freeTextAutocomplete" : true,
-        "answersConceptName" : "Procedure Diagnostic Test"
+          "autocomplete" : true,
+          "answersConceptName" : "Procedure Diagnostic Test"
       }
     },
     "sections": {
