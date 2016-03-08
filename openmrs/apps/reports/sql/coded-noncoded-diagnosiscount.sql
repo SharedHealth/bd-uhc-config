@@ -2,6 +2,9 @@ select user.username as UserName,sum(if(cv.concept_full_name='Non-coded Diagnosi
 sum(if(cv.concept_full_name='Coded Diagnosis',1,0)) as 'Coded Diagnosis'
 from
   obs o inner join encounter e on o.encounter_id=e.encounter_id
+  INNER join location l on l.location_id = e.location_id
+    INNER JOIN location_tag_map lm on l.location_id= lm.location_id
+    inner JOIN location_tag lt on lt.location_tag_id = lm.location_tag_id and lt.name='Report Location'
     inner join encounter_provider ep on e.encounter_id = ep.encounter_id
     inner join provider p  on ep.provider_id=p.provider_id
 inner join users user on p.person_id=user.person_id
