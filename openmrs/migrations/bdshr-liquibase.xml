@@ -180,7 +180,7 @@
     <changeSet id='201603081440' author='Neha,Sukreet' context='setup'>
         <comment>Increasing the person attribute value size to 150</comment>
         <sql>
-            ALTER TABLE person_attribute ALTER COLUMN value TYPE character varying(150);
+            ALTER TABLE person_attribute MODIFY COLUMN value varchar(150);
         </sql>
     </changeSet>
 </databaseChangeLog>
