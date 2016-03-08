@@ -1,5 +1,5 @@
 
-select user.username as 'Name',
+select user.username as 'User Name',
   rag.name AS 'Patient Age Group',
   sum(IF(p.gender = 'F', 1, 0)) AS Female,
   sum(IF(p.gender = 'M', 1, 0)) AS Male,
