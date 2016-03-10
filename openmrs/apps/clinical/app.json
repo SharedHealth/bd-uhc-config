@@ -139,7 +139,7 @@
                 "Non Communicable Disease Set, Non Communicable Disease":{
                  "multiSelect": true
                 },
-                "Surgeons’s Name":{
+                "Surgeon Name":{
                   "conciseText": true 
                 },
                 "Anesthesia Type":{
