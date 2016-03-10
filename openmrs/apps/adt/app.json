@@ -28,6 +28,7 @@
         "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onDischargeForwardTo": "#/patient/search",
         "defaultVisitType": "inpatient",
+        "maxPatientsPerBed" : 5,
         "dashboard": {
             "dashboardName": "General",
             "translationKey":"ADT_GENERAL",
