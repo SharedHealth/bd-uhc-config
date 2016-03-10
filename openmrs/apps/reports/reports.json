@@ -49,131 +49,7 @@
       "countOnlyClosedVisits": "false"
     }
   },
- "delivery_report": {
-    "name": "Delivery Note Template Report",
-    "type": "obsTemplate",
-    "config": {
-      "templateName": "Delivery Note",
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "delivery_report_based_on_type": {
-    "name": "Delivery count based on Type of delivery",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "Type of delivery"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "delivery_report_based_Delivery_Outcome": {
-    "name": "Delivery count based on Delivery Outcome",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "Delivery outcome"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
- "ANCTemplateReport": {
-    "name": "Total Registered Pregnant Women or ANC Patients",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "ANC Notes"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false",
-      "countOncePerPatient": "true"
-    }
-  },
-  "ANCReportCount": {
-    "name": "ANC Visit-Number Report",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "ANC visit number"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
- "no_blood_transfusion": {
-    "name": "ANC Blood Transfusions",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "ANC Notes, Blood Transfusion"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "PNCTemplateReport": {
-    "name": "Total PNC Patients",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "PNC Notes"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false",
-      "countOncePerPatient": "true"
-    }
-  },
-  "PNCReportCount": {
-    "name": "PNC Visit-Number Report",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "PNC visit number"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
-  "pnc_no_blood_transfusion": {
-    "name": "PNC Blood Transfusions",
-    "type": "obsCount",
-    "config": {
-      "ageGroupName": "All Ages",
-      "conceptNames": [
-        "PNC Notes, Blood Transfusion"
-      ],
-      "locationTagNames":[
-        "Report Location"
-      ],
-      "countOnlyClosedVisits": "false"
-    }
-  },
+ 
   "ContagiousReport1": {
     "name": "Integrated Disease Surveillance Report-1",
     "type": "diagnosisCount",
@@ -216,20 +92,6 @@
         "gender",
         "agegroup_name"
       ]
-    }
-  },
-  "FreeTextDrugOrdered": {
-    "name": "Non coded drugs",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddrugs.sql"
-    }
-  },
-  "FreeTextDiagnosis": {
-    "name": "Non coded Diagnosis",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddiagnosis.sql"
     }
   },
   "NCDTemplateReport":{
@@ -277,27 +139,7 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/deathreport.sql"
     }
   },
-  "customordertype_providerreport": {
-    "name": "Order Type by Providers",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ordertypebyprovider.sql"
-    }
-  },
-  "Codednoncodeddiagnosis": {
-    "name": "Count of Coded And Noncoded Diagnoses by providers",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-diagnosiscount.sql"
-    }
-  },
-  "Codednoncodeddrug": {
-    "name": "Count of Coded And Noncoded Drug orders by proivders",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-drugcount.sql"
-    }
-  },
+  
   "Physical Assault": {
     "name": "Physical Assault",
     "type": "MRSGeneric",
@@ -305,55 +147,6 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/physicalAssaultCustom.sql"
     }
   },
-  "DogBiteandOtherBite":
-	{
-     "name":"Dog Bite and Other Bite",
-     "type":"diagnosisCount",
-     "config":{
-     "concept":"Dog Bite and Others Set",
-     "ageGroupName":"All Ages",
-     "dateRangeRequired": true, 
-     "applyDateRangeFor": "diagnosisDate",
-     "visitsToConsider": "all",
-     "locationTagNames":[
-        "Report Location"
-      ],
-     "rowsGroupBy": [
-        "header_concept_name",
-        "leaf_concept_name"
-      ],
-      "columnsGroupBy": [
-        "gender",
-        "agegroup_name"
-      ]
-     }
-  },
-   "breastCancerScreeningReport":
-    {
-    "name":"Breast Cancer Screening Programme Report(DHIS2)",
-    "type":"obsCount",
-    "config":{
-    "ageGroupName": "All Ages",
-    "conceptNames": ["Breast Cancer Screening Notes, CBE Positive","Breast Cancer Screening Notes, CBE Negative"],
-    "countOnlyClosedVisits":"false",
-      "locationTagNames":[
-        "Report Location"
-      ]
-    }
-    },
-    "cervicalCancerScreeningReport":
-    {
-    "name":"Cervical Cancer Screening Programme Report(DHIS2)",
-    "type":"obsCount",
-    "config":{
-    "ageGroupName": "All Ages",
-    "conceptNames": ["Cervical Cancer Screening Notes, VIA Positive","Cervical Cancer Screening Notes, VIA Negative"],
-    "countOnlyClosedVisits":"false",
-      "locationTagNames":[
-        "Report Location"
-      ]
-    }
-    },
     "OralnDentalReport": {
     "name": "Dental and Oral Report",
     "type": "diagnosisCount",
@@ -376,18 +169,6 @@
       ]
     }
   },
- "dischargeoutcome": {
-    "name":"Discharge Outcome count",
-    "type":"obsCount",
-    "config":{
-    "ageGroupName": "All Ages",
-    "conceptNames": ["Inpatient Outcome"],
-     "locationTagNames":[
-        "Report Location"
-      ],
-    "countOnlyClosedVisits":"true"
-    }
-},
    "admissionReport": {
      "name": "Admission Report",
     "type": "ipdPatients",
@@ -416,27 +197,19 @@
        "filterBy": "Date of Discharge"
      }
    },
-  "womenttcount": {
-    "name": "Women TT Vaccine Count(DHIS2)",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/allwomenttcount.sql"
+    "dischargeoutcome": {
+    "name":"Discharge Outcome count",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Inpatient Outcome"],
+     "locationTagNames":[
+        "Report Location"
+      ],
+    "countOnlyClosedVisits":"true"
     }
-  },
-  "pregnantwomenttcount": {
-    "name": "Pregnant Women TT Vaccine Count(DHIS2)",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pregnantwomenttcount.sql"
-    }
-  },
-  "childrenvaccinecount": {
-    "name": "Children Vaccine Count(DHIS2)",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/childrenvaccinecount.sql"
-    }
-  },
+},
+
   "diarrhoeainpatientreport": {
     "name": "Diarrhoea Inpatient Report",
     "type": "MRSGeneric",
@@ -458,19 +231,50 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/diarrhoeaemergency.sql"
     }
   },
-  "visittypereport": {
-    "name": "Visit Count Report",
+  "pneumoniaReport": {
+    "name": "Pneumonia Report",
+    "type": "obsCount",
+    "config": {
+    "ageGroupName": "pneumonia",
+    "conceptNames": ["State Of Pneumonia"],
+       "locationTagNames": ["Report Location"],
+      "countOnlyClosedVisits":"false"
+    }
+ },
+  "FreeTextDrugOrdered": {
+    "name": "Non coded drugs",
     "type": "MRSGeneric",
     "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/visittypecount.sql"
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddrugs.sql"
     }
   },
-  "bedoccupancyRate": {
-        "name": "BOR ",
-      "type": "MRSGeneric",
-      "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
-      }
+  "FreeTextDiagnosis": {
+    "name": "Non coded Diagnosis",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/noncodeddiagnosis.sql"
+    }
+  },
+  "customordertype_providerreport": {
+    "name": "Order Type by Providers",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/ordertypebyprovider.sql"
+    }
+  },
+  "Codednoncodeddiagnosis": {
+    "name": "Count of Coded And Noncoded Diagnoses by providers",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-diagnosiscount.sql"
+    }
+  },
+  "Codednoncodeddrug": {
+    "name": "Count of Coded And Noncoded Drug orders by proivders",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/coded-noncoded-drugcount.sql"
+    }
   },
     "imciTemplateReport0":{
         "name": "IMCI(0-2m) General Section Report",
@@ -533,7 +337,7 @@
         }
     },
      "ObstericcareReport": {
-    "name": "Obsteric Complications Information Report",
+    "name": "Obsteric Complications Information Report (DHIS2)",
     "type": "diagnosisCount",
     "config": {
       "concept":"Obsteric Complications Info Set",
@@ -554,14 +358,213 @@
       ]
     }
   },
-  "pneumoniaReport": {
-    "name": "Pneumonia Report",
+  "delivery_report": {
+    "name": "Delivery Note Template Report (DHIS2)",
+    "type": "obsTemplate",
+    "config": {
+      "templateName": "Delivery Note",
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+  "delivery_report_based_on_type": {
+    "name": "Delivery count based on Type of delivery (DHIS2)",
     "type": "obsCount",
     "config": {
-    "ageGroupName": "pneumonia",
-    "conceptNames": ["State Of Pneumonia"],
-       "locationTagNames": ["Report Location"],
-      "countOnlyClosedVisits":"false"
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Type of delivery"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
     }
- }
+  },
+  "delivery_report_based_Delivery_Outcome": {
+    "name": "Delivery count based on Delivery Outcome (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "Delivery outcome"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+ "ANCTemplateReport": {
+    "name": "Total Registered Pregnant Women or ANC Patients (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "ANC Notes"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false",
+      "countOncePerPatient": "true"
+    }
+  },
+  "ANCReportCount": {
+    "name": "ANC Visit-Number Report (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "ANC visit number"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+ "no_blood_transfusion": {
+    "name": "ANC Blood Transfusions (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "ANC Notes, Blood Transfusion"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+  "PNCTemplateReport": {
+    "name": "Total PNC Patients (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "PNC Notes"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false",
+      "countOncePerPatient": "true"
+    }
+  },
+  "PNCReportCount": {
+    "name": "PNC Visit-Number Report (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "PNC visit number"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+  "pnc_no_blood_transfusion": {
+    "name": "PNC Blood Transfusions (DHIS2)",
+    "type": "obsCount",
+    "config": {
+      "ageGroupName": "All Ages",
+      "conceptNames": [
+        "PNC Notes, Blood Transfusion"
+      ],
+      "locationTagNames":[
+        "Report Location"
+      ],
+      "countOnlyClosedVisits": "false"
+    }
+  },
+    "DogBiteandOtherBite":
+	{
+     "name":"Dog Bite and Other Bite (DHIS2)",
+     "type":"diagnosisCount",
+     "config":{
+     "concept":"Dog Bite and Others Set",
+     "ageGroupName":"All Ages",
+     "dateRangeRequired": true, 
+     "applyDateRangeFor": "diagnosisDate",
+     "visitsToConsider": "all",
+     "locationTagNames":[
+        "Report Location"
+      ],
+     "rowsGroupBy": [
+        "header_concept_name",
+        "leaf_concept_name"
+      ],
+      "columnsGroupBy": [
+        "gender",
+        "agegroup_name"
+      ]
+     }
+  },
+   "breastCancerScreeningReport":
+    {
+    "name":"Breast Cancer Screening Programme Report (DHIS2)",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Breast Cancer Screening Notes, CBE Positive","Breast Cancer Screening Notes, CBE Negative"],
+    "countOnlyClosedVisits":"false",
+      "locationTagNames":[
+        "Report Location"
+      ]
+    }
+    },
+    "cervicalCancerScreeningReport":
+    {
+    "name":"Cervical Cancer Screening Programme Report (DHIS2)",
+    "type":"obsCount",
+    "config":{
+    "ageGroupName": "All Ages",
+    "conceptNames": ["Cervical Cancer Screening Notes, VIA Positive","Cervical Cancer Screening Notes, VIA Negative"],
+    "countOnlyClosedVisits":"false",
+      "locationTagNames":[
+        "Report Location"
+      ]
+    }
+    },   
+  "womenttcount": {
+    "name": "Women TT Vaccine Count (DHIS2)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/allwomenttcount.sql"
+    }
+  },
+  "pregnantwomenttcount": {
+    "name": "Pregnant Women TT Vaccine Count (DHIS2)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/pregnantwomenttcount.sql"
+    }
+  },
+  "childrenvaccinecount": {
+    "name": "Children Vaccine Count (DHIS2)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/childrenvaccinecount.sql"
+    }
+  },
+    "visittypereport": {
+    "name": "Visit Count Report (DHIS2)",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/visittypecount.sql"
+    }
+  },
+  "bedoccupancyRate": {
+        "name": "BOR (DHIS2)",
+      "type": "MRSGeneric",
+      "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
+      }
+  }
 }
