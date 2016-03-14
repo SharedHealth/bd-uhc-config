@@ -189,27 +189,6 @@
             call add_concept_set_members(@all_orderables_concept_id, @radiology_order_id, 2);
         </sql>
     </changeSet>
-    <changeSet id="BD-20160314-1639" author="neha, sukreet" context="setup">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                select count(*) from concept_name where name = 'Radiology Order Fulfillment Form'  and concept_name_type='FULLY_SPECIFIED';
-            </sqlCheck>
-        </preConditions>
-        <comment>Creating Radiology Order Fulfillment Form concept for Radiology orders</comment>
-        <sql>
-            set @radiology_template_id = 0;
-
-            set @radiology_order_fulfillment_form_id = 0;
-            set @radiology_order_fulfillment_form_name_short_id = 0;
-            set @radiology_order_fulfillment_form_name_full_id = 0;
-
-            SELECT concept_id INTO @radiology_template_id FROM concept_name where name = 'Radiology Template' and concept_name_type='FULLY_SPECIFIED';
-
-            call add_concept(@radiology_order_fulfillment_form_id, @radiology_order_fulfillment_form_name_short_id, @radiology_order_fulfillment_form_name_full_id,
-            'Radiology Order Fulfillment Form', 'Radiology Order Fulfillment Form', 'N/A', 'ConvSet', TRUE);
-            call add_concept_set_members(@radiology_order_fulfillment_form_id, @radiology_template_id, 1);
-        </sql>
-    </changeSet>
     <changeSet id="BD-20160314-1653" author="sukreet,neha" context="setup">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
@@ -242,6 +221,22 @@
             WHERE           ob.obs_id IS NULL
             AND             ot.NAME = ''Radiology Order'' group by pi.identifier',
             'Sql query to fetch active patients with radiology order ', uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20160314-1825" author="neha, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Radiology Order Fulfillment Form'  and concept_name_type='FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Radiology Order Fulfillment Form concept for Radiology orders</comment>
+        <sql>
+            set @radiology_order_fulfillment_form_id = 0;
+            set @radiology_order_fulfillment_form_name_short_id = 0;
+            set @radiology_order_fulfillment_form_name_full_id = 0;
+
+            call add_concept(@radiology_order_fulfillment_form_id, @radiology_order_fulfillment_form_name_short_id, @radiology_order_fulfillment_form_name_full_id,
+            'Radiology Order Fulfillment Form', 'Radiology Order Fulfillment Form', 'N/A', 'ConvSet', TRUE);
         </sql>
     </changeSet>
 </databaseChangeLog>
