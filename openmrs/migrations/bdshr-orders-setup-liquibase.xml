@@ -137,4 +137,111 @@
 
         </sql>
     </changeSet>
+    <changeSet id="BD-20160314-1636" author="neha,sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type where name='Radiology Order'
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Order Type Radiology Order</comment>
+        <insert tableName="order_type">
+            <column name="name" value="Radiology Order"/>
+            <column name="description" value="An order for radiology"/>
+            <column name="creator" valueNumeric="1"/>
+            <column name="date_created" valueDate="now()"/>
+            <column name="retired" valueBoolean="false"/>
+            <column name="date_retired"/>
+            <column name="retire_reason"/>
+            <column name="uuid" valueComputed="uuid()"/>
+            <column name="java_class_name" value="org.openmrs.Order"/>
+        </insert>
+    </changeSet>
+    <changeSet id="BD-20160314-1637" author="neha,sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from order_type_class_map where order_type_id = (select order_type_id from order_type where name='Radiology Order')
+                and concept_class_id = (select concept_class_id from concept_class where name='Radiology')
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding mapping between Radiology Order order-type and radiology concept class</comment>
+        <sql>
+            insert into order_type_class_map values((select order_type_id from order_type where name='Radiology Order'),
+            (select concept_class_id from concept_class where name='Radiology'));
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20160314-1638" author="neha,sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Radiology Order' and concept_name_type='FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Radiology Order and adding to All Orderables</comment>
+        <sql>
+            set @all_orderables_concept_id = 0;
+
+            set @radiology_order_id = 0;
+            set @radiology_order_name_short_id = 0;
+            set @radiology_order_name_full_id = 0;
+
+            SELECT concept_id INTO @all_orderables_concept_id FROM concept_name where name = 'All Orderables' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@radiology_order_id, @radiology_order_name_short_id, @radiology_order_name_full_id, 'Radiology Order', 'Radiology', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@all_orderables_concept_id, @radiology_order_id, 2);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20160314-1639" author="neha, sukreet" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from concept_name where name = 'Radiology Order Fulfillment Form'  and concept_name_type='FULLY_SPECIFIED';
+            </sqlCheck>
+        </preConditions>
+        <comment>Creating Radiology Order Fulfillment Form concept for Radiology orders</comment>
+        <sql>
+            set @radiology_template_id = 0;
+
+            set @radiology_order_fulfillment_form_id = 0;
+            set @radiology_order_fulfillment_form_name_short_id = 0;
+            set @radiology_order_fulfillment_form_name_full_id = 0;
+
+            SELECT concept_id INTO @radiology_template_id FROM concept_name where name = 'Radiology Template' and concept_name_type='FULLY_SPECIFIED';
+
+            call add_concept(@radiology_order_fulfillment_form_id, @radiology_order_fulfillment_form_name_short_id, @radiology_order_fulfillment_form_name_full_id,
+            'Radiology Order Fulfillment Form', 'Radiology Order Fulfillment Form', 'N/A', 'ConvSet', TRUE);
+            call add_concept_set_members(@radiology_order_fulfillment_form_id, @radiology_template_id, 1);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20160314-1653" author="sukreet,neha" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from global_property where property = 'emrapi.sqlSearch.active.radiologyOrder'
+            </sqlCheck>
+        </preConditions>
+        <comment>set emrapi.sqlSearch.active.radiologyOrder global property</comment>
+        <sql>
+            INSERT INTO global_property (`property`, `property_value`, `description`, `uuid`)
+            VALUES ('emrapi.sqlSearch.active.radiologyOrder',
+            'SELECT DISTINCT Concat(pn.given_name,'' '', pn.family_name) AS name,
+            pi.identifier,
+            Concat("",p.uuid) AS uuid,
+            Date_format(o.date_activated,''%b %d %Y %h:%i %p'') AS ''Order Placed on''
+            FROM            orders o
+            JOIN            person_name pn
+            ON              o.patient_id = pn.person_id
+            JOIN            patient_identifier pi
+            ON              o.patient_id = pi.patient_id
+            JOIN            person p
+            ON              o.patient_id = p.person_id
+            LEFT OUTER JOIN obs ob
+            ON              o.order_id = ob.order_id
+            JOIN            concept c
+            ON              o.concept_id = c.concept_id
+            JOIN            concept_name cn
+            ON              c.concept_id = cn.concept_id AND cn.concept_name_type=''FULLY_SPECIFIED''
+            INNER JOIN      order_type ot
+            ON              ot.order_type_id = o.order_type_id
+            WHERE           ob.obs_id IS NULL
+            AND             ot.NAME = ''Radiology Order'' group by pi.identifier',
+            'Sql query to fetch active patients with radiology order ', uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>

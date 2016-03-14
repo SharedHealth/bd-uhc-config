@@ -11,7 +11,22 @@
         "view": "tabular"
       },
       "label": "Procedure Order",
-      "order": 3,
+      "order": 1,
+      "requiredPrivilege": "app:orders"
+    },
+    "bahmni_clinical_patients_search_RadiologyOrder": {
+      "id": "bahmni.clinical.patients.search.radiologyOrder",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+        "searchHandler": "emrapi.sqlSearch.active.radiologyOrder",
+        "translationKey": "Radiologys",
+        "forwardUrl": "../orders/#/patient/{{patientUuid}}/fulfillment/Radiology Order",
+        "forwardButtonTitle": "View",
+        "view": "tabular"
+      },
+      "label": "Radiology Order",
+      "order": 2,
       "requiredPrivilege": "app:orders"
     }
 }

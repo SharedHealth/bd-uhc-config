@@ -95,6 +95,18 @@
           "numberOfVisits": 4
         }
       },
+      "radiologyOrders": {
+        "orderType": "Radiology Order",
+        "title": "Radiology Orders",
+        "name": "ordersControl",
+        "displayOrder": 13,
+        "dashboardParams": {
+          "conceptNames": [
+            "Radiology Template"
+          ],
+          "numberOfVisits": 4
+        }
+      },
       "vitals": {
         "title": "Vitals",
         "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
