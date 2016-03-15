@@ -131,6 +131,14 @@ insert into reporting_age_group
         </sql>
     </changeSet>
 
-    </databaseChangeLog>
+    <changeSet id="BD-age-group-009" author="sravanthi">
+        <comment>Add ageGroup for death cause</comment>
+        <sql>
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-5 years', 'Below 5 years', 0, 0, 5, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('30+ years', 'Above 30 years', 30, 0, 200, 0, 2);
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
     
     
