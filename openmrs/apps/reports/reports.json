@@ -21,7 +21,7 @@
     }
   },
     "demoregistration": {
-    "name": "Registration count by users - General category Only",
+    "name": "Registration count by users - All Categories",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
@@ -241,6 +241,41 @@
       "countOnlyClosedVisits":"false"
     }
  },
+    "topTenDiagnosisCountBelowFiveYears": {
+    "name": "Top Ten Diagnosis Count - Below 5 years",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/topTenDiagnosisCountBelowFiveYears.sql"
+    }
+  },
+    "topTenCausesofDeathBelowfiveYears": {
+    "name": "Top Ten Causes of Death - Below 5 years",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/topTenCausesOfDeathBelowFiveYears.sql"
+    }
+  },
+   "topTenDiagnosisCountAbove30Years": {
+    "name": "Top Ten Diagnosis Count - Above 30 Years",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/topTenDiagnosisCountAboveThirtyYears.sql"
+    }
+  },
+    "topTenCausesofDeath": {
+    "name": "Top Ten Causes of Death - Above 30 Years",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/topTenCausesOfDeathAboveThirtyYears.sql"
+    }
+  },
+    "numberOfPatientsConsultedByaDoctor": {
+    "name": "Number of Patients Consulted ",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/countOfPatientsWithAtleastOneObsOrOrderPerUser.sql"
+    }
+  },
   "FreeTextDrugOrdered": {
     "name": "Non coded drugs",
     "type": "MRSGeneric",
