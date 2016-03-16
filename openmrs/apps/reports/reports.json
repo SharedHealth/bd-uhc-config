@@ -596,7 +596,7 @@
     }
   },
   "bedoccupancyRate": {
-        "name": "BOR (DHIS2)",
+        "name": "Bed Statement (DHIS2)",
       "type": "MRSGeneric",
       "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/bor.sql"
