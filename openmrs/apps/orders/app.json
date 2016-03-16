@@ -50,6 +50,11 @@
       "Procedure Diagnostic Test" : {
           "autocomplete" : true,
           "answersConceptName" : "Procedure Diagnostic Test"
+      },
+      "Type of Radiology": {
+        "autocomplete" : true,
+        "required" : true,
+        "answersConceptName" : "Type of Radiology"
       }
     },
     "sections": {
