@@ -39,7 +39,7 @@
                     "name": "vitals",
                     "translationKey":"ADT_VITALS",
                      "isObservation": true,
-                    "dashboardParams": {
+                    "dashboardConfig": {
                         "conceptNames": [
                             "Vitals"
                         ],
@@ -50,21 +50,21 @@
                 "disposition": {
                     "title": "Disposition",
                     "translationKey":"ADT_DISPOSITION",
-                    "name": "disposition",
+                    "type": "disposition",
                     "numberOfVisits": 1,
                     "displayOrder": 2
                 },
                 "diagnosis": {
                     "title": "Diagnosis",
                     "translationKey":"ADT_DIAGNOSIS",
-                    "name": "diagnosis",
+                    "type": "diagnosis",
                     "numberOfVisits": 1,
                     "showDetailsButton": true,
                     "displayOrder": 3
                 },
                 "patient_information": {
                     "title": "Patient Information",
-                    "name": "patientInformation",
+                    "type": "patientInformation",
                     "translationKey":"ADT_PATIENT_INFO",
                     "patientAttributes": [
                                   "healthId",
@@ -91,7 +91,7 @@
                 "admission_details": {
                     "translationKey":"ADT_ADMISSION",
                     "title": "Admission Details",
-                    "name": "admissionDetails",
+                    "type": "admissionDetails",
                     "displayOrder": 4
                 }
               }

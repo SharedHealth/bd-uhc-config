@@ -6,7 +6,7 @@
     "sections": {
       "patientInformation": {
         "title": "Patient Information",
-        "name": "patientInformation",
+        "type": "patientInformation",
         "patientAttributes": [
           "healthId",
           "fatherName",
@@ -31,7 +31,7 @@
       },
       "diagnosis": {
         "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-        "name": "diagnosis",
+        "type": "diagnosis",
         "showCertainty": true,
         "showOrder": false,
         "showDetailsButton": true,
@@ -40,8 +40,8 @@
       "treatments": {
         "title": "Treatments",
         "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
-        "name": "treatment",
-        "dashboardParams": {
+        "type": "treatment",
+        "dashboardConfig": {
           "showFlowSheet": true,
           "showListView": true,
           "showRoute": true,
@@ -50,7 +50,7 @@
           "showOtherActive": true,
           "showDetailsButton": true
         },
-        "allTreatmentDetails": {
+        "expandedViewConfig": {
           "title": "Treatments",
           "translationKey": "DASHBOARD_TITLE_TREATMENTS_KEY",
           "showFlowSheet": true,
@@ -66,8 +66,8 @@
       "lab_results": {
         "title": "Lab Results",
         "translationKey": "DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-        "name": "labOrders",
-        "dashboardParams": {
+        "type": "labOrders",
+        "dashboardConfig": {
           "title":null,
           "numberOfVisits": 1,
           "showChart": false,
@@ -77,7 +77,7 @@
           "showCommentsExpanded": true,
           "showAccessionNotes": true
         },
-        "allLabDetails": {
+        "expandedViewConfig": {
           "numberOfVisits": 10,
           "showChart": true,
           "showTable": true
@@ -87,9 +87,9 @@
       "procedureOrders": {
         "orderType": "Procedure Order",
         "title": "Procedure Orders",
-        "name": "ordersControl",
+        "type": "ordersControl",
         "displayOrder": 12,
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "Procedure Template"
           ],
@@ -99,9 +99,9 @@
       "radiologyOrders": {
         "orderType": "Radiology Order",
         "title": "Radiology Orders",
-        "name": "ordersControl",
+        "type": "ordersControl",
         "displayOrder": 13,
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "Radiology Order Fulfillment Form"
           ],
@@ -111,15 +111,15 @@
       "vitals": {
         "title": "Vitals",
         "translationKey": "DASHBOARD_TITLE_VITALS_KEY",
-        "name": "vitals",
+        "type": "vitals",
         "isObservation": true,
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "Vitals"
           ],
           "numberOfVisits": 2
         },
-        "allObservationDetails": {
+        "expandedViewConfig": {
           "conceptNames": [
             "Vitals"
           ],
@@ -141,15 +141,15 @@
       "history_and_examinations": {
         "title": "History and Examinations",
         "translationKey": "DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
-        "name": "vitals",
+        "type": "vitals",
         "isObservation": true,
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "History and Examination"
           ],
           "numberOfVisits": 2
         },
-        "allObservationDetails": {
+        "expandedViewConfig": {
           "conceptNames": [
             "History and Examination"
           ],
@@ -163,9 +163,9 @@
 
         "title": "Consultation Notes",
         "translationKey": "DASHBOARD_TITLE_Consultation_KEY",
-        "name":"Consultation Notes",
+        "type":"Consultation Notes",
         "isObservation": true,
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "Consultation Note"
           ],
@@ -177,8 +177,8 @@
       "visits": {
         "title": "Visits",
         "translationKey": "DASHBOARD_TITLE_VISITS_KEY",
-        "name": "visits",
-        "dashboardParams": {
+        "type": "visits",
+        "dashboardConfig": {
           "title": null,
           "maximumNoOfVisits": 10
         },
@@ -187,7 +187,7 @@
       "admission_details": {
         "title": "Admission Details",
         "translationKey": "DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
-        "name": "admissionDetails",
+        "type": "admissionDetails",
         "displayOrder": 2
       }
     }
@@ -200,7 +200,7 @@
       "patient_information": {
         "title": "Patient Information",
         "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
-        "name": "patientInformation",
+        "type": "patientInformation",
         "patientAttributes": [
           "healthId",
           "fatherName",
@@ -225,7 +225,7 @@
       },
       "diagnosis": {
         "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
-        "name": "diagnosis",
+        "type": "diagnosis",
         "showCertainty": true,
         "showDetailsButton": true,
         "showOrder": true,
@@ -235,20 +235,20 @@
         "type": "observation",
         "title": "Delivery Note",
         "isObservation": true,
-        "name": "Delivery Note",
+        "type": "Delivery Note",
         "displayOrder": 2,
         "conceptNames": [
           "Delivery Note"
         ],
         "translationKey": "DELIVERY_NOTES",
         "numberOfVisits": "5",
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "Delivery Note"
           ],
           "numberOfVisits": "5"
         },
-        "allObservationDetails": {
+        "expandedViewConfig": {
           "conceptNames": [
             "Delivery Note"
           ],
@@ -260,20 +260,20 @@
         "type": "observation",
         "title": "PNC Notes",
         "isObservation": true,
-        "name": "PNC Notes",
+        "type": "PNC Notes",
         "displayOrder": 3,
         "conceptNames": [
           "PNC Notes"
         ],
         "translationKey": "PNC_NOTES",
         "numberOfVisits": "5",
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "PNC Notes"
           ],
           "numberOfVisits": "5"
         },
-        "allObservationDetails": {
+        "expandedViewConfig": {
           "conceptNames": [
             "PNC Notes"
           ],
@@ -285,20 +285,20 @@
         "type": "observation",
         "title": "ANC Notes",
         "isObservation": true,
-        "name": "ANC Notes",
+        "type": "ANC Notes",
         "displayOrder": 4,
         "conceptNames": [
           "ANC Notes"
         ],
         "translationKey": "ANC_NOTES",
         "numberOfVisits": "5",
-        "dashboardParams": {
+        "dashboardConfig": {
           "conceptNames": [
             "ANC Notes"
           ],
           "numberOfVisits": "5"
         },
-        "allObservationDetails": {
+        "expandedViewConfig": {
           "conceptNames": [
             "ANC Notes"
           ],
