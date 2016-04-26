@@ -34,6 +34,7 @@
         "name": "diagnosis",
         "showCertainty": true,
         "showOrder": false,
+        "showDetailsButton": true,
         "displayOrder": 1
       },
       "treatments": {
@@ -226,6 +227,7 @@
         "translationKey": "DASHBOARD_TITLE_DIAGNOSIS_KEY",
         "name": "diagnosis",
         "showCertainty": true,
+        "showDetailsButton": true,
         "showOrder": true,
         "displayOrder": 1
       },
