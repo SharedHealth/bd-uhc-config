@@ -13,9 +13,11 @@
         what actions.
     -->
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
+        <validCheckSum>3:60625eb74a44bb2f04ef3a0bcded2abe</validCheckSum>
         <comment>Create RegistrationClerk ROLE and Privileges</comment>
         <sql>
-            insert into role (role, description) values ('RegistrationClerk', 'RegistrationClerk');
+            set @uuid = uuid();
+            insert into role (role, description, uuid) values ('RegistrationClerk', 'RegistrationClerk',@uuid);
 
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Add Observations');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Delete Observations');
@@ -54,10 +56,11 @@
         </sql>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
+        <validCheckSum>3:82a0fe78a656bcf007da64db887b3dfd</validCheckSum>
         <comment>Create Document-Uploader ROLE and Privileges</comment>
         <sql>
-            
-            INSERT INTO role (role, description) VALUES ('bahmni-document-uploader', 'bahmni-document-uploader');
+            set @uuid = uuid();
+            INSERT INTO role (role, description,uuid) VALUES ('bahmni-document-uploader', 'bahmni-document-uploader',@uuid);
 
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Observations');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Add Encounters');
