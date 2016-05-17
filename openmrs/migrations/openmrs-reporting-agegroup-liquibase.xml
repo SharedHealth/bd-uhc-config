@@ -53,11 +53,11 @@
            insert into reporting_age_group
 			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			values
-  			('IDS1(0-28days)','Contagious1',0,0,0,28,1);
+  			('IDS1(0-28days)','Contagious1',0,0,0,29,1);
 			insert into reporting_age_group
 			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			values
- 			 ('IDS1(29d-1yr)','Contagious1',0,29,1,-1,2);
+ 			 ('IDS1(29d-1yr)','Contagious1',0,29,1,0,2);
 			insert into reporting_age_group
 			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
 			values
