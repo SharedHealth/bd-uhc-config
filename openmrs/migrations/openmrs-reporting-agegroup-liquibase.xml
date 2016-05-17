@@ -13,15 +13,20 @@
     <changeSet id="BD-age-group-001" author="tw">
         <comment>Add ageGroup for children death</comment>
         <sql>
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values
             ('Total Children death (0-5yrs)','Children Death', 0, 0, 5, 0, 7);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values
             ('Total Neonatal death (0-7 days)','Children Death', 0, 0, 0, 7, 8);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values
             ('Total Neonatal death (8-28 days)','Children Death', 0, 8, 0, 28, 9);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values
             ('Total Infant death (29days to 1 yr)','Children Death', 0, 29, 1, -1, 10);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values
             ('Total Children death (1yr to 5yrs)','Children Death', 1, 0, 5, -1, 11);
         </sql>
     </changeSet>
@@ -38,107 +43,125 @@
     <changeSet id="BD-age-group-003" author="Dayaan">
         <comment>Add ageGroup for children death</comment>
         <sql>
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days, sort_order)
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days,
+            sort_order)
             VALUES ('(0-12)Months Old Children','Vaccination',0,0,1,0,1);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days, sort_order)
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days,
+            sort_order)
             VALUES ('(13-24)Months Old Children','Vaccination',1,0,2,0,2);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days, sort_order)
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years, max_days,
+            sort_order)
             VALUES ('women(15-49 years old)','women 15-49',15,0,49,0,1);
         </sql>
     </changeSet>
-    
+
     <changeSet id="BD-age-group-004" author="tw">
         <comment>Add ageGroup for IDS set 1</comment>
         <sql>
-           insert into reporting_age_group
-			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			values
-  			('IDS1(0-28days)','Contagious1',0,0,0,29,1);
-			insert into reporting_age_group
-			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			values
- 			 ('IDS1(29d-1yr)','Contagious1',0,29,1,0,2);
-			insert into reporting_age_group
-			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			values
- 			 ('IDS1(1-5yr)','Contagious1',1,0,5,0,3);
-			insert into reporting_age_group
-			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			values
- 			 ('IDS1(5-15yr)','Contagious1',5,0,15,0,4);
-			insert into reporting_age_group
-			(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-			values
-  			('IDS1(15+yr)','Contagious1',15,0,200,0,5);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS1(0-28days)','Contagious1',0,0,0,28,1);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS1(29d-1yr)','Contagious1',0,29,1,-1,2);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS1(1-5yr)','Contagious1',1,0,5,0,3);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS1(5-15yr)','Contagious1',5,0,15,0,4);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS1(15+yr)','Contagious1',15,0,200,0,5);
         </sql>
     </changeSet>
-    
-<changeSet id="BD-age-group-005" author="tw">
-<comment>Add ageGroup for IDS set 2</comment>
-<sql>
-    insert into reporting_age_group
-(name,report_group_name, min_years, min_days, max_years , max_days, sort_order)
-values
-  ('IDS2(0-5yr)','Contagious2',0,0,5,0,1);
-  	insert into reporting_age_group
-(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-values
-  ('IDS2(5-15yr)','Contagious2',5,0,15,0,2);
-	insert into reporting_age_group
-(name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
-values
-  ('IDS2(15+yr)','Contagious2',15,0,200,0,3);
-  
-</sql>
-</changeSet>
-<changeSet id="BD-age-group-006" author="tw">
-<comment>Add ageGroup for Dental and Oral</comment>
-<sql>
-insert into reporting_age_group
-(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
-('DentalOral(0-1yr)','DentalOral',0,0,1,0,1);
-insert into reporting_age_group
-(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
-('DentalOral(1-4yr)','DentalOral',1,0,4,0,2);
-insert into reporting_age_group
-(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
-('DentalOral(5-14yr)','DentalOral',5,0,14,0,3);
-insert into reporting_age_group
-(name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
-('DentalOral(15-49yr)','DentalOral',15,0,49,0,4);
-insert into reporting_age_group
-(name,report_group_name,min_years,min_days,max_years,max_days, sort_order)values
-('DentalOral(50yr+)','DentalOral',50,0,200,0,5);
-</sql>
-</changeSet>
- <changeSet id="BD-age-group-007" author="apaul">
+
+    <changeSet id="BD-age-group-005" author="tw">
+        <comment>Add ageGroup for IDS set 2</comment>
+        <sql>
+            insert into reporting_age_group
+            (name,report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS2(0-5yr)','Contagious2',0,0,5,0,1);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS2(5-15yr)','Contagious2',5,0,15,0,2);
+            insert into reporting_age_group
+            (name, report_group_name, min_years, min_days, max_years , max_days, sort_order)
+            values
+            ('IDS2(15+yr)','Contagious2',15,0,200,0,3);
+
+        </sql>
+    </changeSet>
+    <changeSet id="BD-age-group-006" author="tw">
+        <comment>Add ageGroup for Dental and Oral</comment>
+        <sql>
+            insert into reporting_age_group
+            (name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+            ('DentalOral(0-1yr)','DentalOral',0,0,1,0,1);
+            insert into reporting_age_group
+            (name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+            ('DentalOral(1-4yr)','DentalOral',1,0,4,0,2);
+            insert into reporting_age_group
+            (name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+            ('DentalOral(5-14yr)','DentalOral',5,0,14,0,3);
+            insert into reporting_age_group
+            (name,report_group_name,min_years,min_days,max_years,max_days,sort_order)values
+            ('DentalOral(15-49yr)','DentalOral',15,0,49,0,4);
+            insert into reporting_age_group
+            (name,report_group_name,min_years,min_days,max_years,max_days, sort_order)values
+            ('DentalOral(50yr+)','DentalOral',50,0,200,0,5);
+        </sql>
+    </changeSet>
+    <changeSet id="BD-age-group-007" author="apaul">
         <preConditions onFail="WARN">
-            <sqlCheck expectedResult="1">select count(*) from reporting_age_group where name = '50+ years' and report_group_name='Registration';</sqlCheck>
-        </preConditions>       
+            <sqlCheck expectedResult="1">select count(*) from reporting_age_group where name = '50+ years' and
+                report_group_name='Registration';
+            </sqlCheck>
+        </preConditions>
         <comment>Fixing the sort order of Registration age group</comment>
- 	<sql>
+        <sql>
             update reporting_age_group set sort_order = 5 where name = '50+ years' and report_group_name='Registration';
         </sql>
     </changeSet>
     <changeSet id="BD-age-group-008" author="apaul">
         <comment>Add ageGroup for pneumonia and diarrhoea</comment>
         <sql>
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-11 months','pneumonia', 0, 0, 1, -1, 1);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('1-5 years','pneumonia', 1, 0, 5, -1, 2);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-5 years','Diarrhoea', 0, 0, 5, -1, 1);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('Above 5 years','Diarrhoea', 5, 0, 200, -1, 2);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('All Ages', 'All Ages',0,0,200,1,1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('0-11 months','pneumonia', 0, 0, 1, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('1-5 years','pneumonia', 1, 0, 5, -1, 2);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('0-5 years','Diarrhoea', 0, 0, 5, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('Above 5 years','Diarrhoea', 5, 0, 200, -1, 2);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('All Ages', 'All Ages',0,0,200,1,1);
         </sql>
     </changeSet>
 
     <changeSet id="BD-age-group-009" author="sravanthi">
         <comment>Add ageGroup for death cause</comment>
         <sql>
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('0-5 years', 'Below 5 years', 0, 0, 5, -1, 1);
-            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days, sort_order) values ('30+ years', 'Above 30 years', 30, 0, 200, 0, 2);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('0-5 years', 'Below 5 years', 0, 0, 5, -1, 1);
+            insert into reporting_age_group(name, report_group_name, min_years, min_days, max_years , max_days,
+            sort_order) values ('30+ years', 'Above 30 years', 30, 0, 200, 0, 2);
         </sql>
     </changeSet>
-
+    <changeSet id="BD-age-group-010" author="sadia">
+    <comment>Add ageGroup for death cause</comment>
+    <sql>
+    update reporting_age_group set max_days=29 where report_group_name='Contagious1' and name='IDS1(0-28days)';
+    update reporting_age_group set max_days=0 where report_group_name='Contagious1' and name= 'IDS1(29d-1yr)';
+    </sql>
+    </changeSet>
 </databaseChangeLog>
     
     
