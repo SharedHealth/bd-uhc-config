@@ -156,12 +156,26 @@
         </sql>
     </changeSet>
     <changeSet id="BD-age-group-010" author="sadia">
-    <comment>Add ageGroup for death cause</comment>
+    <comment>Add ageGroup for IDS1 </comment>
     <sql>
-    update reporting_age_group set max_days=29 where report_group_name='Contagious1' and name='IDS1(0-28days)';
-    update reporting_age_group set max_days=0 where report_group_name='Contagious1' and name= 'IDS1(29d-1yr)';
+        update reporting_age_group set max_days=29 where report_group_name='Contagious1' and name='IDS1(0-28days)';
+        update reporting_age_group set max_days=0 where report_group_name='Contagious1' and name= 'IDS1(29d-1yr)';
     </sql>
+</changeSet>
+    <changeSet id="BD-age-group-011" author="sadia">
+        <comment>Add ageGroup for Children Death </comment>
+        <sql>
+            update reporting_age_group set max_days=8 where name='Total Neonatal death (0-7 days)' and report_group_name='Children Death';
+            update reporting_age_group set max_days=29 where name='Total Neonatal death (8-28 days)' and report_group_name='Children Death';
+            update reporting_age_group SET  max_days=0 where name='Total Infant death (29days to 1 yr)' and report_group_name='Children Death';
+            update reporting_age_group set max_days=0 where name='Total Children death (1yr to 5yrs)' and report_group_name='Children Death';
+            UPDATE reporting_age_group set max_days=0 where name='0-5 years' and report_group_name='Diarrhoea';
+            UPDATE  reporting_age_group set max_days=0 where name='1-5 years' and report_group_name='pneumonia';
+            UPDATE  reporting_age_group set max_days=0 where name='0-11 months' and report_group_name='pneumonia';
+        </sql>
     </changeSet>
+
+
 </databaseChangeLog>
     
     
