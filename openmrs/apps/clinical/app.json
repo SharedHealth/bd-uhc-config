@@ -31,17 +31,13 @@
         "allowConsultationWhenNoOpenVisit": true,
         "defaultVisitType": "outpatient",
         "conceptSetUI": {
-                "Condition Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false,
-                    "allowAddMore" : true
-                },
-                "Condition Non-Coded Chief Complaint" : {
-                    "answersConceptName" : "Chief Complaint Answers",
-                    "freeTextAutocomplete" : true,
-                    "durationRequired" : false,
-                    "allowAddMore" : true
+                "Condition Chief Complaint Data": {
+                  "answersConceptName": "Condition Chief Complaint",
+                  "autocomplete": true,
+                  "codedConceptName": "Condition Chief Complaint",
+                  "nonCodedConceptName": "Condition Non-Coded Chief Complaint",
+                  "durationRequired": false,
+                  "allowAddMore" : true
                 },
                 "Family Member Condition Diagnosis" : {
                     "autocomplete" : true,
