@@ -32,7 +32,7 @@
         "defaultVisitType": "outpatient",
         "conceptSetUI": {
                 "Condition Chief Complaint Data": {
-                  "answersConceptName": "Condition Chief Complaint",
+                  "answersConceptName": "Chief Complaint Answers",
                   "autocomplete": true,
                   "codedConceptName": "Condition Chief Complaint",
                   "nonCodedConceptName": "Condition Non-Coded Chief Complaint",
