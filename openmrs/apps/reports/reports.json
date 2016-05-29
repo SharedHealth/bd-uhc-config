@@ -27,6 +27,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyusers.sql"
     }
   },
+  "registrationcountconslidated": {
+    "name": "Registration count by users - Consolidated",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/registrationbyuserconsolidated.sql"
+    }
+  },
   "customfeereport": {
     "name": "Registration count at Departments - Free categories only",
     "type": "MRSGeneric",
@@ -236,7 +243,7 @@
     "type": "obsCount",
     "config": {
     "ageGroupName": "pneumonia",
-    "conceptNames": ["IMCI 0-2m, State Of Pneumonia"],
+    "conceptNames": ["IMCI 0-2m","State Of Pneumonia"],
        "locationTagNames": ["Report Location"],
       "countOnlyClosedVisits":"false"
     }
@@ -246,7 +253,7 @@
     "type": "obsCount",
     "config": {
       "ageGroupName": "pneumonia",
-      "conceptNames": ["IMCI 2m-5y, IMCI 2months to 5 years, State Of Pneumonia"],
+      "conceptNames": ["IMCI 2m-5y, IMCI 2months to 5 years", "State Of Pneumonia"],
       "locationTagNames": ["Report Location"],
       "countOnlyClosedVisits":"false"
     }
