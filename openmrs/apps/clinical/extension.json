@@ -64,7 +64,7 @@
         "requiredPrivilege": "app:clinical:observationTab"
     },
     "bahmni_clinical_patients_search_allpatients_active_app:clinical": {
-        "id": "bahmni.clinical.patients.search.allPatients",
+        "id": "bahmni.clinical.patients.search.activePatients",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
         "extensionParams": {
