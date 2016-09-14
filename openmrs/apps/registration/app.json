@@ -28,7 +28,7 @@
             "showMiddleName": false,
             "addressHierarchy": {
                 "showAddressFieldsTopDown": true,
-                "freeTextAddressFields": ["address1"]
+                "strictAutocompleteFromLevel": "address2"
             },
             "printOptions":[
                 {
@@ -102,7 +102,7 @@
 			"label": "Ward/Union",
 			"placeholder": "Enter Ward/Union",
 			"field": "address3"
-		},	
+		},
                 "customAttributes": {
                  "label": "ID/Relative Name/Phone",
                  "placeholder": "ID/Relative Name/Phone",
