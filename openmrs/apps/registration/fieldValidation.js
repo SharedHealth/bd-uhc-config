@@ -40,5 +40,11 @@ Bahmni.Registration.customValidator = {
 			return (getLunhAlgorithmSum(value) % 10) == 0;
 		},
 		errorMessage: "Please Enter Valid Health ID."
-	}
+	},
+    "birthdate":{
+        method: function(name, value, attributeDetails) {
+            return (new Date().getFullYear()-value.getFullYear()) < 115;
+        },
+        errorMessage: "Patient age must be less than 115."
+    }
 };
