@@ -48,6 +48,7 @@
         </sql>
     </changeSet>
     <changeSet id="BD-201406241630" author="angshu" context="setup">
+        <validCheckSum>3:83d0d6f2cb423226e31f4786dccbfaab</validCheckSum>
         <comment>Remove unwanted idgen sources. adding location. retiring and adding person attributes</comment>
         <sql>
             INSERT INTO location (name, description, creator, date_created, uuid) VALUES ('BahmniFacility', 'Description for this faciltiy', 1, curdate(), uuid());
@@ -56,7 +57,7 @@
             delete from idgen_seq_id_gen where prefix in ('GAN', 'SEM', 'SIV');
             delete from idgen_log_entry;
             delete from idgen_identifier_source where name in ('GAN', 'SEM', 'SIV', 'BAH');
-            SELECT patient_identifier_type_id from patient_identifier_type where name = 'Bahmni Id' into @patient_identifier;
+            SELECT patient_identifier_type_id from patient_identifier_type where uuid = (select property_value from global_property where property = 'emr.primaryIdentifierType') into @patient_identifier;
             INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created) VALUES (uuid(), 'BD', 'ID sequence source for patients in Bangladesh for this facility', @patient_identifier, 1, curdate());
             SET @source_id := LAST_INSERT_ID();
             INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'BD', '', 9,9);

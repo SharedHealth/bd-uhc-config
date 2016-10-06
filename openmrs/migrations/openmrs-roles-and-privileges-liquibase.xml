@@ -14,6 +14,7 @@
     -->
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
         <validCheckSum>3:60625eb74a44bb2f04ef3a0bcded2abe</validCheckSum>
+        <validCheckSum>3:729de8736c4d43ea3b30d362196c1c2a</validCheckSum>
         <comment>Create RegistrationClerk ROLE and Privileges</comment>
         <sql>
             set @uuid = uuid();
@@ -38,7 +39,7 @@
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Encounters');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Global Properties');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Identifier Types');
-            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Location Attribute Types');
+            insert into role_privilege (role, privilege) values ('RegistrationClerk', 'Get Location Attribute Types');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Locations');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Navigation Menu');
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'View Observations');
@@ -57,6 +58,7 @@
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
         <validCheckSum>3:82a0fe78a656bcf007da64db887b3dfd</validCheckSum>
+        <validCheckSum>3:1adebc0daaf8828c15b8b91867586253</validCheckSum>
         <comment>Create Document-Uploader ROLE and Privileges</comment>
         <sql>
             set @uuid = uuid();
@@ -71,7 +73,7 @@
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Encounters');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Global Properties');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Identifier Types');
-            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Location Attribute Types');
+            INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'Get Location Attribute Types');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Locations');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Observations');
             INSERT INTO role_privilege (role, privilege) VALUES ('bahmni-document-uploader', 'View Patient Identifiers');
@@ -106,6 +108,7 @@
         </insert>
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
+        <validCheckSum>3:2ce7bbb14bf322e39fe10731825deb11</validCheckSum>
         <comment>Adding privileges for doctor, nurse roles</comment>
         <sql>
             insert into role_privilege (role, privilege) values ('Doctor', 'Add Encounters');
@@ -138,11 +141,11 @@
             insert into role_privilege (role, privilege) values ('Doctor', 'Patient Dashboard - View Visits Section');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Classes');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Datatypes');
-            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Map Types');
-            insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Reference Terms');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Get Concept Map Types');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Get Concept Reference Terms');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Concept Sources');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Concepts');
-            insert into role_privilege (role, privilege) values ('Doctor', 'View Encounter Roles');
+            insert into role_privilege (role, privilege) values ('Doctor', 'Get Encounter Roles');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Encounter Types');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Encounters');
             insert into role_privilege (role, privilege) values ('Doctor', 'View Locations');
@@ -198,11 +201,11 @@
             insert into role_privilege (role, privilege) values ('Nurse', 'Patient Dashboard - View Visits Section');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Classes');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Datatypes');
-            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Map Types');
-            insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Reference Terms');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Get Concept Map Types');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Get Concept Reference Terms');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Concept Sources');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Concepts');
-            insert into role_privilege (role, privilege) values ('Nurse', 'View Encounter Roles');
+            insert into role_privilege (role, privilege) values ('Nurse', 'Get Encounter Roles');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Encounter Types');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Encounters');
             insert into role_privilege (role, privilege) values ('Nurse', 'View Locations');
