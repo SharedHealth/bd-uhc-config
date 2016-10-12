@@ -49,6 +49,7 @@
     </changeSet>
     <changeSet id="BD-201406241630" author="angshu" context="setup">
         <validCheckSum>3:83d0d6f2cb423226e31f4786dccbfaab</validCheckSum>
+        <validCheckSum>3:54a5cf75b16047f4cdaea6cefce9b027</validCheckSum>
         <comment>Remove unwanted idgen sources. adding location. retiring and adding person attributes</comment>
         <sql>
             INSERT INTO location (name, description, creator, date_created, uuid) VALUES ('BahmniFacility', 'Description for this faciltiy', 1, curdate(), uuid());
