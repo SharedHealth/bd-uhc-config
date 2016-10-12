@@ -15,6 +15,7 @@
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-001" author="tw">
         <validCheckSum>3:60625eb74a44bb2f04ef3a0bcded2abe</validCheckSum>
         <validCheckSum>3:729de8736c4d43ea3b30d362196c1c2a</validCheckSum>
+        <validCheckSum>3:02bc4df7f8ece61336048c565b22bd89</validCheckSum>
         <comment>Create RegistrationClerk ROLE and Privileges</comment>
         <sql>
             set @uuid = uuid();
@@ -59,6 +60,7 @@
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-002" author="tw">
         <validCheckSum>3:82a0fe78a656bcf007da64db887b3dfd</validCheckSum>
         <validCheckSum>3:1adebc0daaf8828c15b8b91867586253</validCheckSum>
+        <validCheckSum>3:ab302c495ed5e495c23a628d1a2869a6</validCheckSum>
         <comment>Create Document-Uploader ROLE and Privileges</comment>
         <sql>
             set @uuid = uuid();
@@ -109,6 +111,7 @@
     </changeSet>
     <changeSet id="BAHMNI-IMPL-OMRS-ROLES-PVG-004" author="tw">
         <validCheckSum>3:2ce7bbb14bf322e39fe10731825deb11</validCheckSum>
+        <validCheckSum>3:2e0265dc4dcee7a0d87a5fa6262ee09c</validCheckSum>
         <comment>Adding privileges for doctor, nurse roles</comment>
         <sql>
             insert into role_privilege (role, privilege) values ('Doctor', 'Add Encounters');
