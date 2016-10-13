@@ -45,6 +45,6 @@ Bahmni.Registration.customValidator = {
         method: function(name, value, attributeDetails) {
             return (new Date().getFullYear()-value.getFullYear()) <= 115;
         },
-        errorMessage: "Patient age must not be less than or equal 115 years."
+        errorMessage: "Patient age should be less than or equal 115 years."
     }
 };
