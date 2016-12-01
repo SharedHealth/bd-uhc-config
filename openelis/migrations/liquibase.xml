@@ -5,21 +5,6 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.9 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.9.xsd">
 
-    <changeSet id='201510281511' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="0">
-                select count(*) from health_center where name='BDH';
-            </sqlCheck>
-        </preConditions>
-        <comment>Identifier for bd patients</comment>
-        <insert schemaName="clinlims" tableName="health_center">
-            <column name="active" type="boolean" valueBoolean="true"/>
-            <column name="name" value="BDH"/>
-            <column name="description" value="BDH"/>
-            <column name="allow_patient_creation" type="boolean" valueBoolean="true"/>
-        </insert>
-    </changeSet>
-
     <changeSet id="201510281514" author="Neha">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
@@ -43,72 +28,6 @@
         </sql>
     </changeSet>
 
-    <changeSet id='201510301711' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='CHP';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers CHP</comment>
-        <sql>
-            update health_center set active='f' where name = 'CHP';
-        </sql>
-    </changeSet>
-    <changeSet id='201510301712' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='GAN';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers GAN</comment>
-        <sql>
-            update health_center set active='f' where name = 'GAN';
-        </sql>
-    </changeSet>
-    <changeSet id='201510301713' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='SEM';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers SEM</comment>
-        <sql>
-            update health_center set active='f' where name = 'SEM';
-        </sql>
-    </changeSet>
-    <changeSet id='201510301714' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='SIV';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers SIV</comment>
-        <sql>
-            update health_center set active='f' where name = 'SIV';
-        </sql>
-    </changeSet>
-    <changeSet id='201510301715' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='BAH';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers BAH</comment>
-        <sql>
-            update health_center set active='f' where name = 'BAH';
-        </sql>
-    </changeSet>
-    <changeSet id='201510301716' author='Neha' context='setup'>
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from health_center where name='BAM';
-            </sqlCheck>
-        </preConditions>
-        <comment>Deactivation bahmni default health centers BAM</comment>
-        <sql>
-            update health_center set active='f' where name = 'BAM';
-        </sql>
-    </changeSet>
     <changeSet id='201511061756' author='Neha' context='setup'>
         <comment>Increasing the test name and description size to 255</comment>
         <sql>
