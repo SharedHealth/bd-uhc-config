@@ -181,4 +181,18 @@
             INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('National ID', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
         </sql>
     </changeSet>
+    <changeSet id='BD-201612021402' author='Neha,Sukreet' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM idgen_identifier_source WHERE name = 'BDH';
+            </sqlCheck>
+        </preConditions>
+        <comment>Inserting BDH identifier. Split from changeset BD-201406241630</comment>
+        <sql>
+            SELECT patient_identifier_type_id from patient_identifier_type where name = 'Patient Identifier' into @patient_identifier;
+            INSERT INTO idgen_identifier_source (uuid, name, description, identifier_type, creator, date_created) VALUES (uuid(), 'BDH', 'ID sequence source for patients in Bangladesh for this facility', @patient_identifier, 1, curdate());
+            SET @source_id := LAST_INSERT_ID();
+            INSERT INTO idgen_seq_id_gen (id, next_sequence_value, base_character_set, first_identifier_base, prefix, suffix, min_length, max_length) VALUES (@source_id, 200000, '0123456789', '200000', 'BDH', '', 9,9);
+        </sql>
+    </changeSet>
 </databaseChangeLog>
