@@ -218,28 +218,6 @@
             VALUES ('motherName', 'Mother\'s Name', 'java.lang.String', '1', 1, now(), 0, 10, uuid());
         </sql>
     </changeSet>
-    <changeSet id="BD-20150421-1438" author="apaule">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from person_attribute_type where name =  'Health ID';
-            </sqlCheck>
-        </preConditions>
-        <comment>Updating the attribute Health ID</comment>
-        <sql>
-            UPDATE person_attribute_type SET name = 'healthId' WHERE name = 'Health ID';
-        </sql>
-    </changeSet>
-    <changeSet id="BD-20150421-1439" author="apaule">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from person_attribute_type where name =  'National ID';
-            </sqlCheck>
-        </preConditions>
-        <comment>Updating the attribute National ID</comment>
-        <sql>
-            UPDATE person_attribute_type SET name = 'nationalId' WHERE name = 'National ID';
-        </sql>
-    </changeSet>
     <changeSet id="BD-20150421-1440" author="apaule">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="1">
@@ -350,28 +328,6 @@
             UPDATE person_attribute_type SET sort_weight = '3' WHERE name = 'spouseName';
         </sql>
     </changeSet>
-    <changeSet id="BD-20150421-1451" author="apaule">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from person_attribute_type where name = 'healthId';
-            </sqlCheck>
-        </preConditions>
-        <comment>Updating the sortweight of the attribute health Id</comment>
-        <sql>
-            UPDATE person_attribute_type SET sort_weight = '4' WHERE name = 'healthId';
-        </sql>
-    </changeSet>
-    <changeSet id="BD-20150421-1452" author="apaule">
-        <preConditions onFail="MARK_RAN">
-            <sqlCheck expectedResult="1">
-                select count(*) from person_attribute_type where name = 'nationalId';
-            </sqlCheck>
-        </preConditions>
-        <comment>Updating the sortweight of the attribute nationalId</comment>
-        <sql>
-            UPDATE person_attribute_type SET sort_weight = '5' WHERE name = 'nationalId';
-        </sql>
-    </changeSet>
     <changeSet id="BD-20150421-1453" author="apaule">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="1">
@@ -393,6 +349,30 @@
         <sql>
             UPDATE person_attribute_type SET retired = 0, retired_by = null, date_retired = null 
             WHERE name = 'motherName';
+        </sql>
+    </changeSet>
+    <changeSet id='BD-201612021256' author='Neha,Sukreet' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM person_attribute_type WHERE name = 'healthId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Insert Health ID and National ID. Split from changeset BD-201406241630</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) 
+            VALUES ('healthId', 'Unique Health ID', 'java.lang.String', '1', 1, curdate(), 0, 4, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id='BD-201612021258' author='Neha,Sukreet' context='setup'>
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM person_attribute_type WHERE name = 'nationalId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Insert Health ID and National ID. Split from changeset BD-201406241630</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) 
+            VALUES ('nationalId', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 5, uuid());
         </sql>
     </changeSet>
 </databaseChangeLog>
