@@ -174,13 +174,6 @@
             UPDATE person_attribute_type SET description="রোগীর নাম" WHERE name = 'givenNameLocal';
         </sql>
     </changeSet>
-    <changeSet id='BD-201612021256' author='Neha,Sukreet' context='setup'>
-        <comment>Insert Health ID and National ID. Split from changeset BD-201406241630</comment>
-        <sql>
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('Health ID', 'Unique Health ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
-            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid) VALUES ('National ID', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 3, uuid());
-        </sql>
-    </changeSet>
     <changeSet id='BD-201612021402' author='Neha,Sukreet' context='setup'>
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
