@@ -13,6 +13,7 @@
     <include file = "openmrs-roles-and-privileges-liquibase.xml"/>
     <include file = "openmrs-users-liquibase.xml"/>
     <include file = "openmrs-patient-attributes-liquibase.xml"/>
+    <include file = "openmrs-patient-identifiers-liquibase.xml"/>
     <include file = "openmrs-visits-liquibase.xml"/>
     <include file = "openmrs-misc-config-liquibase.xml"/>
     <include file = "location-encounter-data-liquibase.xml"/>

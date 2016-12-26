@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd
+        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+    <changeSet id="bdshrclient-20161223-1030" author="Sukreet,dubey" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from patient_identifier_type where name='HealthId';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding an identifier for healthId</comment>
+        <sql>
+            set @uuid = uuid();
+            insert into patient_identifier_type(name,description, creator, date_created, location_behavior, uniqueness_behavior, uuid)
+            VALUES('HealthId','Health Identifier type', 1, curdate(), 'NOT_USED', 'UNIQUE', @uuid);
+        </sql>
+    </changeSet>
+    <changeSet id="bdshrclient-20161223-1045" author="Sukreet,Dubey" context="setup">
+        <comment>Adding a global property for extra patient identifier type</comment>
+        <sql>
+            set @hid_identifier_uuid = null;
+            select uuid into @hid_identifier_uuid from patient_identifier_type where name = 'HealthId';
+            update global_property set property_value=@hid_identifier_uuid where property = 'emr.extraPatientIdentifierTypes';
+        </sql>
+    </changeSet>
+</databaseChangeLog>
