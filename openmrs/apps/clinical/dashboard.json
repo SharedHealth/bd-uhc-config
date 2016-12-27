@@ -8,6 +8,7 @@
         "title": "Patient Information",
         "type": "patientInformation",
         "patientAttributes": [
+          "healthId",
           "fatherName",
           "spouseName",
           "nationalId",
@@ -201,6 +202,7 @@
         "translationKey": "DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
         "type": "patientInformation",
         "patientAttributes": [
+          "healthId",
           "fatherName",
           "spouseName",
           "nationalId",

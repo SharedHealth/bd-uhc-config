@@ -23,7 +23,7 @@
         <comment>Adding a global property for extra patient identifier type</comment>
         <sql>
             set @hid_identifier_uuid = null;
-            select uuid into @hid_identifier_uuid from patient_identifier_type where name = 'HealthId';
+            select uuid into @hid_identifier_uuid from patient_identifier_type where name = 'Health Id';
             update global_property set property_value=@hid_identifier_uuid where property = 'emr.extraPatientIdentifierTypes';
         </sql>
     </changeSet>

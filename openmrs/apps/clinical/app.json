@@ -23,11 +23,6 @@
         "visitUuid"
     ],
     "config": {
-        "patientContext": {
-          "additionalPatientIdentifiers": [
-            "Health Id"
-          ]
-        },
         "obsIgnoreList": [
             "Fee Category"
         ],
