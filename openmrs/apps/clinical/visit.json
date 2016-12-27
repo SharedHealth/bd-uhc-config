@@ -16,7 +16,6 @@
         "config": {
           "title": "PatientInformation",
           "patientAttributes": [
-            "healthId",
             "fatherName",
             "spouseName",
             "nationalId",
@@ -149,7 +148,6 @@
         "config": {
           "title": "PatientInformation",
           "patientAttributes": [
-            "healthId",
             "fatherName",
             "spouseName",
             "nationalId",
@@ -270,7 +268,6 @@
         "config": {
           "title": "PatientInformation",
           "patientAttributes": [
-            "healthId",
             "fatherName",
             "spouseName",
             "nationalId",
@@ -352,7 +349,6 @@
         "config": {
           "title": "PatientInformation",
           "patientAttributes": [
-            "healthId",
             "fatherName",
             "spouseName",
             "nationalId",
@@ -418,7 +414,6 @@
         "config": {
           "title": "PatientInformation",
           "patientAttributes": [
-            "healthId",
             "fatherName",
             "spouseName",
             "nationalId",

@@ -181,7 +181,7 @@
     "type": "ipdPatients",
      "config": {
        "addressAttributes": ["address1"],
-       "patientAttributes": ["fatherName","healthId","phoneNumber"],
+       "patientAttributes": ["fatherName","phoneNumber"],
        "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
 "Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
        "locationTagNames":[
@@ -195,7 +195,7 @@
      "type": "ipdPatients",
      "config": {
        "addressAttributes": ["address1"],
-       "patientAttributes": ["fatherName","healthId","phoneNumber"],
+       "patientAttributes": ["fatherName","phoneNumber"],
        "conceptNames": ["Reason for admission", "Inpatient Outcome", "History and examination notes", "Management given",
 "Treatment/Advice on discharge", "Additional advice" , "Follow up date"],
        "locationTagNames":[
@@ -333,7 +333,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, General",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -343,7 +343,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Diarrhoea",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -353,7 +353,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Breast feeding assessment",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -363,7 +363,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 0-2m, Check immunization status",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -373,7 +373,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 2m-5y, IMCI 2months to 5 years, General",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }
@@ -383,7 +383,7 @@
         "type": "obsTemplate",
         "config": {
             "templateName": "IMCI 2m-5y ,Diarrhoea",
-            "patientAttributes": ["fatherName","healthId","phoneNumber"],
+            "patientAttributes": ["fatherName","phoneNumber"],
             "locationTagNames": ["Report Location"],
             "applyDateRangeFor": "encounterCreateDate"
         }

@@ -24,6 +24,11 @@
         "visitUuid"
     ],
     "config": {
+        "patientContext": {
+        "additionalPatientIdentifiers": [
+          "Health Id"
+        ]
+      },
         "onAdmissionForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onTransferForwardTo": "#/patient/{{patientUuid}}/visit/{{visitUuid}}/encounter/{{encounterUuid}}/bed",
         "onDischargeForwardTo": "#/patient/search",
@@ -67,7 +72,6 @@
                     "type": "patientInformation",
                     "translationKey":"ADT_PATIENT_INFO",
                     "patientAttributes": [
-                                  "healthId",
                                   "fatherName",
                                   "spouseName",
                                   "nationalId",
