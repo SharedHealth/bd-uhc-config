@@ -119,7 +119,6 @@
         "placeholder": "ID/Relative Name/Phone",
         "fields": [
           "nationalId",
-          "healthId",
           "birthRegistrationId",
           "phoneNumber",
           "fatherName",
