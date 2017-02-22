@@ -1,55 +1,210 @@
-<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
-<table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
-    <tbody>
-    <tr>
-    
-        <td class="print-table-right" valign="top">
-            <table class="registrationCard-details">
-             <tbody>
-                 <tr>
-                    <b> 
-                        <h2> {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}</h2></b>
-                        </tr>
-                        <br>
-                        <tr>
-        			    <b> <h3>{{ "REGISTRATION_INSTITUTE_ADDRESS" | translate }}</h3></b> 
-        	       </tr>  
-            <br>
-            
-         
-           
-            
-            <table class="registrationCard-details" >
-               
-                <b> 
-                <tr>
-                   <u><h1> {{patient.healthId}}</h1></u>
-                </tr>
-                </b><br>
-                
-                <tr>
-                   <h3> Dated :  {{patient.registrationDate | bahmniDate}} </h3>
-                </tr>
-                <tr>
-                  <h3>  Registration :{{patient.identifier}} </h3>
-                </tr>
-                <tr>
-                  <h3>  Name  :  {{patient.fullNameLocal()}}</h3>
-                </tr>
-                <tr>
-                  <h3>  Age: {{patient.age | age}}</h3>
-                    </tr>
-               <tr> <h3>Gender : {{patient.gender}} </h3>
-                </tr>
-                </tr>
-               <tr> <h3>Address : {{patient.address.address1}} {{patient.address.address2}} {{patient.address.address3}} {{patient.address.address3}} {{patient.address.address4}} {{patient.address.address5}} {{patient.address.countyDistrict}}  {{patient.address.stateProvince}} </h3>
-                </tr>
-           
-                
-             
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<script src="/bahmni_config/openmrs/apps/registration/healthIDCardLayout/js/jQuery-3.1.1.min.js"></script>
+<script src="/bahmni_config/openmrs/apps/registration/healthIDCardLayout/js/jsBarCode.js"></script>
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/healthIDCardLayout/css/print.css"/>
+
+<div class="healthId">
+    <div class="healthId_body">
+
+        <div class="heading">
+            <img src="/bahmni_config/openmrs/apps/registration/healthIDCardLayout/images/gov_logo.jpg"
+                 alt="dghs_logo"/>
+
+            <div>
+                <span class="bdgov">&#2455;&#2467;&#2474;&#2509;&#2480;&#2460;&#2494;&#2468;&#2472;&#2509;&#2468;&#2509;&#2480;&#2496;&#32;&#2476;&#2494;&#2434;&#2482;&#2494;&#2470;&#2503;&#2486;&#32;&#2488;&#2480;&#2453;&#2494;&#2480;</span>
+            </div>
+
+            <div><span
+                    class="bdgov">&#32;&#2488;&#2509;&#2476;&#2494;&#2488;&#2509;&#2469;&#2509;&#2479;&#32;&#2451;&#32;&#2474;&#2480;&#2495;&#2476;&#2494;&#2480;&#32;&#2453;&#2482;&#2509;&#2479;&#2494;&#2467;&#32;&#2478;&#2472;&#2509;&#2468;&#2509;&#2480;&#2467;&#2494;&#2482;&#2527;</span>
+            </div>
+
+            <div class="eng_name" id="hidCard">Health ID: {{patient.extraIdentifiers[0].identifier}}</div>
+        </div>
+
+        <div class="patient_details">
+            <div id="english_name">
+                <div class="eng_name name_no_overflow">
+                    <span class="label_tag" id="name_tag">Name:</span>
+                    <span id="name">{{patient.givenName}} {{patient.familyName}}</span>
+                </div>
+            </div>
+
+
+            <div id="bangla_name" class="name_no_overflow">
+                <span class="label_tag" id="bangla_name_tag">&#2472;&#2494;&#2478;&#2435;</span>
+                <span class="bangla_value">{{patient.givenNameLocal}} {{patient.familyNameLocal}}</span>
+            </div>
+
+            <div id="dob_and_gender">
+                <div class="form-field">
+                                    <span class="label_tag"
+                                          id="dob_tag">&#2460;&#2472;&#2509;&#2478; &#2468;&#2494;&#2480;&#2495;&#2454;&#2435;</span>
+                    <span id="dob">{{patient.birthdate}}</span>
+                    <span>&#2439;&#2434;</span>
+                </div>
+
+                <div class="form-field">
+                                    <span class="label_tag"
+                                          id="gender_tag">&#2482;&#2495;&#2457;&#2509;&#2455;&#2435;</span>
+                    <span id="gender">{{patient.gender}}</span>
+                </div>
+            </div>
+
+            <div id="nid_and_issued">
+                <div class="form-field">
+                                    <span class="label_tag"
+                                          id="issued_tag">&#2474;&#2509;&#2480;&#2470;&#2494;&#2472;&#2503;&#2480; &#2468;&#2494;&#2480;&#2495;&#2454;&#2435;</span>
+                    <span id="issued">{{patient.registrationDate}}</span>
+                    <span>&#2439;&#2434;</span>
+                </div>
+
+                <div id="nid_div" class="eng_name form-field">
+                    <span class="label_tag" id="nid_tag">NID:</span>
+                    <span id="nid">{{patient.nationalId}}</span>
+                </div>
+            </div>
+
+            <div class="form-field " hidden="true">
+                <div class="label_tag" id="patientUUIDTag">&#2482;&#2495;&#2457;&#2509;&#2455;:</div>
+
+                <div class="patient_uuid"><span>{{patient.uuid}}</span></div>
+            </div>
+
+            <div class="address_details">
+                <div class="address_line">
+                                    <span class="label_tag"
+                                          id="address_tag">&#2464;&#2495;&#2453;&#2494;&#2472;&#2494;&#2435;</span>
+                    <span id="address_line" class="address"></span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <div class="hid_footer">
+        <svg class="barcode" jsbarcode-height="25px" jsbarcode-format="CODE39"
+             jsbarcode-value="{{patient.extraIdentifiers[0].identifier}}" jsbarcode-displayValue="false"/>
+
+        <div class="disclaimer">&#2447;&#2439;&#32;&#2453;&#2494;&#2480;&#2509;&#2465;&#32;&#2455;&#2467;&#2474;&#2509;&#2480;&#2460;&#2494;&#2468;&#2472;&#2509;&#2468;&#2509;&#2480;&#2496;&#32;&#2476;&#2494;&#2434;&#2482;&#2494;&#2470;&#2503;&#2486;&#32;&#2488;&#2480;&#2453;&#2494;&#2480;&#2503;&#2480;&#32;&#2488;&#2478;&#2509;&#2474;&#2468;&#2509;&#2468;&#2495;&#2404;&#32;&#2439;&#2489;&#2494;&#32;&#2486;&#2497;&#2471;&#2497;&#2478;&#2494;&#2468;&#2509;&#2480;&#32;&#2441;&#2474;&#2480;&#2507;&#2453;&#2509;&#2468;&#32;&#2476;&#2509;&#2479;&#2476;&#2489;&#2494;&#2480;&#2453;&#2494;&#2480;&#2496;&#2480;&#32;&#2460;&#2472;&#2509;&#2479;&#32;&#2474;&#2509;&#2480;&#2479;&#2507;&#2460;&#2509;&#2479;&#2404;&#32;&#2453;&#2494;&#2480;&#2509;&#2465;&#2463;&#2495;&#32;&#2437;&#2472;&#2509;&#2479;&#32;&#2453;&#2507;&#2469;&#2494;&#2451;&#32;&#2474;&#2494;&#2451;&#2527;&#2494;&#32;&#2455;&#2503;&#2482;&#2503;&#32;&#2472;&#2495;&#2453;&#2463;&#2488;&#2509;&#2469;&#32;&#2488;&#2509;&#2476;&#2494;&#2488;&#2509;&#2469;&#2509;&#2479;&#2453;&#2503;&#2472;&#2509;&#2470;&#2509;&#2480;&#2503;&#32;&#2460;&#2478;&#2494;&#32;&#2470;&#2503;&#2451;&#2527;&#2494;&#2480;&#32;&#2460;&#2472;&#2509;&#2479;&#32;&#2437;&#2472;&#2497;&#2480;&#2507;&#2471;&#32;&#2453;&#2480;&#2494;&#32;&#2489;&#2482;&#2404;</div>
+    </div>
+</div>
+
+<script>
+
+    function formatDate(date) {
+        var unquoteDate = date.replace(/"/g, "");
+        var today = new Date(unquoteDate);
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1;
+
+        var yyyy = today.getFullYear();
+        if (dd < 10) {
+            dd = '0' + dd;
+        }
+        if (mm < 10) {
+            mm = '0' + mm;
+        }
+        return dd + "-" + mm + "-" + yyyy;
+    }
+
+    function convertDigitToBangla(date) {
+        var finalEnlishToBanglaNumber = {
+            '0': '\u09E6',
+            '1': '\u09E7',
+            '2': '\u09E8',
+            '3': '\u09E9',
+            '4': '\u09EA',
+            '5': '\u09EB',
+            '6': '\u09EC',
+            '7': '\u09ED',
+            '8': '\u09EE',
+            '9': '\u09EF'
+        };
+        var formattedDate = formatDate(date);
+        var strArray = formattedDate.split("");
+        var retStr = "";
+        for (var x in strArray) {
+            if (isNaN(strArray[x])) {
+                retStr = retStr + strArray[x];
+            } else {
+                retStr = retStr + finalEnlishToBanglaNumber[strArray[x]];
+            }
+        }
+        return retStr;
+    }
+
+
+    function buildAddress(addressJson) {
+        var address = addressJson
+        var delimiter = ", ";
+        var result = address.address1.concat(delimiter);
+        if (address.address2) {
+            result = result.concat(address.address2).concat(delimiter);
+        }
+        if (address.address3) {
+            result = result.concat(address.address3).concat(delimiter);
+        }
+        if (address.address4) {
+            result = result.concat(address.address4).concat(delimiter);
+        }
+        if (address.address5) {
+            result = result.concat(address.address5).concat(delimiter);
+        }
+        result = result.concat(address.countyDistrict).concat(delimiter);
+        return result.concat(address.stateProvince);
+    }
+
+    function getGender(genderCode) {
+        if (genderCode == "M") {
+            return '\u09AA\u09C1\u09B0\u09C1\u09B7'
+        } else if (genderCode == "F") {
+            return '\u09B8\u09CD\u09A4\u09CD\u09B0\u09C0'
+        } else if (genderCode == "O") {
+            return '\u09B9\u09BF\u099C\u09A1\u09BC\u09BE'
+        }
+    }
+
+    var existingOnload = window.onload;
+    window.onload = function () {
+
+        var banglaName = jQuery('#bangla_name .bangla_value');
+        if (!banglaName.text().trim()) {
+            jQuery('#bangla_name .label_tag').hide()
+        }
+
+        var nid = jQuery('#nid_div #nid');
+        if (!nid.text().trim()) {
+            jQuery('#nid_div #nid_tag').hide()
+        }
+
+
+        var genderElement = jQuery('#gender');
+        genderElement.text(getGender(genderElement.text()));
+
+        var dobElement = jQuery('#dob');
+        dobElement.text(convertDigitToBangla(dobElement.text()));
+
+        var issuedElement = jQuery('#issued');
+        issuedElement.text(convertDigitToBangla(issuedElement.text()));
+
+        var patientUUIDElement = jQuery('.patient_uuid span');
+        var patientUUID = patientUUIDElement.text();
+
+        var addressElement = jQuery('.address');
+        jQuery.ajax({
+            type: "GET",
+            url: "/openmrs/ws/hidcard/person/" + patientUUID,
+            dataType: "json",
+            async: false
+        }).done(function (patient) {
+            var address = patient.address;
+            addressElement.text(buildAddress(address));
+        }).fail(function (error) {
+            console.log(error)
+        });
+
+        JsBarcode(".barcode").init();
+
+        if (existingOnload) {
+            existingOnload();
+        }
+    };
+</script>

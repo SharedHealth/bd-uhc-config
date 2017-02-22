@@ -1,15 +1,143 @@
-.row {
-    float: clear;
-}
-.left {
-    width: 100%;
-    float: left;
-}
-.right {
-    width: 50%;
-    float: left;
+@font-face {
+    font-family: 'SolaimanLipi';
+    src: url('SolaimanLipi.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
-.label {
+body {
+    width: 960px;
+}
+
+.healthId {
+    font-family: SolaimanLipi !important;
+    border-style: solid;
+    width: 8.2cm !important;
+    height: 5.1cm !important;
+    margin: 30px;
+    float: left;
+    border-color: #afafaf;
+    border-width: medium;
+    position: relative;
+    box-sizing: border-box;
+    page-break-inside: avoid;
+}
+
+.heading{
+    padding: 3px 10px 14px 10px;
+    height : 27px;
+    font-size: 11px;
+    border: medium none;
+    border-bottom: groove #eee;
+    line-height: 13px;
+}
+
+.bdgov {
+    display: block;
+    text-align: center;
+}
+
+.eng_name{
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+#hidCard{
+    text-align: center;
     font-weight: bold;
+    font-size: 11px !important;
+}
+
+.patient_details {
+    padding: 0px 10px 0px 10px;
+}
+
+.healthId img {
+    float: left;
+    width:39px;
+    height:39px
+}
+
+.label_tag{
+    font-size:10px;
+}
+
+#english_name{
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 17px;
+}
+
+#bangla_name{
+    display: block;
+    clear: both;
+    overflow: hidden;
+    height: 14px;
+    padding-top: 2px;
+    font-size:10px;
+}
+
+.name_no_overflow {
+    overflow: hidden;
+    height: 18px;
+    text-overflow: clip;
+    white-space: nowrap;
+}
+
+#name,#nid,#gender,#dob,#issued{
+    font-size:10px;
+    display:inline;
+}
+
+#name_tag,#nid_tag, #gender_tag,#dob_tag,#issued_tag,#address_tag{
+    display:inline-block;
+}
+
+#dob_and_gender, #nid_and_issued{
+    display:block;
+    clear: both;
+    overflow: hidden;
+    height: 16px;
+    line-height: 16px;
+    font-size:10px;
+}
+.form-field{
+    width:50%;
+    padding-right:5px;
+    float: left;
+    box-sizing: border-box;
+}
+
+.address_details{
+    display: block;
+    line-height: 13px;
+    overflow: hidden;
+    height: 30px;
+}
+
+.address {
+    display:inline;
+    font-size: 10px;
+    overflow: hidden;
+}
+
+.hid_footer{
+    padding-bottom: 1px;
+    position: relative;
+    border: medium none;
+    border-top: groove #eee;
+}
+
+.disclaimer{
+    font-size: 7px;
+    line-height: 9px;
+    padding-top: 0px;
+    text-align: center;
+    position: absolute;
+    bottom: -8px;
+}
+
+.barcode{
+    height: 25px !important;
+    width: 300px !important;
 }
