@@ -29,7 +29,7 @@ body{
 }
 
 .opdTicket-print-table {
-	border: none
+	border: none;
 	border-collapse: collapse;
 	width: 100%;
 }

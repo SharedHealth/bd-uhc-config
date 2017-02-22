@@ -52,9 +52,10 @@
   overflow: scroll;
   margin: 0 auto;
   table-layout: fixed;
-  p {
-    text-indent: 50px;
-    } 
+}
+
+.dischargePatient-print-table p {
+  text-indent: 50px;
 }
 
 /* line 24, print.scss */

@@ -6,7 +6,7 @@
     		<td colspan="2"><h2 class="custom-print-center custom-bold-text"> <u>Kaliganj UHC</u> </h2></td>
     	</tr>
     	<tr>
-    		<td> <span class="custom-bold-text">ID</span> : {{patient.identifier}}</td>
+    		<td> <span class="custom-bold-text">ID</span> : {{patient.primaryIdentifier.identifier}}</td>
             <td><span class="custom-bold-text">Date</span> : {{patient.registrationDate | bahmniDate}} </td>
     	</tr>
     	<tr>
@@ -34,5 +34,4 @@
     	</tr>
     </tbody>
 </table>
-
 </div>
