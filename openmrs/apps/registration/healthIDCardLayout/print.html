@@ -61,6 +61,10 @@
                     <span class="label_tag" id="nid_tag">NID:</span>
                     <span id="nid">{{patient.nationalId}}</span>
                 </div>
+                <div id="brn_div" class="eng_name form-field">
+                    <span class="label_tag" id="brn_tag">BRN:</span>
+                    <span id="brn">{{patient.birthRegistrationId}}</span>
+                </div>
             </div>
 
             <div class="form-field " hidden="true">
@@ -162,6 +166,22 @@
         }
     }
 
+    function showNIDOrBRN(nid, brn) {
+
+        if (!nid.text().trim() && !brn.text().trim()) {
+            jQuery('#nid_div #nid_tag').hide()
+            jQuery('#brn_div #brn_tag').hide()
+            return;
+        }
+
+        if (!nid.text().trim()) {
+            jQuery('#nid_div #nid_tag').hide()
+        } else {
+            jQuery('#brn_div #brn_tag').hide()
+        }
+
+    }
+
     var existingOnload = window.onload;
     window.onload = function () {
 
@@ -171,9 +191,8 @@
         }
 
         var nid = jQuery('#nid_div #nid');
-        if (!nid.text().trim()) {
-            jQuery('#nid_div #nid_tag').hide()
-        }
+        var brn = jQuery('#brn_div #brn');
+        showNIDOrBRN(nid, brn);
 
 
         var genderElement = jQuery('#gender');
