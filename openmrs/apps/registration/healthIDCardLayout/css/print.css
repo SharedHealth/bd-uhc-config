@@ -84,12 +84,12 @@ body {
     white-space: nowrap;
 }
 
-#name,#nid,#gender,#dob,#issued{
+#name,#nid,#brn,#gender,#dob,#issued{
     font-size:10px;
     display:inline;
 }
 
-#name_tag,#nid_tag, #gender_tag,#dob_tag,#issued_tag,#address_tag{
+#name_tag,#nid_tag,#brn_tag, #gender_tag,#dob_tag,#issued_tag,#address_tag{
     display:inline-block;
 }
 
