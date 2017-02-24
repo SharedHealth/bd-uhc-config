@@ -375,4 +375,40 @@
             VALUES ('nationalId', 'National ID', 'java.lang.String', '1', 1, curdate(), 0, 5, uuid());
         </sql>
     </changeSet>
+    <changeSet id="BD-20170224-1445" author="anjaly,abhilash" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'givenNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add given name local attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('givenNameLocal', 'রোগীর নাম', 'java.lang.String', '1', 1, now(), 1, 3, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20170224-1451" author="anjaly,abhilash" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'familyNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add family name local attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('familyNameLocal', 'পদবি', 'java.lang.String', '1', 1, now(), 1, 3, uuid());
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20170224-1455" author="anjaly,abhilash" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                select count(*) from person_attribute_type where name = 'middleNameLocal';
+            </sqlCheck>
+        </preConditions>
+        <comment>Add middle name local attribute</comment>
+        <sql>
+            INSERT INTO person_attribute_type (name, description, format, searchable, creator, date_created, retired, sort_weight, uuid)
+            VALUES ('middleNameLocal', 'middleNameLocal', 'java.lang.String', '1', 1, now(), 1, 3, uuid());
+        </sql>
+    </changeSet>
 </databaseChangeLog>
