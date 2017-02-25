@@ -1,5 +1,5 @@
 Select
-        (select count(*) from bed where bed_type_id=1 or bed_type_id = 3 as 'No. of beds',
+        (select count(*) from bed where bed_type_id=1 or bed_type_id = 3) as 'No. of beds',
 
         (datediff('#endDate#','#startDate#')+1) as 'No. of days',
 
