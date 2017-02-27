@@ -31,7 +31,7 @@
 
             <div id="bangla_name" class="name_no_overflow">
                 <span class="label_tag" id="bangla_name_tag">&#2472;&#2494;&#2478;&#2435;</span>
-                <span class="bangla_value">{{patient.givenNameLocal}} {{patient.familyNameLocal}}</span>
+                <span class="bangla_value"></span>
             </div>
 
             <div id="dob_and_gender">
@@ -182,13 +182,19 @@
 
     }
 
-    var existingOnload = window.onload;
-    window.onload = function () {
-
+    function appendBanglaName(givenNameLocal,familyNameLocal) {
         var banglaName = jQuery('#bangla_name .bangla_value');
-        if (!banglaName.text().trim()) {
+        if(givenNameLocal && familyNameLocal){
+            banglaName.text(givenNameLocal.concat(" ").concat(familyNameLocal));
+        }
+        else{
             jQuery('#bangla_name .label_tag').hide()
         }
+
+    }
+
+    var existingOnload = window.onload;
+    window.onload = function () {
 
         var nid = jQuery('#nid_div #nid');
         var brn = jQuery('#brn_div #brn');
@@ -214,8 +220,11 @@
             dataType: "json",
             async: false
         }).done(function (patient) {
+            appendBanglaName(patient.givenNameLocal,patient.familyNameLocal)
             var address = patient.address;
             addressElement.text(buildAddress(address));
+            console.log(patient);
+
         }).fail(function (error) {
             console.log(error)
         });
