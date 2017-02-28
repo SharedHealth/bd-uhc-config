@@ -170,6 +170,7 @@
         "duration": {
           "required": true
         },
+        "hideOrderSet": true,
         "doseUnits": [
         "Capsule dose form",
         "Tablet dose form",
