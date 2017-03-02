@@ -200,6 +200,12 @@
         var brn = jQuery('#brn_div #brn');
         showNIDOrBRN(nid, brn);
 
+        var nameElement = jQuery('#name');
+        var name = nameElement.text();
+        var titleCaseName = name.split(" ").map(function (part) {
+            return part[0].toUpperCase() + part.slice(1).toLowerCase()
+        }).join(" ");
+        nameElement.text(titleCaseName);
 
         var genderElement = jQuery('#gender');
         genderElement.text(getGender(genderElement.text()));
@@ -223,7 +229,6 @@
             appendBanglaName(patient.givenNameLocal,patient.familyNameLocal)
             var address = patient.address;
             addressElement.text(buildAddress(address));
-            console.log(patient);
 
         }).fail(function (error) {
             console.log(error)
