@@ -203,6 +203,7 @@
         var nameElement = jQuery('#name');
         var name = nameElement.text();
         var titleCaseName = name.split(" ").map(function (part) {
+            if(!part) return;
             return part[0].toUpperCase() + part.slice(1).toLowerCase()
         }).join(" ");
         nameElement.text(titleCaseName);
