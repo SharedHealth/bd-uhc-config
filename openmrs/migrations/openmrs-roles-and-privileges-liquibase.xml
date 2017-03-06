@@ -255,16 +255,25 @@
             insert into role_privilege (role, privilege) values ('RegistrationClerk', 'National Registry') on duplicate key update privilege='National Registry';
         </sql>
     </changeSet>
-    <changeSet id="BD-20150511-1027" author="neha" context="setup">
+    <changeSet id="BD-20170305-1457" author="abhilash" context="setup">
         <preConditions onFail="MARK_RAN">
             <sqlCheck expectedResult="0">
-                SELECT COUNT(*) FROM role_privilege where role = 'Clinical:ReadOnly' and privilege = 'app:clinical:treatmentTab';
+                SELECT COUNT(*) FROM privilege where privilege = 'app:clinical:treatmentTab';
             </sqlCheck>
         </preConditions>
         <comment>Adding privilage for treatment tab</comment>
         <sql>
             insert into privilege (privilege, description, uuid) values ('app:clinical:treatmentTab', 'Privilege for treatment tab', uuid());
-
+        </sql>
+    </changeSet>
+    <changeSet id="BD-20170305-1458" author="abhilash" context="setup">
+        <preConditions onFail="MARK_RAN">
+            <sqlCheck expectedResult="0">
+                SELECT COUNT(*) FROM role_privilege where role = 'Clinical:ReadOnly' and privilege = 'app:clinical:treatmentTab';
+            </sqlCheck>
+        </preConditions>
+        <comment>Adding  role_privilege for treatment tab</comment>
+        <sql>
             insert into role_privilege (role, privilege) values ('Clinical:ReadOnly', 'app:clinical:treatmentTab');
         </sql>
     </changeSet>
