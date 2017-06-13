@@ -201,9 +201,12 @@
         showNIDOrBRN(nid, brn);
 
         var nameElement = jQuery('#name');
-        var name = nameElement.text();
-        var titleCaseName = name.split(" ").map(function (part) {
-            if(!part) return;
+        var name = nameElement.text().trim();
+        var nameParts = name.split(" ");
+        var lastIndex = nameParts.length - 1;
+        nameParts = (nameParts[lastIndex].toLowerCase() == 'x') ? nameParts.slice(0,lastIndex) : nameParts
+        var titleCaseName = nameParts.map(function (part) {
+            if (!part) return
             return part[0].toUpperCase() + part.slice(1).toLowerCase()
         }).join(" ");
         nameElement.text(titleCaseName);
