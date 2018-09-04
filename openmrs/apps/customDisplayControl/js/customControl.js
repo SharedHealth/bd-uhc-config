@@ -151,7 +151,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             },
             template: '<ng-include src="contentUrl"/>',
         }
-    }]).directive('prescriptionFooter', ['TreatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
+    }]).directive('prescriptionFooter', ['treatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
     {
        var link = function ($scope) 
         {        
@@ -177,7 +177,7 @@ angular.module('bahmni.common.displaycontrol.custom')
             link: link,
             template: '<ng-include src="contentUrl"/>',
         }
-    }]).directive('endPrescription', ['TreatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
+    }]).directive('endPrescription', ['treatmentService','visitService','appService', 'spinner', function (treatmentService,visitService,appService, spinner) 
     {
        var link = function ($scope) 
         {        
