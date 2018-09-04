@@ -145,13 +145,13 @@
         "isObservation": true,
         "dashboardConfig": {
           "conceptNames": [
-            "History and Examination"
+            "Condition Complaint Template"
           ],
           "numberOfVisits": 2
         },
         "expandedViewConfig": {
           "conceptNames": [
-            "History and Examination"
+            "Condition Complaint Template"
           ],
           "numberOfVisits": 2,
           "showDetailsButton": true,
