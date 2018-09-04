@@ -37,6 +37,7 @@
       "Upazilla"
     ],
     "searchByIdForwardUrl": "/patient/{{patientUuid}}",
+    "showLastName": true,
     "showMiddleName": false,
     "addressHierarchy": {
       "showAddressFieldsTopDown": true,
